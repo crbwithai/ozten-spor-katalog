@@ -104,3 +104,27 @@
     margin-top:16mm; background:#111111; color:#fff; text-align:center; padding:10mm;
     font-size:11pt; letter-spacing:1pt; font-weight:700;
   }
+
+  /* CATEGORY NAVIGATION (About page) */
+  .category-navigation { margin-top:7mm; border-top:1px solid #DADADA; padding-top:6mm; }
+  .category-navigation-title {
+    font-size:11pt; font-weight:800; letter-spacing:1.5pt; color:#111111;
+    padding-bottom:2mm; margin-bottom:4mm; border-bottom:2pt solid #111111;
+  }
+  .category-button-grid {
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:2.5mm;
+  }
+  .category-nav-button {
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    text-decoration:none; font-size:7.5pt; font-weight:700; color:#111111;
+    letter-spacing:0.3pt; line-height:1.2;
+    border:1px solid #DADADA; border-radius:2px; background:#fff;
+    padding:2.5mm 2mm;
+  }
+  .category-nav-button:hover { border-color:#E11D2E; color:#E11D2E; }
+  .category-nav-button:focus { outline:none; border-color:#0B5FA8; color:#0B5FA8; }
+  @media print {
+    .category-nav-button, .category-nav-button:hover, .category-nav-button:focus {
+      border-color:#DADADA; color:#111111;
+    }
+  }
