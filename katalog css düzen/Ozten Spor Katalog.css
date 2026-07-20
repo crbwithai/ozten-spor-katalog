@@ -2,10 +2,11 @@
   * { box-sizing: border-box; margin:0; padding:0; }
   body { font-family: Arial, Helvetica, sans-serif; color:#111111; }
   .page {
-    width:210mm; height:297mm; position:relative;
+    width:210mm; height:297mm; position:relative; margin:0 auto;
     padding:16mm 15mm 14mm 15mm; page-break-after:always; overflow:hidden;
   }
   .page:last-child { page-break-after:auto; }
+  img { max-width:100%; height:auto; }
 
   /* FOOTER */
   .footer {
@@ -33,7 +34,7 @@
     background:transparent;
   }
   .cover-hero span { font-size:9pt; letter-spacing:1.5pt; color:#8C8C8C; }
-  .cover-bottom { position:absolute; bottom:14mm; left:15mm; right:15mm; }
+  .cover-bottom { margin:10mm 15mm 0 15mm; }
   .cover-brand { font-size:40pt; font-weight:800; letter-spacing:1pt; }
   .cover-slogan { font-size:12pt; color:#D8D8D8; margin-top:3mm; font-style:italic; }
   .cover-tags { margin-top:8mm; display:flex; align-items:center; gap:4mm; font-size:9pt; letter-spacing:2pt; color:#C9C9C9; }
@@ -128,3 +129,58 @@
       border-color:#DADADA; color:#111111;
     }
   }
+
+  @media (max-width:800px) {
+    .page { width:100%; height:auto; }
+    .product-grid { grid-template-columns:1fr; }
+    .contact-grid { grid-template-columns:1fr; }
+    .category-button-grid { grid-template-columns:1fr 1fr; }
+  }
+
+
+/* ============================================================
+   GEZİNME BUTONLARI — sabit "Yukarı Çık" ve "Ana Kataloğa Dön" butonları
+   (index.html: yalnızca "Yukarı Çık" / kategori sayfaları: her ikisi de)
+   ============================================================ */
+html { scroll-behavior: smooth; }
+
+.floating-nav-group {
+  position: fixed;
+  right: 5mm;
+  bottom: 5mm;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2.5mm;
+}
+
+.floating-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5mm;
+  padding: 3mm 5mm;
+  background: #111111;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8.5pt;
+  font-weight: 700;
+  letter-spacing: 0.3pt;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+  transition: background-color .15s ease, transform .15s ease;
+  white-space: nowrap;
+}
+.floating-nav-btn:hover { background:#E11D2E; }
+.floating-nav-btn:focus { outline:none; box-shadow:0 0 0 2px #0B5FA8; }
+.floating-nav-btn .fn-arrow { font-size:10pt; line-height:1; }
+
+@media (max-width:480px) {
+  .floating-nav-group { right:3mm; bottom:3mm; gap:2mm; }
+  .floating-nav-btn { padding:2.8mm 4mm; font-size:7.5pt; }
+}
+
+@media print {
+  .floating-nav-group { display:none; }
+}
