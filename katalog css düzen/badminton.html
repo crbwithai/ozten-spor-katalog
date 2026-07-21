@@ -1,15 +1,18 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
 <title>BADMINTON — Özten Spor Kataloğu</title>
 <link rel="stylesheet" href="Ozten Spor Katalog.css">
+<script src="sepet.js" defer></script>
 </head>
 <body id="top">
 <div class="floating-nav-group">
     <a href="#top" class="floating-nav-btn"><span class="fn-arrow">&#8593;</span> Yukarı Çık</a>
     <a href="index.html#top" class="floating-nav-btn"><span class="fn-arrow">&#8592;</span> Ana Kataloğa Dön</a>
 </div>
+<div class="katalog-arama"><input type="text" placeholder="Ürün ara..." oninput="aramaFiltrele(this)"></div>
+<p class="urun-bulunamadi" hidden>Ürün bulunamadı.</p>
 <section class="page cat-page" id="kategori-badminton">
         <div class="cat-header">
             <div class="cat-num">04</div>
@@ -19,22 +22,6 @@
             </div>
         </div>
         <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Basketbol%20image/PVC%20PANYA%20HB-2%20ALTIS.bmp" alt="PVC PANYA HB-2 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : PVC PANYA HB-2 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : PVC PANYA HB-2, ALTIS Dayanıklı PVC pano, Çelik çember, Hava koşullarına dayanıklı, Sağlam bağlantı noktaları</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kolay montaj, İç ve dış saha kullanımına uygun, Antrenman ve hobi kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Basketbol%20image/BNS3O%20HATTRICK%20BASKETBOL%20A%C4%9EI.bmp" alt="BNS3O HATTRICK BASKETBOL AĞI" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : BNS3O HATTRICK BASKETBOL AĞI</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : BNS30 HATTRICK BASKETBOL AĞI Dayanıklı naylon ip, UV dayanımlı yapı, Standart çember uyumlu</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kolay montaj, Aşınmaya dayanıklı, İç ve dış saha kullanımına uygun, Uzun ömürlü kullanım.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Badminton%20image/B100%20ALTIS.bmp" alt="B100 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -66,22 +53,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : SDB43 SPORTICA Çelik gövde, İzometrik kafa tasarımı, Dayanıklı misina, Kaymaz tutma sapı</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Hafif yapı, Dengeli kontrol, Başlangıç seviyesi kullanımına uygun.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Badminton</span>
-        <span>30</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">04</div>
-            <div class="cat-titleblock">
-                <h1>BADMINTON</h1>
-                <p>Ürün listesi (devamı) — sayfa 2/9</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Badminton%20image/SDB53%20ALTIS%20HBT53%20HATTRICK.bmp" alt="SDB53 ALTIS HBT53 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -97,7 +69,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : SDB10 ALTIS Çelik gövde, Temperli çelik şaft, Dayanıklı misina, Kaymaz tutma sapı</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">İzometrik kafa tasarımı, Hafif yapı, Hobi kullanımına uygun.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Badminton</span>
+        <span>28</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">04</div>
+            <div class="cat-titleblock">
+                <h1>BADMINTON</h1>
+                <p>Ürün listesi (devamı) — sayfa 2/9</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Badminton%20image/SDB65%20SPORTICA.bmp" alt="SDB65 SPORTICA" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -129,22 +116,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 80 - 85 gram – Hafif yapı ile hızlı oyun ağırlık, 675 mm ±2 mm uzunluk, 10 - 13 kg kordaj gerginliği</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">22x23 kordaj düzeni, Titreşim önleyici sistem –, Soft malzeme ile sargılı, konforlu kavrama.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Badminton</span>
-        <span>31</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">04</div>
-            <div class="cat-titleblock">
-                <h1>BADMINTON</h1>
-                <p>Ürün listesi (devamı) — sayfa 3/9</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Badminton%20image/Helix%20Badminton%20Raketi%20Primier%20BR020.bmp" alt="Helix Badminton Raketi Primier BR020" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -160,7 +132,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Alüminyum (hafif ve dayanıklı) malzeme, 100 ± 5 gram, 66,5 ± 0,5 cm uzunluk, 16-18 lbs kordaj gerginliği</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">6,9 mm, Türkiye Badminton Federasyonu uygunluk.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Badminton</span>
+        <span>29</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">04</div>
+            <div class="cat-titleblock">
+                <h1>BADMINTON</h1>
+                <p>Ürün listesi (devamı) — sayfa 3/9</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Badminton%20image/TBF%20Badminton%20Raketi%20Momentum%20TBF-M.bmp" alt="TBF Badminton Raketi Momentum TBF-M" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -173,47 +160,32 @@
         <img src="%C4%B0mage/Badminton%20image/TBF%20Badminton%20Raketi%20Strong%20TBF-S.bmp" alt="TBF Badminton Raketi Strong TBF-S" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : TBF Badminton Raketi Strong TBF-S</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 80 - 84 gram, 295 ± 5 mm denge balansı, 28 lbs kordaj gerginliği, 67,5 ± 0,1 cm uzunluk, 7,1 mm, Türkiye Badminton Federasyonu&#x27;na uygun üretim, 72 ± 2 gram</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">305 ± 5 mm denge noktası, 23 - 26 lbs kordaj gerginliği, 67,5 ± 1 cm uzunluk, 7,1 mm, Türkiye Badminton, 665 ± 5 mm, 98 ± 10 g ağırlık, 19-21.</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Tek parça karbon yapı, 80-84 gram ağırlık, 295 ± 5 mm denge balansı, 28 lbs kordaj gerginliği</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">67,5 ± 0,1 cm uzunluk, 7,1 mm şaft çapı, Türkiye Badminton Federasyonu&#x27;na uygun üretim, Fermuarlı sırt askılı özel kumaş çanta dahil.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Badminton%20image/TBF%20Badminton%20Raketi%20Winner%20TBF-W.bmp" alt="TBF Badminton Raketi Winner TBF-W" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : TBF Badminton Raketi Winner TBF-W</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 80 - 84 gram, 295 ± 5 mm denge balansı, 28 lbs kordaj gerginliği, 67,5 ± 0,1 cm uzunluk, 7,1 mm, Türkiye Badminton Federasyonu&#x27;na uygun üretim, 72 ± 2 gram</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">305 ± 5 mm denge noktası, 23 - 26 lbs kordaj gerginliği, 67,5 ± 1 cm uzunluk, 7,1 mm, Türkiye Badminton, 665 ± 5 mm, 98 ± 10 g ağırlık, 19-21.</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Tek parça karbon yapı, 72 ± 2 gram ağırlık, 305 ± 5 mm denge noktası, 23-26 lbs kordaj gerginliği</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">67,5 ± 1 cm uzunluk, 7,1 mm şaft çapı, Türkiye Badminton Federasyonu onaylı, Fermuarlı sırt askılı koruyucu çanta dahil.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Badminton%20image/Helix%20Storm%20Badminton%20Raket%20Seti.bmp" alt="Helix Storm Badminton Raket Seti" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Storm Badminton Raket Seti</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Alüminyum – Hafif ve dayanıklı yapı malzeme, Çift kafalı – Kontrol ve hassasiyet sağlar, 100 ± 5 gram – ağırlık, 66,5 (± 0,5) cm – Standart ölçü</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">16–18 lbs – Kontrollü vuruşlar için ideal kordaj gerginliği, 6,9 mm – Esnek ve sağlam şaft yapısı.</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 665 ± 5 mm uzunluk, 98 ± 10 g ağırlık, 19-21 LBS tel gerilimi, 310 ± 10 mm denge noktası</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Dengeli ağırlık dağılımı ve ergonomik yapı, Badminton antrenmanları ve rekreasyonel oyunlar için uygun.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Badminton</span>
-        <span>32</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">04</div>
-            <div class="cat-titleblock">
-                <h1>BADMINTON</h1>
-                <p>Ürün listesi (devamı) — sayfa 4/9</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Badminton%20image/TBF%20Badminton%20Raket%20Seti%20Beginning%20TBF-BG.bmp" alt="TBF Badminton Raket Seti Beginning TBF-BG" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : TBF Badminton Raket Seti Beginning TBF-BG</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Alüminyum – Hafif ve dayanıklı yapı malzeme, Çift kafalı – Kontrol ve hassasiyet sağlar, 100 ± 5 gram – ağırlık, 66,5 (± 0,5) cm – Standart ölçü</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">16–18 lbs – Kontrollü vuruşlar için ideal kordaj gerginliği, 6,9 mm – Esnek ve sağlam şaft yapısı.</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Alüminyum çift kafalı yapı, 100 ± 5 gram ağırlık, 66,5 (± 0,5) cm uzunluk, 16-18 lbs kordaj gerginliği</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">6,9 mm şaft çapı, Türkiye Badminton Federasyonu onaylı, Fermuarlı sırt askılı tam boy taşıma çantası dahil.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
@@ -223,7 +195,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Alüminyum – Hafif ve dayanıklı malzeme, 2 raket + 1 badminton topu, Çift parça bağlantı –, 85 ± 5 gram, 665 mm ±10 – Standart raket uzunluğu uzunluk</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Yumuşak dokulu, kaymaz kavrama sağlayan soft malzeme sap, Tam boy, fermuarlı ve sırt askılı taşıma çantası.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Badminton</span>
+        <span>30</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">04</div>
+            <div class="cat-titleblock">
+                <h1>BADMINTON</h1>
+                <p>Ürün listesi (devamı) — sayfa 4/9</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Badminton%20image/Helix%20Badminton%20Raket%20Seti%20Glory%20BR012.bmp" alt="Helix Badminton Raket Seti Glory BR012" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -255,29 +242,9 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 12 adet (tüp içinde), A+ kalite kaz tüyü, tam katı doğal mantar malzeme, 4,74 – 5,50 gram (±0,76 g) ağırlık, 76/77 m/s – uçuş hızı</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">A+ seviyesi – Yoğun kullanıma uygun, Folyo astar – Termal koruma sağlar kaplama, BWF (Dünya Badminton Federasyonu) sertifikalı.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Badminton</span>
-        <span>33</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">04</div>
-            <div class="cat-titleblock">
-                <h1>BADMINTON</h1>
-                <p>Ürün listesi (devamı) — sayfa 5/9</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Badminton%20image/Helix%20Badminton%20Topu%20Hobi%20BBT-6'l%C4%B1.bmp" alt="Helix Badminton Topu Hobi BBT-Set 6'lı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Badminton Topu Hobi BBT-Set 6&#x27;lı</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Plastik tüy + 2 katmanlı doğal toz mantar ve malzeme, 23,5 mm, 5 gram ağırlık, Tüp içinde 6 adet badminton topu</span></div>
@@ -291,7 +258,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Naylon perde tüyü – Sağlam ve uzun ömürlü malzeme, Mantar ile perdeyi ayıran destek şeridi, PU mantar – Dayanıklı temas yüzeyi</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">6 (±1) gram – Dengeli uçuş ağırlık, Orta hız – Stabil ve kontrollü performans uçuş hızı.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Badminton</span>
+        <span>31</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">04</div>
+            <div class="cat-titleblock">
+                <h1>BADMINTON</h1>
+                <p>Ürün listesi (devamı) — sayfa 5/9</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Badminton%20image/Helix%20Badminton%20Topu%20I%C5%9F%C4%B1kl%C4%B1%20LB-20%20Turuncu.bmp" alt="Helix Badminton Topu Işıklı LB-20 Turuncu" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -323,22 +305,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : BT10 Altis, Dayanıklı çelik gövde, Ergonomik tasarım, Kaymaz tutuş</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Hafif ve sağlam yapı, Antrenman kullanımına uygun.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Badminton</span>
-        <span>34</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">04</div>
-            <div class="cat-titleblock">
-                <h1>BADMINTON</h1>
-                <p>Ürün listesi (devamı) — sayfa 6/9</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Badminton%20image/BT30%20HATTRICK.bmp" alt="BT30 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -354,7 +321,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : BT50 Hattrick, Dayanıklı çelik gövde, Hafif ve dengeli yapı, Ergonomik kavrama, Güçlü ve kontrollü vuruş</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Aşınmaya dayanıklı, Antrenman ve hobi kullanımına uygun.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Badminton</span>
+        <span>32</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">04</div>
+            <div class="cat-titleblock">
+                <h1>BADMINTON</h1>
+                <p>Ürün listesi (devamı) — sayfa 6/9</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Badminton%20image/Enlio%20BWF%20Onayl%C4%B1%20Badminton%20Filesi.bmp" alt="Enlio BWF Onaylı Badminton Filesi" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -386,22 +368,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 290 x 150 cm (genel) ölçü, 290 x 80 cm, 4 x 4 cm, 2,5 cm – Ekstra dayanıklılık sağlar</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Naylon – Hafif ve sağlam yapı malzeme, Birbirine geçmeli portatif direkler.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Badminton</span>
-        <span>35</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">04</div>
-            <div class="cat-titleblock">
-                <h1>BADMINTON</h1>
-                <p>Ürün listesi (devamı) — sayfa 7/9</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Badminton%20image/TBF%20Badminton%20Grip%20DG600%2060'l%C4%B1.bmp" alt="TBF Badminton Grip DG600 60'lı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -417,7 +384,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 60 adet overgrip (1 paket), 26 x 1100 x 0,7 mm ölçü, PU (Kaymaz ve dayanıklı yapı) malzeme</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Türkiye Badminton Federasyonu (TBF) uyumlu.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Badminton</span>
+        <span>33</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">04</div>
+            <div class="cat-titleblock">
+                <h1>BADMINTON</h1>
+                <p>Ürün listesi (devamı) — sayfa 7/9</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Badminton%20image/TBF%20Badminton%20Grip%20BG-600Y%203'l%C3%BC.bmp" alt="TBF Badminton Grip BG-600Y 3'lü" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -449,14 +431,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 200 metre – Çoklu raketler için yeterli uzunluk, 0,7 mm – İnce yapı ile yüksek hassasiyet kalınlık, 28-30 lbs – Güç ve kontrol dengesi gerginlik kapasitesi</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Dayanıklı, kopmaya karşı dirençli yapı malzeme, Türkiye Badminton Federasyonu (TBF) uyumlu, Beyaz – Temiz ve profesyonel görünüm renk.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Badminton%20image/TBF%20Badminton%20Kordaj%20BKP200BL-PRO%20200m%20Siyah.bmp" alt="TBF Badminton Kordaj BKP200BL-PRO 200m Siyah" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : TBF Badminton Kordaj BKP200BL-PRO 200m Siyah</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Multifilament (Sentetik, his ve dayanıklılık dengesi), 0.70 mm kalınlık, 200 metre uzunluk, 33 – 35 lbs gerginlik kapasitesi</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Top kontrolünü ve hassasiyeti artıran performans odaklı yapı, Profesyonel ve ileri seviye badminton oyuncuları için.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div></div>
         <div class="footer">
         <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
         <span>Badminton</span>
-        <span>36</span>
+        <span>34</span>
     </div>
     </section>
-    <section class="page cat-page">
+<section class="page cat-page">
         <div class="cat-header">
             <div class="cat-num">04</div>
             <div class="cat-titleblock">
@@ -465,14 +455,6 @@
             </div>
         </div>
         <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Badminton%20image/TBF%20Badminton%20Kordaj%20BKP200BL-PRO%20200m%20Siyah.bmp" alt="TBF Badminton Kordaj BKP200BL-PRO 200m Siyah" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : TBF Badminton Kordaj BKP200BL-PRO 200m Siyah</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Multifilament (Sentetik, his ve dayanıklılık dengesi), 0.70 mm kalınlık, 200 metre uzunluk, 33 – 35 lbs gerginlik kapasitesi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Top kontrolünü ve hassasiyeti artıran performans odaklı yapı, Profesyonel ve ileri seviye badminton oyuncuları için.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Badminton%20image/TBF%20Badminton%20Kordaj%20BKS100W-PRO%20100m%20Beyaz.bmp" alt="TBF Badminton Kordaj BKS100W-PRO 100m Beyaz" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -516,10 +498,10 @@
         <div class="footer">
         <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
         <span>Badminton</span>
-        <span>37</span>
+        <span>35</span>
     </div>
     </section>
-    <section class="page cat-page">
+<section class="page cat-page">
         <div class="cat-header">
             <div class="cat-num">04</div>
             <div class="cat-titleblock">
@@ -544,38 +526,49 @@
         <div class="pf pf-filled"><span class="pf-label filled">Tekerlekli taban – Kolay hareket ettirme, Kum ile doldurulabilen alt hazne – Ekstra denge sağlar.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Badminton%20image/Helix%20Raket%20%C3%96rme%20Makinesi%20RSM-300.bmp" alt="Helix Raket Örme Makinesi RSM-300" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
-        <div class="pf"><span class="pf-label">Ürün Adı</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Açıklama</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Teknik Özellikler</span><span class="pf-line"></span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Raket Örme Makinesi RSM-300</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 10 LBS – 88, Geniş LCD ekran, 6 nokta senkronize tutuş + 4 sabitleme kolu, 5 dişli anti-atlama kelepçeler</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">360° frenli döner tabla, Otomatik &amp;, Badminton, tenis ve squash raketleri, 81 × 65 × 40 cm ölçü.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Badminton%20image/Helix%20Manuel%20Raket%20%C3%96rme%20Makinesi%20RSM-200.bmp" alt="Helix Manuel Raket Örme Makinesi RSM-200" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
-        <div class="pf"><span class="pf-label">Ürün Adı</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Açıklama</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Teknik Özellikler</span><span class="pf-line"></span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Manuel Raket Örme Makinesi RSM-200</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : RSM-200 model, 10 LBS – 88, 6 nokta senkronize tutuş + 4 sabitleme kolu, 5 dişli anti-atlama kelepçeler</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">360° frenli döner tabla, Badminton, tenis ve squash raketleri, 81 × 65 × 40 cm ölçü.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Badminton%20image/Enlio%20Badminton%20Zemini%20Y3170%20BWF%20Onayl%C4%B1.bmp" alt="Enlio Badminton Zemini Y3170 BWF Onaylı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Enlio Badminton Zemini Y3170 BWF Onaylı</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 15 m x 7,2 m, %100 saf malzeme, Kristal kum desenli kaymaz yapı, Fiberglas örgü destekli orta tabaka, Badminton</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">voleybol, basketbol, tenis, padel, BWF onaylı, Su geçirmez, alev almaz, antibakteriyel, düşük şişme.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div></div>
         <div class="footer">
         <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
         <span>Badminton</span>
-        <span>38</span>
+        <span>36</span>
     </div>
     </section>
-    
+
+
+<script>
+function aramaFiltrele(inp){
+  var q=inp.value.toLocaleLowerCase('tr-TR').trim(), gorunen=0;
+  document.querySelectorAll('.product-card').forEach(function(k){
+    var e=k.querySelector('.pf-label');
+    var esles=(e?e.textContent.toLocaleLowerCase('tr-TR'):'').indexOf(q)!==-1;
+    k.style.display=esles?'':'none';
+    if(esles)gorunen++;
+  });
+  document.querySelector('.urun-bulunamadi').hidden=!(q&&gorunen===0);
+}
+</script>
 </body>
 </html>

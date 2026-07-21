@@ -1,15 +1,18 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
 <title>FITNESS — Özten Spor Kataloğu</title>
 <link rel="stylesheet" href="Ozten Spor Katalog.css">
+<script src="sepet.js" defer></script>
 </head>
 <body id="top">
 <div class="floating-nav-group">
     <a href="#top" class="floating-nav-btn"><span class="fn-arrow">&#8593;</span> Yukarı Çık</a>
     <a href="index.html#top" class="floating-nav-btn"><span class="fn-arrow">&#8592;</span> Ana Kataloğa Dön</a>
 </div>
+<div class="katalog-arama"><input type="text" placeholder="Ürün ara..." oninput="aramaFiltrele(this)"></div>
+<p class="urun-bulunamadi" hidden>Ürün bulunamadı.</p>
 <section class="page cat-page" id="kategori-fitness">
         <div class="cat-header">
             <div class="cat-num">10</div>
@@ -19,38 +22,6 @@
             </div>
         </div>
         <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Yoga%20ve%20Pilates%20image/Helix%20Yoga%20Blo%C4%9Fu%20YBK-1.bmp" alt="Helix Yoga Bloğu YBK-1" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Yoga Bloğu YBK-1</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 7,6 x 15 x 22,8 cm ölçü, 110 gram ağırlık, Yüksek yoğunluklu malzeme</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Yuvarlatılmış kenarlar, hafif ve dayanıklı yapı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Yoga%20ve%20Pilates%20image/Helix%20Yoga%20Blo%C4%9Fu%20YBK-2.bmp" alt="Helix Yoga Bloğu YBK-2" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Yoga Bloğu YBK-2</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 7,6 x 15 x 22,8 cm ölçü, 110 gram ağırlık, Yüksek yoğunluklu malzeme</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Yuvarlatılmış kenarlar, hafif yapı, dayanıklı malzeme.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Yoga%20ve%20Pilates%20image/Helix%20Yoga%20Blo%C4%9Fu%20YBK-3.bmp" alt="Helix Yoga Bloğu YBK-3" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Yoga Bloğu YBK-3</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 7,6 x 15 x 22,8 cm ölçü, 110 gram ağırlık, Yüksek yoğunluklu malzeme</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Yuvarlatılmış kenarlar, hafif ve dayanıklı yapı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Yoga%20ve%20Pilates%20image/Helix%20Yoga%20Blo%C4%9Fu%20YBK-4.bmp" alt="Helix Yoga Bloğu YBK-4" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Yoga Bloğu YBK-4</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 7,6 x 15 x 22,8 cm ölçü, 110 gram ağırlık, Yüksek yoğunluklu malzeme</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Gül (Rose), Yuvarlatılmış kenarlar, hafif yapı, dayanıklı malzeme.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/DAMBIL%20SET%C4%B0%20DS10%20ALTIS.bmp" alt="DAMBIL SETİ DS10 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -66,22 +37,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : PVC dambıl seti</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">16 kg 4 adet 1,25 kg plaka 4 adet 2,5 kg plaka 2 adet 25 × 400 mm sıkma aparatlı bar Ev tipi kuvvet antrenmanlarına uygun Dayanıklı PVC kaplama.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>77</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ürün listesi (devamı) — sayfa 2/28</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/DAMBIL%20SET%C4%B0%20HDS30%20HATTRICK%202016TL.bmp" alt="DAMBIL SETİ HDS30 HATTRICK 2016TL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -90,13 +46,8 @@
         <div class="pf pf-filled"><span class="pf-label filled">21 kg 8 adet 1,25 kg plaka 4 adet 2,5 kg plaka 2 adet 25 × 400 mm sıkma aparatlı bar Ev tipi kuvvet antrenmanlarına uygun Dayanıklı PVC kaplama.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/DAMBIL%20SET%C4%B0%20HDS40%20HATTRICK.png" alt="DAMBIL SETİ HDS40 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : DAMBIL SETİ HDS40 HATTRICK</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : PVC dambıl seti</span></div>
@@ -108,7 +59,7 @@
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : MEKİK SEHPASI MK300</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Ayarlanabilir mekik sehpası 3 kademe ayar sistemi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">140 × 45 × 120 cm Dayanıklı çelik gövde Konforlu minder yapısı Ev tipi fitness antrenmanlarına uygun Karın ve core egzersizleri için idealdirv.</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">140 × 45 × 120 cm Dayanıklı çelik gövde Konforlu minder yapısı Ev tipi fitness antrenmanlarına uygun Karın ve core egzersizleri için idealdir.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
@@ -118,7 +69,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Ayarlanabilir ağırlık sehpası, Dayanıklı çelik gövde, Konforlu minder yapısı, Farklı egzersiz pozisyonlarına uygundur</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Serbest ağırlık antrenmanlarını destekler, Ev tipi kullanım için uygundur, Kolay kurulum.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Fitness</span>
+        <span>74</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">10</div>
+            <div class="cat-titleblock">
+                <h1>FITNESS</h1>
+                <p>Ürün listesi (devamı) — sayfa 2/28</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/A%C4%9EIRLIK%20SEHPASI%20BNCH06%205860TL.bmp" alt="AĞIRLIK SEHPASI BNCH06 5860TL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -134,22 +100,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Ayarlanabilir ağırlık sehpası, Dayanıklı çelik gövde, Konforlu minder yapısı, Farklı antrenman pozisyonlarına uygundur</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Serbest ağırlık çalışmalarını destekler, Ev tipi kullanım için uygundur, Sağlam ve dengeli yapı.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>78</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ürün listesi (devamı) — sayfa 3/28</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/A%C4%9EIRLIK%20SEHPASI%20BNCH01.bmp" alt="AĞIRLIK SEHPASI BNCH01" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -181,14 +132,24 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : PVC kısa bar, Dayanıklı PVC gövde, Plakalarla kullanıma uygundur, Ergonomik tutuş sağlar, Hafif ve dayanıklı yapı</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Ev tipi antrenmanlar için uygundur, Kuvvet egzersizlerini destekler.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Fitness</span>
+        <span>75</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">10</div>
+            <div class="cat-titleblock">
+                <h1>FITNESS</h1>
+                <p>Ürün listesi (devamı) — sayfa 3/28</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/KISA%20BAR%20KBR10.png" alt="KISA BAR KBR10" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KISA BAR KBR10</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom kısa bar, Dayanıklı krom kaplama, Plakalarla kullanıma uygundur, Ergonomik tutuş sağlar</span></div>
@@ -198,18 +159,50 @@
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/KISA%20BAR%20ABR120.bmp" alt="KISA BAR ABR120" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KISA BAR ABR120</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KROM BAR ABR120</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom bar 120 cm uzunluk, Dayanıklı krom kaplama, Çelik gövde, Plakalarla kullanıma uygundur</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Kuvvet antrenmanlarını destekler, Ev ve spor salonu kullanımına uygundur.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/KISA%20BAR%20ABR119.png" alt="KISA BAR ABR119" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KROM BAR ABR119</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Z krom bar 120 cm uzunluk, Dayanıklı krom kaplama, Ergonomik, Z bar tasarımı, Plakalarla kullanıma uygundur</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Kol ve üst vücut egzersizleri için uygundur, Ev ve spor salonu kullanımına uygundur.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/KISA%20BAR%20ABR152.png" alt="KISA BAR ABR152" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KROM BAR ABR152</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom bar 152 cm uzunluk, Dayanıklı krom kaplama, Çelik gövde, Plakalarla kullanıma uygundur</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Kuvvet antrenmanlarını destekler, Ev ve spor salonu kullanımına uygundur.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/KISA%20BAR%20ABR160.png" alt="KISA BAR ABR160" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KROM BAR ABR160</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom bar 160 cm uzunluk, Dayanıklı krom kaplama, Çelik gövde, Plakalarla kullanıma uygundur</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Kuvvet antrenmanlarını destekler, Ev ve spor salonu kullanımına uygundur.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/KISA%20BAR%20ABR183.png" alt="KISA BAR ABR183" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KROM BAR ABR183</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom bar 183 cm uzunluk, Dayanıklı krom kaplama, Çelik gövde, Plakalarla kullanıma uygundur</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Kuvvet antrenmanlarını destekler, Ev ve spor salonu kullanımına uygundur.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div></div>
         <div class="footer">
         <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
         <span>Fitness</span>
-        <span>79</span>
+        <span>76</span>
     </div>
     </section>
-    <section class="page cat-page">
+<section class="page cat-page">
         <div class="cat-header">
             <div class="cat-num">10</div>
             <div class="cat-titleblock">
@@ -219,61 +212,9 @@
         </div>
         <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/KISA%20BAR%20ABR119.bmp" alt="KISA BAR ABR119" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+        <img src="%C4%B0mage/Fitness%20image/KISA%20BAR%20ABR213.png" alt="KISA BAR ABR213" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KISA BAR ABR119</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Z krom bar 120 cm uzunluk, Dayanıklı krom kaplama, Ergonomik, Z bar tasarımı, Plakalarla kullanıma uygundur</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kol ve üst vücut egzersizleri için uygundur, Ev ve spor salonu kullanımına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KISA BAR ABR152</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom bar 152 cm uzunluk, Dayanıklı krom kaplama, Çelik gövde, Plakalarla kullanıma uygundur</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kuvvet antrenmanlarını destekler, Ev ve spor salonu kullanımına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KISA BAR ABR160</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom bar 160 cm uzunluk, Dayanıklı krom kaplama, Çelik gövde, Plakalarla kullanıma uygundur</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kuvvet antrenmanlarını destekler, Ev ve spor salonu kullanımına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KISA BAR ABR183</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom bar 183 cm uzunluk, Dayanıklı krom kaplama, Çelik gövde, Plakalarla kullanıma uygundur</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kuvvet antrenmanlarını destekler, Ev ve spor salonu kullanımına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KISA BAR ABR213</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KROM BAR ABR213</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom bar 213 cm uzunluk, Dayanıklı krom kaplama, Çelik gövde, Plakalarla kullanıma uygundur</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Kuvvet antrenmanlarını destekler, Ev ve spor salonu kullanımına uygundur.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
@@ -285,14 +226,46 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Döküm ağırlık plakası 7,5 kg ağırlık, Dayanıklı döküm malzeme, Standart barlarla uyumludur, Kuvvet antrenmanları için uygundur</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Uzun ömürlü kullanım, Ev ve spor salonu kullanımına uygundur.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/D%C3%96K%C3%9CM%20PLAKA%20SDA10.bmp" alt="DÖKÜM PLAKA SDA10" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : DÖKÜM PLAKA SDA10</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Döküm ağırlık plakası 10 kg ağırlık, Dayanıklı döküm malzeme, Standart barlarla uyumludur, Kuvvet antrenmanları için uygundur</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Uzun ömürlü kullanım, Ev ve spor salonu kullanımına uygundur.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/D%C3%96K%C3%9CM%20PLAKA%20SDA12%2C5.bmp" alt="DÖKÜM PLAKA SDA12,5" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : DÖKÜM PLAKA SDA12,5</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Döküm ağırlık plakası 12,5 kg ağırlık, Dayanıklı döküm malzeme, Standart barlarla uyumludur, Kuvvet antrenmanları için uygundur</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Uzun ömürlü kullanım, Ev ve spor salonu kullanımına uygundur.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/D%C3%96K%C3%9CM%20PLAKA%20SDA15.bmp" alt="DÖKÜM PLAKA SDA15" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : DÖKÜM PLAKA SDA15</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Döküm ağırlık plakası 15 kg ağırlık, Dayanıklı döküm malzeme, Standart barlarla uyumludur, Kuvvet antrenmanları için uygundur</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Uzun ömürlü kullanım, Ev ve spor salonu kullanımına uygundur.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/D%C3%96K%C3%9CM%20PLAKA%20SDA20.bmp" alt="DÖKÜM PLAKA SDA20" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : DÖKÜM PLAKA SDA20</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Döküm ağırlık plakası 20 kg ağırlık, Dayanıklı döküm malzeme, Standart barlarla uyumludur, Kuvvet antrenmanları için uygundur</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Uzun ömürlü kullanım, Ev ve spor salonu kullanımına uygundur.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div></div>
         <div class="footer">
         <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
         <span>Fitness</span>
-        <span>80</span>
+        <span>77</span>
     </div>
     </section>
-    <section class="page cat-page">
+<section class="page cat-page">
         <div class="cat-header">
             <div class="cat-num">10</div>
             <div class="cat-titleblock">
@@ -301,58 +274,6 @@
             </div>
         </div>
         <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : DÖKÜM PLAKA SDA10</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Döküm ağırlık plakası 10 kg ağırlık, Dayanıklı döküm malzeme, Standart barlarla uyumludur, Kuvvet antrenmanları için uygundur</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Uzun ömürlü kullanım, Ev ve spor salonu kullanımına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : DÖKÜM PLAKA SDA12,5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Döküm ağırlık plakası 12,5 kg ağırlık, Dayanıklı döküm malzeme, Standart barlarla uyumludur, Kuvvet antrenmanları için uygundur</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Uzun ömürlü kullanım, Ev ve spor salonu kullanımına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : DÖKÜM PLAKA SDA15</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Döküm ağırlık plakası 15 kg ağırlık, Dayanıklı döküm malzeme, Standart barlarla uyumludur, Kuvvet antrenmanları için uygundur</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Uzun ömürlü kullanım, Ev ve spor salonu kullanımına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : DÖKÜM PLAKA SDA20</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Döküm ağırlık plakası 20 kg ağırlık, Dayanıklı döküm malzeme, Standart barlarla uyumludur, Kuvvet antrenmanları için uygundur</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Uzun ömürlü kullanım, Ev ve spor salonu kullanımına uygundurv.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/KROM%20PLAKA%20KP0%2C5.bmp" alt="KROM PLAKA KP0,5" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -361,54 +282,24 @@
         <div class="pf pf-filled"><span class="pf-label filled">Uzun ömürlü kullanım, Ev ve spor salonu kullanımına uygundur.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/KROM%20PLAKA%20KP1.bmp" alt="KROM PLAKA KP1" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KROM PLAKA KP1</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom ağırlık plakası 1 kg ağırlık, Dayanıklı krom kaplama, Standart barlarla uyumludur, Kuvvet antrenmanları için uygundur</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Uzun ömürlü kullanım, Ev ve spor salonu kullanımına uygundur.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>81</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ürün listesi (devamı) — sayfa 6/28</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/KROM%20PLAKA%20KP1%2C5.bmp" alt="KROM PLAKA KP1,5" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KROM PLAKA KP1,5</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom ağırlık plakası 1,5 kg ağırlık, Dayanıklı krom kaplama, Standart barlarla uyumludur, Kuvvet antrenmanları için uygundur</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Uzun ömürlü kullanım, Ev ve spor salonu kullanımına uygundur.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/KROM%20PLAKA%20KP2.bmp" alt="KROM PLAKA KP2" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KROM PLAKA KP2</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom ağırlık plakası 2 kg ağırlık, Dayanıklı krom kaplama, Standart barlarla uyumludur, Kuvvet antrenmanları için uygundur</span></div>
@@ -423,52 +314,84 @@
         <div class="pf pf-filled"><span class="pf-label filled">Uzun ömürlü kullanım, Ev ve spor salonu kullanımına uygundur.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/KROM%20PLAKA%20KP3.bmp" alt="KROM PLAKA KP3" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KROM PLAKA KP3</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom ağırlık plakası 3 kg ağırlık, Dayanıklı krom kaplama, Standart barlarla uyumludur, Kuvvet antrenmanları için uygundur</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Uzun ömürlü kullanım, Ev ve spor salonu kullanımına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KROM PLAKA KP4</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom ağırlık plakası 4 kg ağırlık, Dayanıklı krom kaplama, Standart barlarla uyumludur, Kuvvet antrenmanları için uygundur</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Uzun ömürlü kullanım, Ev ve spor salonu kullanımına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KROM PLAKA KP5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom ağırlık plakası 5 kg ağırlık, Dayanıklı krom kaplama, Standart barlarla uyumludur, Kuvvet antrenmanları için uygundur</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Uzun ömürlü kullanım, Ev ve spor salonu kullanımına uygundur.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div></div>
         <div class="footer">
         <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
         <span>Fitness</span>
-        <span>82</span>
+        <span>78</span>
     </div>
     </section>
-    <section class="page cat-page">
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">10</div>
+            <div class="cat-titleblock">
+                <h1>FITNESS</h1>
+                <p>Ürün listesi (devamı) — sayfa 6/28</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/KROM%20PLAKA%20KP4.bmp" alt="KROM PLAKA KP4" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KROM PLAKA KP4</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom ağırlık plakası 4 kg ağırlık, Dayanıklı krom kaplama, Standart barlarla uyumludur, Kuvvet antrenmanları için uygundur</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Uzun ömürlü kullanım, Ev ve spor salonu kullanımına uygundur.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/KROM%20PLAKA%20KP5.bmp" alt="KROM PLAKA KP5" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KROM PLAKA KP5</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom ağırlık plakası 5 kg ağırlık, Dayanıklı krom kaplama, Standart barlarla uyumludur, Kuvvet antrenmanları için uygundur</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Uzun ömürlü kullanım, Ev ve spor salonu kullanımına uygundur.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/KROM%20PLAKA%20KP7%2C5.bmp" alt="KROM PLAKA KP7,5" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KROM PLAKA KP7,5</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom ağırlık plakası 7,5 kg ağırlık, Dayanıklı krom kaplama, Standart barlarla uyumludur, Kuvvet antrenmanları için uygundur</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Uzun ömürlü kullanım, Ev ve spor salonu kullanımına uygundur.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/KROM%20PLAKA%20KP10.bmp" alt="KROM PLAKA KP10" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KROM PLAKA KP10</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom ağırlık plakası 10 kg ağırlık, Dayanıklı krom kaplama, Standart barlarla uyumludur, Kuvvet antrenmanları için uygundur</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Uzun ömürlü kullanım, Ev ve spor salonu kullanımına uygundur.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/KROM%20PLAKA%20KP12%2C5.bmp" alt="KROM PLAKA KP12,5" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KROM PLAKA KP12,5</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom ağırlık plakası 12,5 kg ağırlık, Dayanıklı krom kaplama, Standart barlarla uyumludur, Kuvvet antrenmanları için uygundur</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Uzun ömürlü kullanım, Ev ve spor salonu kullanımına uygundur.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/KROM%20PLAKA%20KP15.bmp" alt="KROM PLAKA KP15" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KROM PLAKA KP15</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom ağırlık plakası 15 kg ağırlık, Dayanıklı krom kaplama, Standart barlarla uyumludur, Kuvvet antrenmanları için uygundur</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Uzun ömürlü kullanım, Ev ve spor salonu kullanımına uygundur.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Fitness</span>
+        <span>79</span>
+    </div>
+    </section>
+<section class="page cat-page">
         <div class="cat-header">
             <div class="cat-num">10</div>
             <div class="cat-titleblock">
@@ -477,65 +400,8 @@
             </div>
         </div>
         <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KROM PLAKA KP7,5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom ağırlık plakası 7,5 kg ağırlık, Dayanıklı krom kaplama, Standart barlarla uyumludur, Kuvvet antrenmanları için uygundur</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Uzun ömürlü kullanım, Ev ve spor salonu kullanımına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KROM PLAKA KP10</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom ağırlık plakası 10 kg ağırlık, Dayanıklı krom kaplama, Standart barlarla uyumludur, Kuvvet antrenmanları için uygundur</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Uzun ömürlü kullanım, Ev ve spor salonu kullanımına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KROM PLAKA KP12,5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom ağırlık plakası 12,5 kg ağırlık, Dayanıklı krom kaplama, Standart barlarla uyumludur, Kuvvet antrenmanları için uygundur</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Uzun ömürlü kullanım, Ev ve spor salonu kullanımına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KROM PLAKA KP15</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom ağırlık plakası 15 kg ağırlık, Dayanıklı krom kaplama, Standart barlarla uyumludur, Kuvvet antrenmanları için uygundur</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Uzun ömürlü kullanım, Ev ve spor salonu kullanımına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/KROM%20PLAKA%20KP20.bmp" alt="KROM PLAKA KP20" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KROM PLAKA KP20</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom ağırlık plakası 20 kg ağırlık, Dayanıklı krom kaplama, Standart barlarla uyumludur, Kuvvet antrenmanları için uygundur</span></div>
@@ -549,22 +415,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Dambıl standı, Neopren ve PVC dambıllarla uyumludur, Dayanıklı çelik gövde, Düzenli ve pratik depolama sağlar, Kolay erişim sağlayan tasarım</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Sağlam ve dengeli yapı, Spor salonu ve fitness alanlarında kullanıma uygundur.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>83</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ürün listesi (devamı) — sayfa 8/28</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/DAMBIL%20STANDI%20DSR11%206800TL.bmp" alt="DAMBIL STANDI DSR11 6800TL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -581,13 +432,8 @@
         <div class="pf pf-filled"><span class="pf-label filled">fitness ve kuvvet antrenmanları için uygundur.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/EL%2CAYAK%20A%C4%9EIRLI%C4%9EI%20AY28%20535TL.bmp" alt="EL,AYAK AĞIRLIĞI AY29" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : EL,AYAK AĞIRLIĞI AY29</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Ayak bileği ağırlık seti Çiftli set AY29: 2,5 kg (çift) Blister ambalaj Cırt cırtlı ayarlanabilir tasarım Yürüyüş</span></div>
@@ -601,14 +447,24 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Ayak bileği ağırlık seti, Çiftli set 0,5 kg (çift), Ayarlanabilir cırt cırtlı tasarım, Ofset kutu ambalaj</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Konforlu kullanım sağlar, Yürüyüş, fitness ve kuvvet antrenmanları için uygundur.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Fitness</span>
+        <span>80</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">10</div>
+            <div class="cat-titleblock">
+                <h1>FITNESS</h1>
+                <p>Ürün listesi (devamı) — sayfa 8/28</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/EL%2CAYAK%20A%C4%9EIRLI%C4%9EI%20HE13.bmp" alt="EL,AYAK AĞIRLIĞI AS30" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : EL,AYAK AĞIRLIĞI AS30</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Ayak bileği ağırlık seti, Çiftli set 1,5 kg (çift), Ayarlanabilir cırt cırtlı tasarım, Ofset kutu ambalaj</span></div>
@@ -622,22 +478,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Ayak bileği ağırlık seti, Çiftli set 2 kg (çift), Ayarlanabilir cırt cırtlı tasarım, Ofset kutu ambalaj</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Konforlu kullanım sağlar, Yürüyüş, fitness ve kuvvet antrenmanları için uygundur.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>84</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ürün listesi (devamı) — sayfa 9/28</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/EL%2CAYAK%20A%C4%9EIRLI%C4%9EI%20AS50.bmp" alt="EL,AYAK AĞIRLIĞI AS50" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -654,13 +495,8 @@
         <div class="pf pf-filled"><span class="pf-label filled">Konforlu kullanım sağlar, Yürüyüş, fitness ve kuvvet antrenmanları için uygundur.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/EL%2CAYAK%20A%C4%9EIRLI%C4%9EI%20AS80.bmp" alt="EL,AYAK AĞIRLIĞI AS70" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : EL,AYAK AĞIRLIĞI AS70</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : El ve ayak ağırlık seti, Çiftli set 4 kg (çift), Ayarlanabilir cırt cırtlı tasarım, Renkli kutu ambalaj</span></div>
@@ -674,7 +510,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : El ve ayak ağırlık seti, Çiftli set 5 kg (çift), Ayarlanabilir cırt cırtlı tasarım, Renkli kutu ambalaj</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Konforlu kullanım sağlar, Yürüyüş, fitness ve kuvvet antrenmanları için uygundur.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Fitness</span>
+        <span>81</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">10</div>
+            <div class="cat-titleblock">
+                <h1>FITNESS</h1>
+                <p>Ürün listesi (devamı) — sayfa 9/28</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/DAMBIL%20AL67%20ALTIS.bmp" alt="DAMBIL AL67 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -690,22 +541,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Vinly dambıl 4 kg ağırlık, Tekli ürün, Köşeli form tasarımı, Vinly kaplama</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Dayanıklı yapı, Fitness ve kuvvet antrenmanları için uygundur.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>85</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ürün listesi (devamı) — sayfa 10/28</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/DAMBIL%20VD7%20HATTRICK.bmp" alt="DAMBIL VD7 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -737,7 +573,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Vinyl dambıl seti, Çiftli set 0,5 kg ağırlık, Renkli kutu ambalaj, Vinyl kaplama, Ergonomik tutuş sağlar</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Fitness, aerobik ve pilates antrenmanları için uygundur.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Fitness</span>
+        <span>82</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">10</div>
+            <div class="cat-titleblock">
+                <h1>FITNESS</h1>
+                <p>Ürün listesi (devamı) — sayfa 10/28</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/%C3%87%C4%B0FTL%C4%B0%20DAMBIL%20VDS20%20ALTIS.bmp" alt="ÇİFTLİ DAMBIL VDS20 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -753,22 +604,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Vinyl dambıl seti, Çiftli set 2,5 kg ağırlık, Renkli kutu ambalaj, Vinyl kaplama, Ergonomik tutuş sağlar</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Fitness, aerobik ve pilates antrenmanları için uygundur.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>86</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ürün listesi (devamı) — sayfa 11/28</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/K%C3%96%C5%9EEL%C4%B0%20DAMBIL%20DS50%20ALTIS.bmp" alt="KÖŞELİ DAMBIL DS50 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -800,7 +636,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Plastik köşeli dambıl seti, Çiftli set 5 kg ağırlık, Köşeli form tasarımı, Plastik kaplama</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Dayanıklı yapı, Fitness ve kuvvet antrenmanları için uygundur.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Fitness</span>
+        <span>83</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">10</div>
+            <div class="cat-titleblock">
+                <h1>FITNESS</h1>
+                <p>Ürün listesi (devamı) — sayfa 11/28</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/K%C3%96%C5%9EEL%C4%B0%20DAMBIL%20DS86%20ALTIS%20455TL.bmp" alt="KÖŞELİ DAMBIL DS86 ALTIS 455TL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -816,14 +667,46 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Plastik köşeli dambıl seti, Çiftli set 8 kg ağırlık, Köşeli form tasarımı, Plastik kaplama</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Renkli kutu ambalaj, Fitness ve kuvvet antrenmanları için uygundur.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/K%C3%96%C5%9EEL%C4%B0%20DAMBIL%20DS99%20ALTIS%20570TL.bmp" alt="KÖŞELİ DAMBIL DS99 ALTIS 570TL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KÖŞELİ DAMBIL DS99 ALTIS</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Plastik köşeli dambıl seti, Çiftli set 9 kg ağırlık, Köşeli form tasarımı, Plastik kaplama</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Renkli kutu ambalaj, Fitness ve kuvvet antrenmanları için uygundur.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/FITNESS%20ELD%C4%B0VEN%20TROX%20190TL.bmp" alt="KÖŞELİ DAMBIL HR30 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KÖŞELİ DAMBIL HR30 ALTIS</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Plastik köşeli dambıl seti, Çiftli set 10 kg ağırlık, Köşeli form tasarımı, Plastik kaplama</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Renkli kutu ambalaj, Fitness ve kuvvet antrenmanları için uygundur.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/FITNESS%20ELD%C4%B0VEN%20TROX.png" alt="FITNESS ELDİVEN TROX" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : FITNESS ELDİVEN TROX</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Parmaksız fitness eldiveni, Ayarlanabilir cırt cırtlı bilek bandı, Kaymaz ve dayanıklı avuç içi yüzeyi</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ağırlık antrenmanı ve fitness çalışmaları için idealdir.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/FITNESS%20ELD%C4%B0VEN%20WETRO%20190TL.bmp" alt="FITNESS ELDİVEN WETRO 190TL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : FITNESS ELDİVEN WETRO</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Parmaksız fitness eldiveni, Ayarlanabilir cırt cırtlı bilek bandı, Kaymaz ve dayanıklı avuç içi yüzeyi</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ağırlık antrenmanı ve fitness çalışmaları için idealdir.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div></div>
         <div class="footer">
         <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
         <span>Fitness</span>
-        <span>87</span>
+        <span>84</span>
     </div>
     </section>
-    <section class="page cat-page">
+<section class="page cat-page">
         <div class="cat-header">
             <div class="cat-num">10</div>
             <div class="cat-titleblock">
@@ -833,65 +716,60 @@
         </div>
         <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/K%C3%96%C5%9EEL%C4%B0%20DAMBIL%20DS99%20ALTIS%20570TL.bmp" alt="KÖŞELİ DAMBIL DS99 ALTIS 570TL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KÖŞELİ DAMBIL DS99 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Plastik köşeli dambıl seti, Çiftli set 9 kg ağırlık, Köşeli form tasarımı, Plastik kaplama</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Renkli kutu ambalaj, Fitness ve kuvvet antrenmanları için uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KÖŞELİ DAMBIL HR30 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Plastik köşeli dambıl seti, Çiftli set 10 kg ağırlık, Köşeli form tasarımı, Plastik kaplama</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Renkli kutu ambalaj, Fitness ve kuvvet antrenmanları için uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/FITNESS%20ELD%C4%B0VEN%20TROX%20190TL.bmp" alt="FITNESS ELDİVEN TROX 190TL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : FITNESS ELDİVEN TROX</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Plastik köşeli dambıl seti, Çiftli set 10 kg ağırlık, Köşeli form tasarımı, Plastik kaplama</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Renkli kutu ambalaj, Fitness ve kuvvet antrenmanları için uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/FITNESS%20ELD%C4%B0VEN%20WETRO%20190TL.bmp" alt="FITNESS ELDİVEN WETRO 190TL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : FITNESS ELDİVEN WETRO</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Plastik köşeli dambıl seti, Çiftli set 10 kg ağırlık, Köşeli form tasarımı, Plastik kaplama</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Renkli kutu ambalaj, Fitness ve kuvvet antrenmanları için uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/FITNESS%20ELD%C4%B0VEN%20CONVAX%20270TL.bmp" alt="FITNESS ELDİVEN CONVAX 270TL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : FITNESS ELDİVEN CONVAX</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : </span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Parmaksız fitness eldiveni, Ayarlanabilir cırt cırtlı bilek bandı, Kaymaz ve dayanıklı avuç içi yüzeyi</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ağırlık antrenmanı ve fitness çalışmaları için idealdir.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/FITNESS%20ELD%C4%B0VEN%20SNIPER%20270TL.bmp" alt="FITNESS ELDİVEN SNIPER 270TL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : FITNESS ELDİVEN SNIPER</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : </span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Parmaksız fitness eldiveni, Ayarlanabilir cırt cırtlı bilek bandı, Kaymaz ve dayanıklı avuç içi yüzeyi</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ağırlık antrenmanı ve fitness çalışmaları için idealdir.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/FITNESS%20ELD%C4%B0VEN%20SHOT%20270TL.bmp" alt="FITNESS ELDİVEN SHOT 270TL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : FITNESS ELDİVEN SHOT</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Parmaksız fitness eldiveni, Ayarlanabilir cırt cırtlı bilek bandı, Kaymaz ve dayanıklı avuç içi yüzeyi</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ağırlık antrenmanı ve fitness çalışmaları için idealdir.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/FITNESS%20ELD%C4%B0VEN%20ACROSS%20270TL.bmp" alt="FITNESS ELDİVEN ACROSS 270TL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : FITNESS ELDİVEN ACROSS</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Parmaksız fitness eldiveni, Ayarlanabilir cırt cırtlı bilek bandı, Kaymaz ve dayanıklı avuç içi yüzeyi</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ağırlık antrenmanı ve fitness çalışmaları için idealdir.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/FITNESS%20ELD%C4%B0VEN%20PALMS%20320TL.bmp" alt="FITNESS ELDİVEN PALMS 320TL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : FITNESS ELDİVEN PALMS</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Parmaksız fitness eldiveni, Ayarlanabilir cırt cırtlı bilek bandı, Kaymaz ve dayanıklı avuç içi yüzeyi</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ağırlık antrenmanı ve fitness çalışmaları için idealdir.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/FITNESS%20ELD%C4%B0VEN%20NEOF%C4%B0T%20320TL.bmp" alt="FITNESS ELDİVEN NEOFİT 320TL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : FITNESS ELDİVEN NEOFİT</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Parmaksız fitness eldiveni, Ayarlanabilir cırt cırtlı bilek bandı, Kaymaz ve dayanıklı avuç içi yüzeyi</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ağırlık antrenmanı ve fitness çalışmaları için idealdir.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div></div>
         <div class="footer">
         <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
         <span>Fitness</span>
-        <span>88</span>
+        <span>85</span>
     </div>
     </section>
-    <section class="page cat-page">
+<section class="page cat-page">
         <div class="cat-header">
             <div class="cat-num">10</div>
             <div class="cat-titleblock">
@@ -901,95 +779,43 @@
         </div>
         <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/FITNESS%20ELD%C4%B0VEN%20SHOT%20270TL.bmp" alt="FITNESS ELDİVEN SHOT 270TL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : FITNESS ELDİVEN SHOT</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : </span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/FITNESS%20ELD%C4%B0VEN%20ACROSS%20270TL.bmp" alt="FITNESS ELDİVEN ACROSS 270TL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : FITNESS ELDİVEN ACROSS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : </span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/FITNESS%20ELD%C4%B0VEN%20PALMS%20320TL.bmp" alt="FITNESS ELDİVEN PALMS 320TL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : FITNESS ELDİVEN PALMS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : </span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/FITNESS%20ELD%C4%B0VEN%20NEOF%C4%B0T%20320TL.bmp" alt="FITNESS ELDİVEN NEOFİT 320TL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : FITNESS ELDİVEN NEOFİT</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : </span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/FITNESS%20ELD%C4%B0VEN%20MESHBACK%20320TL.bmp" alt="FITNESS ELDİVEN MESHBACK 320TL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : FITNESS ELDİVEN MESHBACK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : </span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Parmaksız fitness eldiveni, Fileli (mesh) sırt yapısıyla nefes alabilir tasarım, Ayarlanabilir cırt cırtlı bilek bandı</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Kaymaz avuç içi yüzeyi, Ağırlık antrenmanı ve fitness çalışmaları için idealdir.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/FITNESS%20ELD%C4%B0VEN%20TRIMMER%20320TL.bmp" alt="FITNESS ELDİVEN TRIMMER 320TL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : FITNESS ELDİVEN TRIMMER</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : </span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Parmaksız fitness eldiveni, Ayarlanabilir cırt cırtlı bilek bandı, Kaymaz ve dayanıklı avuç içi yüzeyi</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ağırlık antrenmanı ve fitness çalışmaları için idealdir.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>89</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ürün listesi (devamı) — sayfa 14/28</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/FITNESS%20ELD%C4%B0VEN%20FLASH%20400TL.bmp" alt="FITNESS ELDİVEN FLASH 400TL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : FITNESS ELDİVEN FLASH</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : </span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : FITNESS ELDİVENİ PREXA</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : </span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Parmaksız fitness eldiveni, Ayarlanabilir cırt cırtlı bilek bandı, Kaymaz ve dayanıklı avuç içi yüzeyi</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ağırlık antrenmanı ve fitness çalışmaları için idealdir.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/FITNESS%20ELD%C4%B0VEN%C4%B0%20HIGHPRO%20180TL.bmp" alt="FITNESS ELDİVENİ HIGHPRO 180TL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+        <img src="%C4%B0mage/Fitness%20image/FITNESS%20ELD%C4%B0VEN%C4%B0%20HIGHPRO%20180TL.bmp" alt="FITNESS ELDİVENİ PREXA" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : FITNESS ELDİVENİ PREXA</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Parmaksız fitness eldiveni, Ayarlanabilir cırt cırtlı bilek bandı, Kaymaz ve dayanıklı avuç içi yüzeyi</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ağırlık antrenmanı ve fitness çalışmaları için idealdir.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/FITNESS%20ELD%C4%B0VEN%C4%B0%20HIGHPRO.png" alt="FITNESS ELDİVENİ HIGHPRO" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : FITNESS ELDİVENİ HIGHPRO</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 200, 10 seviye ayarlanabilir, maksimum 30 KG Paslanmaz, 1.5 mm, #45 Çelik</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Alüminyum (100x80x4 mm), 2240 x 610 x 508 mm, 80 x 4 mm.</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Parmaksız crossfit eldiveni, Bilek destekli ayarlanabilir cırt cırtlı bant, Kaymaz dokulu avuç içi yüzeyi</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ağırlık kaldırma, crossfit ve fonksiyonel antrenmanlar için idealdir.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
@@ -999,38 +825,38 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 200, 10 seviye ayarlanabilir, maksimum 30 KG Paslanmaz, 1.5 mm, #45 Çelik</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Alüminyum (100x80x4 mm), 2240 x 610 x 508 mm, 80 x 4 mm.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Fitness</span>
+        <span>86</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">10</div>
+            <div class="cat-titleblock">
+                <h1>FITNESS</h1>
+                <p>Ürün listesi (devamı) — sayfa 14/28</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20Crossfit%20Antrenman%20Halat%C4%B1%20CR-15%2015m.bmp" alt="Helix Crossfit Antrenman Halatı CR-15 15m" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Crossfit Antrenman Halatı CR-15 15m</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 15 uzunluk, 3.8 cm (38 mm), Yüksek mukavemetli polyester veya naylon sentetik lif, Güçlendirilmiş makaron kaplama, Yaklaşık 12–14 kg ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">CrossFit, fonksiyonel antrenman, HIIT, kardiyo, kuvvet ve patlayıcı güç çalışmaları, 12 metre Çap (Kalınlık): 3.8 cm (38 mm) uzunluk.</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">CrossFit, fonksiyonel antrenman, HIIT, kardiyo, kuvvet ve patlayıcı güç çalışmaları, 15 metre Çap (Kalınlık): 3.8 cm (38 mm) uzunluk.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20Crossfit%20Antrenman%20Halat%C4%B1%20CR-12%2012m.bmp" alt="Helix Crossfit Antrenman Halatı CR-12 12m" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Crossfit Antrenman Halatı CR-12 12m</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 15 uzunluk, 3.8 cm (38 mm), Yüksek mukavemetli polyester veya naylon sentetik lif, Güçlendirilmiş makaron kaplama, Yaklaşık 12–14 kg ağırlık</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 12 uzunluk, 3.8 cm (38 mm), Yüksek mukavemetli polyester veya naylon sentetik lif, Güçlendirilmiş makaron kaplama, Yaklaşık 10–12 kg ağırlık</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">CrossFit, fonksiyonel antrenman, HIIT, kardiyo, kuvvet ve patlayıcı güç çalışmaları, 12 metre Çap (Kalınlık): 3.8 cm (38 mm) uzunluk.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>90</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ürün listesi (devamı) — sayfa 15/28</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20Crossfit%20Antrenman%20Halat%C4%B1%20CR-10%2010m.bmp" alt="Helix Crossfit Antrenman Halatı CR-10 10m" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -1040,18 +866,10 @@
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Crossfit%20Antrenman%20Halat%C4%B1%20CR-15%2015m.bmp" alt="Helix Crossfit Antrenman Halatı CR-15 15m" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Crossfit Antrenman Halatı CR-15 15m</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 15 uzunluk, 3.8 cm (38 mm), Yüksek mukavemetli polyester veya naylon sentetik lif, Güçlendirilmiş makaron kaplama, Yaklaşık 12–14 kg ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">CrossFit, fonksiyonel antrenman, HIIT, kardiyo, kuvvet ve patlayıcı güç çalışmaları, 14 metre uzunluk.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20%C3%87ekme%20Halat%C4%B1%20BR-14%2014m.bmp" alt="Helix Çekme Halatı BR-14 14m" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Çekme Halatı BR-14 14m</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 15 uzunluk, 3.8 cm (38 mm), Yüksek mukavemetli polyester veya naylon sentetik lif, Güçlendirilmiş makaron kaplama, Yaklaşık 12–14 kg ağırlık</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 14 uzunluk, 3.8 cm (38 mm), Yüksek mukavemetli polyester veya naylon sentetik lif, Güçlendirilmiş makaron kaplama, Yaklaşık 12–14 kg ağırlık</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">CrossFit, fonksiyonel antrenman, HIIT, kardiyo, kuvvet ve patlayıcı güç çalışmaları, 14 metre uzunluk.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
@@ -1070,7 +888,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 120 cm uzunluk, 50 mm (Olimpik standart), Yüksek kaliteli çelik malzeme, Krom kaplama (veya eşdeğer paslanmaz kaplama)</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Ergonomik Z şekli, Tırtıklı (knurled).</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Fitness</span>
+        <span>87</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">10</div>
+            <div class="cat-titleblock">
+                <h1>FITNESS</h1>
+                <p>Ürün listesi (devamı) — sayfa 15/28</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Raptor%20Olimpik%20Bar%20OB-180%20180cm.bmp" alt="Raptor Olimpik Bar OB-180 180cm" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -1078,22 +911,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 180 cm uzunluk, 50 mm olimpik standart, Yüksek kaliteli çelik malzeme, Krom kaplama / paslanmaz yapı yüzey</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Tırtıklı (knurled) yüzey, Spor salonu, ev antrenmanı, kuvvet çalışmaları.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>91</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ürün listesi (devamı) — sayfa 16/28</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20Duvar%20Barfiks%20Bar%C4%B1%20DB-50.bmp" alt="Helix Duvar Barfiks Barı DB-50" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -1133,7 +951,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 25 ağırlık, Aşınmaya dayanıklı yüksek kaliteli dış kumaş, dengeli iç dolgu, Ergonomik yapı, çoklu tutma sapları, Fonksiyonel antrenman</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">ileri seviye kuvvet çalışması, patlayıcı güç egzersizleri, kardiyo, crossfit, taktik/askeri antrenman.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Fitness</span>
+        <span>88</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">10</div>
+            <div class="cat-titleblock">
+                <h1>FITNESS</h1>
+                <p>Ürün listesi (devamı) — sayfa 16/28</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20G%C3%BC%C3%A7%20%C3%87antas%C4%B1%20PB20%2020kg.bmp" alt="Helix Güç Çantası PB20 20kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -1141,22 +974,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 20 ağırlık, Dayanıklı dış kumaş, aşınmaya karşı dirençli yapı, homojen iç dolgu, Çoklu tutma saplı ergonomik yapı</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Fonksiyonel antrenman, kuvvet ve kondisyon çalışmaları, kardiyo, patlayıcı güç egzersizleri, crossfit.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>92</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ürün listesi (devamı) — sayfa 17/28</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20G%C3%BC%C3%A7%20%C3%87antas%C4%B1%20PB15%2015kg.bmp" alt="Helix Güç Çantası PB15 15kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -1196,7 +1014,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 20 ağırlık, Sentetik deri (PVC / PU), kum dolgu, Çoklu ergonomik tutuş alanı (güçlendirilmiş naylon), Yarım ay (hilal) şekli</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">dinamik ağırlık merkezi, Fonksiyonel kuvvet, core aktivasyonu, çeviklik, HIIT, kondisyon.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Fitness</span>
+        <span>89</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">10</div>
+            <div class="cat-titleblock">
+                <h1>FITNESS</h1>
+                <p>Ürün listesi (devamı) — sayfa 17/28</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20Bulgar%20%C3%87antas%C4%B1%20BB15%2015kg.bmp" alt="Helix Bulgar Çantası BB15 15kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -1204,22 +1037,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 15 ağırlık, Dayanıklı sentetik deri (PVC veya PU), Dengeli ağırlık sağlayan kum veya benzeri yoğun malzeme, Yarım ay / hilal form, dinamik ağırlık merkezi</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Ergonomik yerleşimli, güçlendirilmiş çoklu tutma sapları, Fonksiyonel antrenman, HIIT, kuvvet &amp; çeviklik çalışmaları.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>93</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ürün listesi (devamı) — sayfa 18/28</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20Bulgar%20%C3%87antas%C4%B1%20BB10%2010kg.bmp" alt="Helix Bulgar Çantası BB10 10kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -1259,7 +1077,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 24 ağırlık, Dökme demir üzeri vinil (PVC) kaplama, Ergonomik, geniş sap, Fonksiyonel antrenman, kuvvet antrenmanı</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">kardiyo, patlayıcı güç egzersizleri, crossfit, Zemin dostu, ses azaltıcı, kolay temizlenebilir.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Fitness</span>
+        <span>90</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">10</div>
+            <div class="cat-titleblock">
+                <h1>FITNESS</h1>
+                <p>Ürün listesi (devamı) — sayfa 18/28</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20Kettlebell%20Vinil%20KB-20%2020kg.bmp" alt="Helix Kettlebell Vinil KB-20 20kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -1267,22 +1100,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 20 ağırlık, Dökme demir üzeri vinil (PVC) kaplama, Ergonomik, geniş sap, Fonksiyonel antrenman, kuvvet antrenmanı</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">kardiyo, patlayıcı güç egzersizleri, crossfit, Zemin dostu, ses azaltıcı, kolay temizlenebilir.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>94</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ürün listesi (devamı) — sayfa 19/28</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20Kettlebell%20Vinil%20KB-5%205kg.bmp" alt="Helix Kettlebell Vinil KB-5 5kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -1322,7 +1140,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 14 ağırlık, Dökme demir + PVC vinil kaplama, Geniş ve ergonomik, Fonksiyonel antrenman, kuvvet antrenmanı</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">kardiyo, patlayıcı güç, crossfit, Zemin dostu, ses azaltıcı, kolay temizlenebilir.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Fitness</span>
+        <span>91</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">10</div>
+            <div class="cat-titleblock">
+                <h1>FITNESS</h1>
+                <p>Ürün listesi (devamı) — sayfa 19/28</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20Kettlebell%20Vinil%20KB-12%2012kg.bmp" alt="Helix Kettlebell Vinil KB-12 12kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -1330,22 +1163,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 12 ağırlık, Dökme demir üzeri vinil (PVC) kaplama, Ergonomik, geniş sap, Fonksiyonel antrenman, kuvvet antrenmanı</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">kardiyo, patlayıcı güç egzersizleri, genel fitness, Zemin dostu, ses azaltıcı, kolay temizlenebilir.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>95</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ürün listesi (devamı) — sayfa 20/28</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20Kettlebell%20Vinil%20KB-10%2010kg.bmp" alt="Helix Kettlebell Vinil KB-10 10kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -1385,7 +1203,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 2 ağırlık, Dökme demir + PVC vinil kaplama, Geniş ve ergonomik, Fonksiyonel antrenman, kardiyo, kas tonlama, rehabilitasyon</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">fizik tedavi, düşük yoğunluklu antrenmanlar, Zemin koruyucu, ses azaltıcı, kolay temizlenebilir.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Fitness</span>
+        <span>92</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">10</div>
+            <div class="cat-titleblock">
+                <h1>FITNESS</h1>
+                <p>Ürün listesi (devamı) — sayfa 20/28</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20Kettlebell%20Neopren%20NK-20%2020kg.bmp" alt="Helix Kettlebell Neopren NK-20 20kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -1393,22 +1226,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 20 ağırlık, Geniş, ergonomik, pürüzsüz veya hafif tırtıklı, Siyah veya ağırlığa özel renk</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Ev ve ticari spor salonları, kuvvet, kardiyo fonksiyonel antrenmanlar.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>96</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ürün listesi (devamı) — sayfa 21/28</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20Kettlebell%20Neopren%20NK-2%202kg.bmp" alt="Helix Kettlebell Neopren NK-2 2kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -1448,7 +1266,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 10 ağırlık, Dökme demir + kauçuk dış kaplama, 50 MM (Olimpik standart)</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Olimpik barlar (halter ve dambıl), Ev ve salon kullanımı.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Fitness</span>
+        <span>93</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">10</div>
+            <div class="cat-titleblock">
+                <h1>FITNESS</h1>
+                <p>Ürün listesi (devamı) — sayfa 21/28</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20Olimpik%20Plaka%20Kau%C3%A7uk%20Kapl%C4%B1%20RP-7%207.5kg.bmp" alt="Helix Olimpik Plaka Kauçuk Kaplı RP-7 7.5kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -1456,22 +1289,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 7.5 ağırlık, Dökme demir çekirdek + kauçuk dış kaplama, 50 MM (Olimpik standart)</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Olimpik barlar (halter ve dambıl), Ev ve salon kullanımı.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>97</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ürün listesi (devamı) — sayfa 22/28</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20Olimpik%20Plaka%20Kau%C3%A7uk%20Kapl%C4%B1%20RP-5%205kg.bmp" alt="Helix Olimpik Plaka Kauçuk Kaplı RP-5 5kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -1511,7 +1329,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 10, Vinil kaplama, çimento dolgulu veya PP plastik, Kromajlı metal veya dayanıklı plastik</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Yaklaşık 30–40 cm, Standart 25–30 mm.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Fitness</span>
+        <span>94</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">10</div>
+            <div class="cat-titleblock">
+                <h1>FITNESS</h1>
+                <p>Ürün listesi (devamı) — sayfa 22/28</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20Gri%20Plaka%20GP-50%205kg.bmp" alt="Helix Gri Plaka GP-50 5kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -1519,22 +1352,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 ağırlık, Yüksek kaliteli dökme demir, Gri renkli, tutma delikli (grip) yapı, Standart barlar (yaklaşık 30 mm çap)</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Ev kullanımı, salonlar, bireysel antrenman.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>98</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ürün listesi (devamı) — sayfa 23/28</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20Gri%20Plaka%20GP-25%202.5kg.bmp" alt="Helix Gri Plaka GP-25 2.5kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -1574,7 +1392,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 30 KG (tek dambıl) ağırlık, Çelik sap + kauçuk kaplı dökme demir başlıklar malzeme, Tırtıklı (knurled) ve ergonomik, Profesyonel spor salonları</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">evde yoğun kuvvet antrenmanı, crossfit, vücut geliştirme, Darbe emici, ses yalıtımlı, zemin koruyucu, sabit başlık, paslanmaya dayanıklı.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Fitness</span>
+        <span>95</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">10</div>
+            <div class="cat-titleblock">
+                <h1>FITNESS</h1>
+                <p>Ürün listesi (devamı) — sayfa 23/28</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-22%2022.5kg.bmp" alt="Helix Dambıl Kauçuk HX-22 22.5kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -1582,22 +1415,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 22.5 KG (tek dambıl) ağırlık, Çelik sap + kauçuk kaplı dökme demir başlıklar malzeme, Tırtıklı (knurled) ve ergonomik, Spor salonları, evde kuvvet antrenmanı</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">crossfit, vücut geliştirme, Darbe emici, sessiz kullanım, zemin koruyucu, sabit ağırlık başlıkları, paslanmaya dayanıklı.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>99</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ürün listesi (devamı) — sayfa 24/28</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-25%2025kg.bmp" alt="Helix Dambıl Kauçuk HX-25 25kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -1637,7 +1455,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 12.5 KG (tek dambıl) ağırlık, Sertleştirilmiş çelik sap + kauçuk kaplı dökme demir başlıklar malzeme, Ergonomik, tırtıklı (knurled) kavrama yüzeyi</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Profesyonel spor salonu, evde kuvvet antrenmanı, crossfit, vücut geliştirme, Darbe emici, ses yalıtımlı, zemin koruyucu, paslanmaya dayanıklı.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Fitness</span>
+        <span>96</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">10</div>
+            <div class="cat-titleblock">
+                <h1>FITNESS</h1>
+                <p>Ürün listesi (devamı) — sayfa 24/28</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-10%2010kg.bmp" alt="Helix Dambıl Kauçuk HX-10 10kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -1645,22 +1478,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 10 KG (tek dambıl) ağırlık, Kauçuk kaplı dökme demir başlık + sertleştirilmiş çelik sap malzeme, Ergonomik, tırtıklı (knurled) kavrama yüzeyi</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Spor salonları, evde kuvvet antrenmanı, crossfit, vücut geliştirme, Darbe emici, ses yalıtımlı, zemin koruyucu, paslanmaya dayanıklı.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>100</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ürün listesi (devamı) — sayfa 25/28</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-75%207.5kg.bmp" alt="Helix Dambıl Kauçuk HX-75 7.5kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -1692,11 +1510,26 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 10 KG (tek dambıl) ağırlık, Dökme demir üzeri vinyl (PVC) kaplama malzeme, Ev ve spor salonu kullanımı, genel fitness</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">kuvvet antrenmanı, Ergonomik sap, kaymaz yüzey, zemin dostu, kolay temizlenebilir, paslanmaya karşı dayanıklı.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Fitness</span>
+        <span>97</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">10</div>
+            <div class="cat-titleblock">
+                <h1>FITNESS</h1>
+                <p>Ürün listesi (devamı) — sayfa 25/28</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Vinil%20PVC%20PD-09%209kg.bmp" alt="Helix Dambıl Vinil PVC PD-09 9kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Vinil PVC PD-09 9kgÖzellikler:</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Vinil PVC PD-09 9kg</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 9 KG (tek dambıl) ağırlık, Dökme demir gövde, vinil (PVC) kaplama malzeme, Ev ve spor salonu, genel fitness, kuvvet antrenmanı Ergonomik sap</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">kaymaz yüzey, zemin dostu, kolay temizlenebilir, paslanmaya karşı dayanıklı.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
@@ -1704,30 +1537,15 @@
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Vinil%20PVC%20PD-08%208kg.bmp" alt="Helix Dambıl Vinil PVC PD-08 8kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Vinil PVC PD-08 8kgÖzellikler:</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Vinil PVC PD-08 8kg</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 8 KG (tek dambıl) ağırlık, Dökme demir üzeri vinil (PVC) kaplama malzeme, Ev ve spor salonu, genel fitness</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">kuvvet antrenmanı Ergonomik sap, kaymaz yüzey, zemin dostu, kolay temizlenebilir.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>101</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ürün listesi (devamı) — sayfa 26/28</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Vinil%20PVC%20PD-07%207kg.bmp" alt="Helix Dambıl Vinil PVC PD-07 7kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Vinil PVC PD-07 7kgÖzellikler:</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Vinil PVC PD-07 7kg</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 7 KG (tek dambıl) ağırlık, Dökme demir üzeri vinil (PVC) kaplama malzeme, Ev ve spor salonu, fitness</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">kuvvet antrenmanı Ergonomik sap, kaymaz yüzey, zemin dostu kaplama, kolay temizlenebilir yapı.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
@@ -1747,11 +1565,26 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 KG (tek dambıl ağırlığı) ağırlık, Dökme demir üzeri vinil (PVC) kaplama malzeme, Ev ve spor salonu kullanımı, genel fitness</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">kardiyo, rehabilitasyon, kuvvet antrenmanı Ergonomik sap, zemin dostu vinil kaplama, kaymaz yüzey, kolay temizlenebilir.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Fitness</span>
+        <span>98</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">10</div>
+            <div class="cat-titleblock">
+                <h1>FITNESS</h1>
+                <p>Ürün listesi (devamı) — sayfa 26/28</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Vinil%20PVC%20PD-04%204kg.bmp" alt="Helix Dambıl Vinil PVC PD-04 4kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Vinil PVC PD-04 4kgKullanım</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Vinil PVC PD-04 4kg</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 4 KG (tek dambıl) ağırlık, Dökme demir gövde, dış yüzey vinil (PVC) kaplama malzeme, Ergonomik sap, kaymaz yüzey</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Evde egzersiz Spor salonu antrenmanları Rehabilitasyon çalışmaları, 3 ve kilogram kas tonlama (tek adet).</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
@@ -1771,22 +1604,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 2 KG (tek dambıl ağırlığı) ağırlık, Dökme demir üzeri vinil (PVC) kaplama malzeme, Ev ve spor salonu kullanımı, genel fitness, kardiyo</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">rehabilitasyon, hafif kuvvet antrenmanı, fizik tedavi, Ergonomik sap, zemin dostu vinil kaplama, kaymaz yüzey, kolay temizlenebilir.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>102</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ürün listesi (devamı) — sayfa 27/28</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Vinil%20PVC%20PD-01%201kg.bmp" alt="Helix Dambıl Vinil PVC PD-01 1kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -1802,7 +1620,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 10 KG (tek dambıl) ağırlık, Dökme demir gövde + neopren kaplama malzeme, Ev, spor salonu</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">genel fitness, Ergonomik tasarım, kaymaz yüzey, zemin dostu yapı.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Fitness</span>
+        <span>99</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">10</div>
+            <div class="cat-titleblock">
+                <h1>FITNESS</h1>
+                <p>Ürün listesi (devamı) — sayfa 27/28</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Neopren%20ND-9%209kg.bmp" alt="Helix Dambıl Neopren ND-9 9kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -1834,14 +1667,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 6 KG (tek dambıl) ağırlık, Dökme demir üzeri neopren kaplama malzeme, Kaymaz yüzey, ergonomik sap, kolay temizlenebilir</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">zemin dostu, Ev ve spor salonu kullanımı, genel fitness, kuvvet antrenmanı.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Neopren%20ND-5%205kg.bmp" alt="Helix Dambıl Neopren ND-5 5kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Neopren ND-5 5kg</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 KG (tek dambıl) ağırlık, Dökme demir üzeri neopren kaplama malzeme, Kaymaz yüzey, ergonomik sap, kolay temizlenebilir</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">zemin dostu, Ev ve spor salonu, fitness, kardiyo, rehabilitasyon, kuvvet antrenmanı.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div></div>
         <div class="footer">
         <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
         <span>Fitness</span>
-        <span>103</span>
+        <span>100</span>
     </div>
     </section>
-    <section class="page cat-page">
+<section class="page cat-page">
         <div class="cat-header">
             <div class="cat-num">10</div>
             <div class="cat-titleblock">
@@ -1851,27 +1692,63 @@
         </div>
         <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Neopren%20ND-5%205kg.bmp" alt="Helix Dambıl Neopren ND-5 5kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Neopren ND-5 5kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 KG (tek dambıl) ağırlık, Dökme demir üzeri neopren kaplama malzeme, Kaymaz yüzey, ergonomik sap, kolay temizlenebilir</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">zemin dostu, Ev ve spor salonu, fitness, kardiyo, rehabilitasyon, kuvvet antrenmanı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Neopren%20ND-4%204kg.bmp" alt="Helix Dambıl Neopren ND-4 4kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Neopren ND-4 4kg</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 1 adet, 4 kilogram ağırlık, Neopren kaplı döküm demir malzeme</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Kaymaz ve kolay temizlenebilir yüzey, Yeşil renk.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Neopren%20ND-1%201kg.bmp" alt="Helix Dambıl Neopren ND-1 1kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Neopren ND-1 1kg</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 1 KG (tek dambıl) ağırlık, Dökme demir üzeri neopren kaplama malzeme, Kaymaz yüzey, ergonomik sap, kolay temizlenebilir</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">zemin dostu, Ev/spor salonu, kardiyo, rehabilitasyon, fizik tedavi, aerobik.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Neopren%20ND-05%200.5kg.bmp" alt="Helix Dambıl Neopren ND-05 0.5kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Neopren ND-05 0.5kg</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 0.5 KG (tek dambıl) ağırlık, Dökme demir üzeri neopren kaplama malzeme, Kaymaz yüzey, ergonomik sap, kolay temizlenebilir</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">zemin dostu, Ev/spor salonu, kardiyo, rehabilitasyon, fizik tedavi, aerobik, düşük yoğunluklu egzersizler.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Ayarlanabilir%20AD-40%202%2C5kg-40kg.bmp" alt="Helix Dambıl Ayarlanabilir AD-40 2,5kg-40kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Ayarlanabilir AD-40 2,5kg-40kg</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 2.5 KG – 40, Kadran, kilit veya pim mekanizması (modele göre değişebilir), Yüksek mukavemetli çelik, dayanıklı plastik veya kompozit dış kaplama malzeme</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Kompakt, yer tasarrufu sağlayan yapı, Ev kullanımı, bireysel spor salonları, fonksiyonel kuvvet antrenmanları.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Ayarlanabilir%20AD-24%202%2C5kg-24kg.bmp" alt="Helix Dambıl Ayarlanabilir AD-24 2,5kg-24kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Ayarlanabilir AD-24 2,5kg-24kg</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 2.5 KG – 24, Genellikle 2.5 KG artışlarla, Hızlı çevirmeli kadran veya kilit/pim sistemi, Yüksek mukavemetli çelik gövde, dayanıklı plastik/alaşım kaplamalar malzeme</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Tırtıklı (knurled) ergonomik dizayn, kaymaz yüzey, Ev antrenmanları, PT stüdyoları, fonksiyonel antrenman alanları.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div></div>
         <div class="footer">
         <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
         <span>Fitness</span>
-        <span>104</span>
+        <span>101</span>
     </div>
     </section>
-    
+
+<script>
+function aramaFiltrele(inp){
+  var q=inp.value.toLocaleLowerCase('tr-TR').trim(), gorunen=0;
+  document.querySelectorAll('.product-card').forEach(function(k){
+    var e=k.querySelector('.pf-label');
+    var esles=(e?e.textContent.toLocaleLowerCase('tr-TR'):'').indexOf(q)!==-1;
+    k.style.display=esles?'':'none';
+    if(esles)gorunen++;
+  });
+  document.querySelector('.urun-bulunamadi').hidden=!(q&&gorunen===0);
+}
+</script>
 </body>
 </html>

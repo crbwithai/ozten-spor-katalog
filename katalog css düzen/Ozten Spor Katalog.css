@@ -4,13 +4,14 @@
   .page {
     width:210mm; height:297mm; position:relative; margin:0 auto;
     padding:16mm 15mm 14mm 15mm; page-break-after:always; overflow:hidden;
+    display:flex; flex-direction:column;
   }
   .page:last-child { page-break-after:auto; }
   img { max-width:100%; height:auto; }
 
   /* FOOTER */
   .footer {
-    position:absolute; left:15mm; right:15mm; bottom:8mm;
+    position:static; margin-top:auto; flex-shrink:0;
     display:flex; justify-content:space-between; font-size:8pt; color:#6B6B6B;
     border-top:0.5pt solid #DADADA; padding-top:3mm; letter-spacing:0.5pt;
   }
@@ -137,6 +138,11 @@
     .category-button-grid { grid-template-columns:1fr 1fr; }
   }
 
+  @media screen and (min-width:801px) {
+    .page { width:calc(100% - 40px); max-width:1140px; height:auto; }
+    .product-grid { grid-template-columns:1fr 1fr 1fr; }
+  }
+
 
 /* ============================================================
    GEZİNME BUTONLARI — sabit "Yukarı Çık" ve "Ana Kataloğa Dön" butonları
@@ -183,4 +189,80 @@ html { scroll-behavior: smooth; }
 
 @media print {
   .floating-nav-group { display:none; }
+}
+
+/* ============================================================
+   ÜRÜN ARAMA KUTUSU
+   ============================================================ */
+.katalog-arama { padding:4mm 5mm; background:#F7F7F7; border-bottom:1px solid #DADADA; }
+.katalog-arama input {
+  display:block; width:100%; max-width:480px; margin:0 auto;
+  padding:2.8mm 4mm; font-family:Arial,Helvetica,sans-serif; font-size:10pt;
+  color:#111111; background:#fff; border:1px solid #DADADA; border-radius:20px; outline:none;
+}
+.katalog-arama input:focus { border-color:#0B5FA8; }
+.urun-bulunamadi { text-align:center; font-size:10pt; color:#6B6B6B; padding:10mm 0; }
+@media (max-width:480px) {
+  .katalog-arama input { font-size:11pt; padding:3mm 4mm; }
+}
+@media print {
+  .katalog-arama, .urun-bulunamadi, .arama-sonuclari { display:none !important; }
+}
+.arama-sonuclari { max-width:480px; margin:0 auto; }
+.arama-sonuc-item {
+  display:flex; align-items:center; gap:3mm; padding:2.5mm 4mm;
+  border-bottom:1px solid #DADADA; text-decoration:none; color:#111111; font-size:9.5pt;
+}
+.arama-sonuc-item:hover { background:#F2F2F2; }
+.arama-sonuc-item img { width:12mm; height:12mm; object-fit:contain; background:#fff; border:1px solid #DADADA; flex-shrink:0; }
+
+/* ============================================================
+   SEPET SİSTEMİ
+   ============================================================ */
+.sepet-ekle-btn {
+  display:block; width:100%; margin-top:3mm; padding:2.4mm 3mm;
+  background:#111111; color:#fff; border:none; border-radius:4px;
+  font-family:Arial,Helvetica,sans-serif; font-size:8.5pt; font-weight:700;
+  letter-spacing:0.3pt; cursor:pointer;
+}
+.sepet-ekle-btn:hover { background:#E11D2E; }
+
+.sepet-badge {
+  display:inline-block; background:#E11D2E; color:#fff; border-radius:10px;
+  font-size:7.5pt; padding:0.3mm 2mm; margin-left:1.5mm; min-width:3mm; text-align:center;
+}
+
+.sepet-buton-sarici { position:fixed; left:5mm; bottom:5mm; z-index:999; }
+.sepet-arkaplan { position:fixed; inset:0; background:rgba(0,0,0,0.45); z-index:1000; }
+.sepet-paneli {
+  position:fixed; top:0; right:0; height:100%; width:360px; max-width:92vw;
+  background:#fff; z-index:1001; box-shadow:-2px 0 12px rgba(0,0,0,0.2);
+  display:flex; flex-direction:column; font-family:Arial,Helvetica,sans-serif;
+}
+.sepet-paneli[hidden] { display:none; }
+.sepet-baslik {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:4mm 5mm; border-bottom:1px solid #DADADA; font-weight:700; font-size:11pt; color:#111111;
+}
+.sepet-kapat { background:none; border:none; font-size:16pt; line-height:1; cursor:pointer; color:#111111; padding:1mm 2mm; }
+.sepet-liste { flex:1; overflow-y:auto; padding:3mm 5mm; }
+.sepet-bos { color:#6B6B6B; font-size:9.5pt; text-align:center; margin-top:10mm; }
+.sepet-urun { display:flex; align-items:center; gap:3mm; padding:2.5mm 0; border-bottom:1px solid #F0F0F0; }
+.sepet-urun img { width:14mm; height:14mm; object-fit:contain; border:1px solid #DADADA; flex-shrink:0; background:#fff; }
+.sepet-urun-bilgi { flex:1; display:flex; flex-direction:column; font-size:9pt; gap:1mm; min-width:0; color:#111111; }
+.sepet-urun-bilgi span { overflow-wrap:anywhere; }
+.sepet-urun-bilgi b { color:#E11D2E; }
+.sepet-adet { display:flex; align-items:center; gap:1.5mm; flex-shrink:0; }
+.sepet-adet button { width:6mm; height:6mm; border:1px solid #DADADA; background:#fff; border-radius:3px; cursor:pointer; font-size:9pt; line-height:1; }
+.sepet-adet span { font-size:9pt; min-width:4mm; text-align:center; }
+.sepet-sil { border:none; background:none; color:#E11D2E; font-size:8pt; cursor:pointer; text-decoration:underline; flex-shrink:0; }
+.sepet-alt { padding:4mm 5mm; border-top:1px solid #DADADA; font-size:10.5pt; font-weight:700; color:#111111; }
+
+@media (max-width:480px) {
+  .sepet-paneli { width:100%; max-width:100vw; }
+  .sepet-buton-sarici { left:3mm; bottom:3mm; }
+  .sepet-buton { padding:2.8mm 4mm; font-size:7.5pt; }
+}
+@media print {
+  .sepet-ekle-btn, #sepetSarici, .sepet-buton-sarici { display:none !important; }
 }

@@ -1,15 +1,18 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
 <title>MASA TENİSİ — Özten Spor Kataloğu</title>
 <link rel="stylesheet" href="Ozten Spor Katalog.css">
+<script src="sepet.js" defer></script>
 </head>
 <body id="top">
 <div class="floating-nav-group">
     <a href="#top" class="floating-nav-btn"><span class="fn-arrow">&#8593;</span> Yukarı Çık</a>
     <a href="index.html#top" class="floating-nav-btn"><span class="fn-arrow">&#8592;</span> Ana Kataloğa Dön</a>
 </div>
+<div class="katalog-arama"><input type="text" placeholder="Ürün ara..." oninput="aramaFiltrele(this)"></div>
+<p class="urun-bulunamadi" hidden>Ürün bulunamadı.</p>
 <section class="page cat-page" id="kategori-masa-tenisi">
         <div class="cat-header">
             <div class="cat-num">05</div>
@@ -20,35 +23,11 @@
         </div>
         <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Badminton%20image/Helix%20Raket%20%C3%96rme%20Makinesi%20RSM-300.bmp" alt="Helix Raket Örme Makinesi RSM-300" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Raket Örme Makinesi RSM-300</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 10 LBS – 88, Geniş LCD ekran, 6 nokta senkronize tutuş + 4 sabitleme kolu, 5 dişli anti-atlama kelepçeler</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">360° frenli döner tabla, Otomatik &amp;, Badminton, tenis ve squash raketleri, 81 × 65 × 40 cm ölçü.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Badminton%20image/Helix%20Manuel%20Raket%20%C3%96rme%20Makinesi%20RSM-200.bmp" alt="Helix Manuel Raket Örme Makinesi RSM-200" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Manuel Raket Örme Makinesi RSM-200</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : RSM-200 model, 10 LBS – 88, 6 nokta senkronize tutuş + 4 sabitleme kolu, 5 dişli anti-atlama kelepçeler</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">360° frenli döner tabla, Badminton, tenis ve squash raketleri, 81 × 65 × 40 cm ölçü.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Badminton%20image/Enlio%20Badminton%20Zemini%20Y3170%20BWF%20Onayl%C4%B1.bmp" alt="Enlio Badminton Zemini Y3170 BWF Onaylı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Enlio Badminton Zemini Y3170 BWF Onaylı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 15 m x 7,2 m, %100 saf malzeme, Kristal kum desenli kaymaz yapı, Fiberglas örgü destekli orta tabaka, Badminton</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">voleybol, basketbol, tenis, padel, BWF onaylı, Su geçirmez, alev almaz, antibakteriyel, düşük şişme.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Masa%20Tenisi%20image/PP200%20SPORTICA.bmp" alt="PP200 SPORTICA" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : PP200 SPORTICA</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 40+ mm çap ABS malzeme, Yuvarlak ve dengeli yapı, Dayanıklı yüzey, Dengeli sekme performansı, Beyaz/Turuncu renk seçeneği, Antrenman ve hobi kullanımına uygun40+ mm çap ABS malzeme</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Yuvarlak ve dengeli yapı, Dayanıklı yüzey, Dengeli sekme performansı, Beyaz/Turuncu renk seçeneği.</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 40+ mm çap ABS malzeme, Yuvarlak ve dengeli yapı, Dayanıklı yüzey</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Dengeli sekme performansı, Beyaz/Turuncu renk seçeneği, Antrenman ve hobi kullanımına uygun.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
@@ -66,22 +45,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 40+ mm çap, Premium ABS malzeme, Dengeli sekme performansı, Hassas yuvarlaklık</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Dayanıklı yüzey, Uzun ömürlü kullanım, Antrenman ve maç kullanımına uygun.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Masa Tenisi</span>
-        <span>39</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">05</div>
-            <div class="cat-titleblock">
-                <h1>MASA TENISI</h1>
-                <p>Ürün listesi (devamı) — sayfa 2/9</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20Topu%20100'l%C3%BC%20D40%2B%203%20Y%C4%B1ld%C4%B1z.bmp" alt="Helix Masa Tenisi Topu 100'lü D40+ 3 Yıldız" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -105,7 +69,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 40 mm, 2.10 g ağırlık, 100 adet, 1 yıldız antrenman topu.</span></div>
         <div class="pf pf-filled"><span class="pf-label filled"></span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Masa Tenisi</span>
+        <span>37</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">05</div>
+            <div class="cat-titleblock">
+                <h1>MASA TENISI</h1>
+                <p>Ürün listesi (devamı) — sayfa 2/9</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Masa%20Tenisi%20image/Giant%20Dragon%20Masa%20Tenisi%20Topu%206'l%C4%B1%2063066%203%20Y%C4%B1ld%C4%B1z%20ITTF%20Onayl%C4%B1.bmp" alt="Giant Dragon Masa Tenisi Topu 6'lı 63066 3 Yıldız ITTF Onaylı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -129,22 +108,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Tekli masa tenisi raketi, Kauçuk kaplama yüzey, Ahşap gövde, Ergonomik sap tasarımı</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Dengeli hız ve kontrol, Dayanıklı yapı, Antrenman ve hobi kullanımına uygun.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Masa Tenisi</span>
-        <span>40</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">05</div>
-            <div class="cat-titleblock">
-                <h1>MASA TENISI</h1>
-                <p>Ürün listesi (devamı) — sayfa 3/9</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Masa%20Tenisi%20image/MT100%20HATTRICK.bmp" alt="MT100 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -168,7 +132,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Tekli masa tenisi raketi, ITTF onaylı kauçuk kaplama 5 katmanlı ahşap gövde, Ergonomik profesyonel sap tasarımı</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Yüksek hız, spin ve kontrol, Dayanıklı yapı, İleri seviye antrenman ve maç kullanımına uygun.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Masa Tenisi</span>
+        <span>38</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">05</div>
+            <div class="cat-titleblock">
+                <h1>MASA TENISI</h1>
+                <p>Ürün listesi (devamı) — sayfa 3/9</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Masa%20Tenisi%20image/MTC200%20ALTIS.bmp" alt="MTC200 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -192,22 +171,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 2 adet masa tenisi raketi 3 adet masa tenisi topu, ITTF onaylı kauçuk kaplama, Blister paket</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Ahşap gövde, Dengeli hız ve kontrol, Okul, antrenman ve hobi kullanımına uygun.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Masa Tenisi</span>
-        <span>41</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">05</div>
-            <div class="cat-titleblock">
-                <h1>MASA TENISI</h1>
-                <p>Ürün listesi (devamı) — sayfa 4/9</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Masa%20Tenisi%20image/SDT4040%20HATTRICK.bmp" alt="SDT4040 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -231,7 +195,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 4 adet masa tenisi raketi 4 adet masa tenisi topu, Blister paket, Kauçuk kaplama yüzey</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Ahşap gövde, Aile, okul ve hobi kullanımına uygun.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Masa Tenisi</span>
+        <span>39</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">05</div>
+            <div class="cat-titleblock">
+                <h1>MASA TENISI</h1>
+                <p>Ürün listesi (devamı) — sayfa 4/9</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Masa%20Tenisi%20image/Hyper%20Masa%20Tenisi%20Raketi%205%20Y%C4%B1ld%C4%B1z.bmp" alt="Hyper Masa Tenisi Raketi 5 Yıldız" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -255,22 +234,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 3, Çift taraflı yüksek kaliteli kauçuk, Sünger destekli kauçuk, Yüksek kontrol ve esneklik.</span></div>
         <div class="pf pf-filled"><span class="pf-label filled"></span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Masa Tenisi</span>
-        <span>42</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">05</div>
-            <div class="cat-titleblock">
-                <h1>MASA TENISI</h1>
-                <p>Ürün listesi (devamı) — sayfa 5/9</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Masa%20Tenisi%20image/Hyper%20Masa%20Tenisi%20Raketi%202%20Y%C4%B1ld%C4%B1z.bmp" alt="Hyper Masa Tenisi Raketi 2 Yıldız" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -279,15 +243,10 @@
         <div class="pf pf-filled"><span class="pf-label filled"></span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20Raketi%20Velon%206%20Y%C4%B1ld%C4%B1z%20ITTF%20Onayl%C4%B1.bmp" alt="Helix Masa Tenisi Raketi Velon 6 Yıldız ITTF Onaylı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Masa Tenisi Raketi Velon Yıldız ITTF Onaylı</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Masa Tenisi Raketi Velon 6 Yıldız ITTF Onaylı</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 6, 6,2 mm, 1,8 mm kauçuk kalınlığı, 83, 97 hız, 57 6, ITTF Onaylı.</span></div>
         <div class="pf pf-filled"><span class="pf-label filled"></span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
@@ -299,7 +258,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5, 6 mm, 1,8 mm kauçuk kalınlığı, 80, 90 hız, 62, ITTF Onaylı.</span></div>
         <div class="pf pf-filled"><span class="pf-label filled"></span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Masa Tenisi</span>
+        <span>40</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">05</div>
+            <div class="cat-titleblock">
+                <h1>MASA TENISI</h1>
+                <p>Ürün listesi (devamı) — sayfa 5/9</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20Raketi%20Meteor%202%20Y%C4%B1ld%C4%B1z%20ITTF%20Onayl%C4%B1.bmp" alt="Helix Masa Tenisi Raketi Meteor 2 Yıldız ITTF Onaylı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -323,22 +297,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 4, 6 mm, 1,7 mm kauçuk kalınlığı, 73, 82 hız, 67, ITTF Onaylı.</span></div>
         <div class="pf pf-filled"><span class="pf-label filled"></span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Masa Tenisi</span>
-        <span>43</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">05</div>
-            <div class="cat-titleblock">
-                <h1>MASA TENISI</h1>
-                <p>Ürün listesi (devamı) — sayfa 6/9</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20Raketi%20Axia%207%20Y%C4%B1ld%C4%B1z%20ITTF%20Onayl%C4%B1.bmp" alt="Helix Masa Tenisi Raketi Axia 7 Yıldız ITTF Onaylı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -362,7 +321,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 43 – temel spin üretimi, 53 – dengeli ve etkili vuruş hızı, 93 – yüksek kontrol, hassas oyun, 2 adet 2 yıldız raket + 3 adet 2 yıldız top</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Yeni başlayan yetişkinler, orta seviyedeki çocuklar.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Masa Tenisi</span>
+        <span>41</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">05</div>
+            <div class="cat-titleblock">
+                <h1>MASA TENISI</h1>
+                <p>Ürün listesi (devamı) — sayfa 6/9</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Masa%20Tenisi%20image/Reactor%20Masa%20Tenisi%20Raket%20Seti%20RTR-99%205%20Y%C4%B1ld%C4%B1z%20ITTF%20Onayl%C4%B1.bmp" alt="Reactor Masa Tenisi Raket Seti RTR-99 5 Yıldız ITTF Onaylı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -386,22 +360,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Mengeneli ağ ve demir seti, Masa tenisi filesi dahildir, Blister paket, Metal direk yapısı</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Kolay montaj, Standart masa tenisi masalarına uyumludur, Ev ve hobi kullanımına uygun.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Masa Tenisi</span>
-        <span>44</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">05</div>
-            <div class="cat-titleblock">
-                <h1>MASA TENISI</h1>
-                <p>Ürün listesi (devamı) — sayfa 7/9</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Masa%20Tenisi%20image/HDT55%20HATTRICK.bmp" alt="HDT55 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -425,7 +384,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Mengeneli ağ ve demir seti, Masa tenisi filesi dahildir, Blister paket, Metal direk yapısı, Sağlam sabitleme sistemi</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Standart masa tenisi masalarına uyumludur, Ev, okul ve kulüp kullanımına uygundur.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Masa Tenisi</span>
+        <span>42</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">05</div>
+            <div class="cat-titleblock">
+                <h1>MASA TENISI</h1>
+                <p>Ürün listesi (devamı) — sayfa 7/9</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Masa%20Tenisi%20image/EVEREST%20201A%20ALTIS.bmp" alt="EVEREST 201A ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -449,22 +423,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Boyutlar (Kurulu Hali): 180 × 92 × 76 cm, 12 mm, 25 × 25 mm, MDF (Orta yoğunluklu lif levha) malzeme</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Katlanabilir ayaklar ve taşıması kolay yüzey, Yüksek kaliteli, uzun ömürlü yapı.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Masa Tenisi</span>
-        <span>45</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">05</div>
-            <div class="cat-titleblock">
-                <h1>MASA TENISI</h1>
-                <p>Ürün listesi (devamı) — sayfa 8/9</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20Masas%C4%B1%2018mm%20TMTF%20Onayl%C4%B1.bmp" alt="Helix Masa Tenisi Masası 18mm TMTF Onaylı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -480,7 +439,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : St, ACP – Alüminyum Kompozit, 4 mm, anti-glare (yansımayı azaltan) yüzey, 36 mm metal çerçeve, Ø15×30 mm yuvarlak metal profil, korozyon önleyici kaplama</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">274 × 152,5 × 76 cm (ITTF standart ölçüleri), 2 parçalı masa, 4 adet 125 mm çaplı tekerlek (2’si yön değiştirilebilir).</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Masa Tenisi</span>
+        <span>43</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">05</div>
+            <div class="cat-titleblock">
+                <h1>MASA TENISI</h1>
+                <p>Ürün listesi (devamı) — sayfa 8/9</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Masa%20Tenisi%20image/Giant%20Dragon%20Masa%20Tenisi%20Masas%C4%B1%2025mm%20ITTF%20Onayl%C4%B1.bmp" alt="Giant Dragon Masa Tenisi Masası 25mm ITTF Onaylı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -512,14 +486,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Kapalı halde 19 × 14,5 × 5 cm ölçü, 365 gram ağırlık, Yüksek kaliteli plastik ve metal bileşenler malzeme</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Yaylı mandal sistemi ile tüm masa tiplerine uyumlu, File, direklere sarılarak kolayca saklanabilir.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20A%C4%9Fdemir%20Seti%20V200.bmp" alt="Helix Masa Tenisi Ağdemir Seti V200" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Masa Tenisi Ağdemir Seti V200</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Mandallı tutma sistemi – kolay gerginlik ayarı, Dayanıklı örme file, Yaylı silindirli düzenleme sistemi</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Amatör ve profesyonel oyuncular, Hızlı ve pratik; mandallar ile kolay montaj.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div></div>
         <div class="footer">
         <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
         <span>Masa Tenisi</span>
-        <span>46</span>
+        <span>44</span>
     </div>
     </section>
-    <section class="page cat-page">
+<section class="page cat-page">
         <div class="cat-header">
             <div class="cat-num">05</div>
             <div class="cat-titleblock">
@@ -529,14 +511,6 @@
         </div>
         <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20A%C4%9Fdemir%20Seti%20V200.bmp" alt="Helix Masa Tenisi Ağdemir Seti V200" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Masa Tenisi Ağdemir Seti V200</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Mandallı tutma sistemi – kolay gerginlik ayarı, Dayanıklı örme file, Yaylı silindirli düzenleme sistemi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Amatör ve profesyonel oyuncular, Hızlı ve pratik; mandallar ile kolay montaj.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20A%C4%9Fdemir%20Seti%20V100.bmp" alt="Helix Masa Tenisi Ağdemir Seti V100" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Masa Tenisi Ağdemir Seti V100</span></div>
@@ -544,38 +518,56 @@
         <div class="pf pf-filled"><span class="pf-label filled">Amatör ve profesyonel oyuncular için uygun, Hızlı ve pratik; ek ekipman gerektirmez.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20A%C4%9Fdemir%20Seti%20TTF-2.bmp" alt="Helix Masa Tenisi Ağdemir Seti TTF-2" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
-        <div class="pf"><span class="pf-label">Ürün Adı</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Açıklama</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Teknik Özellikler</span><span class="pf-line"></span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Masa Tenisi Ağdemir Seti TTF-2</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Mandallı bağlantı – kolay montaj, güçlü tutuş, Örme – dayanıklı uzun ömürlü yapı</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Yaylı silindirli – optimum file gerginliği, Uluslararası standartlara uygun.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20A%C4%9Fdemir%20Seti%20TN-200.bmp" alt="Helix Masa Tenisi Ağdemir Seti TN-200" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
-        <div class="pf"><span class="pf-label">Ürün Adı</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Açıklama</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Teknik Özellikler</span><span class="pf-line"></span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Masa Tenisi Ağdemir Seti TN-200</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Mengeneli – güçlü tutuş, kolay montaj, Dayanıklı naylon, İpli gerdirme – hızlı ayarlanabilir</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Kutu ambalaj – pratik taşıma ve depolama, Antrenman ve günlük oyun.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20A%C4%9Fdemir%20Seti%20B50.bmp" alt="Helix Masa Tenisi Ağdemir Seti B50" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Masa Tenisi Ağdemir Seti B50</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Mengeneli tutma mekanizması, Örme file + dayanıklı naylon ağ, İple gerdirilebilir yapı, Mengeneli sistem sayesinde hızlı ve kolay montaj</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Standart masa tenisi file ölçüleri ile uyumlu.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Masa%20Tenisi%20image/Giant%20Dragon%20Masa%20Tenisi%20A%C4%9Fdemir%20Seti%20ITTF%20Onayl%C4%B1.bmp" alt="Giant Dragon Masa Tenisi Ağdemir Seti ITTF Onaylı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Giant Dragon Masa Tenisi Ağdemir Seti ITTF Onaylı</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Uluslararası Masa Tenisi Federasyonu tarafından resmi olarak onaylıdır, Dayanıklı ağ pamuk + sağlam metal bileşenler malzeme, Profesyonel oyun ölçülerine uygundur</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Basit talimatlarla hızlı ve pratik kurulum sağlar, Ev, okul, spor salonu ve tüm kapalı alanlarda kullanılabilir.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div></div>
         <div class="footer">
         <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
         <span>Masa Tenisi</span>
-        <span>47</span>
+        <span>45</span>
     </div>
     </section>
-    
+
+<script>
+function aramaFiltrele(inp){
+  var q=inp.value.toLocaleLowerCase('tr-TR').trim(), gorunen=0;
+  document.querySelectorAll('.product-card').forEach(function(k){
+    var e=k.querySelector('.pf-label');
+    var esles=(e?e.textContent.toLocaleLowerCase('tr-TR'):'').indexOf(q)!==-1;
+    k.style.display=esles?'':'none';
+    if(esles)gorunen++;
+  });
+  document.querySelector('.urun-bulunamadi').hidden=!(q&&gorunen===0);
+}
+</script>
 </body>
 </html>

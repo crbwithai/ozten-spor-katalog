@@ -1,15 +1,18 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
 <title>TENİS — Özten Spor Kataloğu</title>
 <link rel="stylesheet" href="Ozten Spor Katalog.css">
+<script src="sepet.js" defer></script>
 </head>
 <body id="top">
 <div class="floating-nav-group">
     <a href="#top" class="floating-nav-btn"><span class="fn-arrow">&#8593;</span> Yukarı Çık</a>
     <a href="index.html#top" class="floating-nav-btn"><span class="fn-arrow">&#8592;</span> Ana Kataloğa Dön</a>
 </div>
+<div class="katalog-arama"><input type="text" placeholder="Ürün ara..." oninput="aramaFiltrele(this)"></div>
+<p class="urun-bulunamadi" hidden>Ürün bulunamadı.</p>
 <section class="page cat-page" id="kategori-tenis">
         <div class="cat-header">
             <div class="cat-num">06</div>
@@ -20,43 +23,11 @@
         </div>
         <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20A%C4%9Fdemir%20Seti%20TTF-2.bmp" alt="Helix Masa Tenisi Ağdemir Seti TTF-2" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Masa Tenisi Ağdemir Seti TTF-2</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Mandallı bağlantı – kolay montaj, güçlü tutuş, Örme – dayanıklı uzun ömürlü yapı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Yaylı silindirli – optimum file gerginliği, Uluslararası standartlara uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20A%C4%9Fdemir%20Seti%20TN-200.bmp" alt="Helix Masa Tenisi Ağdemir Seti TN-200" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Masa Tenisi Ağdemir Seti TN-200</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Mengeneli – güçlü tutuş, kolay montaj, Dayanıklı naylon, İpli gerdirme – hızlı ayarlanabilir</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kutu ambalaj – pratik taşıma ve depolama, Antrenman ve günlük oyun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20A%C4%9Fdemir%20Seti%20B50.bmp" alt="Helix Masa Tenisi Ağdemir Seti B50" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Masa Tenisi Ağdemir Seti B50</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Mengeneli tutma mekanizması, Örme file + dayanıklı naylon ağ, İple gerdirilebilir yapı, Mengeneli sistem sayesinde hızlı ve kolay montaj</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Standart masa tenisi file ölçüleri ile uyumlu.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Masa%20Tenisi%20image/Giant%20Dragon%20Masa%20Tenisi%20A%C4%9Fdemir%20Seti%20ITTF%20Onayl%C4%B1.bmp" alt="Giant Dragon Masa Tenisi Ağdemir Seti ITTF Onaylı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Giant Dragon Masa Tenisi Ağdemir Seti ITTF Onaylı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Uluslararası Masa Tenisi Federasyonu tarafından resmi olarak onaylıdır, Dayanıklı ağ pamuk + sağlam metal bileşenler malzeme, Profesyonel oyun ölçülerine uygundur</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Basit talimatlarla hızlı ve pratik kurulum sağlar, Ev, okul, spor salonu ve tüm kapalı alanlarda kullanılabilir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Tenis%20image/ATS19%20HATTRICK.bmp" alt="ATS19 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : ATS19 HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Uluslararası Masa Tenisi Federasyonu tarafından resmi olarak onaylıdır, Dayanıklı ağ pamuk + sağlam metal bileşenler malzeme, Profesyonel oyun ölçülerine uygundur</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Basit talimatlarla hızlı ve pratik kurulum sağlar, Ev, okul, spor salonu ve tüm kapalı alanlarda kullanılabilir.</span></div>
+        <div class="pf"><span class="pf-label">Açıklama</span><span class="pf-line"></span></div>
+        <div class="pf"><span class="pf-label">Teknik Özellikler</span><span class="pf-line"></span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
@@ -66,22 +37,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : </span></div>
         <div class="pf pf-filled"><span class="pf-label filled"></span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Tenis</span>
-        <span>48</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">06</div>
-            <div class="cat-titleblock">
-                <h1>TENIS</h1>
-                <p>Ürün listesi (devamı) — sayfa 2/13</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Tenis%20image/ATS23%20HATTRICK.bmp" alt="ATS23 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -113,30 +69,77 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : </span></div>
         <div class="pf pf-filled"><span class="pf-label filled"></span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Tenis</span>
+        <span>46</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">06</div>
+            <div class="cat-titleblock">
+                <h1>TENIS</h1>
+                <p>Ürün listesi (devamı) — sayfa 2/13</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Tenis%20image/T101%2021-23%20HATTRICK.bmp" alt="T101 21-23 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : T101 21-23 HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 19 inç, 180 gram (±5 g) ağırlık, Çift parça, 30–35 lbs tel gerginliği, 16x18, L2.</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
+        <div class="pf"><span class="pf-label">Açıklama</span><span class="pf-line"></span></div>
+        <div class="pf"><span class="pf-label">Teknik Özellikler</span><span class="pf-line"></span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Tenis%20image/T101%2025-26%20HATTRICK.bmp" alt="T101 25-26 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : T101 25-26 HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 19 inç, 180 gram (±5 g) ağırlık, Çift parça, 30–35 lbs tel gerginliği, 16x18, L2.</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
+        <div class="pf"><span class="pf-label">Açıklama</span><span class="pf-line"></span></div>
+        <div class="pf"><span class="pf-label">Teknik Özellikler</span><span class="pf-line"></span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Tenis%20image/T202%20L1-L2-L3%20HATTRICK.bmp" alt="T202 L1-L2-L3 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : T202 L1-L2-L3 HATTRICK</span></div>
+        <div class="pf"><span class="pf-label">Açıklama</span><span class="pf-line"></span></div>
+        <div class="pf"><span class="pf-label">Teknik Özellikler</span><span class="pf-line"></span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Tenis%20image/S900%20S%20HATTRICK.bmp" alt="S900 S HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : S900 S HATTRICK</span></div>
+        <div class="pf"><span class="pf-label">Açıklama</span><span class="pf-line"></span></div>
+        <div class="pf"><span class="pf-label">Teknik Özellikler</span><span class="pf-line"></span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Raketi%20Majesty%20ND%2019%20L2%20Grip.bmp" alt="Helix Tenis Raketi Majesty ND 19 L2 Grip" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Tenis Raketi Majesty ND 19&quot; L2 Grip</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Alüminyum gövde – hafif ve dayanıklı yapı, 19 inç boyut, 180 gram (±5 g) ağırlık, Çift parça kafa bağlantısı</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">30–35 lbs tel gerginliği, 16x18 tel deseni, L2 grip boyutu, Tam boy taşıma çantası dahil.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Raketi%20Majesty%2019%20L2%20Grip.bmp" alt="Helix Tenis Raketi Majesty 19 L2 Grip" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Tenis Raketi Majesty 19&quot; L2 Grip</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Alüminyum gövde – hafif ve dayanıklı yapı, 19 inç boyut, 180 gram (±5 g) ağırlık, Çift parça kafa bağlantısı</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">30–35 lbs tel gerginliği, 16x18 tel deseni, L2 grip boyutu, Tam boy taşıma çantası dahil.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div></div>
         <div class="footer">
         <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
         <span>Tenis</span>
-        <span>49</span>
+        <span>47</span>
     </div>
     </section>
-    <section class="page cat-page">
+<section class="page cat-page">
         <div class="cat-header">
             <div class="cat-num">06</div>
             <div class="cat-titleblock">
@@ -145,38 +148,6 @@
             </div>
         </div>
         <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Tenis%20image/T202%20L1-L2-L3%20HATTRICK.bmp" alt="T202 L1-L2-L3 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : T202 L1-L2-L3 HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 19 inç, 180 gram (±5 g) ağırlık, Çift parça, 30–35 lbs tel gerginliği, 16x18, L2.</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Tenis%20image/S900%20S%20HATTRICK.bmp" alt="S900 S HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : S900 S HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 19 inç, 180 gram (±5 g) ağırlık, Çift parça, 30–35 lbs tel gerginliği, 16x18, L2.</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Raketi%20Majesty%20ND%2019%20L2%20Grip.bmp" alt="Helix Tenis Raketi Majesty ND 19 L2 Grip" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Tenis Raketi Majesty ND 19&quot; L2 Grip</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 19 inç, 180 gram (±5 g) ağırlık, Çift parça, 30–35 lbs tel gerginliği, 16x18, L2.</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Raketi%20Majesty%2019%20L2%20Grip.bmp" alt="Helix Tenis Raketi Majesty 19 L2 Grip" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Tenis Raketi Majesty 19&quot; L2 Grip</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 19 inç, 180 gram (±5 g) ağırlık, Çift parça, 30–35 lbs tel gerginliği, 16x18, L2.</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Raketi%20Majesty%2026%20L1%20Grip.bmp" alt="Helix Tenis Raketi Majesty 26 L1 Grip" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -192,22 +163,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Alüminyum – Hafif ve dayanıklı yapı malzeme, Çift parça – Daha fazla denge ve sağlamlık, 23 inç – 6–8 yaş arası oyuncular için uygun boyut</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">200–240 gram (± 5 gram) – Kolay kullanım için ideal ağırlık, 30–35 lbs – Kontrollü vuruşlar için optimize edilmiştir tel gerginliği.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Tenis</span>
-        <span>50</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">06</div>
-            <div class="cat-titleblock">
-                <h1>TENIS</h1>
-                <p>Ürün listesi (devamı) — sayfa 4/13</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Raketi%20Winner%2025%20L2%20Grip.bmp" alt="Helix Tenis Raketi Winner 25 L2 Grip" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -224,13 +180,8 @@
         <div class="pf pf-filled"><span class="pf-label filled">16x17 kordaj düzeni, L2 grip boyutu, 27 inç (685 mm ±5 mm) – Yetişkin oyuncular için ideal uzunluk boyut.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Raketi%20Winner%2027%20L1%20Grip.bmp" alt="Helix Tenis Raketi Winner 27&quot; L2 Grip" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Tenis Raketi Winner 27&quot; L2 Grip</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Tek parça bağlantılı – Titreşim emici tasarım, 27 inç (685 mm ±5 mm) – Yetişkin oyuncular için ideal uzunluk boyut, 300 gram (±10 gr) – Mükemmel denge ve manevra kabiliyeti ağırlık</span></div>
@@ -244,7 +195,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 27 inç (685 mm ±5 mm) – Yetişkin oyuncular için ideal uzunluk boyut, 300 gram (±10 gr) – Dengeli ve rahat kullanım ağırlık, 45-50 lbs – Güç ve kontrol dengesi için optimize edilmiş kordaj gerginliği</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">16x19 – Spin ve hassasiyet için uygun kordaj düzeni.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Tenis</span>
+        <span>48</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">06</div>
+            <div class="cat-titleblock">
+                <h1>TENIS</h1>
+                <p>Ürün listesi (devamı) — sayfa 4/13</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Raketi%20Winner%2026%20L2%20Grip.bmp" alt="Helix Tenis Raketi Winner 26 L2 Grip" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -260,22 +226,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Tek parça – titreşim azaltıcı, 26 inç boyut, 35–40 lbs kordaj gerginliği, 16×17 kordaj düzeni</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">270 g (±10 g) ağırlık, 660 mm (±5 mm) raket uzunluğu.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Tenis</span>
-        <span>51</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">06</div>
-            <div class="cat-titleblock">
-                <h1>TENIS</h1>
-                <p>Ürün listesi (devamı) — sayfa 5/13</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Raketi%20Winner%2026%20L0%20Grip.bmp" alt="Helix Tenis Raketi Winner 26 L0 Grip" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -307,7 +258,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 25 inç – Genç ve orta seviye oyuncular için ideal boyut, 210–320 gram (± 5 gram) – Konforlu ve dengeli kullanım ağırlık, 30–35 lbs – Kontrollü ve güçlü vuruşlar için tel gerginliği</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">16x18 – Yüksek hassasiyet ve kontrol sağlar, Tam boy çanta – Kolay taşıma ve saklama imkânı.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Tenis</span>
+        <span>49</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">06</div>
+            <div class="cat-titleblock">
+                <h1>TENIS</h1>
+                <p>Ürün listesi (devamı) — sayfa 5/13</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Raketi%20Majesty%2021.bmp" alt="Helix Tenis Raketi Majesty 21" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -316,34 +282,14 @@
         <div class="pf pf-filled"><span class="pf-label filled">16x18 – Daha iyi top hissiyatı ve kontrol sağlar, Tam boy çanta – Kolay taşıma ve güvenli saklama.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Raketi%20Majesty%2021.bmp" alt="Helix Tenis Raketi Majesty 27&quot;" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Tenis Raketi Majesty 27&quot;</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 27 inç – Yetişkinler ve genç oyuncular için ideal boyut, 210 - 320 gram (±5 gram) – Dengeli ve konforlu kullanım ağırlık, 30-35 lbs – Kontrollü ve güçlü vuruşlar optimize edilmiş kordaj gerginliği</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">16x18 – Spin ve hassasiyet için ideal kordaj düzeni, Tam boy çanta – Kolay taşıma ve güvenli saklama.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Tenis</span>
-        <span>52</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">06</div>
-            <div class="cat-titleblock">
-                <h1>TENIS</h1>
-                <p>Ürün listesi (devamı) — sayfa 6/13</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Raketi%20Invict%2027%20%20L1%20Grip.bmp" alt="Helix Tenis Raketi Invict 27  L1 Grip" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -368,19 +314,29 @@
         <div class="pf pf-filled"><span class="pf-label filled">685 mm (±5 mm) uzunluk, L2 grip boyutu.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Raketi%20Invict%20Carbon%2027%20L2%20Grip.bmp" alt="Helix Tenis Raketi Invict Carbon 26&quot; L2 Grip" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Tenis Raketi Invict Carbon 26&quot; L2 Grip</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 26 inç – Genç oyuncular için ideal boyut, 45 ±3 lbs – Güçlü ve hassas vuruşlar için kordaj gerginliği, 16x19 – Güç ve kontrol dengesine sahip kordaj düzeni</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">255 gram (±10 gram) – Kolay kontrol, hafif yapı ağırlık, 660 mm (±5 mm) – Dengeli ve ergonomik kullanım raket uzunluğu.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Tenis</span>
+        <span>50</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">06</div>
+            <div class="cat-titleblock">
+                <h1>TENIS</h1>
+                <p>Ürün listesi (devamı) — sayfa 6/13</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Raketi%20Invict%20Carbon%2025%20L3%20Grip.bmp" alt="Helix Tenis Raketi Invict Carbon 25 L3 Grip" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -396,22 +352,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 27 inç boyut, 50–55 lbs kordaj gerginliği, 16×19 kordaj düzeni, 295 g (±10 g) ağırlık, 685 mm (±5 mm) raket uzunluğu</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">L1 grip boyutu, Profesyonel performans sağlayan pro karbon grafit yapı.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Tenis</span>
-        <span>53</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">06</div>
-            <div class="cat-titleblock">
-                <h1>TENIS</h1>
-                <p>Ürün listesi (devamı) — sayfa 7/13</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Raketi%20Invict%20Carbon%2026%20L1%20Grip.bmp" alt="Helix Tenis Raketi Invict Carbon 26 L1 Grip" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -432,18 +373,33 @@
         <img src="%C4%B0mage/Tenis%20image/TP400%20ALTIS.bmp" alt="TP400 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : TP400 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 25 inç boyut, 50–55 lbs kordaj gerginliği, 16×19 kordaj düzeni, ~270 g (±10 g) ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">635 mm (±5 mm) raket uzunluğu, L0 grip boyutu.</span></div>
+        <div class="pf"><span class="pf-label">Açıklama</span><span class="pf-line"></span></div>
+        <div class="pf"><span class="pf-label">Teknik Özellikler</span><span class="pf-line"></span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Tenis%20image/TP450%20ALTIS.bmp" alt="TP450 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : TP450 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 25 inç boyut, 50–55 lbs kordaj gerginliği, 16×19 kordaj düzeni, ~270 g (±10 g) ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">635 mm (±5 mm) raket uzunluğu, L0 grip boyutu.</span></div>
+        <div class="pf"><span class="pf-label">Açıklama</span><span class="pf-line"></span></div>
+        <div class="pf"><span class="pf-label">Teknik Özellikler</span><span class="pf-line"></span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Tenis</span>
+        <span>51</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">06</div>
+            <div class="cat-titleblock">
+                <h1>TENIS</h1>
+                <p>Ürün listesi (devamı) — sayfa 7/13</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Tenis%20image/TP300%20HATTRICK.bmp" alt="TP300 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -459,22 +415,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : </span></div>
         <div class="pf pf-filled"><span class="pf-label filled"></span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Tenis</span>
-        <span>54</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">06</div>
-            <div class="cat-titleblock">
-                <h1>TENIS</h1>
-                <p>Ürün listesi (devamı) — sayfa 8/13</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Tenis%20image/TP650%20HATTRICK.bmp" alt="TP650 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -506,7 +447,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Top ağırlığı 58 gram (± 2 gram) ağırlığındadır. Topun çapı 60-65 milimetredir, Topa bağlı olan elastik ipin uzunluğu 350 santimetredir</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Elastik ipin kalınlığı 2 milimetredir.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Tenis</span>
+        <span>52</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">06</div>
+            <div class="cat-titleblock">
+                <h1>TENIS</h1>
+                <p>Ürün listesi (devamı) — sayfa 8/13</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Topu%20Profesyonel%203'l%C3%BC%20TN-100%20Antrenman.bmp" alt="Helix Tenis Topu Profesyonel 3'lü TN-100 Antrenman" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -522,22 +478,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 56,5 - 58,5 gram, 65,5 - 67,5 mm çap, 0.220 - 0.260 inç Sekme (20°C): 140 - 145 cm</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Çim, toprak ve sert kortlar için uygundur.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Tenis</span>
-        <span>55</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">06</div>
-            <div class="cat-titleblock">
-                <h1>TENIS</h1>
-                <p>Ürün listesi (devamı) — sayfa 9/13</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Topu%20Profesyonel%2036'l%C4%B1%20Antrenman%20ITF%20Onayl%C4%B1.bmp" alt="Helix Tenis Topu Profesyonel 36'lı Antrenman ITF Onaylı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -569,7 +510,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 36,0 – 46,9 gram (basınçlı) ağırlık, 60,0 – 68,6 mm çap, 0,551 – 0,650 inç Sekme (20°C): 105 – 120 cm</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">8 yaş ve üzeri çocuklar.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Tenis</span>
+        <span>53</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">06</div>
+            <div class="cat-titleblock">
+                <h1>TENIS</h1>
+                <p>Ürün listesi (devamı) — sayfa 9/13</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Topu%208%2B%20ya%C5%9F%2036'l%C4%B1%20HT-700%20ITF%20Onayl%C4%B1.bmp" alt="Helix Tenis Topu 8+ yaş 36'lı HT-700 ITF Onaylı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -585,22 +541,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Uluslararası Tenis Federasyonu standartlarına uygundur, 36,0 – 49,0 gram (düşük basınçlı) ağırlık</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">70,0 – 80,0 mm Sekme (20°C): 90 – 105 cm çap, 4 – 7 yaş.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Tenis</span>
-        <span>56</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">06</div>
-            <div class="cat-titleblock">
-                <h1>TENIS</h1>
-                <p>Ürün listesi (devamı) — sayfa 10/13</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Topu%204-7%20ya%C5%9F%2036'l%C4%B1%20HT-800%20ITF%20Onayl%C4%B1.bmp" alt="Helix Tenis Topu 4-7 yaş 36'lı HT-800 ITF Onaylı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -632,7 +573,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 107 x 1280 cm ölçü, 2x2 adet polyester dikiş, 2.5 mm polyamid iplik, 40 mm</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">4 mm çelik halat, 50x40x40 mm – 1100 D.U.V. dayanımlı polyester.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Tenis</span>
+        <span>54</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">06</div>
+            <div class="cat-titleblock">
+                <h1>TENIS</h1>
+                <p>Ürün listesi (devamı) — sayfa 10/13</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Tenis%20image/Helix%20Portatif%20Ayak%20Tenisi%20Filesi%20PT-6m.bmp" alt="Helix Portatif Ayak Tenisi Filesi PT-6m" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -648,22 +604,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 3 metre genişlik, 80 cm yükseklik, 4 x 4 cm, Metal borularla sağlam iskelet</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">esnek kablo destekli, Kolay montaj – aletsiz kurulum.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Tenis</span>
-        <span>57</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">06</div>
-            <div class="cat-titleblock">
-                <h1>TENIS</h1>
-                <p>Ürün listesi (devamı) — sayfa 11/13</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Ete%C4%9Fi%20TE-B.bmp" alt="Helix Tenis Eteği TE-B" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -695,7 +636,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : %100 Polyester (Likra esnekliği) malzeme, Doğal salınım, yüksek hareket özgürlüğü, Lazer kesim</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">pürüzsüz kenarlar, Kanserojen madde içermez, Form koruyucu yapı, çekme yapmaz.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Tenis</span>
+        <span>55</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">06</div>
+            <div class="cat-titleblock">
+                <h1>TENIS</h1>
+                <p>Ürün listesi (devamı) — sayfa 11/13</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Tenis%20image/Helix%20Overgrip%2060X%20BG60.bmp" alt="Helix Overgrip 60X BG60" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -711,22 +667,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : PU (Poliüretan) malzeme, 3 adet overgrip, Tenis, raket sporları, antrenman ve maç kullanımı</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Yüksek tutuş gücü, teri azaltan yapı, yumuşak konforlu yüzey.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Tenis</span>
-        <span>58</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">06</div>
-            <div class="cat-titleblock">
-                <h1>TENIS</h1>
-                <p>Ürün listesi (devamı) — sayfa 12/13</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Tenis%20image/Helix%20Overgrip%20BG3%20Siyah.bmp" alt="Helix Overgrip BG3 Siyah" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -758,7 +699,22 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 72 adet tenis topu kapasite, Çelik alaşım – Dayanıklı ve sağlam malzeme, Fırınlanmış boya – Paslanmaz ve soyulmaz kaplama</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Evet – Kolay taşıma ve saklama, 3 kg – Hafif ve taşınabilir yapı ağırlık, 27 × 27 × 32 cm – Kompakt tasarım ölçü.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Tenis</span>
+        <span>56</span>
+    </div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">06</div>
+            <div class="cat-titleblock">
+                <h1>TENIS</h1>
+                <p>Ürün listesi (devamı) — sayfa 12/13</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Tenis%20image/Helix%20Top%20Ta%C5%9F%C4%B1ma%20Sepeti%20TL100.bmp" alt="Helix Top Taşıma Sepeti TL100" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -774,22 +730,7 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 1.30 mm çap, 12 metre / 39.4 inç uzunluk, Polyester içermeyen naylon titanyum ipek malzeme, Oyun boyunca sabit gerilim korur</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Yüksek dayanıklılık ve uzun ömür, Maksimum kontrol ve tepki dengesi sunar.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Tenis</span>
-        <span>59</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">06</div>
-            <div class="cat-titleblock">
-                <h1>TENIS</h1>
-                <p>Ürün listesi (devamı) — sayfa 13/13</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
+    </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
         <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Robotu.bmp" alt="Helix Tenis Robotu" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
@@ -813,39 +754,80 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Polivinil alkol (PVA) köpük – Yüksek su emme kapasitesi malzeme, Hafif kullanım için alüminyum sap, Tenis kortlarındaki suyu hızlıca emer</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">kuruma sürecini hızlandırır, Uzun ömürlü ve sağlam malzemelerden üretilmiştir, Hafif ve ergonomik tasarımıyla kolay kullanım sağlar.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Tenis</span>
+        <span>57</span>
     </div>
-        <div class="pf"><span class="pf-label">Ürün Adı</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Açıklama</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Teknik Özellikler</span><span class="pf-line"></span></div>
+    </section>
+<section class="page cat-page">
+        <div class="cat-header">
+            <div class="cat-num">06</div>
+            <div class="cat-titleblock">
+                <h1>TENIS</h1>
+                <p>Ürün listesi (devamı) — sayfa 13/13</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Kortu%20Portatif%20RP12-4.bmp" alt="Helix Tenis Kortu Portatif RP12-4" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Tenis Kortu Portatif RP12-4</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Doğal silikon – Esnek ve dayanıklı malzeme, 4 köşe, 12 kenar dikdörtgeni, 2 daire, 1395 gram – ağırlık</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Esnek yapısı sayesinde hasar almaz, Kolay taşınabilir ve hızlı kurulabilir.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Tenis%20image/Helix%20Otomatik%20Top%20Toplay%C4%B1c%C4%B1%20T120.bmp" alt="Helix Otomatik Top Toplayıcı T120" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
-        <div class="pf"><span class="pf-label">Ürün Adı</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Açıklama</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Teknik Özellikler</span><span class="pf-line"></span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Otomatik Top Toplayıcı T120</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 86 - 126 cm (Ayarlanabilir), 30 adet tenis topu kapasite, 2,4 kg, Hafif ve ergonomik tasarım.</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Top%20Kovas%C4%B1%20KV72.bmp" alt="Helix Tenis Top Kovası KV72" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Tenis Top Kovası KV72</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 72 adet tenis topu kapasite, Yüksek yoğunluklu sert plastik malzeme, Hava geçirmez</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">koruyucu tasarım, Ergonomik taşıma sapı ile kolay taşıma.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Topu%20Toplama%20T%C3%BCp%C3%BC%20CL18.bmp" alt="Helix Tenis Topu Toplama Tüpü CL18" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Tenis Topu Toplama Tüpü CL18</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : PE (Polietilen) malzeme, 18 adet tenis topu kapasite, 117 cm uzunluk</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Tek elle, eğilmeden hızlı top toplama.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Topu%20Toplama%20T%C3%BCp%C3%BC%20CL15.bmp" alt="Helix Tenis Topu Toplama Tüpü CL15" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Tenis Topu Toplama Tüpü CL15</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : PE (Polietilen) malzeme, 15 tenis topu kapasite, 96 cm uzunluk</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Tek elle kolay ve hızlı top toplama.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div></div>
         <div class="footer">
         <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
         <span>Tenis</span>
-        <span>60</span>
+        <span>58</span>
     </div>
     </section>
-    
+
+<script>
+function aramaFiltrele(inp){
+  var q=inp.value.toLocaleLowerCase('tr-TR').trim(), gorunen=0;
+  document.querySelectorAll('.product-card').forEach(function(k){
+    var e=k.querySelector('.pf-label');
+    var esles=(e?e.textContent.toLocaleLowerCase('tr-TR'):'').indexOf(q)!==-1;
+    k.style.display=esles?'':'none';
+    if(esles)gorunen++;
+  });
+  document.querySelector('.urun-bulunamadi').hidden=!(q&&gorunen===0);
+}
+</script>
 </body>
 </html>

@@ -1,8 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="Ozten Spor Katalog.css">
+<script src="sepet.js" defer></script>
 </head>
 <body id="top">
 <div class="floating-nav-group">
@@ -22,6 +23,30 @@
         <p class="cover-slogan">Güvenle Oynayın. Kalite ile Kazanın.</p>
         <div class="cover-tags">
             <span>GÜVEN</span><span class="dot"></span><span>KALİTE</span><span class="dot"></span><span>ÇEŞİTLİLİK</span>
+        </div>
+        <div class="section-kicker" style="margin-top:10mm;">İLETİŞİM</div>
+        <h1 class="section-title" style="color:#fff; font-size:18pt; margin-bottom:4mm;">Bize <span class="accent">Ulaşın</span></h1>
+        <p class="lead" style="color:#D8D8D8; margin-bottom:4mm;">Toptan ve perakende sipariş, iş birliği ve bilgi talepleriniz için bizimle iletişime geçin.</p>
+        <div class="contact-grid" style="margin-top:4mm;">
+            <div class="contact-item">
+                <div class="c-icon" style="background:#ffffff; color:#111111;">☎</div>
+                <div><h4 style="color:#fff;">Telefon</h4><p class="fill-text" style="color:#B7B7B7;">[0 (___) ___ __ __]</p></div>
+            </div>
+            <div class="contact-item">
+                <div class="c-icon" style="background:#ffffff; color:#111111;">✉</div>
+                <div><h4 style="color:#fff;">E-posta</h4><p class="fill-text" style="color:#B7B7B7;">[info@markaadi.com]</p></div>
+            </div>
+            <div class="contact-item">
+                <div class="c-icon" style="background:#ffffff; color:#111111;">⚑</div>
+                <div><h4 style="color:#fff;">Adres</h4><p class="fill-text" style="color:#B7B7B7;">[Mahalle, Cadde No:.. İlçe / Şehir]</p></div>
+            </div>
+            <div class="contact-item">
+                <div class="c-icon" style="background:#ffffff; color:#111111;">@</div>
+                <div><h4 style="color:#fff;">Sosyal Medya</h4><p class="fill-text" style="color:#B7B7B7;">[@markaadi — Instagram / LinkedIn / Facebook]</p></div>
+            </div>
+        </div>
+        <div class="cta-band" style="background:#ffffff; color:#111111; margin-top:8mm;">
+            <span>TOPTAN SİPARİŞ VE İŞ BİRLİĞİ İÇİN BİZE YAZIN</span>
         </div>
     </div>
 </section>
@@ -81,6 +106,9 @@
         <span>02</span>
     </div>
 </section>
+<div class="katalog-arama"><input type="text" placeholder="Ürün ara..." oninput="aramaFiltrele(this)"></div>
+<p class="urun-bulunamadi" hidden>Ürün bulunamadı.</p>
+<div id="aramaSonuclari" class="arama-sonuclari"></div>
         <section class="page featured-page">
     <div class="section-kicker" style="color:#E11D2E">VİTRİN</div>
     <h1 class="section-title">EN ÇOK TERCİH EDİLENLER</h1>
@@ -167,40 +195,40 @@
     <div class="footer">
         <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
         <span>Öne Çıkan Ürünler</span>
-        <span>126</span>
+        <span>124</span>
     </div>
 </section>
-<section class="page contact-page">
-    <div class="cover-accent-bar" style="bottom:0;top:auto;"></div>
-    <div class="section-kicker">İLETİŞİM</div>
-    <h1 class="section-title">Bize <span class="accent">Ulaşın</span></h1>
-    <p class="lead">Toptan ve perakende sipariş, iş birliği ve bilgi talepleriniz için bizimle iletişime geçin.</p>
-    <div class="contact-grid">
-        <div class="contact-item">
-            <div class="c-icon" style="background:#111111">☎</div>
-            <div><h4>Telefon</h4><p class="fill-text">[0 (___) ___ __ __]</p></div>
-        </div>
-        <div class="contact-item">
-            <div class="c-icon" style="background:#111111">✉</div>
-            <div><h4>E-posta</h4><p class="fill-text">[info@markaadi.com]</p></div>
-        </div>
-        <div class="contact-item">
-            <div class="c-icon" style="background:#111111">⚑</div>
-            <div><h4>Adres</h4><p class="fill-text">[Mahalle, Cadde No:.. İlçe / Şehir]</p></div>
-        </div>
-        <div class="contact-item">
-            <div class="c-icon" style="background:#111111">@</div>
-            <div><h4>Sosyal Medya</h4><p class="fill-text">[@markaadi — Instagram / LinkedIn / Facebook]</p></div>
-        </div>
-    </div>
-    <div class="cta-band">
-        <span>TOPTAN SİPARİŞ VE İŞ BİRLİĞİ İÇİN BİZE YAZIN</span>
-    </div>
-    <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>İletişim</span>
-        <span>127</span>
-    </div>
-</section>
+<script>
+var katalogVerisi=null;
+function katalogYukle(cb){
+  if(katalogVerisi){cb();return;}
+  katalogVerisi=[];
+  var linkler=document.querySelectorAll('.category-nav-button');
+  var kalan=linkler.length;
+  linkler.forEach(function(a){
+    fetch(a.getAttribute('href')).then(function(r){return r.text();}).then(function(html){
+      var dom=new DOMParser().parseFromString(html,'text/html');
+      dom.querySelectorAll('.product-card').forEach(function(k){
+        var e=k.querySelector('.pf-label');
+        var ad=e?e.textContent.replace(/^Ürün Adı\s*:?\s*/,'').trim():'';
+        var img=k.querySelector('img');
+        if(ad)katalogVerisi.push({ad:ad,gorsel:img?img.getAttribute('src'):'',href:a.getAttribute('href')+'#kategori-'+a.getAttribute('href').replace('.html','')});
+      });
+    }).catch(function(){}).then(function(){if(--kalan===0)cb();});
+  });
+}
+function aramaFiltrele(inp){
+  var q=inp.value.toLocaleLowerCase('tr-TR').trim();
+  var kutu=document.getElementById('aramaSonuclari');
+  if(!q){kutu.innerHTML='';document.querySelector('.urun-bulunamadi').hidden=true;return;}
+  katalogYukle(function(){
+    var sonuc=katalogVerisi.filter(function(u){return u.ad.toLocaleLowerCase('tr-TR').indexOf(q)!==-1;});
+    kutu.innerHTML=sonuc.map(function(u){
+      return '<a class="arama-sonuc-item" href="'+u.href+'"><img src="'+u.gorsel+'" alt=""><span>'+u.ad+'</span></a>';
+    }).join('');
+    document.querySelector('.urun-bulunamadi').hidden=sonuc.length>0;
+  });
+}
+</script>
 </body>
 </html>

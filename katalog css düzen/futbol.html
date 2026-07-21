@@ -1,15 +1,18 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
 <title>FUTBOL — Özten Spor Kataloğu</title>
 <link rel="stylesheet" href="Ozten Spor Katalog.css">
+<script src="sepet.js" defer></script>
 </head>
 <body id="top">
 <div class="floating-nav-group">
     <a href="#top" class="floating-nav-btn"><span class="fn-arrow">&#8593;</span> Yukarı Çık</a>
     <a href="index.html#top" class="floating-nav-btn"><span class="fn-arrow">&#8592;</span> Ana Kataloğa Dön</a>
 </div>
+<div class="katalog-arama"><input type="text" placeholder="Ürün ara..." oninput="aramaFiltrele(this)"></div>
+<p class="urun-bulunamadi" hidden>Ürün bulunamadı.</p>
 <section class="page cat-page" id="kategori-futbol">
         <div class="cat-header">
             <div class="cat-num">01</div>
@@ -73,12 +76,12 @@
         <span>03</span>
     </div>
     </section>
-    <section class="page cat-page">
+<section class="page cat-page">
         <div class="cat-header">
             <div class="cat-num">01</div>
             <div class="cat-titleblock">
                 <h1>FUTBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 2/18</p>
+                <p>Ürün listesi (devamı) — sayfa 2/16</p>
             </div>
         </div>
         <div class="product-grid"><div class="product-card">
@@ -136,12 +139,12 @@
         <span>04</span>
     </div>
     </section>
-    <section class="page cat-page">
+<section class="page cat-page">
         <div class="cat-header">
             <div class="cat-num">01</div>
             <div class="cat-titleblock">
                 <h1>FUTBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 3/18</p>
+                <p>Ürün listesi (devamı) — sayfa 3/16</p>
             </div>
         </div>
         <div class="product-grid"><div class="product-card">
@@ -199,12 +202,12 @@
         <span>05</span>
     </div>
     </section>
-    <section class="page cat-page">
+<section class="page cat-page">
         <div class="cat-header">
             <div class="cat-num">01</div>
             <div class="cat-titleblock">
                 <h1>FUTBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 4/18</p>
+                <p>Ürün listesi (devamı) — sayfa 4/16</p>
             </div>
         </div>
         <div class="product-grid"><div class="product-card">
@@ -217,7 +220,7 @@
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Hybrid%20Unity4.jpg" alt="Helix Futbol Topu Hybrid4" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Hybrid4.jpg" alt="Helix Futbol Topu Hybrid4" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Hybrid No:4</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 4 (9–12 yaş), 350–390 gram ağırlık, 32 panel – hibrit yapı</span></div>
@@ -262,12 +265,12 @@
         <span>06</span>
     </div>
     </section>
-    <section class="page cat-page">
+<section class="page cat-page">
         <div class="cat-header">
             <div class="cat-num">01</div>
             <div class="cat-titleblock">
                 <h1>FUTBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 5/18</p>
+                <p>Ürün listesi (devamı) — sayfa 5/16</p>
             </div>
         </div>
         <div class="product-grid"><div class="product-card">
@@ -325,12 +328,12 @@
         <span>07</span>
     </div>
     </section>
-    <section class="page cat-page">
+<section class="page cat-page">
         <div class="cat-header">
             <div class="cat-num">01</div>
             <div class="cat-titleblock">
                 <h1>FUTBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 6/18</p>
+                <p>Ürün listesi (devamı) — sayfa 6/16</p>
             </div>
         </div>
         <div class="product-grid"><div class="product-card">
@@ -388,12 +391,12 @@
         <span>08</span>
     </div>
     </section>
-    <section class="page cat-page">
+<section class="page cat-page">
         <div class="cat-header">
             <div class="cat-num">01</div>
             <div class="cat-titleblock">
                 <h1>FUTBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 7/18</p>
+                <p>Ürün listesi (devamı) — sayfa 7/16</p>
             </div>
         </div>
         <div class="product-grid"><div class="product-card">
@@ -405,13 +408,8 @@
         <div class="pf pf-filled"><span class="pf-label filled">Lateks destekli, Dayanıklı şişme bladder, Antrenman, okul maçları ve amatör müsabakalar.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Sannleika.bmp" alt="Helix Futbol Topu Sannleika" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Sannleika No:5 FIFA Quality Pro</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 1.2 mm PU deri, 3.8 mm POE köpük İç Lastik (Bladder): Yüksek kaliteli Patch, 32 panel aerodinamik tasarım, 68.5 - 69.5 cm, 420 - 445 g ağırlık</span></div>
@@ -442,13 +440,8 @@
         <div class="pf pf-filled"><span class="pf-label filled">Maç ve antrenman kullanımına uygun.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Futbol%20image/PROGOLD%20HATTRICK%20NO%205.bmp" alt="PROGOLD ALTIS NO:4" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : PROGOLD ALTIS NO:4</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 4 Numara, Premium, Japon PU yüzey, El dikişli 18 panel yapı</span></div>
@@ -461,12 +454,12 @@
         <span>09</span>
     </div>
     </section>
-    <section class="page cat-page">
+<section class="page cat-page">
         <div class="cat-header">
             <div class="cat-num">01</div>
             <div class="cat-titleblock">
                 <h1>FUTBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 8/18</p>
+                <p>Ürün listesi (devamı) — sayfa 8/16</p>
             </div>
         </div>
         <div class="product-grid"><div class="product-card">
@@ -486,13 +479,8 @@
         <div class="pf pf-filled"><span class="pf-label filled">Butil iç lastik, Salon kullanımına uygun, Antrenman ve maç kullanımına uygun.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Futbol%20image/FUTSAL%20PRO%20HATTRICK.bmp" alt="FUTSAL PRO HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : FUTSAL PRO HATTRICKNO:4</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : No:4 Pro, Hybrid, Teknolojisi, Premium PU yüzey, Düşük sekme özelliği, Butil iç lastik</span></div>
@@ -529,12 +517,12 @@
         <span>10</span>
     </div>
     </section>
-    <section class="page cat-page">
+<section class="page cat-page">
         <div class="cat-header">
             <div class="cat-num">01</div>
             <div class="cat-titleblock">
                 <h1>FUTBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 9/18</p>
+                <p>Ürün listesi (devamı) — sayfa 9/16</p>
             </div>
         </div>
         <div class="product-grid"><div class="product-card">
@@ -592,20 +580,20 @@
         <span>11</span>
     </div>
     </section>
-    <section class="page cat-page">
+<section class="page cat-page">
         <div class="cat-header">
             <div class="cat-num">01</div>
             <div class="cat-titleblock">
                 <h1>FUTBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 10/18</p>
+                <p>Ürün listesi (devamı) — sayfa 10/16</p>
             </div>
         </div>
         <div class="product-grid"><div class="product-card">
         <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/THERMO%20PLUS%20HATTRICK.bmp" alt="THERMO PLUS HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+        <img src="%C4%B0mage/Futbol%20image/THERMO%20PLUS%20HATTRICK%205%20no.bmp" alt="THERMO PLUS HATTRICK 5 no" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : THERMO PLUS HATTRICK NO:4</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : No:4 Thermo (Isıl, Yapıştırma), Teknolojisi 32, Panel Premium PU yüzey, Butil iç lastik</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : THERMO PLUS HATTRICK NO:5</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : No:5 Thermo (Isıl, Yapıştırma), Teknolojisi 32, Panel Premium PU yüzey, Butil iç lastik</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Düşük su emme, Dengeli uçuş, Maç ve antrenman kullanımına uygun.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
@@ -655,12 +643,12 @@
         <span>12</span>
     </div>
     </section>
-    <section class="page cat-page">
+<section class="page cat-page">
         <div class="cat-header">
             <div class="cat-num">01</div>
             <div class="cat-titleblock">
                 <h1>FUTBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 11/18</p>
+                <p>Ürün listesi (devamı) — sayfa 11/16</p>
             </div>
         </div>
         <div class="product-grid"><div class="product-card">
@@ -688,39 +676,24 @@
         <div class="pf pf-filled"><span class="pf-label filled">İç ve dış saha kullanımına uygun, Hız, çeviklik ve sıçrama antrenmanlarına uygun.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Futbol%20image/SI%C3%87RAMA%20SET%C4%B0%2023CM.bmp" alt="SIÇRAMA SETİ 30CM" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : SIÇRAMA SETİ 30CM</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 30 cm yükseklik, Dayanıklı PVC malzeme, Kırılmaya dayanıklı yapı, Hafif ve taşınabilir, Üst üste istiflenebilir tasarım</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">İç ve dış saha kullanımına uygun, Hız, çeviklik ve sıçrama antrenmanlarına uygun.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Futbol%20image/SI%C3%87RAMA%20SET%C4%B0%2023CM.bmp" alt="SIÇRAMA SETİ 40CM" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : SIÇRAMA SETİ 40CM</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 40 cm yükseklik, Dayanıklı PVC malzeme, Kırılmaya dayanıklı yapı, Hafif ve taşınabilir, Üst üste istiflenebilir tasarım</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">İç ve dış saha kullanımına uygun, Hız, çeviklik ve sıçrama antrenmanlarına uygun.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Futbol%20image/SI%C3%87RAMA%20SET%C4%B0%2023CM.bmp" alt="SIÇRAMA SETİ 45CM" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : SIÇRAMA SETİ 45CM</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 45 cm yükseklik, Dayanıklı PVC malzeme, Kırılmaya dayanıklı yapı, Hafif ve taşınabilir, Üst üste istiflenebilir tasarım</span></div>
@@ -733,12 +706,12 @@
         <span>13</span>
     </div>
     </section>
-    <section class="page cat-page">
+<section class="page cat-page">
         <div class="cat-header">
             <div class="cat-num">01</div>
             <div class="cat-titleblock">
                 <h1>FUTBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 12/18</p>
+                <p>Ürün listesi (devamı) — sayfa 12/16</p>
             </div>
         </div>
         <div class="product-grid"><div class="product-card">
@@ -750,13 +723,8 @@
         <div class="pf pf-filled"><span class="pf-label filled">Hafif ve taşınabilir, İç ve dış saha kullanımına uygun, Hız, çeviklik ve koordinasyon antrenmanlarına uygun.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Futbol%20image/ENGELL%C4%B0%20SET%C4%B0%2012'L%C4%B0%2048CM.bmp" alt="ENGELLİ SETİ 12'Lİ 63CM" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : ENGELLİ SETİ 12&#x27;Lİ 63CM</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : ENGELLİ SETİ 12&#x27;Lİ 63, CM 12&#x27;li set 63 cm yükseklik, Dayanıklı PVC malzeme, Esnek ve kırılmaya dayanıklı yapı</span></div>
@@ -779,13 +747,8 @@
         <div class="pf pf-filled"><span class="pf-label filled">Özel kutulu taşıma ve depolama çözümü, Mini futbol, antrenman ve amatör futbol aktiviteleri.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Kale%20Filesi%20Mini%20MKF-160.bmp" alt="Helix Futbol Kalesi Mini MGK-100" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
         <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Kalesi Mini MGK- 100</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Mini futbol kalesi, 110 x 160 x 70 cm (Y x G x D) ölçü, 60 mm çap / 3 mm kalınlık, 32 mm çap / 1.3 mm kalınlık</span></div>
@@ -806,12 +769,12 @@
         <span>14</span>
     </div>
     </section>
-    <section class="page cat-page">
+<section class="page cat-page">
         <div class="cat-header">
             <div class="cat-num">01</div>
             <div class="cat-titleblock">
                 <h1>FUTBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 13/18</p>
+                <p>Ürün listesi (devamı) — sayfa 13/16</p>
             </div>
         </div>
         <div class="product-grid"><div class="product-card">
@@ -869,12 +832,12 @@
         <span>15</span>
     </div>
     </section>
-    <section class="page cat-page">
+<section class="page cat-page">
         <div class="cat-header">
             <div class="cat-num">01</div>
             <div class="cat-titleblock">
                 <h1>FUTBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 14/18</p>
+                <p>Ürün listesi (devamı) — sayfa 14/16</p>
             </div>
         </div>
         <div class="product-grid"><div class="product-card">
@@ -932,12 +895,12 @@
         <span>16</span>
     </div>
     </section>
-    <section class="page cat-page">
+<section class="page cat-page">
         <div class="cat-header">
             <div class="cat-num">01</div>
             <div class="cat-titleblock">
                 <h1>FUTBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 15/18</p>
+                <p>Ürün listesi (devamı) — sayfa 15/16</p>
             </div>
         </div>
         <div class="product-grid"><div class="product-card">
@@ -980,14 +943,6 @@
         <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 60 cm yükseklik, 46 cm genişlik, 2,2 cm, Dayanıklı plastik malzeme</span></div>
         <div class="pf pf-filled"><span class="pf-label filled">İç ve dış mekân antrenmanları.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Antrenman%20Merdiveni%204m.bmp" alt="Helix Antrenman Merdiveni 4m" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Antrenman Merdiveni 4m</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 4 metre • uzunluk, Sarı • renk, Standart (yaklaşık 8-10 adet) •, Dayanıklı plastik basamaklar ve naylon ip • malzeme</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Çeviklik, hız, koordinasyon antrenmanları.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div></div>
         <div class="footer">
         <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
@@ -995,91 +950,53 @@
         <span>17</span>
     </div>
     </section>
-    <section class="page cat-page">
+<section class="page cat-page">
         <div class="cat-header">
             <div class="cat-num">01</div>
             <div class="cat-titleblock">
                 <h1>FUTBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 16/18</p>
+                <p>Ürün listesi (devamı) — sayfa 16/16</p>
             </div>
         </div>
         <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Futbol%20image/Helix%20Antrenman%20Merdiveni%204m.bmp" alt="Helix Antrenman Merdiveni 4m" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
-        <div class="pf"><span class="pf-label">Ürün Adı</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Açıklama</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Teknik Özellikler</span><span class="pf-line"></span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Antrenman Merdiveni 4m</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 4 metre • uzunluk, Sarı • renk, Standart (yaklaşık 8-10 adet) •, Dayanıklı plastik basamaklar ve naylon ip • malzeme</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Çeviklik, hız, koordinasyon antrenmanları.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Futbol%20image/Helix%20Antrenman%20Merdiveni%206m.bmp" alt="Helix Antrenman Merdiveni 6m" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
-        <div class="pf"><span class="pf-label">Ürün Adı</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Açıklama</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Teknik Özellikler</span><span class="pf-line"></span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Antrenman Merdiveni 6m</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 6 metre uzunluk, Dayanıklı plastik, İç ve dış mekân antrenmanları.</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Futbol%20image/Helix%20Antrenman%20Merdiveni%209m.bmp" alt="Helix Antrenman Merdiveni 9m" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
-        <div class="pf"><span class="pf-label">Ürün Adı</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Açıklama</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Teknik Özellikler</span><span class="pf-line"></span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Antrenman Merdiveni 9m</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 9 metre uzunluk, 50 cm genişlik, 20 adet, Dayanıklı plastik, İç ve dış mekân antrenmanları.</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Futbol%20image/Helix%20Antrenman%20%C3%87ana%C4%9F%C4%B1%201'li.bmp" alt="Helix Antrenman Çanağı 1'li" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
-        <div class="pf"><span class="pf-label">Ürün Adı</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Açıklama</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Teknik Özellikler</span><span class="pf-line"></span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Antrenman Çanağı 1&#x27;li</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Esnek ve dayanıklı plastik (genellikle polietilen) malzeme, Konik yapı, devrilmeye dirençli tasarım, 1 adet</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Canlı renk seçenekleri (stok durumuna göre değişebilir), Tüm saha ve kondisyon antrenmanları.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Futbol%20image/Helix%20K%C3%BC%C3%A7%C3%BCk%20Huni%20MK-834.bmp" alt="Helix Küçük Huni MK-834" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
     </div>
-        <div class="pf"><span class="pf-label">Ürün Adı</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Açıklama</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Teknik Özellikler</span><span class="pf-line"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
-    </div>
-        <div class="pf"><span class="pf-label">Ürün Adı</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Açıklama</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Teknik Özellikler</span><span class="pf-line"></span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Küçük Huni MK-834</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 15 cm yükseklik, Dayanıklı plastik malzeme, Sarı, kırmızı</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">beyaz, mavi, Geniş tabanlı, dengeli yapı.</span></div>
         <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
     </div></div>
         <div class="footer">
@@ -1088,140 +1005,19 @@
         <span>18</span>
     </div>
     </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">01</div>
-            <div class="cat-titleblock">
-                <h1>FUTBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 17/18</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
-    </div>
-        <div class="pf"><span class="pf-label">Ürün Adı</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Açıklama</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Teknik Özellikler</span><span class="pf-line"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
-    </div>
-        <div class="pf"><span class="pf-label">Ürün Adı</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Açıklama</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Teknik Özellikler</span><span class="pf-line"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
-    </div>
-        <div class="pf"><span class="pf-label">Ürün Adı</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Açıklama</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Teknik Özellikler</span><span class="pf-line"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
-    </div>
-        <div class="pf"><span class="pf-label">Ürün Adı</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Açıklama</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Teknik Özellikler</span><span class="pf-line"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
-    </div>
-        <div class="pf"><span class="pf-label">Ürün Adı</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Açıklama</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Teknik Özellikler</span><span class="pf-line"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
-    </div>
-        <div class="pf"><span class="pf-label">Ürün Adı</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Açıklama</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Teknik Özellikler</span><span class="pf-line"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Futbol</span>
-        <span>19</span>
-    </div>
-    </section>
-    <section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">01</div>
-            <div class="cat-titleblock">
-                <h1>FUTBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 18/18</p>
-            </div>
-        </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
-    </div>
-        <div class="pf"><span class="pf-label">Ürün Adı</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Açıklama</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Teknik Özellikler</span><span class="pf-line"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm;">
-        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B9B9B9" stroke-width="1.4">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <circle cx="8" cy="10" r="2"/>
-            <path d="M22 16l-6-6-8 8"/>
-        </svg>
-        <span>GÖRSEL ALANI</span>
-    </div>
-        <div class="pf"><span class="pf-label">Ürün Adı</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Açıklama</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Teknik Özellikler</span><span class="pf-line"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short"></span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Futbol</span>
-        <span>20</span>
-    </div>
-    </section>
-    
+
+
+<script>
+function aramaFiltrele(inp){
+  var q=inp.value.toLocaleLowerCase('tr-TR').trim(), gorunen=0;
+  document.querySelectorAll('.product-card').forEach(function(k){
+    var e=k.querySelector('.pf-label');
+    var esles=(e?e.textContent.toLocaleLowerCase('tr-TR'):'').indexOf(q)!==-1;
+    k.style.display=esles?'':'none';
+    if(esles)gorunen++;
+  });
+  document.querySelector('.urun-bulunamadi').hidden=!(q&&gorunen===0);
+}
+</script>
 </body>
 </html>
