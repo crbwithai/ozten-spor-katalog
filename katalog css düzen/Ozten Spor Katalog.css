@@ -19,7 +19,7 @@
   /* COVER */
   .cover-page { background:#111111; color:#fff; padding:0; }
   .cover-accent-bar { position:absolute; top:0; left:0; right:0; height:4mm;
-    background:linear-gradient(90deg, #E11D2E 0%, #E11D2E 50%, #0B5FA8 50%, #0B5FA8 100%); }
+    background:linear-gradient(90deg, #E11D2E 0%, #E11D2E 50%, #FD8C22 50%, #FD8C22 100%); }
   .cover-top { padding:14mm 15mm 0 15mm; }
   .cover-kicker { font-size:9pt; letter-spacing:2pt; color:#B7B7B7; }
   .cover-hero {
@@ -44,7 +44,7 @@
   /* SECTION HEADERS (about/featured/contact) */
   .section-kicker { font-size:9pt; letter-spacing:2.5pt; color:#E11D2E; font-weight:700; margin-bottom:4mm; }
   .section-title { font-size:24pt; font-weight:800; margin-bottom:8mm; line-height:1.25; }
-  .section-title .accent { color:#0B5FA8; }
+  .section-title .accent { color:#FD8C22; }
   .lead { font-size:10.5pt; color:#333; line-height:1.6; max-width:160mm; margin-bottom:5mm; }
 
   /* ABOUT */
@@ -92,7 +92,7 @@
   .featured-grid { grid-template-columns:1fr 1fr 1fr; }
   .product-card.featured { border:1.5px solid #111111; }
   .badge {
-    position:absolute; top:-3mm; left:5mm; background:#E11D2E; color:#fff;
+    position:absolute; top:0; left:5mm; background:#E11D2E; color:#fff;
     font-size:6.5pt; letter-spacing:0.5pt; font-weight:700; padding:1.5mm 3mm;
   }
 
@@ -124,7 +124,7 @@
     padding:2.5mm 2mm;
   }
   .category-nav-button:hover { border-color:#E11D2E; color:#E11D2E; }
-  .category-nav-button:focus { outline:none; border-color:#0B5FA8; color:#0B5FA8; }
+  .category-nav-button:focus { outline:none; border-color:#FD8C22; color:#FD8C22; }
   @media print {
     .category-nav-button, .category-nav-button:hover, .category-nav-button:focus {
       border-color:#DADADA; color:#111111;
@@ -179,7 +179,7 @@ html { scroll-behavior: smooth; }
   white-space: nowrap;
 }
 .floating-nav-btn:hover { background:#E11D2E; }
-.floating-nav-btn:focus { outline:none; box-shadow:0 0 0 2px #0B5FA8; }
+.floating-nav-btn:focus { outline:none; box-shadow:0 0 0 2px #FD8C22; }
 .floating-nav-btn .fn-arrow { font-size:10pt; line-height:1; }
 
 @media (max-width:480px) {
@@ -200,7 +200,7 @@ html { scroll-behavior: smooth; }
   padding:2.8mm 4mm; font-family:Arial,Helvetica,sans-serif; font-size:10pt;
   color:#111111; background:#fff; border:1px solid #DADADA; border-radius:20px; outline:none;
 }
-.katalog-arama input:focus { border-color:#0B5FA8; }
+.katalog-arama input:focus { border-color:#FD8C22; }
 .urun-bulunamadi { text-align:center; font-size:10pt; color:#6B6B6B; padding:10mm 0; }
 @media (max-width:480px) {
   .katalog-arama input { font-size:11pt; padding:3mm 4mm; }
@@ -265,4 +265,42 @@ html { scroll-behavior: smooth; }
 }
 @media print {
   .sepet-ekle-btn, #sepetSarici, .sepet-buton-sarici { display:none !important; }
+}
+
+/* ============================================================
+   WHATSAPP SİPARİŞ BUTONU
+   ============================================================ */
+.whatsapp-buton-sarici { position:fixed; right:5mm; bottom:32mm; z-index:999; }
+.whatsapp-buton { background:#25D366; }
+.whatsapp-buton:hover { background:#1DA851; }
+@media (max-width:480px) {
+  .whatsapp-buton-sarici { right:3mm; bottom:27mm; }
+  .whatsapp-metin { display:none; }
+  .whatsapp-buton { padding:2.8mm 3.5mm; }
+}
+@media print {
+  .whatsapp-buton-sarici { display:none !important; }
+}
+
+/* ============================================================
+   İLETİŞİM — KİŞİ KARTLARI
+   ============================================================ */
+.kisi-grid { display:grid; grid-template-columns:1fr 1fr; gap:2mm; margin-top:1mm; }
+.kisi-karti {
+  display:flex; flex-direction:column; align-items:flex-start; gap:0.5mm;
+  background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.25); border-radius:4px;
+  padding:2mm 3mm; cursor:pointer; text-align:left; font-family:Arial,Helvetica,sans-serif;
+}
+.kisi-karti:hover { border-color:#FD8C22; }
+.kisi-karti.aktif { background:#FD8C22; border-color:#FD8C22; }
+.kisi-karti .kisi-ad { font-size:8.5pt; font-weight:700; color:#fff; }
+.kisi-karti .kisi-gorev, .kisi-karti .kisi-tel { font-size:7.5pt; color:#B7B7B7; }
+.kisi-karti.aktif .kisi-gorev, .kisi-karti.aktif .kisi-tel { color:#E8F1FB; }
+@media (max-width:480px) {
+  .kisi-karti { padding:1.8mm 2.5mm; }
+  .kisi-karti .kisi-ad { font-size:8pt; }
+  .kisi-karti .kisi-gorev, .kisi-karti .kisi-tel { font-size:7pt; }
+}
+@media print {
+  .kisi-grid { display:none !important; }
 }
