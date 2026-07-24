@@ -187,12 +187,34 @@
     if(toplamEl) toplamEl.textContent=fiyatVar?(toplamFiyat.toLocaleString('tr-TR')+' ₺'):(toplamAdet+' ürün');
   }
 
+  function kategoriMenuKur(){
+    var butonlar = document.querySelectorAll('.kategori-menu-buton');
+    butonlar.forEach(function(btn){
+      var panel = btn.nextElementSibling;
+      if(!panel || !panel.classList.contains('kategori-menu-panel')) return;
+      btn.setAttribute('aria-expanded', 'false');
+      btn.addEventListener('click', function(e){
+        e.stopPropagation();
+        var acik = !panel.hidden;
+        document.querySelectorAll('.kategori-menu-panel').forEach(function(p){ p.hidden = true; });
+        butonlar.forEach(function(b){ b.setAttribute('aria-expanded', 'false'); });
+        panel.hidden = acik;
+        btn.setAttribute('aria-expanded', String(!acik));
+      });
+    });
+    document.addEventListener('click', function(){
+      document.querySelectorAll('.kategori-menu-panel').forEach(function(p){ p.hidden = true; });
+      butonlar.forEach(function(b){ b.setAttribute('aria-expanded', 'false'); });
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function(){
     kartlariIsle();
     panelOlustur();
     butonEkle();
     whatsappButonuEkle();
     kisiKartlariOlustur();
+    kategoriMenuKur();
     guncelle();
   });
 })();

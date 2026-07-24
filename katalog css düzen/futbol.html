@@ -10,13 +10,16 @@
 <body id="top">
 <div class="floating-nav-group">
     <a href="#top" class="floating-nav-btn"><span class="fn-arrow">&#8593;</span> Yukarı Çık</a>
-    <a href="index.html#top" class="floating-nav-btn"><span class="fn-arrow">&#8592;</span> Ana Kataloğa Dön</a>
-</div>
-<div class="kategori-gecis-buton-sarici">
-    <a href="futbol-malzemeleri.html#top" class="floating-nav-btn">Futbol Malzemeleri <span class="fn-arrow">&#8594;</span></a>
-    <a href="kaleci-eldivenleri.html#top" class="floating-nav-btn">Kaleci Eldivenleri <span class="fn-arrow">&#8594;</span></a>
 </div>
 <div class="katalog-arama"><input type="text" placeholder="Ürün ara..." oninput="aramaFiltrele(this)"></div>
+<div class="kategori-menu-cubugu">
+    <button type="button" class="kategori-menu-buton">Alt Kategoriler <span class="fn-arrow">&#9662;</span></button>
+    <div class="kategori-menu-panel" hidden>
+        <a href="futbol-malzemeleri.html#top">Futbol Malzemeleri</a>
+        <a href="kaleci-eldivenleri.html#top">Kaleci Eldivenleri</a>
+    </div>
+    <a href="index.html#top" class="ana-katalog-buton">Ana Kataloğa Dön</a>
+</div>
 <p class="urun-bulunamadi" hidden>Ürün bulunamadı.</p>
 <section class="page cat-page" id="kategori-futbol">
         <div class="cat-header">

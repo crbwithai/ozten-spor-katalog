@@ -215,6 +215,49 @@ html { scroll-behavior: smooth; }
   .kategori-gecis-buton-sarici { display:none; }
 }
 
+/* ============================================================
+   KATEGORİ MENÜSÜ — ürün arama çubuğunun altında, sayfa akışı
+   içinde duran açılır alt kategori menüsü (sabit/floating değil)
+   ============================================================ */
+.kategori-menu-cubugu {
+  position:relative; padding:3mm 5mm; background:#fff; border-bottom:1px solid #DADADA;
+  display:flex; align-items:center; justify-content:space-between; gap:3mm; flex-wrap:wrap;
+}
+.ana-katalog-buton {
+  display:inline-flex; align-items:center; gap:1.5mm;
+  padding:2.2mm 4mm; background:#111111; color:#fff; border-radius:20px;
+  font-family:Arial,Helvetica,sans-serif; font-size:8.5pt; font-weight:700; text-decoration:none;
+  white-space:nowrap;
+}
+.ana-katalog-buton:hover { background:#E11D2E; }
+.kategori-menu-buton {
+  display:inline-flex; align-items:center; gap:1.5mm; cursor:pointer;
+  padding:2.2mm 4mm; background:#fff; border:1px solid #DADADA; border-radius:20px;
+  font-family:Arial,Helvetica,sans-serif; font-size:8.5pt; font-weight:700; color:#111111;
+}
+.kategori-menu-buton:hover { border-color:#E11D2E; color:#E11D2E; }
+.kategori-menu-buton .fn-arrow { font-size:8pt; line-height:1; transition:transform .15s ease; }
+.kategori-menu-buton[aria-expanded="true"] .fn-arrow { transform:rotate(180deg); }
+.kategori-menu-panel {
+  position:absolute; left:5mm; top:calc(100% + 1mm); z-index:900;
+  background:#ffffff; border:1px solid #DADADA; border-radius:8px; overflow:hidden;
+  box-shadow:0 4px 14px rgba(0,0,0,0.15); min-width:52mm;
+}
+.kategori-menu-panel[hidden] { display:none; }
+.kategori-menu-panel a {
+  display:block; padding:3mm 4mm; font-size:8.5pt; font-weight:700;
+  font-family:Arial,Helvetica,sans-serif; color:#111111; text-decoration:none;
+  border-bottom:1px solid #F0F0F0; white-space:nowrap;
+}
+.kategori-menu-panel a:last-child { border-bottom:none; }
+.kategori-menu-panel a:hover { background:#F2F2F2; color:#E11D2E; }
+@media (max-width:480px) {
+  .kategori-menu-panel a { padding:3.5mm 4mm; font-size:9.5pt; }
+}
+@media print {
+  .kategori-menu-cubugu { display:none; }
+}
+
 @media print {
   .floating-nav-group { display:none; }
 }

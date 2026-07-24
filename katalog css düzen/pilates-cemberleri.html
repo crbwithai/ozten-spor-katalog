@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PİLATES ÇEMBERLERİ — Özten Spor Kataloğu</title>
+<link rel="stylesheet" href="Ozten Spor Katalog.css">
+<script src="sepet.js" defer></script>
+</head>
+<body id="top">
+<div class="floating-nav-group">
+    <a href="#top" class="floating-nav-btn"><span class="fn-arrow">&#8593;</span> Yukarı Çık</a>
+</div>
+<div class="kategori-gecis-buton-sarici">
+    <a href="yoga-pilates.html#top" class="floating-nav-btn"><span class="fn-arrow">&#8592;</span> Yoga Pilates'e Dön</a>
+</div>
+<div class="katalog-arama"><input type="text" placeholder="Ürün ara..." oninput="aramaFiltrele(this)"></div>
+
+<p class="urun-bulunamadi" hidden>Ürün bulunamadı.</p>
+<section class="page cat-page" id="kategori-pilates-cemberleri">
+        <div class="cat-header">
+            <div class="cat-num">09</div>
+            <div class="cat-titleblock">
+                <h1>PİLATES ÇEMBERLERİ</h1>
+                <p>Pilates ve rehabilitasyon çalışmaları için pilates çemberleri.</p>
+            </div>
+        </div>
+        <div class="product-grid"><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Yoga%20ve%20Pilates%20image/P%C4%B0LATES%20%C3%87EMBER%C4%B0%20PR10%20HATTRICK.bmp" alt="PİLATES ÇEMBERİ PR10 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : PİLATES ÇEMBERİ PR10 HATTRICK</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Pilates çemberi, 35 cm çapında, Pilates, fitness ve rehabilitasyon çalışmalarında destek sağlar</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Hafif ve dayanıklı yapısıyla iç-dış bacak, kol ve göğüs kaslarını çalıştırmaya yardımcı olur.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">330 ₺</span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Yoga%20ve%20Pilates%20image/Helix%20Pilates%20%C3%87emberi%20PR-40%20Pembe.bmp" alt="Helix Pilates Çemberi PR-40 Pembe" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Pilates Çemberi PR-40 Pembe</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 40 cm çap, 320 g ağırlık, Polipropilen malzeme, Pembe renk</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Pilates, fitness, esneme ve rehabilitasyon çalışmaları için idealdir.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">290 ₺</span></div>
+    </div><div class="product-card">
+        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
+        <img src="%C4%B0mage/Yoga%20ve%20Pilates%20image/Helix%20Pilates%20%C3%87emberi%20PR-40%20Mavi.bmp" alt="Helix Pilates Çemberi PR-40 Mavi" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
+    </div>
+        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Pilates Çemberi PR-40 Mavi</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 40 cm çap, 320 g ağırlık, Polipropilen malzeme, Mavi renk</span></div>
+        <div class="pf pf-filled"><span class="pf-label filled">Pilates, fitness, esneme ve rehabilitasyon çalışmaları için idealdir.</span></div>
+        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">290 ₺</span></div>
+    </div></div>
+        <div class="footer">
+        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
+        <span>Pilates Çemberleri</span>
+        <span>1</span>
+    </div>
+    </section>
+
+
+<script>
+function aramaFiltrele(inp){
+  var q=inp.value.toLocaleLowerCase('tr-TR').trim(), gorunen=0;
+  document.querySelectorAll('.product-card').forEach(function(k){
+    var e=k.querySelector('.pf-label');
+    var esles=(e?e.textContent.toLocaleLowerCase('tr-TR'):'').indexOf(q)!==-1;
+    k.style.display=esles?'':'none';
+    if(esles)gorunen++;
+  });
+  document.querySelector('.urun-bulunamadi').hidden=!(q&&gorunen===0);
+}
+</script>
+</body>
+</html>
