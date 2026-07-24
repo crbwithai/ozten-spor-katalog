@@ -63,11 +63,18 @@
       '<div id="sepetPaneli" class="sepet-paneli" hidden>'+
         '<div class="sepet-baslik"><span>Sepetim</span><button id="sepetKapat" class="sepet-kapat" type="button" aria-label="Kapat">&times;</button></div>'+
         '<div id="sepetListe" class="sepet-liste"></div>'+
-        '<div class="sepet-alt"><span id="sepetToplam">0 ürün</span></div>'+
+        '<div class="sepet-alt">'+
+          '<span id="sepetToplam">0 ürün</span>'+
+          '<button type="button" id="sepetWhatsapp" class="sepet-whatsapp-btn">'+
+            '<svg viewBox="0 0 32 32" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M16 3C9 3 3 9 3 16c0 2.4.6 4.6 1.8 6.6L3 29l6.6-1.7c1.9 1 4 1.6 6.4 1.6 7 0 13-6 13-13S23 3 16 3zm7.6 18.4c-.3.9-1.7 1.7-2.7 1.9-.7.1-1.6.2-4.6-1-3.9-1.6-6.4-5.5-6.6-5.8-.2-.3-1.6-2.1-1.6-4s1-2.8 1.3-3.2c.3-.3.7-.4 1-.4h.7c.2 0 .5 0 .8.6.3.7 1.1 2.6 1.2 2.8.1.2.2.4 0 .7-.1.3-.2.4-.4.6-.2.2-.4.5-.6.7-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.6 1.4 1.3 2.6 1.7 3 1.9.3.2.5.1.7-.1.2-.2.9-1 1.1-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.5 1.2.4.2.6.3.7.5.1.2.1 1-.2 1.9z"/></svg>'+
+            'WhatsApp\'tan Sipariş Ver'+
+          '</button>'+
+        '</div>'+
       '</div>';
     document.body.appendChild(sarici);
     document.getElementById('sepetKapat').addEventListener('click', panelKapat);
     document.getElementById('sepetArkaplan').addEventListener('click', panelKapat);
+    document.getElementById('sepetWhatsapp').addEventListener('click', whatsappGonder);
   }
   function panelAc(){ document.getElementById('sepetPaneli').hidden=false; document.getElementById('sepetArkaplan').hidden=false; }
   function panelKapat(){ document.getElementById('sepetPaneli').hidden=true; document.getElementById('sepetArkaplan').hidden=true; }

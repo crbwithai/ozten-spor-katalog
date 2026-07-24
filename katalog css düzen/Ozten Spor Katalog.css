@@ -78,6 +78,7 @@
   .pf-line.short { max-width:22mm; }
   .pf-price { margin-top:1mm; }
   .pf-price .pf-label { color:#E11D2E; }
+  .pf-price .pf-line { border-bottom:none; }
 
   /* FILLED PRODUCT ROWS — metin kartın içinde sarmalanır, noktalı çizgi yok */
   .product-card { overflow:hidden; }
@@ -133,9 +134,21 @@
 
   @media (max-width:800px) {
     .page { width:100%; height:auto; }
-    .product-grid { grid-template-columns:1fr; }
+    .product-grid { grid-template-columns:1fr 1fr; gap:3mm; }
     .contact-grid { grid-template-columns:1fr; }
     .category-button-grid { grid-template-columns:1fr 1fr; }
+    .mv-grid { flex-direction:column; }
+    .stat-row { flex-wrap:wrap; justify-content:center; gap:6mm 4mm; }
+    .stat { flex:1 1 40%; min-width:38%; }
+  }
+
+  @media (max-width:480px) {
+    .cover-hero { width:100vw; position:relative; left:50%; right:50%; margin-left:-50vw; margin-right:-50vw; }
+    .product-grid { gap:2.5mm; }
+    .product-card { padding:3mm; }
+    .img-placeholder { height:26mm !important; margin-bottom:2.5mm; }
+    .pf-label, .pf-label.filled { font-size:7pt; }
+    .sepet-ekle-btn { font-size:7.5pt; padding:2.2mm 2mm; }
   }
 
   @media screen and (min-width:801px) {
@@ -183,8 +196,23 @@ html { scroll-behavior: smooth; }
 .floating-nav-btn .fn-arrow { font-size:10pt; line-height:1; }
 
 @media (max-width:480px) {
-  .floating-nav-group { right:3mm; bottom:3mm; gap:2mm; }
-  .floating-nav-btn { padding:2.8mm 4mm; font-size:7.5pt; }
+  .floating-nav-group { right:3mm; bottom:3mm; gap:3mm; }
+  .floating-nav-btn { padding:4mm 6mm; font-size:11pt; }
+  .floating-nav-btn .fn-arrow { font-size:13pt; }
+}
+
+/* ============================================================
+   KATEGORİ İÇİ GEÇİŞ BUTONU — ör. Futbol <-> Kaleci Eldivenleri
+   ============================================================ */
+.kategori-gecis-buton-sarici {
+  position:fixed; left:5mm; bottom:32mm; z-index:999;
+  display:flex; flex-direction:column; align-items:flex-start; gap:2.5mm;
+}
+@media (max-width:480px) {
+  .kategori-gecis-buton-sarici { left:3mm; bottom:32mm; }
+}
+@media print {
+  .kategori-gecis-buton-sarici { display:none; }
 }
 
 @media print {
@@ -256,12 +284,21 @@ html { scroll-behavior: smooth; }
 .sepet-adet button { width:6mm; height:6mm; border:1px solid #DADADA; background:#fff; border-radius:3px; cursor:pointer; font-size:9pt; line-height:1; }
 .sepet-adet span { font-size:9pt; min-width:4mm; text-align:center; }
 .sepet-sil { border:none; background:none; color:#E11D2E; font-size:8pt; cursor:pointer; text-decoration:underline; flex-shrink:0; }
-.sepet-alt { padding:4mm 5mm; border-top:1px solid #DADADA; font-size:10.5pt; font-weight:700; color:#111111; }
+.sepet-alt {
+  padding:4mm 5mm; border-top:1px solid #DADADA; font-size:10.5pt; font-weight:700; color:#111111;
+  display:flex; flex-direction:column; gap:3mm;
+}
+.sepet-whatsapp-btn {
+  display:flex; align-items:center; justify-content:center; gap:1.5mm;
+  width:100%; padding:2.8mm 3mm; background:#25D366; color:#fff; border:none; border-radius:4px;
+  font-family:Arial,Helvetica,sans-serif; font-size:8.5pt; font-weight:700; letter-spacing:0.3pt; cursor:pointer;
+}
+.sepet-whatsapp-btn:hover { background:#1DA851; }
 
 @media (max-width:480px) {
   .sepet-paneli { width:100%; max-width:100vw; }
   .sepet-buton-sarici { left:3mm; bottom:3mm; }
-  .sepet-buton { padding:2.8mm 4mm; font-size:7.5pt; }
+  .sepet-buton { padding:4mm 6mm; font-size:11pt; }
 }
 @media print {
   .sepet-ekle-btn, #sepetSarici, .sepet-buton-sarici { display:none !important; }
@@ -274,9 +311,10 @@ html { scroll-behavior: smooth; }
 .whatsapp-buton { background:#25D366; }
 .whatsapp-buton:hover { background:#1DA851; }
 @media (max-width:480px) {
-  .whatsapp-buton-sarici { right:3mm; bottom:27mm; }
+  .whatsapp-buton-sarici { right:3mm; bottom:32mm; }
   .whatsapp-metin { display:none; }
-  .whatsapp-buton { padding:2.8mm 3.5mm; }
+  .whatsapp-buton { padding:4mm 4.5mm; }
+  .whatsapp-buton svg { width:18px; height:18px; }
 }
 @media print {
   .whatsapp-buton-sarici { display:none !important; }
