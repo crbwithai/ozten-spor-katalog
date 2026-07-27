@@ -132,6 +132,19 @@
     }
   }
 
+  /* Öne çıkan kategori butonu (ör. Dart) — dikkat çekmesi için vurgulu stil */
+  .category-nav-button-vurgu {
+    background:linear-gradient(90deg, #E11D2E 0%, #FD8C22 100%);
+    border-color:transparent; color:#fff;
+  }
+  .category-nav-button-vurgu:hover { border-color:transparent; color:#fff; filter:brightness(1.08); }
+  .category-nav-button-vurgu:focus { border-color:#fff; color:#fff; }
+  @media print {
+    .category-nav-button-vurgu, .category-nav-button-vurgu:hover, .category-nav-button-vurgu:focus {
+      background:none; border-color:#DADADA; color:#111111;
+    }
+  }
+
   @media (max-width:800px) {
     .page { width:100%; height:auto; }
     .product-grid { grid-template-columns:1fr 1fr; gap:3mm; }
