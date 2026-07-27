@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ozten",
+  "compatibility_date": "2026-07-27",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "katalog css düzen"
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}
