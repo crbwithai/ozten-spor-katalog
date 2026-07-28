@@ -33,7 +33,9 @@
     var satir=kart.querySelector('.pf-price .pf-line');
     var metin=satir?satir.textContent.trim():'';
     if(!metin) return null;
-    var sayi=parseFloat(metin.replace(/[^\d.,]/g,'').replace(',','.'));
+    // Türkçe sayı biçimi: "." binlik ayraç, "," ondalık ayraç
+    var temiz=metin.replace(/[^\d.,]/g,'').replace(/\./g,'').replace(',','.');
+    var sayi=parseFloat(temiz);
     return isNaN(sayi)?null:sayi;
   }
 
