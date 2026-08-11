@@ -1,14 +1,20 @@
 (function(){
   var ANAHTAR='oztenSepet';
   var KISI_ANAHTAR='oztenSecilenKisi';
+  var INDIRIM_ANAHTAR='oztenIndirimKodu';
   var WHATSAPP_NUMARA=null;
   var SECILEN_KISI_ADI=null;
+  var UYGULANAN_INDIRIM_KODU=null;
   var KISILER=[
     {ad:'SERHAT', gorev:'Satış Sorumlusu', numara:'905522025737'},
     {ad:'FATİH', gorev:'Satış Sorumlusu', numara:'905388985539'},
     {ad:'POYRAZ', gorev:'Satış Sorumlusu', numara:'905550380752'},
     {ad:'YAĞIZ', gorev:'Satış Sorumlusu', numara:'905434207118'}
   ];
+  // Yeni indirim kodu eklemek için bu listeye satır ekleyin: tip 'yuzde' (%) veya 'tutar' (sabit TL)
+  var INDIRIM_KODLARI={
+    'OZTEN5': {tip:'yuzde', deger:5}
+  };
 
   function sepetiOku(){ try{ return JSON.parse(localStorage.getItem(ANAHTAR))||[]; }catch(e){ return []; } }
   function sepetiYaz(sepet){ localStorage.setItem(ANAHTAR, JSON.stringify(sepet)); guncelle(); }
@@ -66,7 +72,14 @@
         '<div class="sepet-baslik"><span>Sepetim</span><button id="sepetKapat" class="sepet-kapat" type="button" aria-label="Kapat">&times;</button></div>'+
         '<div id="sepetListe" class="sepet-liste"></div>'+
         '<div class="sepet-alt">'+
-          '<span id="sepetToplam">0 ürün</span>'+
+          '<div class="sepet-indirim">'+
+            '<div class="sepet-indirim-form">'+
+              '<input type="text" id="indirimKoduInput" class="sepet-indirim-input" placeholder="İndirim Kodu" autocomplete="off">'+
+              '<button type="button" id="indirimUygulaBtn" class="sepet-indirim-btn">Uygula</button>'+
+            '</div>'+
+            '<div id="indirimMesaj" class="sepet-indirim-mesaj"></div>'+
+          '</div>'+
+          '<div id="sepetToplam">0 ürün</div>'+
           '<button type="button" id="sepetWhatsapp" class="sepet-whatsapp-btn">'+
             '<svg viewBox="0 0 32 32" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M16 3C9 3 3 9 3 16c0 2.4.6 4.6 1.8 6.6L3 29l6.6-1.7c1.9 1 4 1.6 6.4 1.6 7 0 13-6 13-13S23 3 16 3zm7.6 18.4c-.3.9-1.7 1.7-2.7 1.9-.7.1-1.6.2-4.6-1-3.9-1.6-6.4-5.5-6.6-5.8-.2-.3-1.6-2.1-1.6-4s1-2.8 1.3-3.2c.3-.3.7-.4 1-.4h.7c.2 0 .5 0 .8.6.3.7 1.1 2.6 1.2 2.8.1.2.2.4 0 .7-.1.3-.2.4-.4.6-.2.2-.4.5-.6.7-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.6 1.4 1.3 2.6 1.7 3 1.9.3.2.5.1.7-.1.2-.2.9-1 1.1-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.5 1.2.4.2.6.3.7.5.1.2.1 1-.2 1.9z"/></svg>'+
             'WhatsApp\'tan Sipariş Ver'+
@@ -77,6 +90,10 @@
     document.getElementById('sepetKapat').addEventListener('click', panelKapat);
     document.getElementById('sepetArkaplan').addEventListener('click', panelKapat);
     document.getElementById('sepetWhatsapp').addEventListener('click', whatsappGonder);
+    document.getElementById('indirimUygulaBtn').addEventListener('click', indirimUygula);
+    document.getElementById('indirimKoduInput').addEventListener('keydown', function(e){
+      if(e.key==='Enter'){ e.preventDefault(); indirimUygula(); }
+    });
   }
   function panelAc(){ document.getElementById('sepetPaneli').hidden=false; document.getElementById('sepetArkaplan').hidden=false; }
   function panelKapat(){ document.getElementById('sepetPaneli').hidden=true; document.getElementById('sepetArkaplan').hidden=true; }
@@ -106,9 +123,19 @@
       }
       return blok;
     });
-    var genelToplam=fiyatVar?(toplamFiyat.toLocaleString('tr-TR')+' TL'):(toplamAdet+' ürün');
+    var indirimliToplam=(fiyatVar && UYGULANAN_INDIRIM_KODU)?indirimHesapla(UYGULANAN_INDIRIM_KODU, toplamFiyat):null;
+    var toplamMetni;
+    if(!fiyatVar){
+      toplamMetni='Genel Toplam: '+toplamAdet+' ürün';
+    } else if(indirimliToplam!=null && indirimliToplam<toplamFiyat){
+      toplamMetni='İndirim Kodu: '+UYGULANAN_INDIRIM_KODU+
+        '\nEski Tutar: '+toplamFiyat.toLocaleString('tr-TR')+' TL'+
+        '\nTutar: '+indirimliToplam.toLocaleString('tr-TR')+' TL';
+    } else {
+      toplamMetni='Genel Toplam: '+toplamFiyat.toLocaleString('tr-TR')+' TL';
+    }
     var selam=SECILEN_KISI_ADI?('Merhaba '+SECILEN_KISI_ADI+',\n\nAşağıdaki ürünler için sipariş vermek istiyorum:\n\n'):'Merhaba, aşağıdaki ürünler için sipariş vermek istiyorum:\n\n';
-    return selam+satirlar.join('\n\n')+'\n\nGenel Toplam: '+genelToplam;
+    return selam+satirlar.join('\n\n')+'\n\n'+toplamMetni;
   }
   function whatsappGonder(){
     var mesaj=whatsappMesajiOlustur();
@@ -122,6 +149,45 @@
     WHATSAPP_NUMARA=kisi.numara;
     SECILEN_KISI_ADI=kisi.ad;
     try{ localStorage.setItem(KISI_ANAHTAR, kisi.numara); }catch(e){}
+  }
+  function indirimHesapla(kod, toplamFiyat){
+    var tanim=INDIRIM_KODLARI[kod];
+    if(!tanim) return null;
+    var indirimliToplam=tanim.tip==='yuzde'?(toplamFiyat-toplamFiyat*tanim.deger/100):(toplamFiyat-tanim.deger);
+    if(indirimliToplam<0) indirimliToplam=0;
+    return indirimliToplam;
+  }
+  function indirimMesajGoster(metin, basarili){
+    var el=document.getElementById('indirimMesaj');
+    if(!el) return;
+    el.textContent=metin;
+    el.className='sepet-indirim-mesaj'+(metin?(basarili?' basarili':' hata'):'');
+  }
+  function indirimUygula(){
+    var girdi=document.getElementById('indirimKoduInput');
+    var kod=girdi?girdi.value.trim().toUpperCase():'';
+    if(!kod){ indirimMesajGoster('Lütfen bir indirim kodu girin.', false); return; }
+    if(!INDIRIM_KODLARI[kod]){
+      UYGULANAN_INDIRIM_KODU=null;
+      try{ localStorage.removeItem(INDIRIM_ANAHTAR); }catch(e){}
+      indirimMesajGoster('Geçersiz indirim kodu.', false);
+      guncelle();
+      return;
+    }
+    UYGULANAN_INDIRIM_KODU=kod;
+    try{ localStorage.setItem(INDIRIM_ANAHTAR, kod); }catch(e){}
+    indirimMesajGoster('İndirim kodu uygulandı: '+kod, true);
+    guncelle();
+  }
+  function indirimSeciminiUygula(){
+    var kayitliKod=null;
+    try{ kayitliKod=localStorage.getItem(INDIRIM_ANAHTAR); }catch(e){}
+    if(kayitliKod && INDIRIM_KODLARI[kayitliKod]){
+      UYGULANAN_INDIRIM_KODU=kayitliKod;
+      var girdi=document.getElementById('indirimKoduInput');
+      if(girdi) girdi.value=kayitliKod;
+      indirimMesajGoster('İndirim kodu uygulandı: '+kayitliKod, true);
+    }
   }
   function kisiSeciminiUygula(){
     var kayitliNumara=null;
@@ -186,7 +252,20 @@
     var sayiEl=document.getElementById('sepetSayi');
     if(sayiEl) sayiEl.textContent=toplamAdet;
     var toplamEl=document.getElementById('sepetToplam');
-    if(toplamEl) toplamEl.textContent=fiyatVar?(toplamFiyat.toLocaleString('tr-TR')+' ₺'):(toplamAdet+' ürün');
+    if(toplamEl){
+      if(!fiyatVar){
+        toplamEl.textContent=toplamAdet+' ürün';
+      } else {
+        var indirimliToplam=UYGULANAN_INDIRIM_KODU?indirimHesapla(UYGULANAN_INDIRIM_KODU, toplamFiyat):null;
+        if(indirimliToplam!=null && indirimliToplam<toplamFiyat){
+          toplamEl.innerHTML=
+            '<span class="sepet-toplam-eski">'+toplamFiyat.toLocaleString('tr-TR')+' ₺</span>'+
+            '<span class="sepet-toplam-yeni">'+indirimliToplam.toLocaleString('tr-TR')+' ₺</span>';
+        } else {
+          toplamEl.textContent=toplamFiyat.toLocaleString('tr-TR')+' ₺';
+        }
+      }
+    }
   }
 
   function kategoriMenuKur(){
@@ -213,6 +292,7 @@
   document.addEventListener('DOMContentLoaded', function(){
     kartlariIsle();
     panelOlustur();
+    indirimSeciminiUygula();
     butonEkle();
     whatsappButonuEkle();
     kisiKartlariOlustur();
