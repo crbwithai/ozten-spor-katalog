@@ -10,7 +10,7 @@ import re
 import sys
 
 sys.path.insert(0, os.path.dirname(__file__))
-from categories import CATEGORIES
+from categories import CATEGORIES, all_files_in_group
 from generate_pages import render_kategori_panel
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -259,6 +259,85 @@ PAGE = """<!DOCTYPE html>
 """
 
 
+INDEX_JS = """/* Ana sayfaya özel: site-geneli arama (TÜM kategori/alt kategori sayfalarını
+   tarar) + scroll'da belirme. site.js'teki aramaFiltrele (tek sayfa içi filtre)
+   ile karışmasın diye ayrı isim kullanılıyor: siteGeneliAra. Kategori
+   sayfalarında bu dosya yüklenmez.
+
+   TUM_KATEGORI_DOSYALARI bu dosyanın kendisi gibi scripts/generate_index.py
+   tarafından scripts/categories.py'den otomatik üretilir — elle düzenlemeyin,
+   yeni kategori/alt kategori eklenince scripts/generate_index.py yeniden
+   çalıştırılmalı. */
+var TUM_KATEGORI_DOSYALARI = [
+{dosyalar}
+];
+
+var katalogVerisi = null;
+
+function katalogYukle(cb) {{
+  if (katalogVerisi) {{ cb(); return; }}
+  katalogVerisi = [];
+  var kalan = TUM_KATEGORI_DOSYALARI.length;
+  TUM_KATEGORI_DOSYALARI.forEach(function (href) {{
+    fetch(href).then(function (r) {{ return r.text(); }}).then(function (html) {{
+      var dom = new DOMParser().parseFromString(html, 'text/html');
+      dom.querySelectorAll('.product-card').forEach(function (k) {{
+        var e = k.querySelector('.pf-label');
+        var ad = e ? e.textContent.replace(/^Ürün Adı\\s*:?\\s*/, '').trim() : '';
+        var img = k.querySelector('img');
+        if (ad) katalogVerisi.push({{ ad: ad, gorsel: img ? img.getAttribute('src') : '', href: href }});
+      }});
+    }}).catch(function () {{}}).then(function () {{ if (--kalan === 0) cb(); }});
+  }});
+}}
+
+function siteGeneliAra(inp) {{
+  var q = inp.value.trim();
+  var kutu = document.getElementById('aramaSonuclari');
+  if (!q) {{ kutu.innerHTML = ''; document.querySelector('.urun-bulunamadi').hidden = true; return; }}
+  katalogYukle(function () {{
+    // aramaSkoru (site.js) yazım hatalarını tolere eder, kelime sırasını önemsemez.
+    // En iyi eşleşme en üstte olacak şekilde sıralanır.
+    var sonuc = katalogVerisi
+      .map(function (u) {{ return {{ u: u, skor: aramaSkoru(u.ad, q) }}; }})
+      .filter(function (x) {{ return x.skor > 0; }})
+      .sort(function (a, b) {{ return b.skor - a.skor; }})
+      .slice(0, 40)
+      .map(function (x) {{ return x.u; }});
+    kutu.innerHTML = sonuc.map(function (u) {{
+      return '<a class="arama-sonuc-item" href="' + u.href + '"><img src="' + u.gorsel + '" alt=""><span>' + u.ad + '</span></a>';
+    }}).join('');
+    document.querySelector('.urun-bulunamadi').hidden = sonuc.length > 0;
+  }});
+}}
+
+(function () {{
+  var elemanlar = document.querySelectorAll('.oz-belir');
+  if (!elemanlar.length) return;
+  if (!('IntersectionObserver' in window)) {{
+    elemanlar.forEach(function (el) {{ el.classList.add('gorunur'); }});
+    return;
+  }}
+  var gozlemci = new IntersectionObserver(function (girenler) {{
+    girenler.forEach(function (giren) {{
+      if (giren.isIntersecting) {{
+        giren.target.classList.add('gorunur');
+        gozlemci.unobserve(giren.target);
+      }}
+    }});
+  }}, {{ threshold: 0.15 }});
+  elemanlar.forEach(function (el) {{ gozlemci.observe(el); }});
+}})();
+"""
+
+
+def all_category_files():
+    files = set()
+    for g in CATEGORIES:
+        files.update(all_files_in_group(g))
+    return sorted(files)
+
+
 def main():
     out = PAGE.format(
         kategori_panel=render_kategori_panel(None),
@@ -269,6 +348,13 @@ def main():
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(out)
     print(f"{out_path} yazıldı.")
+
+    dosyalar = ",\n".join(f'  "{f}"' for f in all_category_files())
+    js_out = INDEX_JS.format(dosyalar=dosyalar)
+    js_path = os.path.join(SITE_ROOT, "index.js")
+    with open(js_path, "w", encoding="utf-8") as f:
+        f.write(js_out)
+    print(f"{js_path} yazıldı ({len(all_category_files())} dosya).")
 
 
 if __name__ == "__main__":
