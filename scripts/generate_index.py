@@ -265,7 +265,7 @@ def main():
         duvar=render_duvar(),
         vitrin=render_vitrin(),
     )
-    out_path = os.path.join(SITE_ROOT, "index-yeni.html")
+    out_path = os.path.join(SITE_ROOT, "index.html")
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(out)
     print(f"{out_path} yazıldı.")

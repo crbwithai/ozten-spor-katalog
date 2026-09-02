@@ -1,223 +1,406 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="Ozten Spor Katalog.css">
+<title>Özten Spor Kataloğu — Toptan ve Perakende Spor Malzemeleri</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ozten-yeni.css">
 <script src="sepet.js" defer></script>
+<script src="site.js" defer></script>
+<script src="index.js" defer></script>
 </head>
-<body id="top">
-<div class="floating-nav-group">
-    <a href="#top" class="floating-nav-btn"><span class="fn-arrow">&#8593;</span> Yukarı Çık</a>
-</div>
+<body>
 
-<section class="page cover-page">
-    <div class="cover-accent-bar"></div>
-    <div class="cover-top">
-        <div class="cover-kicker">SPOR MALZEMELERİ KATALOĞU · 2026</div>
+<header class="ust-cubuk">
+  <a class="marka" href="index.html">ÖZTEN<span>SPOR</span></a>
+  <div class="ust-arama">
+    <span class="arama-ikon">&#9906;</span>
+    <input type="text" id="aramaKutusu" placeholder="Ürün ara" autocomplete="off" oninput="siteGeneliAra(this)">
+    <div id="aramaSonuclari" class="arama-sonuclari"></div>
+    <p class="urun-bulunamadi" hidden>Aramanla eşleşen ürün bulunamadı.</p>
+  </div>
+  <div class="ust-butonlar">
+    <button type="button" class="ust-btn" id="kategoriAc">Kategoriler &#9662;</button>
+    <button type="button" class="ust-btn" id="sepetAc">Sepetim <span class="ust-rozet" id="ustSepetSayi">0</span></button>
+  </div>
+</header>
+
+<nav class="kategori-panel" id="kategoriPanel" hidden>
+  <div class="kategori-panel-baslik">TÜM KATEGORİLER</div>
+  <div class="kategori-izgara">
+        <a class="kategori-link" href="futbol.html">FUTBOL</a>
+        <a class="kategori-link" href="basketbol.html">BASKETBOL</a>
+        <a class="kategori-link" href="voleybol.html">VOLEYBOL</a>
+        <a class="kategori-link" href="badminton.html">BADMINTON</a>
+        <a class="kategori-link" href="masa-tenisi.html">MASA TENİSİ</a>
+        <a class="kategori-link" href="tenis.html">TENİS</a>
+        <a class="kategori-link" href="atlama-ipi.html">ATLAMA İPİ</a>
+        <a class="kategori-link" href="el-yayi.html">EL YAYI</a>
+        <a class="kategori-link" href="yoga-pilates.html">YOGA PİLATES</a>
+        <a class="kategori-link" href="fitness.html">FITNESS</a>
+        <a class="kategori-link" href="egzersiz.html">EGZERSİZ</a>
+        <a class="kategori-link" href="hentbol.html">HENTBOL</a>
+        <a class="kategori-link" href="yuzme.html">YÜZME</a>
+        <a class="kategori-link" href="bocce.html">BOCCE</a>
+        <a class="kategori-link" href="hokey.html">HOKEY</a>
+        <a class="kategori-link" href="kano.html">KANO</a>
+        <a class="kategori-link" href="beyzbol.html">BEYZBOL</a>
+        <a class="kategori-link" href="paten.html">PATEN</a>
+        <a class="kategori-link" href="oryantiring.html">ORYANTİRİNG</a>
+        <a class="kategori-link" href="padel.html">PADEL</a>
+        <a class="kategori-link" href="pickleball.html">PICKLEBALL</a>
+        <a class="kategori-link" href="ragbi.html">RAGBİ</a>
+        <a class="kategori-link" href="satranc.html">SATRANÇ</a>
+        <a class="kategori-link" href="softball.html">SOFTBALL</a>
+        <a class="kategori-link" href="squash.html">SQUASH</a>
+        <a class="kategori-link" href="dart.html">DART</a>
+        <a class="kategori-link" href="atletizm.html">ATLETİZM</a>
+        <a class="kategori-link" href="cimnastik.html">CİMNASTİK</a>
+        <a class="kategori-link" href="saglik-toplari.html">SAĞLIK TOPLARI</a>
+        <a class="kategori-link" href="su-topu.html">SU TOPU</a>
+        <a class="kategori-link" href="oyun-grubu.html">OYUN GRUBU</a>
+        <a class="kategori-link" href="dovus-sporlari.html">DÖVÜŞ SPORLARI</a>
+  </div>
+</nav>
+
+<section class="oz-hero">
+  <div class="oz-hero-metin">
+    <div class="oz-hero-kicker">SPOR MALZEMELERİ KATALOĞU · 2026</div>
+    <h1>Güvenle Oynayın.<br>Kalite ile Kazanın.</h1>
+    <p class="oz-hero-slogan">32 spor branşında toptan ve perakende ekipman. Kulüplere, mağazalara ve distribütörlere hızlı, güvenilir tedarik.</p>
+    <div class="oz-hero-cta">
+      <a href="#kategoriler" class="oz-btn oz-btn-dolu">Kategorileri Keşfet</a>
     </div>
-    <div class="cover-hero" style="border: none; padding: 0; height: auto; aspect-ratio: 676 / 543;">
-        <img src="ozten-spor-afis.png" alt="Özten Spor Afiş" style="width: 100%; height: 100%; object-fit: contain; display: block; border-radius: 4px;">
-    </div>
-    <div class="cover-bottom">
-        <h1 class="cover-brand">ÖZTEN SPOR</h1>
-        <p class="cover-slogan">Güvenle Oynayın. Kalite ile Kazanın.</p>
-        <div class="cover-tags">
-            <span>GÜVEN</span><span class="dot"></span><span>KALİTE</span><span class="dot"></span><span>ÇEŞİTLİLİK</span>
-        </div>
-        <div class="section-kicker" style="margin-top:10mm;">İLETİŞİM</div>
-        <h1 class="section-title" style="color:#fff; font-size:18pt; margin-bottom:4mm;">Bize <span class="accent">Ulaşın</span></h1>
-        <p class="lead" style="color:#D8D8D8; margin-bottom:4mm;">Toptan ve perakende sipariş, iş birliği ve bilgi talepleriniz için bizimle iletişime geçin.</p>
-        <div class="contact-grid" style="margin-top:4mm;">
-            <div class="contact-item">
-                <div class="c-icon" style="background:#ffffff; color:#111111;">☎</div>
-                <div><h4 style="color:#fff;">Telefon</h4><div id="iletisimKisiler" class="kisi-grid"></div></div>
-            </div>
-            <div class="contact-item">
-                <div class="c-icon" style="background:#ffffff; color:#111111;">✉</div>
-                <div><h4 style="color:#fff;">E-posta</h4><p class="fill-text" style="color:#B7B7B7;">[oztensporltd@gmail.com]</p></div>
-            </div>
-            <div class="contact-item">
-                <div class="c-icon" style="background:#ffffff; color:#111111;">⚑</div>
-                <div><h4 style="color:#fff;">Adres</h4><p class="fill-text" style="color:#B7B7B7;">[Kirazlı Mahallesi 1201.sokak Bağcılar/İstanbul]</p></div>
-            </div>
-            <div class="contact-item">
-                <div class="c-icon" style="background:#ffffff; color:#111111;">@</div>
-                <div><h4 style="color:#fff;">Sosyal Medya</h4><p class="fill-text" style="color:#B7B7B7;">[@oztenspor — Instagram / LinkedIn / Facebook]</p></div>
-            </div>
-        </div>
-        <div class="cta-band" style="background:#ffffff; color:#111111; margin-top:8mm;">
-            <span>TOPTAN SİPARİŞ VE İŞ BİRLİĞİ İÇİN BİZE YAZIN</span>
-        </div>
-    </div>
+  </div>
+  <div class="oz-hero-kisiler">
+    <div class="oz-hero-kisiler-baslik">Bir satış temsilcimizi seçin, hemen WhatsApp'tan ulaşın</div>
+    <div id="iletisimKisiler" class="oz-kisi-liste"></div>
+  </div>
 </section>
-<section class="page about-page">
-    <div class="section-kicker">HAKKIMIZDA</div>
-    <h1 class="section-title">Sahada da, İşte de <span class="accent">Güvenilir Ortağınız</span></h1>
-    <p class="lead">
-        ÖZTEN SPOR olarak; futboldan fitnessa, atletizmden masa tenisine kadar geniş bir ürün yelpazesiyle
-        toptan ve perakende spor malzemesi alıcılarının yanında yer alıyoruz. Müşteri odaklı çalışma
-        anlayışımız, geniş ürün çeşitliliğimiz ve kalite standartlarımızla sektörde güvenilir bir tedarikçi
-        olmayı hedefliyoruz.
-    </p>
-    <p class="lead">
-        Deneyimli ekibimiz ve güçlü tedarik ağımız sayesinde kulüplere, mağazalara ve distribütörlere
-        hızlı, güvenilir ve rekabetçi çözümler sunuyoruz.
-    </p>
-    <div class="mv-grid">
-        <div class="mv-card">
-            <div class="mv-icon" style="background:#E11D2E"></div>
-            <h3>Misyonumuz</h3>
-            <p class="fill-text">Müşterilerimizin performansını ve konforunu artıracak yenilikçi, dayanıklı ve erişilebilir spor ürünleri sunarak, onların sportif hedeflerine ulaşmalarındaki en büyük destekçisi olmak.</p>
-        </div>
-        <div class="mv-card">
-            <div class="mv-icon" style="background:#FD8C22"></div>
-            <h3>Vizyonumuz</h3>
-            <p class="fill-text">Sektördeki yenilikleri takip ederek, her yaştan bireyin sporu bir yaşam tarzı haline getirdiği, bölgesinin en çok tercih edilen ve referans gösterilen lider spor merkezi olmak.</p>
-        </div>
+
+<section class="oz-bolum oz-manifesto">
+  <div class="oz-bolum-etiket">HAKKIMIZDA</div>
+  <h2 class="oz-belir">Sahada da, İşte de Güvenilir Ortağınız</h2>
+  <div class="oz-belir">
+    <p>ÖZTEN SPOR olarak; futboldan fitnessa, atletizmden masa tenisine kadar geniş bir ürün yelpazesiyle toptan ve perakende spor malzemesi alıcılarının yanında yer alıyoruz.</p>
+    <p>Deneyimli ekibimiz ve güçlü tedarik ağımız sayesinde kulüplere, mağazalara ve distribütörlere hızlı, güvenilir ve rekabetçi çözümler sunuyoruz.</p>
+  </div>
+  <div class="oz-mv-grid">
+    <div class="oz-mv-card oz-belir">
+      <div class="oz-mv-cubuk" style="background:var(--kirmizi);"></div>
+      <h3>Misyonumuz</h3>
+      <p>Müşterilerimizin performansını ve konforunu artıracak yenilikçi, dayanıklı ve erişilebilir spor ürünleri sunarak, onların sportif hedeflerine ulaşmalarındaki en büyük destekçisi olmak.</p>
     </div>
-    <div class="stat-row">
-        <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Ürün Çeşidi</span></div>
-        <div class="stat"><span class="stat-num">25+</span><span class="stat-label">Kategori</span></div>
-        <div class="stat"><span class="stat-num">100+</span><span class="stat-label">İş Ortağı</span></div>
-        <div class="stat"><span class="stat-num">5+</span><span class="stat-label">Yıllık Deneyim</span></div>
+    <div class="oz-mv-card oz-belir">
+      <div class="oz-mv-cubuk" style="background:var(--turuncu);"></div>
+      <h3>Vizyonumuz</h3>
+      <p>Sektördeki yenilikleri takip ederek, her yaştan bireyin sporu bir yaşam tarzı haline getirdiği, bölgesinin en çok tercih edilen ve referans gösterilen lider spor merkezi olmak.</p>
     </div>
-    <div class="category-navigation">
-        <h2 class="category-navigation-title">KATEGORİLER</h2>
-        <div class="category-button-grid">
-            <a href="futbol.html" class="category-nav-button">FUTBOL</a>
-            <a href="basketbol.html" class="category-nav-button">BASKETBOL</a>
-            <a href="voleybol.html" class="category-nav-button">VOLEYBOL</a>
-            <a href="badminton.html" class="category-nav-button">BADMINTON</a>
-            <a href="masa-tenisi.html" class="category-nav-button">MASA TENİSİ</a>
-            <a href="tenis.html" class="category-nav-button">TENİS</a>
-            <a href="atlama-ipi.html" class="category-nav-button">ATLAMA İPİ</a>
-            <a href="el-yayi.html" class="category-nav-button">EL YAYI</a>
-            <a href="yoga-pilates.html" class="category-nav-button">YOGA PİLATES</a>
-            <a href="fitness.html" class="category-nav-button">FITNESS</a>
-            <a href="egzersiz.html" class="category-nav-button">EGZERSİZ</a>
-            <a href="hentbol.html" class="category-nav-button">HENTBOL</a>
-            <a href="yuzme.html" class="category-nav-button">YÜZME</a>
-            <a href="bocce.html" class="category-nav-button">BOCCE</a>
-            <a href="hokey.html" class="category-nav-button">HOKEY</a>
-            <a href="kano.html" class="category-nav-button">KANO</a>
-            <a href="beyzbol.html" class="category-nav-button">BEYZBOL</a>
-            <a href="paten.html" class="category-nav-button">PATEN</a>
-            <a href="oryantiring.html" class="category-nav-button">ORYANTİRİNG</a>
-            <a href="padel.html" class="category-nav-button">PADEL</a>
-            <a href="pickleball.html" class="category-nav-button">PICKLEBALL</a>
-            <a href="ragbi.html" class="category-nav-button">RAGBİ</a>
-            <a href="satranc.html" class="category-nav-button">SATRANÇ</a>
-            <a href="softball.html" class="category-nav-button">SOFTBALL</a>
-            <a href="squash.html" class="category-nav-button">SQUASH</a>
-            <a href="dart.html" class="category-nav-button category-nav-button-vurgu">DART</a>
-            <a href="atletizm.html" class="category-nav-button">ATLETİZM</a>
-            <a href="cimnastik.html" class="category-nav-button">CİMNASTİK</a>
-            <a href="saglik-toplari.html" class="category-nav-button">SAĞLIK TOPLARI</a>
-            <a href="su-topu.html" class="category-nav-button">SU TOPU</a>
-            <a href="oyun-grubu.html" class="category-nav-button">OYUN GRUBU</a>
-            <a href="dovus-sporlari.html" class="category-nav-button">DÖVÜŞ SPORLARI</a>
-        </div>
-    </div>
-    <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Hakkımızda</span>
-        <span>02</span>
-    </div>
+  </div>
+  <div class="oz-stat-row">
+    <div class="oz-stat oz-belir"><span class="oz-stat-num">1000+</span><span class="oz-stat-label">Ürün Çeşidi</span></div>
+    <div class="oz-stat oz-belir"><span class="oz-stat-num">32</span><span class="oz-stat-label">Kategori</span></div>
+    <div class="oz-stat oz-belir"><span class="oz-stat-num">100+</span><span class="oz-stat-label">İş Ortağı</span></div>
+    <div class="oz-stat oz-belir"><span class="oz-stat-num">5+</span><span class="oz-stat-label">Yıllık Deneyim</span></div>
+  </div>
 </section>
-<div class="katalog-arama"><input type="text" placeholder="Ürün ara..." oninput="aramaFiltrele(this)"></div>
-<p class="urun-bulunamadi" hidden>Ürün bulunamadı.</p>
-<div id="aramaSonuclari" class="arama-sonuclari"></div>
-        <section class="page featured-page">
-    <div class="section-kicker" style="color:#E11D2E">VİTRİN</div>
-    <h1 class="section-title">EN ÇOK TERCİH EDİLENLER</h1>
-    <p class="lead" style="margin-bottom:8mm;">Alıcılarımızın ve kulüplerin en çok tercih ettiği ürünler tek sayfada.</p>
-    <div class="product-grid featured-grid"><div class="product-card featured">
-        <div class="badge">ÇOK TERCİH EDİLEN</div>
-        <div class="img-placeholder" style="height:36mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Dart.image/Helix%20Dart%20Tahtas%C4%B1%20DBSA-30%20WDF%20Onayl%C4%B1.jpeg" alt="Helix Dart Tahtası DBSA-30 WDF Onaylı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dart Tahtası DBSA-30 WDF Onaylı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : WDF onaylı, A sınıfı doğal sisal yapı, 45 cm çap / 3,8 cm kalınlık. Kendini onaran yüzey ile uzun ömürlü, kulüp ve turnuva kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short" style="font-size:7.5pt;">2.750 ₺</span></div>
-    </div><div class="product-card featured">
-        <div class="badge">ÇOK TERCİH EDİLEN</div>
-        <div class="img-placeholder" style="height:36mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Hybrid%20Unity.jpg" alt="Helix Futbol Topu Hybrid Unity" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Hybrid Unity No:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 32 panel – klasik dengeli tasarım, Hibrit dikiş (makine + el dikişi hissi), PU suni deri yüzey malzeme, Çok katmanlı polyester-pamuk astar. Lateks destekli form koruma, Dayanıklı bladder – yüksek hava tutuşu, 5 – resmi standart ölçü.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">650 ₺</span></div>
-    </div><div class="product-card featured">
-        <div class="badge">ÇOK TERCİH EDİLEN</div>
-        <div class="img-placeholder" style="height:36mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/PLATINO%20PRO%20HATTRICK%20NO%205.webp" alt="PLATINO PRO HATTRICK NO 5" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : PLATINO PRO HATTRICK NO:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 Numara, Premium PU yüzey, Hybrid (yapıştırma) teknoloji, Butil iç lastik 380 g. Salon kullanımına uygun, Maç ve antrenman kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">720 ₺</span></div>
-    </div><div class="product-card featured">
-        <div class="badge">ÇOK TERCİH EDİLEN</div>
-        <div class="img-placeholder" style="height:36mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Voleybol%20image/Summit%20SMT-X360.png" alt="Summit SMT-X360" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Summit SMT-X360</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 Numara, Sarı-Lacivert renk, Dayanıklı kauçuk yüzey, Antrenman topu. Kapalı ve açık saha antrenmanlarına uygun, Ekonomik ve dayanıklı kullanım.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">560 ₺</span></div>
-    </div><div class="product-card featured">
-        <div class="badge">ÇOK TERCİH EDİLEN</div>
-        <div class="img-placeholder" style="height:36mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Voleybol%20image/PROFINAL%20HATTR%C4%B0CK.webp" alt="PROFINAL HATTRİCK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : PROFINAL HATTRİCK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 Numara, Sentetik deri (PVC) yüzey, El dikişli, Butil iç lastik 260–280 g ağırlık. Salon kullanımına uygun, Antrenman ve maç kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">330 ₺</span></div>
-    </div><div class="product-card featured">
-        <div class="badge">ÇOK TERCİH EDİLEN</div>
-        <div class="img-placeholder" style="height:36mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Basketbol%20image/Helix%20Basketbol%20Topu%20Wizard%20RX8%20%20NO%207.webp" alt="Helix Basketbol Topu Wizard RX8  NO 7" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Basketbol Topu Wizard RX8 No:7</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Helix Wizard RX8, 7 numara, 600–650 g ağırlık, 12 panel, Outdoor (dış mekân). Okul, sokak basketbolu, spor kulübü, antrenman.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">370 ₺</span></div>
-    </div></div>
-    <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Öne Çıkan Ürünler</span>
-        <span>124</span>
-    </div>
+
+<section class="oz-bolum oz-bolum-koyu" id="kategoriler">
+  <div class="oz-bolum-etiket">KATALOG</div>
+  <h2 class="oz-belir">32 Branş, Tek Katalog</h2>
+  <p class="oz-bolum-lead oz-belir">Bir kategoriye dokunun, o branşın imza ürünüyle tanışın.</p>
+  <div class="kat-duvar-izgara">
+      <a class="kat-duvar-oge oz-belir" href="futbol.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/Futbol%20image/futbol%20topu%20shine%20pro.jpg" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">01</span>
+        <span class="kat-duvar-ad">FUTBOL</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="basketbol.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/Basketbol%20image/C7%20HATTRICK.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">02</span>
+        <span class="kat-duvar-ad">BASKETBOL</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="voleybol.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/Voleybol%20image/BV100%20ALTIS.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">03</span>
+        <span class="kat-duvar-ad">VOLEYBOL</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="badminton.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/Badminton%20image/B100%20ALTIS.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">04</span>
+        <span class="kat-duvar-ad">BADMINTON</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="masa-tenisi.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/Masa%20Tenisi%20image/TS2000%20SPORTICA.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">05</span>
+        <span class="kat-duvar-ad">MASA TENİSİ</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="tenis.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/Tenis%20image/ATS19%20HATTRICK.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">06</span>
+        <span class="kat-duvar-ad">TENİS</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="atlama-ipi.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/Atlama%20ipi%20image/EY116%20ALTIS.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">07</span>
+        <span class="kat-duvar-ad">ATLAMA İPİ</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="el-yayi.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/El%20yaylar%C4%B1/EY103%20ALTIS.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">08</span>
+        <span class="kat-duvar-ad">EL YAYI</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="yoga-pilates.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/Yoga%20ve%20Pilates%20image/P%C4%B0LATES%20TOPU%20HB20%20HATTRICK.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">09</span>
+        <span class="kat-duvar-ad">YOGA PİLATES</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="fitness.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/Fitness%20image/DAMBIL%20SET%C4%B0%20DS10%20ALTIS.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">10</span>
+        <span class="kat-duvar-ad">FITNESS</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="egzersiz.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/Y%C3%BCzme%20image/CROSSFIT%20HALATI%203809CRS.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">11</span>
+        <span class="kat-duvar-ad">EGZERSİZ</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="hentbol.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/Hentbol%20image/HB60%20HATTRICK.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">12</span>
+        <span class="kat-duvar-ad">HENTBOL</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="yuzme.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/Y%C3%BCzme%20image/ADG23%20HATTRICK.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">13</span>
+        <span class="kat-duvar-ad">YÜZME</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="bocce.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/Bocce%20image/BCS08%20HATTRICK.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">14</span>
+        <span class="kat-duvar-ad">BOCCE</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="hokey.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/hokey%20image/Helix%20Hokey%20%C4%B0pli%20Antrenman%20Topu%20Beyaz.png" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">15</span>
+        <span class="kat-duvar-ad">HOKEY</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="kano.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/kano%20image/Helix%20SUP%20%C5%9Ei%C5%9Fme%20K%C3%BCrek%20S%C3%B6rf%C3%BC%20PLB%2010%276%27%27.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">16</span>
+        <span class="kat-duvar-ad">KANO</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="beyzbol.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/beyzbol%20image/Helix%20Beyzbol%20At%C4%B1%C5%9F%20Makinas%C4%B1%20Topu%20AB-9.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">17</span>
+        <span class="kat-duvar-ad">BEYZBOL</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="paten.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/kaykay%20paten%20kask/Helix%20Paten%20-%20Pembe.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">18</span>
+        <span class="kat-duvar-ad">PATEN</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="oryantiring.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/oryantring%20image/Helix%20El%20Pusula%20OC-50.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">19</span>
+        <span class="kat-duvar-ad">ORYANTİRİNG</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="padel.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/padel%20image/Helix%20Padel%20Raket%20Fiber%20FPD-10.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">20</span>
+        <span class="kat-duvar-ad">PADEL</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="pickleball.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/pickleball%20image/Helix%20Pickleball%20Filesi%20Portatif.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">21</span>
+        <span class="kat-duvar-ad">PICKLEBALL</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="ragbi.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/ragbi%20image/Helix%20Ragbi%20M%C3%BCcadele%20%C3%9Cst%20Minderi%20RM-2%2080x44x25cm.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">22</span>
+        <span class="kat-duvar-ad">RAGBİ</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="satranc.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/satran%C3%A7%20image/Helix%20Matara%20Klasik%20SMB01%20Satran%C3%A7%20Tak%C4%B1m%C4%B1.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">23</span>
+        <span class="kat-duvar-ad">SATRANÇ</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="softball.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/softball%20image/Helix%20Softbol%20Topu%20Sert%20MSB-H12%20TRF%20Onayl%C4%B1.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">24</span>
+        <span class="kat-duvar-ad">SOFTBALL</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="squash.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/SQUASH%20%C4%B0MAGE/Helix%20Squash%20Raketi%20Buddie%20SQ-030.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">25</span>
+        <span class="kat-duvar-ad">SQUASH</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="dart.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/dart%20image/Hatrrick%20Dart%20Oku%2018%20GR.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">26</span>
+        <span class="kat-duvar-ad">DART</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="atletizm.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/Atletizm%20image/Vinex%20Atma%20%C3%87emberi%20G%C3%BClle%20%C3%87eki%C3%A7%20DSHC-SPA10.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">27</span>
+        <span class="kat-duvar-ad">ATLETİZM</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="cimnastik.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/cimnastik%20image/Firefly%20Batakl%C4%B1k%20Minderi%20100x200x10cm.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">28</span>
+        <span class="kat-duvar-ad">CİMNASTİK</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="saglik-toplari.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1plamayan%20RSB%2010kg.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">29</span>
+        <span class="kat-duvar-ad">SAĞLIK TOPLARI</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="su-topu.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/su%20topu%20image/Helix%20Su%20Topu%20Kalesi%20WPG10.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">30</span>
+        <span class="kat-duvar-ad">SU TOPU</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="oyun-grubu.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/oyun%20grubu%20image/Helix%20Balon%20Multicolor%20CB%20100%27l%C3%BC.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">31</span>
+        <span class="kat-duvar-ad">OYUN GRUBU</span>
+      </a>
+      <a class="kat-duvar-oge oz-belir" href="dovus-sporlari.html">
+        <span class="kat-duvar-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/BBS10%20HATTRICK.webp" alt="" loading="lazy"></span>
+        <span class="kat-duvar-no">32</span>
+        <span class="kat-duvar-ad">DÖVÜŞ SPORLARI</span>
+      </a>
+  </div>
 </section>
-<script>
-var katalogVerisi=null;
-function katalogYukle(cb){
-  if(katalogVerisi){cb();return;}
-  katalogVerisi=[];
-  var linkler=document.querySelectorAll('.category-nav-button');
-  var kalan=linkler.length;
-  linkler.forEach(function(a){
-    fetch(a.getAttribute('href')).then(function(r){return r.text();}).then(function(html){
-      var dom=new DOMParser().parseFromString(html,'text/html');
-      dom.querySelectorAll('.product-card').forEach(function(k){
-        var e=k.querySelector('.pf-label');
-        var ad=e?e.textContent.replace(/^Ürün Adı\s*:?\s*/,'').trim():'';
-        var img=k.querySelector('img');
-        if(ad)katalogVerisi.push({ad:ad,gorsel:img?img.getAttribute('src'):'',href:a.getAttribute('href')+'#kategori-'+a.getAttribute('href').replace('.html','')});
-      });
-    }).catch(function(){}).then(function(){if(--kalan===0)cb();});
-  });
-}
-function aramaFiltrele(inp){
-  var q=inp.value.toLocaleLowerCase('tr-TR').trim();
-  var kutu=document.getElementById('aramaSonuclari');
-  if(!q){kutu.innerHTML='';document.querySelector('.urun-bulunamadi').hidden=true;return;}
-  katalogYukle(function(){
-    var sonuc=katalogVerisi.filter(function(u){return u.ad.toLocaleLowerCase('tr-TR').indexOf(q)!==-1;});
-    kutu.innerHTML=sonuc.map(function(u){
-      return '<a class="arama-sonuc-item" href="'+u.href+'"><img src="'+u.gorsel+'" alt=""><span>'+u.ad+'</span></a>';
-    }).join('');
-    document.querySelector('.urun-bulunamadi').hidden=sonuc.length>0;
-  });
-}
-</script>
+
+<section class="oz-bolum">
+  <div class="oz-bolum-etiket" style="color:var(--kirmizi);">VİTRİN</div>
+  <h2 class="oz-belir">En Çok Tercih Edilenler</h2>
+  <p class="oz-bolum-lead oz-belir">Alıcılarımızın ve kulüplerin en çok tercih ettiği ürünler tek sayfada.</p>
+  <div class="product-grid" style="margin-top:40px;">
+      <div class="product-card oz-vitrin-kart oz-belir">
+        <span class="oz-vitrin-rozet">ÇOK TERCİH EDİLEN</span>
+        <div class="kart-gorsel"><img src="%C4%B0mage/Dart.image/Helix%20Dart%20Tahtas%C4%B1%20DBSA-30%20WDF%20Onayl%C4%B1.jpeg" alt="Helix Dart Tahtası DBSA-30 WDF Onaylı" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dart Tahtası DBSA-30 WDF Onaylı</span>
+          <p class="kart-aciklama">WDF onaylı, A sınıfı doğal sisal yapı, 45 cm çap / 3,8 cm kalınlık. Kendini onaran yüzey ile uzun ömürlü, kulüp ve turnuva kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">2.750 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card oz-vitrin-kart oz-belir">
+        <span class="oz-vitrin-rozet">ÇOK TERCİH EDİLEN</span>
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Hybrid%20Unity.jpg" alt="Helix Futbol Topu Hybrid Unity No:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu Hybrid Unity No:5</span>
+          <p class="kart-aciklama">32 panel – klasik dengeli tasarım, Hibrit dikiş (makine + el dikişi hissi), PU suni deri yüzey malzeme, Çok katmanlı polyester-pamuk astar. Lateks destekli form koruma, Dayanıklı bladder – yüksek hava tutuşu, 5 – resmi standart ölçü.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">650 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card oz-vitrin-kart oz-belir">
+        <span class="oz-vitrin-rozet">ÇOK TERCİH EDİLEN</span>
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/PLATINO%20PRO%20HATTRICK%20NO%205.webp" alt="PLATINO PRO HATTRICK NO:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>PLATINO PRO HATTRICK NO:5</span>
+          <p class="kart-aciklama">5 Numara, Premium PU yüzey, Hybrid (yapıştırma) teknoloji, Butil iç lastik 380 g. Salon kullanımına uygun, Maç ve antrenman kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">720 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card oz-vitrin-kart oz-belir">
+        <span class="oz-vitrin-rozet">ÇOK TERCİH EDİLEN</span>
+        <div class="kart-gorsel"><img src="%C4%B0mage/Voleybol%20image/Summit%20SMT-X360.png" alt="Summit SMT-X360" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Summit SMT-X360</span>
+          <p class="kart-aciklama">5 Numara, Sarı-Lacivert renk, Dayanıklı kauçuk yüzey, Antrenman topu. Kapalı ve açık saha antrenmanlarına uygun, Ekonomik ve dayanıklı kullanım.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">560 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card oz-vitrin-kart oz-belir">
+        <span class="oz-vitrin-rozet">ÇOK TERCİH EDİLEN</span>
+        <div class="kart-gorsel"><img src="%C4%B0mage/Voleybol%20image/PROFINAL%20HATTR%C4%B0CK.webp" alt="PROFINAL HATTRİCK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>PROFINAL HATTRİCK</span>
+          <p class="kart-aciklama">5 Numara, Sentetik deri (PVC) yüzey, El dikişli, Butil iç lastik 260–280 g ağırlık. Salon kullanımına uygun, Antrenman ve maç kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">330 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card oz-vitrin-kart oz-belir">
+        <span class="oz-vitrin-rozet">ÇOK TERCİH EDİLEN</span>
+        <div class="kart-gorsel"><img src="%C4%B0mage/Basketbol%20image/Helix%20Basketbol%20Topu%20Wizard%20RX8%20%20NO%207.webp" alt="Helix Basketbol Topu Wizard RX8 No:7" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Basketbol Topu Wizard RX8 No:7</span>
+          <p class="kart-aciklama">Helix Wizard RX8, 7 numara, 600–650 g ağırlık, 12 panel, Outdoor (dış mekân). Okul, sokak basketbolu, spor kulübü, antrenman.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">370 ₺</span></div>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+<section class="oz-bolum oz-bolum-koyu" id="iletisim">
+  <div class="oz-bolum-etiket">İLETİŞİM</div>
+  <h2 class="oz-belir">Bize Ulaşın</h2>
+  <p class="oz-bolum-lead oz-belir">Toptan ve perakende sipariş, iş birliği ve bilgi talepleriniz için bizimle iletişime geçin.</p>
+  <div class="oz-iletisim-grid">
+    <div class="oz-iletisim-kart oz-belir">
+      <div class="oz-iletisim-ikon">✉</div>
+      <div><h4>E-posta</h4><p><a href="mailto:oztensporltd@gmail.com" style="color:inherit;">oztensporltd@gmail.com</a></p></div>
+    </div>
+    <div class="oz-iletisim-kart oz-belir">
+      <div class="oz-iletisim-ikon">⚑</div>
+      <div><h4>Adres</h4><p>Kirazlı Mahallesi 1201. Sokak, Bağcılar / İstanbul</p></div>
+    </div>
+    <div class="oz-iletisim-kart oz-belir">
+      <div class="oz-iletisim-ikon">@</div>
+      <div><h4>Sosyal Medya</h4><p>@oztenspor — Instagram / LinkedIn / Facebook</p></div>
+    </div>
+  </div>
+</section>
+
+<a class="wa-buton" href="https://wa.me/905522025737" target="_blank" rel="noopener" aria-label="WhatsApp'tan yazın">
+  <svg viewBox="0 0 32 32" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M16 3C9 3 3 9 3 16c0 2.4.6 4.6 1.8 6.6L3 29l6.6-1.7c1.9 1 4 1.6 6.4 1.6 7 0 13-6 13-13S23 3 16 3zm7.6 18.4c-.3.9-1.7 1.7-2.7 1.9-.7.1-1.6.2-4.6-1-3.9-1.6-6.4-5.5-6.6-5.8-.2-.3-1.6-2.1-1.6-4s1-2.8 1.3-3.2c.3-.3.7-.4 1-.4h.7c.2 0 .5 0 .8.6.3.7 1.1 2.6 1.2 2.8.1.2.2.4 0 .7-.1.3-.2.4-.4.6-.2.2-.4.5-.6.7-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.6 1.4 1.3 2.6 1.7 3 1.9.3.2.5.1.7-.1.2-.2.9-1 1.1-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.5 1.2.4.2.6.3.7.5.1.2.1 1-.2 1.9z"/></svg>
+</a>
+
+<footer class="alt-bilgi">
+  <div class="alt-bilgi-ic">
+    <strong>ÖZTEN SPOR</strong>
+    Kirazlı Mahallesi 1201. Sokak, Bağcılar / İstanbul<br>
+    <a href="mailto:oztensporltd@gmail.com">oztensporltd@gmail.com</a>
+  </div>
+</footer>
+
+<nav class="alt-cubuk">
+  <a class="alt-btn" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+    Ana Sayfa
+  </a>
+  <button type="button" class="alt-btn" id="altAra">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    Ara
+  </button>
+  <button type="button" class="alt-btn" id="altKategori">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    Kategoriler
+  </button>
+  <button type="button" class="alt-btn" id="altSepet">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M6 6 5 3H3"/></svg>
+    Sepet
+    <span class="alt-rozet" id="altSepetSayi" hidden>0</span>
+  </button>
+</nav>
+
 </body>
 </html>
