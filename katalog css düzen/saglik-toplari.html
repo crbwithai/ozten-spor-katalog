@@ -4,287 +4,321 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SAĞLIK TOPLARI — Özten Spor Kataloğu</title>
-<link rel="stylesheet" href="Ozten Spor Katalog.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ozten-yeni.css">
 <script src="sepet.js" defer></script>
+<script src="site.js" defer></script>
 </head>
-<body id="top">
-<div class="floating-nav-group">
-    <a href="#top" class="floating-nav-btn"><span class="fn-arrow">&#8593;</span> Yukarı Çık</a>
-</div>
-<div class="katalog-arama"><input type="text" placeholder="Ürün ara..." oninput="aramaFiltrele(this)"></div>
-<div class="kategori-menu-cubugu">
-    <button type="button" class="kategori-menu-buton">Alt Kategoriler <span class="fn-arrow">&#9662;</span></button>
-    <div class="kategori-menu-panel" hidden>
-    </div>
-    <a href="index.html#top" class="ana-katalog-buton">Ana Kataloğa Dön</a>
-</div>
+<body>
 
-<p class="urun-bulunamadi" hidden>Ürün bulunamadı.</p>
-<section class="page cat-page" id="kategori-saglik-toplari">
-        <div class="cat-header">
-            <div class="cat-num">29</div>
-            <div class="cat-titleblock">
-                <h1>SAĞLIK TOPLARI</h1>
-                <p>Sağlık topu çeşitleri.</p>
-            </div>
+<header class="ust-cubuk">
+  <a class="marka" href="index.html">ÖZTEN<span>SPOR</span></a>
+  <div class="ust-arama">
+    <span class="arama-ikon">&#9906;</span>
+    <input type="text" id="aramaKutusu" placeholder="Ürün ara" autocomplete="off" oninput="aramaFiltrele(this)">
+  </div>
+  <div class="ust-butonlar">
+    <button type="button" class="ust-btn" id="kategoriAc">Kategoriler &#9662;</button>
+    <button type="button" class="ust-btn" id="sepetAc">Sepetim <span class="ust-rozet" id="ustSepetSayi">0</span></button>
+  </div>
+</header>
+
+<nav class="kategori-panel" id="kategoriPanel" hidden>
+  <div class="kategori-panel-baslik">TÜM KATEGORİLER</div>
+  <div class="kategori-izgara">
+        <a class="kategori-link" href="futbol.html">FUTBOL</a>
+        <a class="kategori-link" href="basketbol.html">BASKETBOL</a>
+        <a class="kategori-link" href="voleybol.html">VOLEYBOL</a>
+        <a class="kategori-link" href="badminton.html">BADMINTON</a>
+        <a class="kategori-link" href="masa-tenisi.html">MASA TENİSİ</a>
+        <a class="kategori-link" href="tenis.html">TENİS</a>
+        <a class="kategori-link" href="atlama-ipi.html">ATLAMA İPİ</a>
+        <a class="kategori-link" href="el-yayi.html">EL YAYI</a>
+        <a class="kategori-link" href="yoga-pilates.html">YOGA PİLATES</a>
+        <a class="kategori-link" href="fitness.html">FITNESS</a>
+        <a class="kategori-link" href="egzersiz.html">EGZERSİZ</a>
+        <a class="kategori-link" href="hentbol.html">HENTBOL</a>
+        <a class="kategori-link" href="yuzme.html">YÜZME</a>
+        <a class="kategori-link" href="bocce.html">BOCCE</a>
+        <a class="kategori-link" href="hokey.html">HOKEY</a>
+        <a class="kategori-link" href="kano.html">KANO</a>
+        <a class="kategori-link" href="beyzbol.html">BEYZBOL</a>
+        <a class="kategori-link" href="paten.html">PATEN</a>
+        <a class="kategori-link" href="oryantiring.html">ORYANTİRİNG</a>
+        <a class="kategori-link" href="padel.html">PADEL</a>
+        <a class="kategori-link" href="pickleball.html">PICKLEBALL</a>
+        <a class="kategori-link" href="ragbi.html">RAGBİ</a>
+        <a class="kategori-link" href="satranc.html">SATRANÇ</a>
+        <a class="kategori-link" href="softball.html">SOFTBALL</a>
+        <a class="kategori-link" href="squash.html">SQUASH</a>
+        <a class="kategori-link" href="dart.html">DART</a>
+        <a class="kategori-link" href="atletizm.html">ATLETİZM</a>
+        <a class="kategori-link" href="cimnastik.html">CİMNASTİK</a>
+        <a class="kategori-link aktif" href="saglik-toplari.html">SAĞLIK TOPLARI</a>
+        <a class="kategori-link" href="su-topu.html">SU TOPU</a>
+        <a class="kategori-link" href="oyun-grubu.html">OYUN GRUBU</a>
+        <a class="kategori-link" href="dovus-sporlari.html">DÖVÜŞ SPORLARI</a>
+  </div>
+</nav>
+
+<section class="kat-basi">
+  <div class="kat-basi-ic">
+    <div class="kat-etiket">KATEGORİ 29</div>
+    <h1>SAĞLIK TOPLARI</h1>
+    <p class="kat-aciklama">Sağlık topu çeşitleri.</p>
+    <span class="kat-sayac">21 ürün</span>
+  </div>
+</section>
+
+<main class="icerik">
+  <p class="urun-bulunamadi" hidden>Aramanla eşleşen ürün bulunamadı.</p>
+  <div class="product-grid">
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1plamayan%20RSB%2010kg.webp" alt="Helix Sağlık Topu Zıplamayan RSB 10kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Sağlık Topu Zıplamayan RSB 10kg</span>
+          <p class="kart-aciklama">Darbeye dayanıklı dış yüzey, Dengeli iç dolgu, Zıplamayan (slam) yapı, 10 kg ağırlık Fonksiyonel antrenman, kuvvet ve core çalışmalarına uygundur, Orta ve ileri seviye sporcular için idealdir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">920 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1plamayan%20RSB%2010kg.bmp" alt="Helix Sağlık Topu Zıplamayan RSB 10kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Sağlık Topu Zıplamayan RSB 10kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Darbeye dayanıklı dış yüzey, Dengeli iç dolgu, Zıplamayan (slam) yapı, 10 kg ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Fonksiyonel antrenman, kuvvet ve core çalışmalarına uygundur, Orta ve ileri seviye sporcular için idealdir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">920 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1plamayan%20RSB%2012kg.bmp" alt="Helix Sağlık Topu Zıplamayan RSB 12kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Sağlık Topu Zıplamayan RSB 12kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Darbeye dayanıklı dış yüzey, Dengeli iç dolgu, Zıplamayan (slam) yapı, 12 kg ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Fonksiyonel antrenman, kuvvet ve core çalışmalarına uygundur, Orta ve ileri seviye sporcular için idealdir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">970 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1plamayan%20RSB%201kg.bmp" alt="Helix Sağlık Topu Zıplamayan RSB 1kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Sağlık Topu Zıplamayan RSB 1kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Darbeye dayanıklı dış yüzey, Dengeli iç dolgu, Zıplamayan (slam) yapı, 1 kg ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Fonksiyonel antrenman, kuvvet ve core çalışmalarına uygundur, Başlangıç seviyesi için idealdir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">380 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1plamayan%20RSB%202kg.bmp" alt="Helix Sağlık Topu Zıplamayan RSB 2kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Sağlık Topu Zıplamayan RSB 2kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Darbeye dayanıklı dış yüzey, Dengeli iç dolgu, Zıplamayan (slam) yapı, 2 kg ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Fonksiyonel antrenman, kuvvet ve core çalışmalarına uygundur, Başlangıç seviyesi için idealdir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">430 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1plamayan%20RSB%203kg.bmp" alt="Helix Sağlık Topu Zıplamayan RSB 3kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Sağlık Topu Zıplamayan RSB 3kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Darbeye dayanıklı dış yüzey, Dengeli iç dolgu, Zıplamayan (slam) yapı, 3 kg ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Fonksiyonel antrenman, kuvvet ve core çalışmalarına uygundur, Her seviye kullanıcıya uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">480 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1plamayan%20RSB%204kg.bmp" alt="Helix Sağlık Topu Zıplamayan RSB 4kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Sağlık Topu Zıplamayan RSB 4kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Darbeye dayanıklı dış yüzey, Dengeli iç dolgu, Zıplamayan (slam) yapı, 4 kg ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Fonksiyonel antrenman, kuvvet ve core çalışmalarına uygundur, Her seviye kullanıcıya uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">500 ₺</span></div>
-    </div>
-</div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Sağlik toplari</span>
-        <span>1</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">29</div>
-            <div class="cat-titleblock">
-                <h1>SAĞLIK TOPLARI</h1>
-                <p>Ürün listesi (devamı) — sayfa 2/4</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1plamayan%20RSB%2012kg.webp" alt="Helix Sağlık Topu Zıplamayan RSB 12kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Sağlık Topu Zıplamayan RSB 12kg</span>
+          <p class="kart-aciklama">Darbeye dayanıklı dış yüzey, Dengeli iç dolgu, Zıplamayan (slam) yapı, 12 kg ağırlık Fonksiyonel antrenman, kuvvet ve core çalışmalarına uygundur, Orta ve ileri seviye sporcular için idealdir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">970 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1plamayan%20RSB%205kg.bmp" alt="Helix Sağlık Topu Zıplamayan RSB 5kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Sağlık Topu Zıplamayan RSB 5kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Darbeye dayanıklı dış yüzey, Dengeli iç dolgu, Zıplamayan (slam) yapı, 5 kg ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Fonksiyonel antrenman, kuvvet ve core çalışmalarına uygundur, Her seviye kullanıcıya uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">620 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1plamayan%20RSB%206kg.bmp" alt="Helix Sağlık Topu Zıplamayan RSB 6kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Sağlık Topu Zıplamayan RSB 6kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Darbeye dayanıklı dış yüzey, Dengeli iç dolgu, Zıplamayan (slam) yapı, 6 kg ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Fonksiyonel antrenman, kuvvet ve core çalışmalarına uygundur, Orta ve ileri seviye sporcular için idealdir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">660 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1plamayan%20RSB%208kg.bmp" alt="Helix Sağlık Topu Zıplamayan RSB 8kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Sağlık Topu Zıplamayan RSB 8kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Darbeye dayanıklı dış yüzey, Dengeli iç dolgu, Zıplamayan (slam) yapı, 8 kg ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Fonksiyonel antrenman, kuvvet ve core çalışmalarına uygundur, Orta ve ileri seviye sporcular için idealdir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">800 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1playan%20RB%2010kg.bmp" alt="Helix Sağlık Topu Zıplayan RB 10kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Sağlık Topu Zıplayan RB 10kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Kauçuk esaslı malzeme, Esnek ve kaymaz dış yüzey, Zıplayan (seken) yapı, 10 kg ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Core, denge ve patlayıcı güç antrenmanlarına uygundur, Slam ve sekme çalışmalarında kullanılabilir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">2.800 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1playan%20RB%2012kg.bmp" alt="Helix Sağlık Topu Zıplayan RB 12kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Sağlık Topu Zıplayan RB 12kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Kauçuk esaslı malzeme, Esnek ve kaymaz dış yüzey, Zıplayan (seken) yapı, 12 kg ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Core, denge ve patlayıcı güç antrenmanlarına uygundur, Slam ve sekme çalışmalarında kullanılabilir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">3.260 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1playan%20RB%201kg.bmp" alt="Helix Sağlık Topu Zıplayan RB 1kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Sağlık Topu Zıplayan RB 1kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Kauçuk esaslı malzeme, Esnek ve kaymaz dış yüzey, Zıplayan (seken) yapı, 1 kg ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Core, denge ve patlayıcı güç antrenmanlarına uygundur, Başlangıç seviyesi ve profesyoneller için idealdir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">590 ₺</span></div>
-    </div>
-</div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Sağlik toplari</span>
-        <span>2</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">29</div>
-            <div class="cat-titleblock">
-                <h1>SAĞLIK TOPLARI</h1>
-                <p>Ürün listesi (devamı) — sayfa 3/4</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1plamayan%20RSB%201kg.webp" alt="Helix Sağlık Topu Zıplamayan RSB 1kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Sağlık Topu Zıplamayan RSB 1kg</span>
+          <p class="kart-aciklama">Darbeye dayanıklı dış yüzey, Dengeli iç dolgu, Zıplamayan (slam) yapı, 1 kg ağırlık Fonksiyonel antrenman, kuvvet ve core çalışmalarına uygundur, Başlangıç seviyesi için idealdir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">380 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1playan%20RB%202kg.bmp" alt="Helix Sağlık Topu Zıplayan RB 2kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Sağlık Topu Zıplayan RB 2kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Kauçuk esaslı malzeme, Esnek ve kaymaz dış yüzey, Zıplayan (seken) yapı, 2 kg ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Core, denge ve patlayıcı güç antrenmanlarına uygundur, Başlangıç seviyesi ve profesyoneller için idealdir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">790 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1playan%20RB%203kg.bmp" alt="Helix Sağlık Topu Zıplayan RB 3kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Sağlık Topu Zıplayan RB 3kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Kauçuk esaslı malzeme, Esnek ve kaymaz dış yüzey, Zıplayan (seken) yapı, 3 kg ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Core, denge ve patlayıcı güç antrenmanlarına uygundur, Her seviye kullanıcıya uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.030 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1playan%20RB%204kg.bmp" alt="Helix Sağlık Topu Zıplayan RB 4kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Sağlık Topu Zıplayan RB 4kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Kauçuk esaslı malzeme, Esnek ve kaymaz dış yüzey, Zıplayan (seken) yapı, 4 kg ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Core, denge ve patlayıcı güç antrenmanlarına uygundur, Her seviye kullanıcıya uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.240 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1playan%20RB%205kg.bmp" alt="Helix Sağlık Topu Zıplayan RB 5kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Sağlık Topu Zıplayan RB 5kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Kauçuk esaslı malzeme, Esnek ve kaymaz dış yüzey, Zıplayan (seken) yapı, 5 kg ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Core, denge ve patlayıcı güç antrenmanlarına uygundur, Her seviye kullanıcıya uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.500 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1playan%20RB%206kg.bmp" alt="Helix Sağlık Topu Zıplayan RB 6kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Sağlık Topu Zıplayan RB 6kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Kauçuk esaslı malzeme, Esnek ve kaymaz dış yüzey, Zıplayan (seken) yapı, 6 kg ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Core, denge ve patlayıcı güç antrenmanlarına uygundur, Orta ve ileri seviye sporcular için idealdir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.740 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1playan%20RB%208kg.bmp" alt="Helix Sağlık Topu Zıplayan RB 8kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Sağlık Topu Zıplayan RB 8kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Kauçuk esaslı malzeme, Esnek ve kaymaz dış yüzey, Zıplayan (seken) yapı, 8 kg ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Core, denge ve patlayıcı güç antrenmanlarına uygundur, Orta ve ileri seviye sporcular için idealdir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">3.640 ₺</span></div>
-    </div>
-</div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Sağlik toplari</span>
-        <span>3</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">29</div>
-            <div class="cat-titleblock">
-                <h1>SAĞLIK TOPLARI</h1>
-                <p>Ürün listesi (devamı) — sayfa 4/4</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1plamayan%20RSB%202kg.webp" alt="Helix Sağlık Topu Zıplamayan RSB 2kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Sağlık Topu Zıplamayan RSB 2kg</span>
+          <p class="kart-aciklama">Darbeye dayanıklı dış yüzey, Dengeli iç dolgu, Zıplamayan (slam) yapı, 2 kg ağırlık Fonksiyonel antrenman, kuvvet ve core çalışmalarına uygundur, Başlangıç seviyesi için idealdir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">430 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/MB10%20SPORTICA.bmp" alt="MB10 SPORTICA" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : MB10 SPORTICA</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Kauçuk/PVC dış yüzey, Dengeli iç dolgu, Tutma-fırlatma-döndürme egzersizlerine uygun yapı, 1 kg ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Denge ve vücut koordinasyonu gelişimini destekler, Fitness ve fonksiyonel antrenmanlar için idealdir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">570 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/MB40%20SPORTICA.bmp" alt="MB40 SPORTICA" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : MB40 SPORTICA</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Kauçuk/PVC dış yüzey, Dengeli iç dolgu, Tutma-fırlatma-döndürme egzersizlerine uygun yapı, 4 kg ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Denge ve vücut koordinasyonu gelişimini destekler, Fitness ve fonksiyonel antrenmanlar için idealdir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.140 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/MTB50%20HATTRICK.bmp" alt="MTB50 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : MTB50 HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Dayanıklı PVC/kauçuk dış yüzey, Pilates ve yoga uyumlu tasarım, 5 kg ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Denge, esneme ve kuvvet çalışmalarına uygundur, Ev ve stüdyo kullanımı için idealdir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.280 ₺</span></div>
-    </div>
-</div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Sağlik toplari</span>
-        <span>4</span>
-    </div>
-    </section>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1plamayan%20RSB%203kg.webp" alt="Helix Sağlık Topu Zıplamayan RSB 3kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Sağlık Topu Zıplamayan RSB 3kg</span>
+          <p class="kart-aciklama">Darbeye dayanıklı dış yüzey, Dengeli iç dolgu, Zıplamayan (slam) yapı, 3 kg ağırlık Fonksiyonel antrenman, kuvvet ve core çalışmalarına uygundur, Her seviye kullanıcıya uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">480 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1plamayan%20RSB%204kg.webp" alt="Helix Sağlık Topu Zıplamayan RSB 4kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Sağlık Topu Zıplamayan RSB 4kg</span>
+          <p class="kart-aciklama">Darbeye dayanıklı dış yüzey, Dengeli iç dolgu, Zıplamayan (slam) yapı, 4 kg ağırlık Fonksiyonel antrenman, kuvvet ve core çalışmalarına uygundur, Her seviye kullanıcıya uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">500 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1plamayan%20RSB%205kg.webp" alt="Helix Sağlık Topu Zıplamayan RSB 5kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Sağlık Topu Zıplamayan RSB 5kg</span>
+          <p class="kart-aciklama">Darbeye dayanıklı dış yüzey, Dengeli iç dolgu, Zıplamayan (slam) yapı, 5 kg ağırlık Fonksiyonel antrenman, kuvvet ve core çalışmalarına uygundur, Her seviye kullanıcıya uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">620 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1plamayan%20RSB%206kg.webp" alt="Helix Sağlık Topu Zıplamayan RSB 6kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Sağlık Topu Zıplamayan RSB 6kg</span>
+          <p class="kart-aciklama">Darbeye dayanıklı dış yüzey, Dengeli iç dolgu, Zıplamayan (slam) yapı, 6 kg ağırlık Fonksiyonel antrenman, kuvvet ve core çalışmalarına uygundur, Orta ve ileri seviye sporcular için idealdir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">660 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1plamayan%20RSB%208kg.webp" alt="Helix Sağlık Topu Zıplamayan RSB 8kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Sağlık Topu Zıplamayan RSB 8kg</span>
+          <p class="kart-aciklama">Darbeye dayanıklı dış yüzey, Dengeli iç dolgu, Zıplamayan (slam) yapı, 8 kg ağırlık Fonksiyonel antrenman, kuvvet ve core çalışmalarına uygundur, Orta ve ileri seviye sporcular için idealdir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">800 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1playan%20RB%2010kg.webp" alt="Helix Sağlık Topu Zıplayan RB 10kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Sağlık Topu Zıplayan RB 10kg</span>
+          <p class="kart-aciklama">Kauçuk esaslı malzeme, Esnek ve kaymaz dış yüzey, Zıplayan (seken) yapı, 10 kg ağırlık Core, denge ve patlayıcı güç antrenmanlarına uygundur, Slam ve sekme çalışmalarında kullanılabilir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">2.800 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1playan%20RB%2012kg.webp" alt="Helix Sağlık Topu Zıplayan RB 12kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Sağlık Topu Zıplayan RB 12kg</span>
+          <p class="kart-aciklama">Kauçuk esaslı malzeme, Esnek ve kaymaz dış yüzey, Zıplayan (seken) yapı, 12 kg ağırlık Core, denge ve patlayıcı güç antrenmanlarına uygundur, Slam ve sekme çalışmalarında kullanılabilir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">3.260 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1playan%20RB%201kg.webp" alt="Helix Sağlık Topu Zıplayan RB 1kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Sağlık Topu Zıplayan RB 1kg</span>
+          <p class="kart-aciklama">Kauçuk esaslı malzeme, Esnek ve kaymaz dış yüzey, Zıplayan (seken) yapı, 1 kg ağırlık Core, denge ve patlayıcı güç antrenmanlarına uygundur, Başlangıç seviyesi ve profesyoneller için idealdir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">590 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1playan%20RB%202kg.webp" alt="Helix Sağlık Topu Zıplayan RB 2kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Sağlık Topu Zıplayan RB 2kg</span>
+          <p class="kart-aciklama">Kauçuk esaslı malzeme, Esnek ve kaymaz dış yüzey, Zıplayan (seken) yapı, 2 kg ağırlık Core, denge ve patlayıcı güç antrenmanlarına uygundur, Başlangıç seviyesi ve profesyoneller için idealdir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">790 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1playan%20RB%203kg.webp" alt="Helix Sağlık Topu Zıplayan RB 3kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Sağlık Topu Zıplayan RB 3kg</span>
+          <p class="kart-aciklama">Kauçuk esaslı malzeme, Esnek ve kaymaz dış yüzey, Zıplayan (seken) yapı, 3 kg ağırlık Core, denge ve patlayıcı güç antrenmanlarına uygundur, Her seviye kullanıcıya uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.030 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1playan%20RB%204kg.webp" alt="Helix Sağlık Topu Zıplayan RB 4kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Sağlık Topu Zıplayan RB 4kg</span>
+          <p class="kart-aciklama">Kauçuk esaslı malzeme, Esnek ve kaymaz dış yüzey, Zıplayan (seken) yapı, 4 kg ağırlık Core, denge ve patlayıcı güç antrenmanlarına uygundur, Her seviye kullanıcıya uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.240 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1playan%20RB%205kg.webp" alt="Helix Sağlık Topu Zıplayan RB 5kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Sağlık Topu Zıplayan RB 5kg</span>
+          <p class="kart-aciklama">Kauçuk esaslı malzeme, Esnek ve kaymaz dış yüzey, Zıplayan (seken) yapı, 5 kg ağırlık Core, denge ve patlayıcı güç antrenmanlarına uygundur, Her seviye kullanıcıya uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.500 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1playan%20RB%206kg.webp" alt="Helix Sağlık Topu Zıplayan RB 6kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Sağlık Topu Zıplayan RB 6kg</span>
+          <p class="kart-aciklama">Kauçuk esaslı malzeme, Esnek ve kaymaz dış yüzey, Zıplayan (seken) yapı, 6 kg ağırlık Core, denge ve patlayıcı güç antrenmanlarına uygundur, Orta ve ileri seviye sporcular için idealdir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.740 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/Helix%20Sa%C4%9Fl%C4%B1k%20Topu%20Z%C4%B1playan%20RB%208kg.webp" alt="Helix Sağlık Topu Zıplayan RB 8kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Sağlık Topu Zıplayan RB 8kg</span>
+          <p class="kart-aciklama">Kauçuk esaslı malzeme, Esnek ve kaymaz dış yüzey, Zıplayan (seken) yapı, 8 kg ağırlık Core, denge ve patlayıcı güç antrenmanlarına uygundur, Orta ve ileri seviye sporcular için idealdir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">3.640 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/MB10%20SPORTICA.webp" alt="MB10 SPORTICA" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>MB10 SPORTICA</span>
+          <p class="kart-aciklama">Kauçuk/PVC dış yüzey, Dengeli iç dolgu, Tutma-fırlatma-döndürme egzersizlerine uygun yapı, 1 kg ağırlık Denge ve vücut koordinasyonu gelişimini destekler, Fitness ve fonksiyonel antrenmanlar için idealdir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">570 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/MB40%20SPORTICA.webp" alt="MB40 SPORTICA" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>MB40 SPORTICA</span>
+          <p class="kart-aciklama">Kauçuk/PVC dış yüzey, Dengeli iç dolgu, Tutma-fırlatma-döndürme egzersizlerine uygun yapı, 4 kg ağırlık Denge ve vücut koordinasyonu gelişimini destekler, Fitness ve fonksiyonel antrenmanlar için idealdir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.140 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Sa%C4%9Fl%C4%B1k%20topu%20image/MTB50%20HATTRICK.webp" alt="MTB50 HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>MTB50 HATTRICK</span>
+          <p class="kart-aciklama">Dayanıklı PVC/kauçuk dış yüzey, Pilates ve yoga uyumlu tasarım, 5 kg ağırlık Denge, esneme ve kuvvet çalışmalarına uygundur, Ev ve stüdyo kullanımı için idealdir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.280 ₺</span></div>
+          </div>
+        </div>
+      </div>
+  </div>
+</main>
 
+<a class="wa-buton" href="https://wa.me/905522025737" target="_blank" rel="noopener" aria-label="WhatsApp'tan yazın">
+  <svg viewBox="0 0 32 32" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M16 3C9 3 3 9 3 16c0 2.4.6 4.6 1.8 6.6L3 29l6.6-1.7c1.9 1 4 1.6 6.4 1.6 7 0 13-6 13-13S23 3 16 3zm7.6 18.4c-.3.9-1.7 1.7-2.7 1.9-.7.1-1.6.2-4.6-1-3.9-1.6-6.4-5.5-6.6-5.8-.2-.3-1.6-2.1-1.6-4s1-2.8 1.3-3.2c.3-.3.7-.4 1-.4h.7c.2 0 .5 0 .8.6.3.7 1.1 2.6 1.2 2.8.1.2.2.4 0 .7-.1.3-.2.4-.4.6-.2.2-.4.5-.6.7-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.6 1.4 1.3 2.6 1.7 3 1.9.3.2.5.1.7-.1.2-.2.9-1 1.1-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.5 1.2.4.2.6.3.7.5.1.2.1 1-.2 1.9z"/></svg>
+</a>
 
-<script>
-function aramaFiltrele(inp){
-  var q=inp.value.toLocaleLowerCase('tr-TR').trim(), gorunen=0;
-  document.querySelectorAll('.product-card').forEach(function(k){
-    var e=k.querySelector('.pf-label');
-    var esles=(e?e.textContent.toLocaleLowerCase('tr-TR'):'').indexOf(q)!==-1;
-    k.style.display=esles?'':'none';
-    if(esles)gorunen++;
-  });
-  document.querySelector('.urun-bulunamadi').hidden=!(q&&gorunen===0);
-}
-</script>
+<footer class="alt-bilgi">
+  <div class="alt-bilgi-ic">
+    <strong>ÖZTEN SPOR</strong>
+    Kirazlı Mahallesi 1201. Sokak, Bağcılar / İstanbul<br>
+    <a href="mailto:oztensporltd@gmail.com">oztensporltd@gmail.com</a>
+  </div>
+</footer>
+
+<nav class="alt-cubuk">
+  <a class="alt-btn" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+    Ana Sayfa
+  </a>
+  <button type="button" class="alt-btn" id="altAra">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    Ara
+  </button>
+  <button type="button" class="alt-btn" id="altKategori">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    Kategoriler
+  </button>
+  <button type="button" class="alt-btn" id="altSepet">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M6 6 5 3H3"/></svg>
+    Sepet
+    <span class="alt-rozet" id="altSepetSayi" hidden>0</span>
+  </button>
+</nav>
+
 </body>
 </html>

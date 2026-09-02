@@ -4,659 +4,699 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FUTBOL — Özten Spor Kataloğu</title>
-<link rel="stylesheet" href="Ozten Spor Katalog.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ozten-yeni.css">
 <script src="sepet.js" defer></script>
+<script src="site.js" defer></script>
 </head>
-<body id="top">
-<div class="floating-nav-group">
-    <a href="#top" class="floating-nav-btn"><span class="fn-arrow">&#8593;</span> Yukarı Çık</a>
-</div>
-<div class="katalog-arama"><input type="text" placeholder="Ürün ara..." oninput="aramaFiltrele(this)"></div>
-<div class="kategori-menu-cubugu">
-    <button type="button" class="kategori-menu-buton">Alt Kategoriler <span class="fn-arrow">&#9662;</span></button>
-    <div class="kategori-menu-panel" hidden>
-        <a href="futbol-malzemeleri.html#top">Futbol Malzemeleri</a>
-        <a href="kaleci-eldivenleri.html#top">Kaleci Eldivenleri</a>
-    </div>
-    <a href="index.html#top" class="ana-katalog-buton">Ana Kataloğa Dön</a>
-</div>
-<p class="urun-bulunamadi" hidden>Ürün bulunamadı.</p>
-<section class="page cat-page" id="kategori-futbol">
-        <div class="cat-header">
-            <div class="cat-num">01</div>
-            <div class="cat-titleblock">
-                <h1>FUTBOL</h1>
-                <p>Sahadan halı sahaya, her seviyeye uygun toplar, forma ve ekipmanlar.</p>
-            </div>
+<body>
+
+<header class="ust-cubuk">
+  <a class="marka" href="index.html">ÖZTEN<span>SPOR</span></a>
+  <div class="ust-arama">
+    <span class="arama-ikon">&#9906;</span>
+    <input type="text" id="aramaKutusu" placeholder="Ürün ara" autocomplete="off" oninput="aramaFiltrele(this)">
+  </div>
+  <div class="ust-butonlar">
+    <button type="button" class="ust-btn" id="kategoriAc">Kategoriler &#9662;</button>
+    <button type="button" class="ust-btn" id="sepetAc">Sepetim <span class="ust-rozet" id="ustSepetSayi">0</span></button>
+  </div>
+</header>
+
+<nav class="kategori-panel" id="kategoriPanel" hidden>
+  <div class="kategori-panel-baslik">TÜM KATEGORİLER</div>
+  <div class="kategori-izgara">
+        <a class="kategori-link aktif" href="futbol.html">FUTBOL</a>
+        <a class="kategori-link" href="basketbol.html">BASKETBOL</a>
+        <a class="kategori-link" href="voleybol.html">VOLEYBOL</a>
+        <a class="kategori-link" href="badminton.html">BADMINTON</a>
+        <a class="kategori-link" href="masa-tenisi.html">MASA TENİSİ</a>
+        <a class="kategori-link" href="tenis.html">TENİS</a>
+        <a class="kategori-link" href="atlama-ipi.html">ATLAMA İPİ</a>
+        <a class="kategori-link" href="el-yayi.html">EL YAYI</a>
+        <a class="kategori-link" href="yoga-pilates.html">YOGA PİLATES</a>
+        <a class="kategori-link" href="fitness.html">FITNESS</a>
+        <a class="kategori-link" href="egzersiz.html">EGZERSİZ</a>
+        <a class="kategori-link" href="hentbol.html">HENTBOL</a>
+        <a class="kategori-link" href="yuzme.html">YÜZME</a>
+        <a class="kategori-link" href="bocce.html">BOCCE</a>
+        <a class="kategori-link" href="hokey.html">HOKEY</a>
+        <a class="kategori-link" href="kano.html">KANO</a>
+        <a class="kategori-link" href="beyzbol.html">BEYZBOL</a>
+        <a class="kategori-link" href="paten.html">PATEN</a>
+        <a class="kategori-link" href="oryantiring.html">ORYANTİRİNG</a>
+        <a class="kategori-link" href="padel.html">PADEL</a>
+        <a class="kategori-link" href="pickleball.html">PICKLEBALL</a>
+        <a class="kategori-link" href="ragbi.html">RAGBİ</a>
+        <a class="kategori-link" href="satranc.html">SATRANÇ</a>
+        <a class="kategori-link" href="softball.html">SOFTBALL</a>
+        <a class="kategori-link" href="squash.html">SQUASH</a>
+        <a class="kategori-link" href="dart.html">DART</a>
+        <a class="kategori-link" href="atletizm.html">ATLETİZM</a>
+        <a class="kategori-link" href="cimnastik.html">CİMNASTİK</a>
+        <a class="kategori-link" href="saglik-toplari.html">SAĞLIK TOPLARI</a>
+        <a class="kategori-link" href="su-topu.html">SU TOPU</a>
+        <a class="kategori-link" href="oyun-grubu.html">OYUN GRUBU</a>
+        <a class="kategori-link" href="dovus-sporlari.html">DÖVÜŞ SPORLARI</a>
+  </div>
+</nav>
+
+<section class="kat-basi">
+  <div class="kat-basi-ic">
+    <div class="kat-etiket">KATEGORİ 01</div>
+    <h1>FUTBOL</h1>
+    <p class="kat-aciklama">Sahadan halı sahaya, her seviyeye uygun toplar, forma ve ekipmanlar.</p>
+    <span class="kat-sayac">58 ürün</span>
+  </div>
+</section>
+
+<nav class="alt-kat-serit" aria-label="Alt kategoriler">
+  <div class="alt-kat-ic">
+      <a class="alt-kat-cip aktif" href="futbol.html">Toplar</a>
+      <a class="alt-kat-cip" href="futbol-malzemeleri.html">Futbol Malzemeleri</a>
+      <a class="alt-kat-cip" href="kaleci-eldivenleri.html">Kaleci Eldivenleri</a>
+  </div>
+</nav>
+
+<main class="icerik">
+  <p class="urun-bulunamadi" hidden>Aramanla eşleşen ürün bulunamadı.</p>
+  <div class="product-grid">
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/futbol%20topu%20shine%20pro.jpg" alt="Helix Futbol Topu Shine Pro No:4" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu Shine Pro No:4</span>
+          <p class="kart-aciklama">4 numara, 32 panel, Mikro Fiber Pearl dış yüzey, Çok katmanlı polyester / pamuk kumaş 380 ±10 gram ağırlık, Butil.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">680 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/futbol%20topu%20shine%20pro.jpg" alt="Futbol Topu Shine Pro" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Shine Pro No:4</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 4 numara, 32 panel, Mikro Fiber Pearl dış yüzey, Çok katmanlı polyester / pamuk kumaş</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">380 ±10 gram ağırlık, Butil.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat </span><span class="pf-line short">680 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/futbol%20topu%20shine%20pro2.jpg" alt="Futbol Topu Shine Pro 2" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Shine Pro No:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5, 32 panel, Mikro Fiber Pearl dış yüzey, Çok katmanlı polyester / pamuk kumaş</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">420 ±10 gram ağırlık, Profesyonel maç ve antrenman.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">680 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Zilli%20Futbol%20Topu%20NV-15.jpg" alt="Helix Zilli Futbol Topu NV-15" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Zilli Futbol Topu NV-15 No:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Zilli futbol topu, 5, 430 gram ağırlık, 32 panel el dikişli, 4 katmanlı PU parlak deri dış yüzey</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Entegre sesli yönlendirme sistemi.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">920 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Zilli%20Futbol%20Topu%20NV-14.jpg" alt="Helix Zilli Futbol Topu NV-14" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Zilli Futbol Topu NV-14 No:4</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Zilli futbol topu, 4 numara boyut, 370-400 gram ağırlık, 32 panel el dikişli, 4 katmanlı PU deri dış yüzey, Entegre zil sistemi ile sesli takip</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Çim, suni çim ve salon zeminleri, 9-12 yaş ve farklı yetenek seviyeleri.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">920 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Velo.jpg" alt="Helix Futbol Topu Velo" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Velo No:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Hybrid futbol topu, 5 (Standart maç ölçüsü), 32 panel, Dayanıklı PU kaplama</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Su geçirmez yapı, Antrenman ve maç, Çim, suni çim ve sert zemin.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">580 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Velo4.jpg" alt="Helix Futbol Topu Velo4" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Velo No:4</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Hybrid futbol topu, 4 (9-12 yaş için ideal), 32 panel, Hybrid (Makine dikişi + Termal yapıştırma), Dayanıklı PU kaplama dış yüzey</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Düşük su emilimi ve yüksek hava tutma performansı, Antrenman ve maç, Doğal çim, suni çim ve sert zeminler.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">580 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Futbol</span>
-        <span>3</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">01</div>
-            <div class="cat-titleblock">
-                <h1>FUTBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 2/10</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/futbol%20topu%20shine%20pro2.jpg" alt="Helix Futbol Topu Shine Pro No:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu Shine Pro No:5</span>
+          <p class="kart-aciklama">5, 32 panel, Mikro Fiber Pearl dış yüzey, Çok katmanlı polyester / pamuk kumaş 420 ±10 gram ağırlık, Profesyonel maç ve antrenman.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">680 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Trex.jpg" alt="Helix Futbol Topu Trex" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Trex No:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : El dikişli futbol topu, 5 (Standart maç ölçüsü), 410-430 gram ağırlık, 32 panel, 4 katmanlı dayanıklı PU kaplama dış yüzey</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Antrenman ve maç, Çim, suni çim, halı saha ve sert zemin.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">660 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Trex4.jpg" alt="Helix Futbol Topu Trex4" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Trex No:4</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 4 (9–12 yaş grubu için idealdir.), 350–390 gram ağırlık, 32 panel, el dikişli, 4 katmanlı PU kaplama dış yüzey</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Lateks, uzun süreli hava tutma özelliği, Çim, suni çim ve sert zeminlerde kullanıma uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">660 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Trex3.jpg" alt="Helix Futbol Topu Trex3" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Trex No:3</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 3 (9 yaş altı için uygundur), 310 - 330 ağırlık, 32 Panel</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">4 Katmanlı PU, Sert Zemin, Suni Çim ve Doğal Çim.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">590 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20TRB.jpg" alt="Helix Futbol Topu TRB" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu TRB No:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 boyut, 400 - 430, 32, Termal Bonded (Isı ile Yapıştırma), Çim ve Suni Çim Sahalar.</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">930 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20TRB4.jpg" alt="Helix Futbol Topu TRB4" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu TRB No:4</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 4, 350 - 380 ağırlık, 32 Panel, PU Deri, Lateks (Yüksek Hava Tutma Kapasitesi)</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Çim, Suni Çim ve Sert Zemin.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">910 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Sirius.jpg" alt="Helix Futbol Topu Sirius" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Sirius No:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 boyut, 410 - 430, 32 Panel, 4 Katmanlı PU Parlak, Çim, Suni Çim ve Sert Zemin.</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">750 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Futbol</span>
-        <span>4</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">01</div>
-            <div class="cat-titleblock">
-                <h1>FUTBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 3/10</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Zilli%20Futbol%20Topu%20NV-15.jpg" alt="Helix Zilli Futbol Topu NV-15 No:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Zilli Futbol Topu NV-15 No:5</span>
+          <p class="kart-aciklama">Zilli futbol topu, 5, 430 gram ağırlık, 32 panel el dikişli, 4 katmanlı PU parlak deri dış yüzey Entegre sesli yönlendirme sistemi.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">920 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Sirius4.jpg" alt="Helix Futbol Topu Sirius4" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Sirius No:4</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 4, 350 - 380 ağırlık, 32 Panel, PU, Sert Zemin, Çim ve Suni Çim.</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">740 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Quick%20Pro.jpg" alt="Helix Futbol Topu Quick Pro" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Quick Pro No:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 (Uluslararası Standart), 32 Panel El, PU ve Suni Deri, Çok Katmanlı Polyester-Pamuk</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Lateks Destekli Form Koruma, Yüksek Hava Tutuşlu, Profesyonel Maç ve Antrenman.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">550 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Quick%20Pro4.jpg" alt="Helix Futbol Topu Quick Pro4" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Quick Pro No:4</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 32 panelden oluşan klasik futbol topu yapısı, El dikişli profesyonel ve dayanıklı üretim PU ve suni deri dış yüzey, Yumuşak dokunuş ve aşınma direnci</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Çok katmanlı polyester-pamuk astar, Lateks destekli iç yapı ile dengeli sekme performansı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">550 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20NS%20Quick.jpg" alt="Helix Futbol Topu NS Quick" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu NS Quick No:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 (standart futbol topu), 410–430 gram ağırlık, 32 panel – el dikişli, PU deri kaplama – dayanıklı ve yumuşak yüzey malzeme, Butil – uzun süre hava tutar</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Çim, suni çim ve sert zemin, Sarı, beyaz ve mavi kombinasyonu renk, Antrenman, amatör ve yarı profesyonel maçlar.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">550 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Hybrid%20Unity.jpg" alt="Helix Futbol Topu Hybrid Unity" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Hybrid Unity No:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 32 panel – klasik dengeli tasarım, Hibrit dikiş (makine + el dikişi hissi), PU suni deri yüzey malzeme, Çok katmanlı polyester-pamuk astar</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Lateks destekli form koruma, Dayanıklı bladder – yüksek hava tutuşu, 5 – resmi standart ölçü.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">650 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Hybrid%20Unity4.jpg" alt="Helix Futbol Topu Hybrid Unity4" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Hybrid Unity No:4</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 32 panel – klasik dengeli yapı, 4 – genç oyuncular için standart ölçü, PU dış yüzey, suni deri kaplama malzeme, Çok katmanlı polyester-pamuk iç yapı, Özel lateks – form koruyucu yapı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Dayanıklı bladder – yüksek hava tutuşu, Hibrit dikiş – dayanıklılık ve yumuşak temas, Antrenmanlar, okul takımları.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">650 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Futbol</span>
-        <span>5</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">01</div>
-            <div class="cat-titleblock">
-                <h1>FUTBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 4/10</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Zilli%20Futbol%20Topu%20NV-14.jpg" alt="Helix Zilli Futbol Topu NV-14 No:4" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Zilli Futbol Topu NV-14 No:4</span>
+          <p class="kart-aciklama">Zilli futbol topu, 4 numara boyut, 370-400 gram ağırlık, 32 panel el dikişli, 4 katmanlı PU deri dış yüzey, Entegre zil sistemi ile sesli takip Çim, suni çim ve salon zeminleri, 9-12 yaş ve farklı yetenek seviyeleri.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">920 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Hybrid.jpg" alt="Helix Futbol Topu Hybrid" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Hybrid No:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 (resmi maç standardı), 410–450 gram ağırlık, 32 panel – hibrit yapı, PU deri kaplama malzeme</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Doğal çim ve suni çim, Profesyonel maç ve antrenman.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">860 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Hybrid4.jpg" alt="Helix Futbol Topu Hybrid4" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Hybrid No:4</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 4 (9–12 yaş), 350–390 gram ağırlık, 32 panel – hibrit yapı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">PU deri kaplama malzeme, Doğal ve suni çim.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">710 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Game.jpg" alt="Helix Futbol Topu Game" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Game No:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 (resmi maç standardı), 32 panel – el dikişli, 4 katmanlı PU deri</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Çim ve suni çim sahalar, 410–430 gram ağırlık.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">610 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Game4.jpg" alt="Helix Futbol Topu Game4" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Game No:4</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 4 (9–12 yaş), 350–380 gram ağırlık, 32 panel – el dikişli</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">3 katmanlı PU kaplama dış yüzey, Çim ve suni çim.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">570 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Force.jpg" alt="Helix Futbol Topu Force" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Force No:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 (resmi maç standardı), 410–430 gram ağırlık, 32 panel – el dikişli</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">4 katmanlı PU deri dış yüzey, Çim, suni çim, sert zemin.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">540 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Force4.jpg" alt="Helix Futbol Topu Force4" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Force No:4</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 4 (9–12 yaş), 350–390 gram ağırlık, 32 panel – el dikişli, 3 katmanlı PU kaplama dış yüzey</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Okul, antrenman, çim ve suni çim.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">500 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Futbol</span>
-        <span>6</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">01</div>
-            <div class="cat-titleblock">
-                <h1>FUTBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 5/10</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Velo.jpg" alt="Helix Futbol Topu Velo No:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu Velo No:5</span>
+          <p class="kart-aciklama">Hybrid futbol topu, 5 (Standart maç ölçüsü), 32 panel, Dayanıklı PU kaplama Su geçirmez yapı, Antrenman ve maç, Çim, suni çim ve sert zemin.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">580 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Force3.jpg" alt="Helix Futbol Topu Force3" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Force No:3</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 3, 300–320 gram ağırlık, 32 panel, el dikişli, 4 katmanlı PU deri dış yüzey</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Çim, suni çim, sert zemin, 9 yaş altı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">510 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Extreme.jpg" alt="Helix Futbol Topu Extreme" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Extreme No:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 boyut, 410 – 430 gram ağırlık, El dikişli, 32 panel</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">5 kat poli pamuk + sentetik deri malzeme, Lateks.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">730 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Antrenman%20Topu%20%C4%B0pli%20RTB-3.jpg" alt="Helix Futbol Antrenman Topu İpli RTB-3" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Antrenman Topu İpli RTB-3 No:3</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 3, 310 – 330 gram ağırlık, 32 panel, El dikişli yapı, PU (poliüretan) dış yüzey malzeme</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">110 cm, Teknik gelişim, pas, şut ve koordinasyon çalışmaları.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">470 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Antrenman%20Topu%20%C4%B0pli%20RTB-5.jpg" alt="Helix Futbol Antrenman Topu İpli RTB-5" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Antrenman Topu İpli RTB-5 No:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 (standart yetişkin futbol topu), 32 panel klasik yapı, Dayanıklı dış yüzey kaplama malzeme, Hava tutuşu yüksek yapı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Elastik ipli geri dönüş mekanizması, Bireysel futbol antrenmanı, teknik gelişim çalışmaları.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">500 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Ballista.jpg" alt="Helix Futbol Topu Ballista" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Ballista No:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 (68.5 – 69.5 cm çevre), 420 – 445 gram ağırlık, 12 panel aerodinamik tasarım, Makine dikişli yapı, Kabartmalı (Embossed) PU / suni deri dış yüzey</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Polyester ve pamuk çok katmanlı yapı, Lateks destekli yüksek geri sekme sistemi, Dayanıklı hava tutan iç lastik, Profesyonel maç ve antrenman.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">440 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20I%C5%9F%C4%B1kl%C4%B1%20FL-1.jpg" alt="Helix Futbol Topu Işıklı FL-1" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Işıklı FL-1 No:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 Numara (standart) boyut, 400 – 430 gram ağırlık, Hybrid, 32 panel, Termal bonded (ısı yapıştırma)</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Suni ve doğal çim Işık sensörlü LED görünürlük.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">890 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Futbol</span>
-        <span>7</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">01</div>
-            <div class="cat-titleblock">
-                <h1>FUTBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 6/10</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Velo4.jpg" alt="Helix Futbol Topu Velo No:4" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu Velo No:4</span>
+          <p class="kart-aciklama">Hybrid futbol topu, 4 (9-12 yaş için ideal), 32 panel, Hybrid (Makine dikişi + Termal yapıştırma), Dayanıklı PU kaplama dış yüzey Düşük su emilimi ve yüksek hava tutma performansı, Antrenman ve maç, Doğal çim, suni çim ve sert zeminler.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">580 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20NS%20Quick.jpg" alt="Helix Futbol Topu NS Quick" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu NS Quick No:4</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 4 (Genç oyuncular için ideal), 350 – 370 gram ağırlık, 32 panel – dikişli tasarım, PU deri dış kaplama – aşınmaya dayanıklı malzeme, Butil – yüksek hava tutma kapasitesi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Suni çim, doğal çim ve sert zemin, Kırmızı, beyaz ve mavi kombinasyonu renk, Antrenmanlar, okul maçları ve hobi amaçlı kullanım.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">550 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Extreme.jpg" alt="Helix Futbol Topu Extreme" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Extreme No:4</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 4 boyut, 370 – 400 gram, El dikişli, 32 panel tasarım</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">5 kat poli pamuk + sentetik deri dış yüzey, Lateks.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">730 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Antrenman%20Topu%20%C4%B0pli%20RTB-4.jpg" alt="Helix Futbol Antrenman Topu İpli RTB-4" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Antrenman Topu İpli RTB-4 No:4</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 4 (9–12 yaş grubu için ideal), 32 panel klasik yapı, Dayanıklı dış kaplama malzeme, Uzun süre hava tutan yapı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Elastik ipli geri dönüş mekanizması, Bireysel futbol antrenmanı, okul ve kulüp çalışmaları.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">490 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Pleco.bmp" alt="Helix Futbol Topu Pleco" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Pleco No:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Helix Pleco Futbol, 5 Numara, 410 - 430, 32 Panel El, 4 Katmanlı PU, Sert Zemin</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Çim ve Suni, Maç, Antrenman, Halı Saha ve Okul Sahaları.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">570 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Premier.bmp" alt="Helix Futbol Topu Premier" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Premier No:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 (Standart Futbol Topu), 410 - 430 ağırlık, 32 Panel El</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">4 Katmanlı PU, Çim ve Suni Çim Sahalar.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">790 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Quick.bmp" alt="Helix Futbol Topu Quick" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Quick No:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 (Resmi Maç Standardı), 410 - 430 ağırlık, 32 Panel El, PU, Doğal Çim ve Suni Çim Sahalar.</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">630 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Futbol</span>
-        <span>8</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">01</div>
-            <div class="cat-titleblock">
-                <h1>FUTBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 7/10</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Trex.jpg" alt="Helix Futbol Topu Trex No:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu Trex No:5</span>
+          <p class="kart-aciklama">El dikişli futbol topu, 5 (Standart maç ölçüsü), 410-430 gram ağırlık, 32 panel, 4 katmanlı dayanıklı PU kaplama dış yüzey Antrenman ve maç, Çim, suni çim, halı saha ve sert zemin.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">660 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Hyper%20Futbol%20Topu%20Blaze.bmp" alt="Hyper Futbol Topu Blaze" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Hyper Futbol Topu Blaze No:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Makine dikişli futbol topu, 5 (Standart maç ölçüsü), 32 panel, PVC + suni deri kaplama dış yüzey, Çok katmanlı polyester-pamuk</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Lateks destekli, Dayanıklı şişme bladder, Antrenman, okul maçları ve amatör müsabakalar.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">220 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Sannleika.bmp" alt="Helix Futbol Topu Sannleika" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Futbol Topu Sannleika No:5 FIFA Quality Pro</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 1.2 mm PU deri, 3.8 mm POE köpük İç Lastik (Bladder): Yüksek kaliteli Patch, 32 panel aerodinamik tasarım, 68.5 - 69.5 cm, 420 - 445 g ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">135 - 155 cm, Maksimum %15 basınç kaybı, %0.7 - %0.9, %30 PU, %30 Sentetik Kauçuk Köpük, %30 Sentetik Kauçuk, %10.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.930 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/PLATINO%20PRO%20HATTRICK%20NO%205.bmp" alt="PLATINO PRO HATTRICK NO 5" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : PLATINO PRO HATTRICK NO:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 Numara, Premium PU yüzey, Hybrid (yapıştırma) teknoloji, Butil iç lastik 380 g</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Salon kullanımına uygun, Maç ve antrenman kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">720 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/PLATINO%20PRO%20HATTRICK%20NO%204.bmp" alt="PLATINO PRO HATTRICK NO 4" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : PLATINO PRO HATTRICK NO:4</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 4 Numara, Premium PU yüzey, Hybrid (yapıştırma) teknoloji, Butil iç lastik</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Salon kullanımına uygun, Maç ve antrenman kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">740 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/PROGOLD%20HATTRICK%20NO%205.bmp" alt="PROGOLD HATTRICK NO 5" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : PROGOLD HATTRICK NO:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 Numara, Premium, Japon PU yüzey, El dikişli 18 panel yapı, Butil iç lastik 380 ±10 g</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Maç ve antrenman kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">720 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/PROGOLD%20HATTRICK%20NO%205.bmp" alt="PROGOLD ALTIS NO:4" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : PROGOLD ALTIS NO:4</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 4 Numara, Premium, Japon PU yüzey, El dikişli 18 panel yapı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Butil iç lastik, Maç ve antrenman kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">720 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Futbol</span>
-        <span>9</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">01</div>
-            <div class="cat-titleblock">
-                <h1>FUTBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 8/10</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Trex4.jpg" alt="Helix Futbol Topu Trex No:4" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu Trex No:4</span>
+          <p class="kart-aciklama">4 (9–12 yaş grubu için idealdir.), 350–390 gram ağırlık, 32 panel, el dikişli, 4 katmanlı PU kaplama dış yüzey Lateks, uzun süreli hava tutma özelliği, Çim, suni çim ve sert zeminlerde kullanıma uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">660 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/ORBIT%20HATTRICK.bmp" alt="ORBIT HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : ORBIT HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Futsal Topu 32, Panel Düşük sekme özelliği, Dayanıklı sentetik deri yüzey, Butil iç lastik</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Salon kullanımına uygun, Antrenman ve maç kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">680 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/HYBIRD%20FUTSAL%20HATTRICK.bmp" alt="HYBIRD FUTSAL HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : HYBIRD FUTSAL HATTRICK NO:4</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : No:4 Hybrid (El, Dikiş + Isıl, Yapıştırma), Teknolojisi, Premium PU sentetik deri yüzey, Düşük sekme özelliği</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Butil iç lastik, Salon kullanımına uygun, Antrenman ve maç kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">700 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/FUTSAL%20PRO%20HATTRICK.bmp" alt="FUTSAL PRO HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : FUTSAL PRO HATTRICKNO:4</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : No:4 Pro, Hybrid, Teknolojisi, Premium PU yüzey, Düşük sekme özelliği, Butil iç lastik</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Yüksek dayanıklılık, Salon maçları ve profesyonel antrenmanlara uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">720 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/CALCIO%20HATTRICK.bmp" alt="CALCIO HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : CALCIO HATTRICK NO:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : No:5 32, Panel Dayanıklı sentetik deri yüzey, Makine dikişli, Butil iç lastik</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Dengeli uçuş ve kontrol, Antrenman ve amatör maç kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">720 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/NOVA%20HATTRICK.bmp" alt="NOVA HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : NOVA HATTRICK NO:4</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : No:4 %100, Parlak PU kaplama, El dikişli 32, Panel 4</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Katmanlı yapı, Bütil iç lastik 380 g ağırlık.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">560 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/IMPEL%20ALTIS.bmp" alt="IMPEL ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : IMPEL ALTIS NO:4</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : No:4 G-14 yüzey, El dikişli 4 katmanlı yapı, Lateks iç lastik 440 g ağırlık.</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">540 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Futbol</span>
-        <span>10</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">01</div>
-            <div class="cat-titleblock">
-                <h1>FUTBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 9/10</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Trex3.jpg" alt="Helix Futbol Topu Trex No:3" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu Trex No:3</span>
+          <p class="kart-aciklama">3 (9 yaş altı için uygundur), 310 - 330 ağırlık, 32 Panel 4 Katmanlı PU, Sert Zemin, Suni Çim ve Doğal Çim.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">590 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/THERMO%20PLUS%20HATTRICK.bmp" alt="THERMO PLUS HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : THERMO PLUS HATTRICK NO:4</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : No:4 Thermo (Isıl, Yapıştırma), Teknolojisi %100, Polyurethane (PU) yüzey 32, Panel Su emmeyen yapı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Dengeli uçuş ve hassas kontrol, Maç ve antrenman kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">610 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/SCORE%20HATTRICK.bmp" alt="SCORE HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : SCORE HATTRICK NO:4</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : No:4 %100, Polyurethane (PU) yüzey, El dikişli 32, Panel Butil iç lastik, Dengeli uçuş ve yüksek dayanıklılık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Antrenman ve maç kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">650 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/NOVA%20NEW%20HATTRICK.bmp" alt="NOVA NEW HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : NOVA NEW HATTRICK NO:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : No:5 32, Panel Dayanıklı sentetik deri yüzey, Makine dikişli, Butil iç lastik, Dengeli uçuş</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Yüksek dayanıklılık, Antrenman ve amatör maç kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">640 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/SOLERA%20HATTRICK.bmp" alt="SOLERA HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : SOLERA HATTRICK NO :5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : No:5 32, Panel Dayanıklı sentetik deri yüzey, Makine dikişli, Butil iç lastik, Dengeli uçuş</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Yüksek dayanıklılık, Antrenman ve amatör maç kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">580 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/FLEETY%20HATTRICK.bmp" alt="FLEETY HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : FLEETY HATTRICK NO:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : No:5 32, Panel Dayanıklı sentetik deri yüzey, Makine dikişli, Butil iç lastik</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Dengeli uçuş, Aşınmaya dayanıklı, Antrenman ve amatör maç kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">620 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/SCORE%20HATTRICK%205%20no.bmp" alt="SCORE HATTRICK 5 no" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : SCORE HATTRICK NO:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : No:5 32, Panel Dayanıklı sentetik deri yüzey, Makine dikişli, Butil iç lastik, Dengeli uçuş</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Yüksek dayanıklılık, Antrenman ve amatör maç kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">650 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Futbol</span>
-        <span>11</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">01</div>
-            <div class="cat-titleblock">
-                <h1>FUTBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 10/10</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20TRB.jpg" alt="Helix Futbol Topu TRB No:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu TRB No:5</span>
+          <p class="kart-aciklama">5 boyut, 400 - 430, 32, Termal Bonded (Isı ile Yapıştırma), Çim ve Suni Çim Sahalar.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">930 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/THERMO%20PLUS%20HATTRICK%205%20no.bmp" alt="THERMO PLUS HATTRICK 5 no" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : THERMO PLUS HATTRICK NO:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : No:5 Thermo (Isıl, Yapıştırma), Teknolojisi 32, Panel Premium PU yüzey, Butil iç lastik</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Düşük su emme, Dengeli uçuş, Maç ve antrenman kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">620 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/ATTAKER%20HATTRICK.bmp" alt="ATTAKER HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : ATTAKER HATTRICK NO :5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : No:5 32, Panel Makine dikişli, Dayanıklı sentetik deri yüzey, Butil iç lastik, Dengeli uçuş</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Yüksek dayanıklılık, Antrenman ve amatör maç kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">680 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/ULTIMAX%20HATTRICK.bmp" alt="ULTIMAX HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : ULTIMAX HATTRICK NO:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : No:5 Hybrid, Teknolojisi 32, Panel Premium PU yüzey, Butil iç lastik, Dengeli uçuş</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Yüksek dayanıklılık, Maç ve antrenman kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">680 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Futbol%20image/HYBIRD900%20HATTRICK.bmp" alt="HYBIRD900 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : HYBIRD900 HATTRICK NO:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : No:5 Hybrid, Teknolojisi 32, Panel Premium PU yüzey, Butil iç lastik, Düşük su emme</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Dengeli uçuş, Yüksek dayanıklılık, Maç ve antrenman kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">680 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Futbol</span>
-        <span>12</span>
-    </div>
-    </section>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20TRB4.jpg" alt="Helix Futbol Topu TRB No:4" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu TRB No:4</span>
+          <p class="kart-aciklama">4, 350 - 380 ağırlık, 32 Panel, PU Deri, Lateks (Yüksek Hava Tutma Kapasitesi) Çim, Suni Çim ve Sert Zemin.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">910 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Sirius.jpg" alt="Helix Futbol Topu Sirius No:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu Sirius No:5</span>
+          <p class="kart-aciklama">5 boyut, 410 - 430, 32 Panel, 4 Katmanlı PU Parlak, Çim, Suni Çim ve Sert Zemin.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">750 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Sirius4.jpg" alt="Helix Futbol Topu Sirius No:4" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu Sirius No:4</span>
+          <p class="kart-aciklama">4, 350 - 380 ağırlık, 32 Panel, PU, Sert Zemin, Çim ve Suni Çim.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">740 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Quick%20Pro.jpg" alt="Helix Futbol Topu Quick Pro No:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu Quick Pro No:5</span>
+          <p class="kart-aciklama">5 (Uluslararası Standart), 32 Panel El, PU ve Suni Deri, Çok Katmanlı Polyester-Pamuk Lateks Destekli Form Koruma, Yüksek Hava Tutuşlu, Profesyonel Maç ve Antrenman.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">550 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Quick%20Pro4.jpg" alt="Helix Futbol Topu Quick Pro No:4" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu Quick Pro No:4</span>
+          <p class="kart-aciklama">32 panelden oluşan klasik futbol topu yapısı, El dikişli profesyonel ve dayanıklı üretim PU ve suni deri dış yüzey, Yumuşak dokunuş ve aşınma direnci Çok katmanlı polyester-pamuk astar, Lateks destekli iç yapı ile dengeli sekme performansı.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">550 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20NS%20Quick.jpg" alt="Helix Futbol Topu NS Quick No:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu NS Quick No:5</span>
+          <p class="kart-aciklama">5 (standart futbol topu), 410–430 gram ağırlık, 32 panel – el dikişli, PU deri kaplama – dayanıklı ve yumuşak yüzey malzeme, Butil – uzun süre hava tutar Çim, suni çim ve sert zemin, Sarı, beyaz ve mavi kombinasyonu renk, Antrenman, amatör ve yarı profesyonel maçlar.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">550 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Hybrid%20Unity.jpg" alt="Helix Futbol Topu Hybrid Unity No:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu Hybrid Unity No:5</span>
+          <p class="kart-aciklama">32 panel – klasik dengeli tasarım, Hibrit dikiş (makine + el dikişi hissi), PU suni deri yüzey malzeme, Çok katmanlı polyester-pamuk astar Lateks destekli form koruma, Dayanıklı bladder – yüksek hava tutuşu, 5 – resmi standart ölçü.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">650 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Hybrid%20Unity4.jpg" alt="Helix Futbol Topu Hybrid Unity No:4" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu Hybrid Unity No:4</span>
+          <p class="kart-aciklama">32 panel – klasik dengeli yapı, 4 – genç oyuncular için standart ölçü, PU dış yüzey, suni deri kaplama malzeme, Çok katmanlı polyester-pamuk iç yapı, Özel lateks – form koruyucu yapı Dayanıklı bladder – yüksek hava tutuşu, Hibrit dikiş – dayanıklılık ve yumuşak temas, Antrenmanlar, okul takımları.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">650 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Hybrid.jpg" alt="Helix Futbol Topu Hybrid No:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu Hybrid No:5</span>
+          <p class="kart-aciklama">5 (resmi maç standardı), 410–450 gram ağırlık, 32 panel – hibrit yapı, PU deri kaplama malzeme Doğal çim ve suni çim, Profesyonel maç ve antrenman.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">860 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Hybrid4.jpg" alt="Helix Futbol Topu Hybrid No:4" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu Hybrid No:4</span>
+          <p class="kart-aciklama">4 (9–12 yaş), 350–390 gram ağırlık, 32 panel – hibrit yapı PU deri kaplama malzeme, Doğal ve suni çim.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">710 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Game.jpg" alt="Helix Futbol Topu Game No:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu Game No:5</span>
+          <p class="kart-aciklama">5 (resmi maç standardı), 32 panel – el dikişli, 4 katmanlı PU deri Çim ve suni çim sahalar, 410–430 gram ağırlık.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">610 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Game4.jpg" alt="Helix Futbol Topu Game No:4" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu Game No:4</span>
+          <p class="kart-aciklama">4 (9–12 yaş), 350–380 gram ağırlık, 32 panel – el dikişli 3 katmanlı PU kaplama dış yüzey, Çim ve suni çim.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">570 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Force.jpg" alt="Helix Futbol Topu Force No:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu Force No:5</span>
+          <p class="kart-aciklama">5 (resmi maç standardı), 410–430 gram ağırlık, 32 panel – el dikişli 4 katmanlı PU deri dış yüzey, Çim, suni çim, sert zemin.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">540 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Force4.jpg" alt="Helix Futbol Topu Force No:4" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu Force No:4</span>
+          <p class="kart-aciklama">4 (9–12 yaş), 350–390 gram ağırlık, 32 panel – el dikişli, 3 katmanlı PU kaplama dış yüzey Okul, antrenman, çim ve suni çim.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">500 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Force3.jpg" alt="Helix Futbol Topu Force No:3" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu Force No:3</span>
+          <p class="kart-aciklama">3, 300–320 gram ağırlık, 32 panel, el dikişli, 4 katmanlı PU deri dış yüzey Çim, suni çim, sert zemin, 9 yaş altı.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">510 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Extreme.jpg" alt="Helix Futbol Topu Extreme No:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu Extreme No:5</span>
+          <p class="kart-aciklama">5 boyut, 410 – 430 gram ağırlık, El dikişli, 32 panel 5 kat poli pamuk + sentetik deri malzeme, Lateks.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">730 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Antrenman%20Topu%20%C4%B0pli%20RTB-3.jpg" alt="Helix Futbol Antrenman Topu İpli RTB-3 No:3" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Antrenman Topu İpli RTB-3 No:3</span>
+          <p class="kart-aciklama">3, 310 – 330 gram ağırlık, 32 panel, El dikişli yapı, PU (poliüretan) dış yüzey malzeme 110 cm, Teknik gelişim, pas, şut ve koordinasyon çalışmaları.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">470 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Antrenman%20Topu%20%C4%B0pli%20RTB-5.jpg" alt="Helix Futbol Antrenman Topu İpli RTB-5 No:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Antrenman Topu İpli RTB-5 No:5</span>
+          <p class="kart-aciklama">5 (standart yetişkin futbol topu), 32 panel klasik yapı, Dayanıklı dış yüzey kaplama malzeme, Hava tutuşu yüksek yapı Elastik ipli geri dönüş mekanizması, Bireysel futbol antrenmanı, teknik gelişim çalışmaları.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">500 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Ballista.jpg" alt="Helix Futbol Topu Ballista No:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu Ballista No:5</span>
+          <p class="kart-aciklama">5 (68.5 – 69.5 cm çevre), 420 – 445 gram ağırlık, 12 panel aerodinamik tasarım, Makine dikişli yapı, Kabartmalı (Embossed) PU / suni deri dış yüzey Polyester ve pamuk çok katmanlı yapı, Lateks destekli yüksek geri sekme sistemi, Dayanıklı hava tutan iç lastik, Profesyonel maç ve antrenman.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">440 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20I%C5%9F%C4%B1kl%C4%B1%20FL-1.jpg" alt="Helix Futbol Topu Işıklı FL-1 No:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu Işıklı FL-1 No:5</span>
+          <p class="kart-aciklama">5 Numara (standart) boyut, 400 – 430 gram ağırlık, Hybrid, 32 panel, Termal bonded (ısı yapıştırma) Suni ve doğal çim Işık sensörlü LED görünürlük.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">890 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20NS%20Quick.jpg" alt="Helix Futbol Topu NS Quick No:4" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu NS Quick No:4</span>
+          <p class="kart-aciklama">4 (Genç oyuncular için ideal), 350 – 370 gram ağırlık, 32 panel – dikişli tasarım, PU deri dış kaplama – aşınmaya dayanıklı malzeme, Butil – yüksek hava tutma kapasitesi Suni çim, doğal çim ve sert zemin, Kırmızı, beyaz ve mavi kombinasyonu renk, Antrenmanlar, okul maçları ve hobi amaçlı kullanım.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">550 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Extreme.jpg" alt="Helix Futbol Topu Extreme No:4" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu Extreme No:4</span>
+          <p class="kart-aciklama">4 boyut, 370 – 400 gram, El dikişli, 32 panel tasarım 5 kat poli pamuk + sentetik deri dış yüzey, Lateks.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">730 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Antrenman%20Topu%20%C4%B0pli%20RTB-4.jpg" alt="Helix Futbol Antrenman Topu İpli RTB-4 No:4" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Antrenman Topu İpli RTB-4 No:4</span>
+          <p class="kart-aciklama">4 (9–12 yaş grubu için ideal), 32 panel klasik yapı, Dayanıklı dış kaplama malzeme, Uzun süre hava tutan yapı Elastik ipli geri dönüş mekanizması, Bireysel futbol antrenmanı, okul ve kulüp çalışmaları.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">490 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Pleco.webp" alt="Helix Futbol Topu Pleco No:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu Pleco No:5</span>
+          <p class="kart-aciklama">Helix Pleco Futbol, 5 Numara, 410 - 430, 32 Panel El, 4 Katmanlı PU, Sert Zemin Çim ve Suni, Maç, Antrenman, Halı Saha ve Okul Sahaları.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">570 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Premier.webp" alt="Helix Futbol Topu Premier No:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu Premier No:5</span>
+          <p class="kart-aciklama">5 (Standart Futbol Topu), 410 - 430 ağırlık, 32 Panel El 4 Katmanlı PU, Çim ve Suni Çim Sahalar.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">790 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Quick.webp" alt="Helix Futbol Topu Quick No:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu Quick No:5</span>
+          <p class="kart-aciklama">5 (Resmi Maç Standardı), 410 - 430 ağırlık, 32 Panel El, PU, Doğal Çim ve Suni Çim Sahalar.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">630 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Hyper%20Futbol%20Topu%20Blaze.webp" alt="Hyper Futbol Topu Blaze No:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Hyper Futbol Topu Blaze No:5</span>
+          <p class="kart-aciklama">Makine dikişli futbol topu, 5 (Standart maç ölçüsü), 32 panel, PVC + suni deri kaplama dış yüzey, Çok katmanlı polyester-pamuk Lateks destekli, Dayanıklı şişme bladder, Antrenman, okul maçları ve amatör müsabakalar.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">220 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/Helix%20Futbol%20Topu%20Sannleika.webp" alt="Helix Futbol Topu Sannleika No:5 FIFA Quality Pro" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Futbol Topu Sannleika No:5 FIFA Quality Pro</span>
+          <p class="kart-aciklama">1.2 mm PU deri, 3.8 mm POE köpük İç Lastik (Bladder): Yüksek kaliteli Patch, 32 panel aerodinamik tasarım, 68.5 - 69.5 cm, 420 - 445 g ağırlık 135 - 155 cm, Maksimum %15 basınç kaybı, %0.7 - %0.9, %30 PU, %30 Sentetik Kauçuk Köpük, %30 Sentetik Kauçuk, %10.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.930 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/PLATINO%20PRO%20HATTRICK%20NO%205.webp" alt="PLATINO PRO HATTRICK NO:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>PLATINO PRO HATTRICK NO:5</span>
+          <p class="kart-aciklama">5 Numara, Premium PU yüzey, Hybrid (yapıştırma) teknoloji, Butil iç lastik 380 g Salon kullanımına uygun, Maç ve antrenman kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">720 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/PLATINO%20PRO%20HATTRICK%20NO%204.webp" alt="PLATINO PRO HATTRICK NO:4" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>PLATINO PRO HATTRICK NO:4</span>
+          <p class="kart-aciklama">4 Numara, Premium PU yüzey, Hybrid (yapıştırma) teknoloji, Butil iç lastik Salon kullanımına uygun, Maç ve antrenman kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">740 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/PROGOLD%20HATTRICK%20NO%205.webp" alt="PROGOLD HATTRICK NO:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>PROGOLD HATTRICK NO:5</span>
+          <p class="kart-aciklama">5 Numara, Premium, Japon PU yüzey, El dikişli 18 panel yapı, Butil iç lastik 380 ±10 g Maç ve antrenman kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">720 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/PROGOLD%20HATTRICK%20NO%205.webp" alt="PROGOLD ALTIS NO:4" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>PROGOLD ALTIS NO:4</span>
+          <p class="kart-aciklama">4 Numara, Premium, Japon PU yüzey, El dikişli 18 panel yapı Butil iç lastik, Maç ve antrenman kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">720 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/ORBIT%20HATTRICK.webp" alt="ORBIT HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>ORBIT HATTRICK</span>
+          <p class="kart-aciklama">Futsal Topu 32, Panel Düşük sekme özelliği, Dayanıklı sentetik deri yüzey, Butil iç lastik Salon kullanımına uygun, Antrenman ve maç kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">680 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/HYBIRD%20FUTSAL%20HATTRICK.webp" alt="HYBIRD FUTSAL HATTRICK NO:4" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>HYBIRD FUTSAL HATTRICK NO:4</span>
+          <p class="kart-aciklama">No:4 Hybrid (El, Dikiş + Isıl, Yapıştırma), Teknolojisi, Premium PU sentetik deri yüzey, Düşük sekme özelliği Butil iç lastik, Salon kullanımına uygun, Antrenman ve maç kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">700 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/FUTSAL%20PRO%20HATTRICK.webp" alt="FUTSAL PRO HATTRICKNO:4" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>FUTSAL PRO HATTRICKNO:4</span>
+          <p class="kart-aciklama">No:4 Pro, Hybrid, Teknolojisi, Premium PU yüzey, Düşük sekme özelliği, Butil iç lastik Yüksek dayanıklılık, Salon maçları ve profesyonel antrenmanlara uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">720 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/CALCIO%20HATTRICK.webp" alt="CALCIO HATTRICK NO:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>CALCIO HATTRICK NO:5</span>
+          <p class="kart-aciklama">No:5 32, Panel Dayanıklı sentetik deri yüzey, Makine dikişli, Butil iç lastik Dengeli uçuş ve kontrol, Antrenman ve amatör maç kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">720 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/NOVA%20HATTRICK.webp" alt="NOVA HATTRICK NO:4" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>NOVA HATTRICK NO:4</span>
+          <p class="kart-aciklama">No:4 %100, Parlak PU kaplama, El dikişli 32, Panel 4 Katmanlı yapı, Bütil iç lastik 380 g ağırlık.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">560 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/IMPEL%20ALTIS.webp" alt="IMPEL ALTIS NO:4" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>IMPEL ALTIS NO:4</span>
+          <p class="kart-aciklama">No:4 G-14 yüzey, El dikişli 4 katmanlı yapı, Lateks iç lastik 440 g ağırlık.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">540 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/THERMO%20PLUS%20HATTRICK.webp" alt="THERMO PLUS HATTRICK NO:4" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>THERMO PLUS HATTRICK NO:4</span>
+          <p class="kart-aciklama">No:4 Thermo (Isıl, Yapıştırma), Teknolojisi %100, Polyurethane (PU) yüzey 32, Panel Su emmeyen yapı Dengeli uçuş ve hassas kontrol, Maç ve antrenman kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">610 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/SCORE%20HATTRICK.webp" alt="SCORE HATTRICK NO:4" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>SCORE HATTRICK NO:4</span>
+          <p class="kart-aciklama">No:4 %100, Polyurethane (PU) yüzey, El dikişli 32, Panel Butil iç lastik, Dengeli uçuş ve yüksek dayanıklılık Antrenman ve maç kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">650 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/NOVA%20NEW%20HATTRICK.webp" alt="NOVA NEW HATTRICK NO:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>NOVA NEW HATTRICK NO:5</span>
+          <p class="kart-aciklama">No:5 32, Panel Dayanıklı sentetik deri yüzey, Makine dikişli, Butil iç lastik, Dengeli uçuş Yüksek dayanıklılık, Antrenman ve amatör maç kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">640 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/SOLERA%20HATTRICK.webp" alt="SOLERA HATTRICK NO :5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>SOLERA HATTRICK NO :5</span>
+          <p class="kart-aciklama">No:5 32, Panel Dayanıklı sentetik deri yüzey, Makine dikişli, Butil iç lastik, Dengeli uçuş Yüksek dayanıklılık, Antrenman ve amatör maç kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">580 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/FLEETY%20HATTRICK.webp" alt="FLEETY HATTRICK NO:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>FLEETY HATTRICK NO:5</span>
+          <p class="kart-aciklama">No:5 32, Panel Dayanıklı sentetik deri yüzey, Makine dikişli, Butil iç lastik Dengeli uçuş, Aşınmaya dayanıklı, Antrenman ve amatör maç kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">620 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/SCORE%20HATTRICK%205%20no.webp" alt="SCORE HATTRICK NO:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>SCORE HATTRICK NO:5</span>
+          <p class="kart-aciklama">No:5 32, Panel Dayanıklı sentetik deri yüzey, Makine dikişli, Butil iç lastik, Dengeli uçuş Yüksek dayanıklılık, Antrenman ve amatör maç kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">650 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/THERMO%20PLUS%20HATTRICK%205%20no.webp" alt="THERMO PLUS HATTRICK NO:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>THERMO PLUS HATTRICK NO:5</span>
+          <p class="kart-aciklama">No:5 Thermo (Isıl, Yapıştırma), Teknolojisi 32, Panel Premium PU yüzey, Butil iç lastik Düşük su emme, Dengeli uçuş, Maç ve antrenman kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">620 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/ATTAKER%20HATTRICK.webp" alt="ATTAKER HATTRICK NO :5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>ATTAKER HATTRICK NO :5</span>
+          <p class="kart-aciklama">No:5 32, Panel Makine dikişli, Dayanıklı sentetik deri yüzey, Butil iç lastik, Dengeli uçuş Yüksek dayanıklılık, Antrenman ve amatör maç kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">680 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/ULTIMAX%20HATTRICK.webp" alt="ULTIMAX HATTRICK NO:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>ULTIMAX HATTRICK NO:5</span>
+          <p class="kart-aciklama">No:5 Hybrid, Teknolojisi 32, Panel Premium PU yüzey, Butil iç lastik, Dengeli uçuş Yüksek dayanıklılık, Maç ve antrenman kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">680 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Futbol%20image/HYBIRD900%20HATTRICK.webp" alt="HYBIRD900 HATTRICK NO:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>HYBIRD900 HATTRICK NO:5</span>
+          <p class="kart-aciklama">No:5 Hybrid, Teknolojisi 32, Panel Premium PU yüzey, Butil iç lastik, Düşük su emme Dengeli uçuş, Yüksek dayanıklılık, Maç ve antrenman kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">680 ₺</span></div>
+          </div>
+        </div>
+      </div>
+  </div>
+</main>
 
+<a class="wa-buton" href="https://wa.me/905522025737" target="_blank" rel="noopener" aria-label="WhatsApp'tan yazın">
+  <svg viewBox="0 0 32 32" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M16 3C9 3 3 9 3 16c0 2.4.6 4.6 1.8 6.6L3 29l6.6-1.7c1.9 1 4 1.6 6.4 1.6 7 0 13-6 13-13S23 3 16 3zm7.6 18.4c-.3.9-1.7 1.7-2.7 1.9-.7.1-1.6.2-4.6-1-3.9-1.6-6.4-5.5-6.6-5.8-.2-.3-1.6-2.1-1.6-4s1-2.8 1.3-3.2c.3-.3.7-.4 1-.4h.7c.2 0 .5 0 .8.6.3.7 1.1 2.6 1.2 2.8.1.2.2.4 0 .7-.1.3-.2.4-.4.6-.2.2-.4.5-.6.7-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.6 1.4 1.3 2.6 1.7 3 1.9.3.2.5.1.7-.1.2-.2.9-1 1.1-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.5 1.2.4.2.6.3.7.5.1.2.1 1-.2 1.9z"/></svg>
+</a>
 
-<script>
-function aramaFiltrele(inp){
-  var q=inp.value.toLocaleLowerCase('tr-TR').trim(), gorunen=0;
-  document.querySelectorAll('.product-card').forEach(function(k){
-    var e=k.querySelector('.pf-label');
-    var esles=(e?e.textContent.toLocaleLowerCase('tr-TR'):'').indexOf(q)!==-1;
-    k.style.display=esles?'':'none';
-    if(esles)gorunen++;
-  });
-  document.querySelector('.urun-bulunamadi').hidden=!(q&&gorunen===0);
-}
-</script>
+<footer class="alt-bilgi">
+  <div class="alt-bilgi-ic">
+    <strong>ÖZTEN SPOR</strong>
+    Kirazlı Mahallesi 1201. Sokak, Bağcılar / İstanbul<br>
+    <a href="mailto:oztensporltd@gmail.com">oztensporltd@gmail.com</a>
+  </div>
+</footer>
+
+<nav class="alt-cubuk">
+  <a class="alt-btn" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+    Ana Sayfa
+  </a>
+  <button type="button" class="alt-btn" id="altAra">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    Ara
+  </button>
+  <button type="button" class="alt-btn" id="altKategori">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    Kategoriler
+  </button>
+  <button type="button" class="alt-btn" id="altSepet">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M6 6 5 3H3"/></svg>
+    Sepet
+    <span class="alt-rozet" id="altSepetSayi" hidden>0</span>
+  </button>
+</nav>
+
 </body>
 </html>

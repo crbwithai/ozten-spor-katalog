@@ -3,192 +3,267 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BARLAR VE BARFİKS EKİPMANLARI — Özten Spor Kataloğu</title>
-<link rel="stylesheet" href="Ozten Spor Katalog.css">
+<title>FITNESS — Özten Spor Kataloğu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ozten-yeni.css">
 <script src="sepet.js" defer></script>
+<script src="site.js" defer></script>
 </head>
-<body id="top">
-<div class="floating-nav-group">
-    <a href="#top" class="floating-nav-btn"><span class="fn-arrow">&#8593;</span> Yukarı Çık</a>
-</div>
-<div class="kategori-gecis-buton-sarici">
-    <a href="fitness.html#top" class="floating-nav-btn"><span class="fn-arrow">&#8592;</span> Fitness'e Dön</a>
-</div>
-<div class="katalog-arama"><input type="text" placeholder="Ürün ara..." oninput="aramaFiltrele(this)"></div>
+<body>
 
-<p class="urun-bulunamadi" hidden>Ürün bulunamadı.</p>
-<section class="page cat-page" id="kategori-barlar-ve-barfiks-ekipmanlari">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>BARLAR VE BARFİKS EKİPMANLARI</h1>
-                <p>Krom barlar, olimpik barlar ve barfiks ekipmanları.</p>
-            </div>
+<header class="ust-cubuk">
+  <a class="marka" href="index.html">ÖZTEN<span>SPOR</span></a>
+  <div class="ust-arama">
+    <span class="arama-ikon">&#9906;</span>
+    <input type="text" id="aramaKutusu" placeholder="Ürün ara" autocomplete="off" oninput="aramaFiltrele(this)">
+  </div>
+  <div class="ust-butonlar">
+    <button type="button" class="ust-btn" id="kategoriAc">Kategoriler &#9662;</button>
+    <button type="button" class="ust-btn" id="sepetAc">Sepetim <span class="ust-rozet" id="ustSepetSayi">0</span></button>
+  </div>
+</header>
+
+<nav class="kategori-panel" id="kategoriPanel" hidden>
+  <div class="kategori-panel-baslik">TÜM KATEGORİLER</div>
+  <div class="kategori-izgara">
+        <a class="kategori-link" href="futbol.html">FUTBOL</a>
+        <a class="kategori-link" href="basketbol.html">BASKETBOL</a>
+        <a class="kategori-link" href="voleybol.html">VOLEYBOL</a>
+        <a class="kategori-link" href="badminton.html">BADMINTON</a>
+        <a class="kategori-link" href="masa-tenisi.html">MASA TENİSİ</a>
+        <a class="kategori-link" href="tenis.html">TENİS</a>
+        <a class="kategori-link" href="atlama-ipi.html">ATLAMA İPİ</a>
+        <a class="kategori-link" href="el-yayi.html">EL YAYI</a>
+        <a class="kategori-link" href="yoga-pilates.html">YOGA PİLATES</a>
+        <a class="kategori-link aktif" href="fitness.html">FITNESS</a>
+        <a class="kategori-link" href="egzersiz.html">EGZERSİZ</a>
+        <a class="kategori-link" href="hentbol.html">HENTBOL</a>
+        <a class="kategori-link" href="yuzme.html">YÜZME</a>
+        <a class="kategori-link" href="bocce.html">BOCCE</a>
+        <a class="kategori-link" href="hokey.html">HOKEY</a>
+        <a class="kategori-link" href="kano.html">KANO</a>
+        <a class="kategori-link" href="beyzbol.html">BEYZBOL</a>
+        <a class="kategori-link" href="paten.html">PATEN</a>
+        <a class="kategori-link" href="oryantiring.html">ORYANTİRİNG</a>
+        <a class="kategori-link" href="padel.html">PADEL</a>
+        <a class="kategori-link" href="pickleball.html">PICKLEBALL</a>
+        <a class="kategori-link" href="ragbi.html">RAGBİ</a>
+        <a class="kategori-link" href="satranc.html">SATRANÇ</a>
+        <a class="kategori-link" href="softball.html">SOFTBALL</a>
+        <a class="kategori-link" href="squash.html">SQUASH</a>
+        <a class="kategori-link" href="dart.html">DART</a>
+        <a class="kategori-link" href="atletizm.html">ATLETİZM</a>
+        <a class="kategori-link" href="cimnastik.html">CİMNASTİK</a>
+        <a class="kategori-link" href="saglik-toplari.html">SAĞLIK TOPLARI</a>
+        <a class="kategori-link" href="su-topu.html">SU TOPU</a>
+        <a class="kategori-link" href="oyun-grubu.html">OYUN GRUBU</a>
+        <a class="kategori-link" href="dovus-sporlari.html">DÖVÜŞ SPORLARI</a>
+  </div>
+</nav>
+
+<section class="kat-basi">
+  <div class="kat-basi-ic">
+    <div class="kat-etiket">KATEGORİ 10</div>
+    <h1>FITNESS</h1>
+    <p class="kat-aciklama">Ev ve salon antrenmanları için dambıl çeşitleri.</p>
+    <span class="kat-sayac">14 ürün</span>
+  </div>
+</section>
+
+<nav class="alt-kat-serit" aria-label="Alt kategoriler">
+  <div class="alt-kat-ic">
+      <a class="alt-kat-cip" href="fitness.html">Dambıllar</a>
+      <a class="alt-kat-cip" href="fitness-aletleri.html">Fitness Aletleri</a>
+      <a class="alt-kat-cip aktif" href="barlar-ve-barfiks-ekipmanlari.html">Barlar ve Barfiks Ekipmanları</a>
+      <a class="alt-kat-cip" href="plaka-ve-plaka-setleri.html">Plaka ve Plaka Setleri</a>
+      <a class="alt-kat-cip" href="el-ve-ayak-agirliklari.html">El ve Ayak Ağırlıkları</a>
+      <a class="alt-kat-cip" href="fitness-eldiven-ve-kemerleri.html">Fitness Eldiven ve Kemerleri</a>
+      <a class="alt-kat-cip" href="halatlar.html">Halatlar</a>
+      <a class="alt-kat-cip" href="agirlik-ve-bulgar-cantalari.html">Ağırlık ve Bulgar Çantaları</a>
+      <a class="alt-kat-cip" href="kettlebell.html">Kettlebell</a>
+      <a class="alt-kat-cip" href="dambil-standlari.html">Dambıl Standları</a>
+  </div>
+</nav>
+
+<main class="icerik">
+  <p class="urun-bulunamadi" hidden>Aramanla eşleşen ürün bulunamadı.</p>
+  <div class="product-grid">
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/KISA%20BAR%20HDB10.webp" alt="KISA BAR HDB10" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>KISA BAR HDB10</span>
+          <p class="kart-aciklama">PVC kısa bar, Dayanıklı PVC gövde, Plakalarla kullanıma uygundur, Ergonomik tutuş sağlar, Hafif ve dayanıklı yapı Ev tipi antrenmanlar için uygundur, Kuvvet egzersizlerini destekler.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">160 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/KISA%20BAR%20HDB10.bmp" alt="KISA BAR HDB10" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KISA BAR HDB10</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : PVC kısa bar, Dayanıklı PVC gövde, Plakalarla kullanıma uygundur, Ergonomik tutuş sağlar, Hafif ve dayanıklı yapı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ev tipi antrenmanlar için uygundur, Kuvvet egzersizlerini destekler.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">160 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/KISA%20BAR%20KBR10.png" alt="KISA BAR KBR10" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KISA BAR KBR10</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom kısa bar, Dayanıklı krom kaplama, Plakalarla kullanıma uygundur, Ergonomik tutuş sağlar</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Sağlam çelik yapı, Ev tipi kuvvet antrenmanlarına uygundur, Uzun ömürlü kullanım.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">340 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/KISA%20BAR%20ABR120.bmp" alt="KISA BAR ABR120" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KROM BAR ABR120</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom bar 120 cm uzunluk, Dayanıklı krom kaplama, Çelik gövde, Plakalarla kullanıma uygundur</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kuvvet antrenmanlarını destekler, Ev ve spor salonu kullanımına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.010 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/KISA%20BAR%20ABR119.png" alt="KISA BAR ABR119" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KROM BAR ABR119</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Z krom bar 120 cm uzunluk, Dayanıklı krom kaplama, Ergonomik, Z bar tasarımı, Plakalarla kullanıma uygundur</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kol ve üst vücut egzersizleri için uygundur, Ev ve spor salonu kullanımına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.010 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/KISA%20BAR%20ABR152.png" alt="KISA BAR ABR152" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KROM BAR ABR152</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom bar 152 cm uzunluk, Dayanıklı krom kaplama, Çelik gövde, Plakalarla kullanıma uygundur</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kuvvet antrenmanlarını destekler, Ev ve spor salonu kullanımına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.130 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/KISA%20BAR%20ABR160.png" alt="KISA BAR ABR160" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KROM BAR ABR160</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom bar 160 cm uzunluk, Dayanıklı krom kaplama, Çelik gövde, Plakalarla kullanıma uygundur</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kuvvet antrenmanlarını destekler, Ev ve spor salonu kullanımına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.140 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Barlar ve Barfiks Ekipmanları</span>
-        <span>1</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>BARLAR VE BARFİKS EKİPMANLARI</h1>
-                <p>Ürün listesi (devamı) — sayfa 2/3</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/KISA%20BAR%20KBR10.png" alt="KISA BAR KBR10" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>KISA BAR KBR10</span>
+          <p class="kart-aciklama">Krom kısa bar, Dayanıklı krom kaplama, Plakalarla kullanıma uygundur, Ergonomik tutuş sağlar Sağlam çelik yapı, Ev tipi kuvvet antrenmanlarına uygundur, Uzun ömürlü kullanım.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">340 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/KISA%20BAR%20ABR183.png" alt="KISA BAR ABR183" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KROM BAR ABR183</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom bar 183 cm uzunluk, Dayanıklı krom kaplama, Çelik gövde, Plakalarla kullanıma uygundur</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kuvvet antrenmanlarını destekler, Ev ve spor salonu kullanımına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.310 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/KISA%20BAR%20ABR213.png" alt="KISA BAR ABR213" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KROM BAR ABR213</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Krom bar 213 cm uzunluk, Dayanıklı krom kaplama, Çelik gövde, Plakalarla kullanıma uygundur</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kuvvet antrenmanlarını destekler, Ev ve spor salonu kullanımına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.420 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Raptor%20Olimpik%20Z%20Bar%20OZB-120%20120cm.bmp" alt="Raptor Olimpik Z Bar OZB-120 120cm" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Olimpik Z Bar OZB-120 120cm</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 120 cm uzunluk, 50 mm (Olimpik standart), Yüksek kaliteli çelik malzeme, Krom kaplama (veya eşdeğer paslanmaz kaplama)</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ergonomik Z şekli, Tırtıklı (knurled).</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">2.700 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Raptor%20Olimpik%20Bar%20OB-180%20180cm.bmp" alt="Raptor Olimpik Bar OB-180 180cm" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Olimpik Bar OB-180 180cm</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 180 cm uzunluk, 50 mm olimpik standart, Yüksek kaliteli çelik malzeme, Krom kaplama / paslanmaz yapı yüzey</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Tırtıklı (knurled) yüzey, Spor salonu, ev antrenmanı, kuvvet çalışmaları.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">4.270 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Duvar%20Barfiks%20Bar%C4%B1%20DB-50.bmp" alt="Helix Duvar Barfiks Barı DB-50" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Duvar Barfiks Barı DB-50</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Yüksek mukavemetli çelik gövde malzeme, Toz boya veya krom kaplama, Tırtıllı yüzey, çoklu tutuş pozisyonları (modele göre değişken)</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Duvara monte (montaj ekipmanları genellikle dahildir), 120–200 kg taşıma kapasitesi (modele göre değişebilir).</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.380 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Kap%C4%B1%20Barfiks%20Bar%C4%B1%20DB-10.bmp" alt="Helix Kapı Barfiks Barı DB-10" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Kapı Barfiks Barı DB-10</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Yüksek kaliteli çelik malzeme, 70 cm – 95 cm arası ayarlanabilir uzunluk, Vidasız, kapı çerçevesine asılabilir tasarım</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ev kullanımı, üst vücut egzersizleri, Pull-up, chin-up, push-up, triceps dips, leg raise.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">720 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Barlar ve Barfiks Ekipmanları</span>
-        <span>2</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>BARLAR VE BARFİKS EKİPMANLARI</h1>
-                <p>Ürün listesi (devamı) — sayfa 3/3</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/KISA%20BAR%20ABR120.webp" alt="KROM BAR ABR120" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>KROM BAR ABR120</span>
+          <p class="kart-aciklama">Krom bar 120 cm uzunluk, Dayanıklı krom kaplama, Çelik gövde, Plakalarla kullanıma uygundur Kuvvet antrenmanlarını destekler, Ev ve spor salonu kullanımına uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.010 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Halter%20Trap%20Bar%20TB-142%20142cm.bmp" alt="Helix Halter Trap Bar TB-142 142cm" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Halter Trap Bar TB-142 142cm</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 142 CM uzunluk, 50 MM (olimpik plaka uyumlu), Ağır hizmet tipi çelik malzeme, Altıgen/kare merkez çerçeve</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Deadlift, shrug, farmer’s walk; ev ve salon tipi kuvvet antrenmanları.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">7.530 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20K%C4%B1sa%20Bar%20Krom%20SB-32%2032cm.bmp" alt="Helix Kısa Bar Krom SB-32 32cm" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Kısa Bar Krom SB-32 32cm</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 32 cm uzunluk, Masif çelik, krom kaplama malzeme, Standart 25–30 mm (veya modele göre olimpik 50 mm)</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Tırtıllı (knurled), kaymaz tasarım, Yıldız somunlar veya yaylı mandallar (ürün modeline göre).</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">490 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Barlar ve Barfiks Ekipmanları</span>
-        <span>3</span>
-    </div>
-    </section>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/KISA%20BAR%20ABR119.png" alt="KROM BAR ABR119" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>KROM BAR ABR119</span>
+          <p class="kart-aciklama">Z krom bar 120 cm uzunluk, Dayanıklı krom kaplama, Ergonomik, Z bar tasarımı, Plakalarla kullanıma uygundur Kol ve üst vücut egzersizleri için uygundur, Ev ve spor salonu kullanımına uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.010 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/KISA%20BAR%20ABR152.png" alt="KROM BAR ABR152" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>KROM BAR ABR152</span>
+          <p class="kart-aciklama">Krom bar 152 cm uzunluk, Dayanıklı krom kaplama, Çelik gövde, Plakalarla kullanıma uygundur Kuvvet antrenmanlarını destekler, Ev ve spor salonu kullanımına uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.130 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/KISA%20BAR%20ABR160.png" alt="KROM BAR ABR160" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>KROM BAR ABR160</span>
+          <p class="kart-aciklama">Krom bar 160 cm uzunluk, Dayanıklı krom kaplama, Çelik gövde, Plakalarla kullanıma uygundur Kuvvet antrenmanlarını destekler, Ev ve spor salonu kullanımına uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.140 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/KISA%20BAR%20ABR183.png" alt="KROM BAR ABR183" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>KROM BAR ABR183</span>
+          <p class="kart-aciklama">Krom bar 183 cm uzunluk, Dayanıklı krom kaplama, Çelik gövde, Plakalarla kullanıma uygundur Kuvvet antrenmanlarını destekler, Ev ve spor salonu kullanımına uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.310 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/KISA%20BAR%20ABR213.png" alt="KROM BAR ABR213" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>KROM BAR ABR213</span>
+          <p class="kart-aciklama">Krom bar 213 cm uzunluk, Dayanıklı krom kaplama, Çelik gövde, Plakalarla kullanıma uygundur Kuvvet antrenmanlarını destekler, Ev ve spor salonu kullanımına uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.420 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Raptor%20Olimpik%20Z%20Bar%20OZB-120%20120cm.webp" alt="Raptor Olimpik Z Bar OZB-120 120cm" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Olimpik Z Bar OZB-120 120cm</span>
+          <p class="kart-aciklama">120 cm uzunluk, 50 mm (Olimpik standart), Yüksek kaliteli çelik malzeme, Krom kaplama (veya eşdeğer paslanmaz kaplama) Ergonomik Z şekli, Tırtıklı (knurled).</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">2.700 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Raptor%20Olimpik%20Bar%20OB-180%20180cm.webp" alt="Raptor Olimpik Bar OB-180 180cm" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Olimpik Bar OB-180 180cm</span>
+          <p class="kart-aciklama">180 cm uzunluk, 50 mm olimpik standart, Yüksek kaliteli çelik malzeme, Krom kaplama / paslanmaz yapı yüzey Tırtıklı (knurled) yüzey, Spor salonu, ev antrenmanı, kuvvet çalışmaları.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">4.270 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Duvar%20Barfiks%20Bar%C4%B1%20DB-50.webp" alt="Helix Duvar Barfiks Barı DB-50" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Duvar Barfiks Barı DB-50</span>
+          <p class="kart-aciklama">Yüksek mukavemetli çelik gövde malzeme, Toz boya veya krom kaplama, Tırtıllı yüzey, çoklu tutuş pozisyonları (modele göre değişken) Duvara monte (montaj ekipmanları genellikle dahildir), 120–200 kg taşıma kapasitesi (modele göre değişebilir).</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.380 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Kap%C4%B1%20Barfiks%20Bar%C4%B1%20DB-10.webp" alt="Helix Kapı Barfiks Barı DB-10" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Kapı Barfiks Barı DB-10</span>
+          <p class="kart-aciklama">Yüksek kaliteli çelik malzeme, 70 cm – 95 cm arası ayarlanabilir uzunluk, Vidasız, kapı çerçevesine asılabilir tasarım Ev kullanımı, üst vücut egzersizleri, Pull-up, chin-up, push-up, triceps dips, leg raise.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">720 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Halter%20Trap%20Bar%20TB-142%20142cm.webp" alt="Helix Halter Trap Bar TB-142 142cm" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Halter Trap Bar TB-142 142cm</span>
+          <p class="kart-aciklama">142 CM uzunluk, 50 MM (olimpik plaka uyumlu), Ağır hizmet tipi çelik malzeme, Altıgen/kare merkez çerçeve Deadlift, shrug, farmer’s walk; ev ve salon tipi kuvvet antrenmanları.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">7.530 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20K%C4%B1sa%20Bar%20Krom%20SB-32%2032cm.webp" alt="Helix Kısa Bar Krom SB-32 32cm" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Kısa Bar Krom SB-32 32cm</span>
+          <p class="kart-aciklama">32 cm uzunluk, Masif çelik, krom kaplama malzeme, Standart 25–30 mm (veya modele göre olimpik 50 mm) Tırtıllı (knurled), kaymaz tasarım, Yıldız somunlar veya yaylı mandallar (ürün modeline göre).</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">490 ₺</span></div>
+          </div>
+        </div>
+      </div>
+  </div>
+</main>
 
+<a class="wa-buton" href="https://wa.me/905522025737" target="_blank" rel="noopener" aria-label="WhatsApp'tan yazın">
+  <svg viewBox="0 0 32 32" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M16 3C9 3 3 9 3 16c0 2.4.6 4.6 1.8 6.6L3 29l6.6-1.7c1.9 1 4 1.6 6.4 1.6 7 0 13-6 13-13S23 3 16 3zm7.6 18.4c-.3.9-1.7 1.7-2.7 1.9-.7.1-1.6.2-4.6-1-3.9-1.6-6.4-5.5-6.6-5.8-.2-.3-1.6-2.1-1.6-4s1-2.8 1.3-3.2c.3-.3.7-.4 1-.4h.7c.2 0 .5 0 .8.6.3.7 1.1 2.6 1.2 2.8.1.2.2.4 0 .7-.1.3-.2.4-.4.6-.2.2-.4.5-.6.7-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.6 1.4 1.3 2.6 1.7 3 1.9.3.2.5.1.7-.1.2-.2.9-1 1.1-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.5 1.2.4.2.6.3.7.5.1.2.1 1-.2 1.9z"/></svg>
+</a>
 
-<script>
-function aramaFiltrele(inp){
-  var q=inp.value.toLocaleLowerCase('tr-TR').trim(), gorunen=0;
-  document.querySelectorAll('.product-card').forEach(function(k){
-    var e=k.querySelector('.pf-label');
-    var esles=(e?e.textContent.toLocaleLowerCase('tr-TR'):'').indexOf(q)!==-1;
-    k.style.display=esles?'':'none';
-    if(esles)gorunen++;
-  });
-  document.querySelector('.urun-bulunamadi').hidden=!(q&&gorunen===0);
-}
-</script>
+<footer class="alt-bilgi">
+  <div class="alt-bilgi-ic">
+    <strong>ÖZTEN SPOR</strong>
+    Kirazlı Mahallesi 1201. Sokak, Bağcılar / İstanbul<br>
+    <a href="mailto:oztensporltd@gmail.com">oztensporltd@gmail.com</a>
+  </div>
+</footer>
+
+<nav class="alt-cubuk">
+  <a class="alt-btn" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+    Ana Sayfa
+  </a>
+  <button type="button" class="alt-btn" id="altAra">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    Ara
+  </button>
+  <button type="button" class="alt-btn" id="altKategori">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    Kategoriler
+  </button>
+  <button type="button" class="alt-btn" id="altSepet">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M6 6 5 3H3"/></svg>
+    Sepet
+    <span class="alt-rozet" id="altSepetSayi" hidden>0</span>
+  </button>
+</nav>
+
 </body>
 </html>

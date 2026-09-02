@@ -3,256 +3,320 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MASA TENİSİ MALZEMELERİ — Özten Spor Kataloğu</title>
-<link rel="stylesheet" href="Ozten Spor Katalog.css">
+<title>MASA TENİSİ — Özten Spor Kataloğu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ozten-yeni.css">
 <script src="sepet.js" defer></script>
+<script src="site.js" defer></script>
 </head>
-<body id="top">
-<div class="floating-nav-group">
-    <a href="#top" class="floating-nav-btn"><span class="fn-arrow">&#8593;</span> Yukarı Çık</a>
-</div>
-<div class="kategori-gecis-buton-sarici">
-    <a href="masa-tenisi.html#top" class="floating-nav-btn"><span class="fn-arrow">&#8592;</span> Masa Tenisi'ne Dön</a>
-</div>
-<div class="katalog-arama"><input type="text" placeholder="Ürün ara..." oninput="aramaFiltrele(this)"></div>
+<body>
 
-<p class="urun-bulunamadi" hidden>Ürün bulunamadı.</p>
-<section class="page cat-page" id="kategori-masa-tenisi-malzemeleri">
-        <div class="cat-header">
-            <div class="cat-num">05</div>
-            <div class="cat-titleblock">
-                <h1>MASA TENİSİ MALZEMELERİ</h1>
-                <p>Masa tenisi masası, file ve ağdemir seti gibi ekipmanlar.</p>
-            </div>
+<header class="ust-cubuk">
+  <a class="marka" href="index.html">ÖZTEN<span>SPOR</span></a>
+  <div class="ust-arama">
+    <span class="arama-ikon">&#9906;</span>
+    <input type="text" id="aramaKutusu" placeholder="Ürün ara" autocomplete="off" oninput="aramaFiltrele(this)">
+  </div>
+  <div class="ust-butonlar">
+    <button type="button" class="ust-btn" id="kategoriAc">Kategoriler &#9662;</button>
+    <button type="button" class="ust-btn" id="sepetAc">Sepetim <span class="ust-rozet" id="ustSepetSayi">0</span></button>
+  </div>
+</header>
+
+<nav class="kategori-panel" id="kategoriPanel" hidden>
+  <div class="kategori-panel-baslik">TÜM KATEGORİLER</div>
+  <div class="kategori-izgara">
+        <a class="kategori-link" href="futbol.html">FUTBOL</a>
+        <a class="kategori-link" href="basketbol.html">BASKETBOL</a>
+        <a class="kategori-link" href="voleybol.html">VOLEYBOL</a>
+        <a class="kategori-link" href="badminton.html">BADMINTON</a>
+        <a class="kategori-link aktif" href="masa-tenisi.html">MASA TENİSİ</a>
+        <a class="kategori-link" href="tenis.html">TENİS</a>
+        <a class="kategori-link" href="atlama-ipi.html">ATLAMA İPİ</a>
+        <a class="kategori-link" href="el-yayi.html">EL YAYI</a>
+        <a class="kategori-link" href="yoga-pilates.html">YOGA PİLATES</a>
+        <a class="kategori-link" href="fitness.html">FITNESS</a>
+        <a class="kategori-link" href="egzersiz.html">EGZERSİZ</a>
+        <a class="kategori-link" href="hentbol.html">HENTBOL</a>
+        <a class="kategori-link" href="yuzme.html">YÜZME</a>
+        <a class="kategori-link" href="bocce.html">BOCCE</a>
+        <a class="kategori-link" href="hokey.html">HOKEY</a>
+        <a class="kategori-link" href="kano.html">KANO</a>
+        <a class="kategori-link" href="beyzbol.html">BEYZBOL</a>
+        <a class="kategori-link" href="paten.html">PATEN</a>
+        <a class="kategori-link" href="oryantiring.html">ORYANTİRİNG</a>
+        <a class="kategori-link" href="padel.html">PADEL</a>
+        <a class="kategori-link" href="pickleball.html">PICKLEBALL</a>
+        <a class="kategori-link" href="ragbi.html">RAGBİ</a>
+        <a class="kategori-link" href="satranc.html">SATRANÇ</a>
+        <a class="kategori-link" href="softball.html">SOFTBALL</a>
+        <a class="kategori-link" href="squash.html">SQUASH</a>
+        <a class="kategori-link" href="dart.html">DART</a>
+        <a class="kategori-link" href="atletizm.html">ATLETİZM</a>
+        <a class="kategori-link" href="cimnastik.html">CİMNASTİK</a>
+        <a class="kategori-link" href="saglik-toplari.html">SAĞLIK TOPLARI</a>
+        <a class="kategori-link" href="su-topu.html">SU TOPU</a>
+        <a class="kategori-link" href="oyun-grubu.html">OYUN GRUBU</a>
+        <a class="kategori-link" href="dovus-sporlari.html">DÖVÜŞ SPORLARI</a>
+  </div>
+</nav>
+
+<section class="kat-basi">
+  <div class="kat-basi-ic">
+    <div class="kat-etiket">KATEGORİ 05</div>
+    <h1>MASA TENİSİ</h1>
+    <p class="kat-aciklama">Kulüp ve ev kullanımına uygun masa tenisi raketleri.</p>
+    <span class="kat-sayac">20 ürün</span>
+  </div>
+</section>
+
+<nav class="alt-kat-serit" aria-label="Alt kategoriler">
+  <div class="alt-kat-ic">
+      <a class="alt-kat-cip" href="masa-tenisi.html">Raketler</a>
+      <a class="alt-kat-cip" href="masa-tenisi-toplari.html">Masa Tenisi Topları</a>
+      <a class="alt-kat-cip aktif" href="masa-tenisi-malzemeleri.html">Masa Tenisi Malzemeleri</a>
+  </div>
+</nav>
+
+<main class="icerik">
+  <p class="urun-bulunamadi" hidden>Aramanla eşleşen ürün bulunamadı.</p>
+  <div class="product-grid">
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Masa%20Tenisi%20image/ADS10%20ALTIS.webp" alt="ADS10 ALTIS" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>ADS10 ALTIS</span>
+          <p class="kart-aciklama">Mengeneli ağ ve demir seti, Masa tenisi filesi dahildir, Metal direk yapısı, Kolay kurulum, Standart masa tenisi masalarına uyumludur Dayanıklı kullanım, Ev, okul ve kulüp kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">110 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Masa%20Tenisi%20image/ADS10%20ALTIS.bmp" alt="ADS10 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : ADS10 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Mengeneli ağ ve demir seti, Masa tenisi filesi dahildir, Metal direk yapısı, Kolay kurulum, Standart masa tenisi masalarına uyumludur</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Dayanıklı kullanım, Ev, okul ve kulüp kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">110 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Masa%20Tenisi%20image/ADS11%20ALTIS.bmp" alt="ADS11 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : ADS11 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Mengeneli ağ ve demir seti, Masa tenisi filesi dahildir, Blister paket, Metal direk yapısı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kolay montaj, Standart masa tenisi masalarına uyumludur, Ev ve hobi kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">110 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Masa%20Tenisi%20image/HDT55%20HATTRICK.bmp" alt="HDT55 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : HDT55 HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Pratik yaylı masa tenisi ağı 180 × 14 cm standart ölçü 19,8 cm açılabilir mekanizma, Yaylı hızlı kurulum sistemi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Standart masa tenisi masalarına uyumludur, Renkli kutu ambalaj, Ev, okul ve kulüp kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">490 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Masa%20Tenisi%20image/ADS14%20ALTIS.bmp" alt="ADS14 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : ADS14 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Mandallı ağ ve demir seti, Masa tenisi filesi dahildir, Blister paket, Metal direk yapısı, Kolay montaj</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Standart masa tenisi masalarına uyumludur, Ev, okul ve hobi kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">320 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Masa%20Tenisi%20image/ADS16%20ALTIS.bmp" alt="ADS16 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : ADS16 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Mengeneli ağ ve demir seti, Masa tenisi filesi dahildir, Blister paket, Metal direk yapısı, Sağlam sabitleme sistemi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Standart masa tenisi masalarına uyumludur, Ev, okul ve kulüp kullanımına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">440 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Masa%20Tenisi%20image/EVEREST%20201A%20ALTIS.bmp" alt="EVEREST 201A ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : EVEREST 201A ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : İç mekân masa tenisi masası 17 mm MDF oyun yüzeyi 17 × 32 mm profil yapısı 32 × 32 mm metal ayaklar Çift parça katlanabilir tasarım</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">274 × 152,5 × 76 cm Ev, okul ve kulüp kullanımına uygunv.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">23.820 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Masa Tenisi Malzemeleri</span>
-        <span>1</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">05</div>
-            <div class="cat-titleblock">
-                <h1>MASA TENİSİ MALZEMELERİ</h1>
-                <p>Ürün listesi (devamı) — sayfa 2/4</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Masa%20Tenisi%20image/ADS11%20ALTIS.webp" alt="ADS11 ALTIS" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>ADS11 ALTIS</span>
+          <p class="kart-aciklama">Mengeneli ağ ve demir seti, Masa tenisi filesi dahildir, Blister paket, Metal direk yapısı Kolay montaj, Standart masa tenisi masalarına uyumludur, Ev ve hobi kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">110 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20Masas%C4%B1%20TMTF%2016mm.bmp" alt="Helix Masa Tenisi Masası TMTF 16mm" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Masa Tenisi Masası TMTF 16mm</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 16 mm MDF Boyutlar (Açık): 274 cm (U) × 152.5 cm (G) × 76 cm (Y), Dayanıklı çelik çerçeve, Darbe emici plastik tapalar</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Evet – az yer kaplayan kompakt tasarım, Ev tipi ve kapalı spor alanları.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">22.360 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20Masas%C4%B1%20Portatif%20TTB%2012mm.bmp" alt="Helix Masa Tenisi Masası Portatif TTB 12mm" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Masa Tenisi Masası Portatif TTB 12mm</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Boyutlar (Kurulu Hali): 180 × 92 × 76 cm, 12 mm, 25 × 25 mm, MDF (Orta yoğunluklu lif levha) malzeme</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Katlanabilir ayaklar ve taşıması kolay yüzey, Yüksek kaliteli, uzun ömürlü yapı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">13.500 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20Masas%C4%B1%2018mm%20TMTF%20Onayl%C4%B1.bmp" alt="Helix Masa Tenisi Masası 18mm TMTF Onaylı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Masa Tenisi Masası 18mm TMTF Onaylı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 18 mm MDF yüzey Boyutlar (Açık Hali): 274 × 152,5 × 76 cm – standart ölçüler malzeme, Çelik – ekstra dayanıklılık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Plastik – güvenlik ve darbe koruması, Kolay katlanır; yer tasarrufu sağlar.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">23.080 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Masa%20Tenisi%20image/Giant%20Dragon%20Masa%20Tenisi%20Masas%C4%B1%20Outdoor%20S7018%204mm.bmp" alt="Giant Dragon Masa Tenisi Masası Outdoor S7018 4mm" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Giant Dragon Masa Tenisi Masası Outdoor S7018 4mm</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : St, ACP – Alüminyum Kompozit, 4 mm, anti-glare (yansımayı azaltan) yüzey, 36 mm metal çerçeve, Ø15×30 mm yuvarlak metal profil, korozyon önleyici kaplama</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">274 × 152,5 × 76 cm (ITTF standart ölçüleri), 2 parçalı masa, 4 adet 125 mm çaplı tekerlek (2’si yön değiştirilebilir).</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">28.000 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Masa%20Tenisi%20image/Giant%20Dragon%20Masa%20Tenisi%20Masas%C4%B1%2025mm%20ITTF%20Onayl%C4%B1.bmp" alt="Giant Dragon Masa Tenisi Masası 25mm ITTF Onaylı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Giant Dragon Masa Tenisi Masası 25mm ITTF Onaylı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : St, ACP – Alüminyum Kompozit, 4 mm, anti-glare (yansımayı azaltan) yüzey, 36 mm metal çerçeve, Ø15×30 mm yuvarlak metal profil, korozyon önleyici kaplama</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">274 × 152,5 × 76 cm (ITTF standart ölçüleri), 2 parçalı masa, 4 adet 125 mm çaplı tekerlek (2’si yön değiştirilebilir).</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">56.990 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20A%C4%9Fdemir%20Seti%20D%C3%BCrb%C3%BCn%20RN959.bmp" alt="Helix Masa Tenisi Ağdemir Seti Dürbün RN959" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Masa Tenisi Ağdemir Seti Dürbün RN959</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Masa tenisi ağ seti / ping pong file sistemi, 19 x 14,5 x 5 cm, 365 gr ağırlık, Yaylı mandal sistemli ağ aparatı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Tüm masa tenisi masaları, Otomatik rulo sarma file sistemi.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">330 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Masa Tenisi Malzemeleri</span>
-        <span>2</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">05</div>
-            <div class="cat-titleblock">
-                <h1>MASA TENİSİ MALZEMELERİ</h1>
-                <p>Ürün listesi (devamı) — sayfa 3/4</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Masa%20Tenisi%20image/HDT55%20HATTRICK.webp" alt="HDT55 HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>HDT55 HATTRICK</span>
+          <p class="kart-aciklama">Pratik yaylı masa tenisi ağı 180 × 14 cm standart ölçü 19,8 cm açılabilir mekanizma, Yaylı hızlı kurulum sistemi Standart masa tenisi masalarına uyumludur, Renkli kutu ambalaj, Ev, okul ve kulüp kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">490 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20A%C4%9Fdemir%20Seti%20D%C3%BCrb%C3%BCn%20RN942.bmp" alt="Helix Masa Tenisi Ağdemir Seti Dürbün RN942" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Masa Tenisi Ağdemir Seti Dürbün RN942</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Boyutlar (Kapalı): 19 x 14,5 x 5 cm, 365 gram ağırlık, Yüksek kaliteli plastik ve metal malzeme, Basit talimatlarla hızlı ve kolay kurulum</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Yaylı mandal – tüm masalarla uyumlu, File, direk içine rulo şeklinde sarılabilir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">330 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20A%C4%9Fdemir%20Seti%20D%C3%BCrb%C3%BCn%20RN935.bmp" alt="Helix Masa Tenisi Ağdemir Seti Dürbün RN935" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Masa Tenisi Ağdemir Seti Dürbün RN935</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Kapalı halde 19 × 14,5 × 5 cm ölçü, 365 gram ağırlık, Yüksek kaliteli plastik ve metal bileşenler malzeme</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Yaylı mandal sistemi ile tüm masa tiplerine uyumlu, File, direklere sarılarak kolayca saklanabilir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">330 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20A%C4%9Fdemir%20Seti%20V200.bmp" alt="Helix Masa Tenisi Ağdemir Seti V200" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Masa Tenisi Ağdemir Seti V200</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Mandallı tutma sistemi – kolay gerginlik ayarı, Dayanıklı örme file, Yaylı silindirli düzenleme sistemi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Amatör ve profesyonel oyuncular, Hızlı ve pratik; mandallar ile kolay montaj.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">620 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20A%C4%9Fdemir%20Seti%20V100.bmp" alt="Helix Masa Tenisi Ağdemir Seti V100" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Masa Tenisi Ağdemir Seti V100</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Mengeneli tutma sistemi – sağlam ve güvenli bağlantı, Dayanıklı örme file, Yaylı silindirli sistem – sürekli ve dengeli gerginlik</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Amatör ve profesyonel oyuncular için uygun, Hızlı ve pratik; ek ekipman gerektirmez.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">900 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20A%C4%9Fdemir%20Seti%20TTF-2.bmp" alt="Helix Masa Tenisi Ağdemir Seti TTF-2" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Masa Tenisi Ağdemir Seti TTF-2</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Mandallı bağlantı – kolay montaj, güçlü tutuş, Örme – dayanıklı uzun ömürlü yapı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Yaylı silindirli – optimum file gerginliği, Uluslararası standartlara uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">765 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20A%C4%9Fdemir%20Seti%20TN-200.bmp" alt="Helix Masa Tenisi Ağdemir Seti TN-200" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Masa Tenisi Ağdemir Seti TN-200</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Mengeneli – güçlü tutuş, kolay montaj, Dayanıklı naylon, İpli gerdirme – hızlı ayarlanabilir</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kutu ambalaj – pratik taşıma ve depolama, Antrenman ve günlük oyun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">430 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Masa Tenisi Malzemeleri</span>
-        <span>3</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">05</div>
-            <div class="cat-titleblock">
-                <h1>MASA TENİSİ MALZEMELERİ</h1>
-                <p>Ürün listesi (devamı) — sayfa 4/4</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Masa%20Tenisi%20image/ADS14%20ALTIS.webp" alt="ADS14 ALTIS" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>ADS14 ALTIS</span>
+          <p class="kart-aciklama">Mandallı ağ ve demir seti, Masa tenisi filesi dahildir, Blister paket, Metal direk yapısı, Kolay montaj Standart masa tenisi masalarına uyumludur, Ev, okul ve hobi kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">320 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20A%C4%9Fdemir%20Seti%20B50.bmp" alt="Helix Masa Tenisi Ağdemir Seti B50" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Masa Tenisi Ağdemir Seti B50</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Mengeneli tutma mekanizması, Örme file + dayanıklı naylon ağ, İple gerdirilebilir yapı, Mengeneli sistem sayesinde hızlı ve kolay montaj</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Standart masa tenisi file ölçüleri ile uyumlu.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">200 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Masa%20Tenisi%20image/Giant%20Dragon%20Masa%20Tenisi%20A%C4%9Fdemir%20Seti%20ITTF%20Onayl%C4%B1.bmp" alt="Giant Dragon Masa Tenisi Ağdemir Seti ITTF Onaylı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Giant Dragon Masa Tenisi Ağdemir Seti ITTF Onaylı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Uluslararası Masa Tenisi Federasyonu tarafından resmi olarak onaylıdır, Dayanıklı ağ pamuk + sağlam metal bileşenler malzeme, Profesyonel oyun ölçülerine uygundur</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Basit talimatlarla hızlı ve pratik kurulum sağlar, Ev, okul, spor salonu ve tüm kapalı alanlarda kullanılabilir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.550 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Masa Tenisi Malzemeleri</span>
-        <span>4</span>
-    </div>
-    </section>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Masa%20Tenisi%20image/ADS16%20ALTIS.webp" alt="ADS16 ALTIS" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>ADS16 ALTIS</span>
+          <p class="kart-aciklama">Mengeneli ağ ve demir seti, Masa tenisi filesi dahildir, Blister paket, Metal direk yapısı, Sağlam sabitleme sistemi Standart masa tenisi masalarına uyumludur, Ev, okul ve kulüp kullanımına uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">440 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Masa%20Tenisi%20image/EVEREST%20201A%20ALTIS.webp" alt="EVEREST 201A ALTIS" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>EVEREST 201A ALTIS</span>
+          <p class="kart-aciklama">İç mekân masa tenisi masası 17 mm MDF oyun yüzeyi 17 × 32 mm profil yapısı 32 × 32 mm metal ayaklar Çift parça katlanabilir tasarım 274 × 152,5 × 76 cm Ev, okul ve kulüp kullanımına uygunv.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">23.820 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20Masas%C4%B1%20TMTF%2016mm.webp" alt="Helix Masa Tenisi Masası TMTF 16mm" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Masa Tenisi Masası TMTF 16mm</span>
+          <p class="kart-aciklama">16 mm MDF Boyutlar (Açık): 274 cm (U) × 152.5 cm (G) × 76 cm (Y), Dayanıklı çelik çerçeve, Darbe emici plastik tapalar Evet – az yer kaplayan kompakt tasarım, Ev tipi ve kapalı spor alanları.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">22.360 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20Masas%C4%B1%20Portatif%20TTB%2012mm.webp" alt="Helix Masa Tenisi Masası Portatif TTB 12mm" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Masa Tenisi Masası Portatif TTB 12mm</span>
+          <p class="kart-aciklama">Boyutlar (Kurulu Hali): 180 × 92 × 76 cm, 12 mm, 25 × 25 mm, MDF (Orta yoğunluklu lif levha) malzeme Katlanabilir ayaklar ve taşıması kolay yüzey, Yüksek kaliteli, uzun ömürlü yapı.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">13.500 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20Masas%C4%B1%2018mm%20TMTF%20Onayl%C4%B1.webp" alt="Helix Masa Tenisi Masası 18mm TMTF Onaylı" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Masa Tenisi Masası 18mm TMTF Onaylı</span>
+          <p class="kart-aciklama">18 mm MDF yüzey Boyutlar (Açık Hali): 274 × 152,5 × 76 cm – standart ölçüler malzeme, Çelik – ekstra dayanıklılık Plastik – güvenlik ve darbe koruması, Kolay katlanır; yer tasarrufu sağlar.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">23.080 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Masa%20Tenisi%20image/Giant%20Dragon%20Masa%20Tenisi%20Masas%C4%B1%20Outdoor%20S7018%204mm.webp" alt="Giant Dragon Masa Tenisi Masası Outdoor S7018 4mm" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Giant Dragon Masa Tenisi Masası Outdoor S7018 4mm</span>
+          <p class="kart-aciklama">St, ACP – Alüminyum Kompozit, 4 mm, anti-glare (yansımayı azaltan) yüzey, 36 mm metal çerçeve, Ø15×30 mm yuvarlak metal profil, korozyon önleyici kaplama 274 × 152,5 × 76 cm (ITTF standart ölçüleri), 2 parçalı masa, 4 adet 125 mm çaplı tekerlek (2’si yön değiştirilebilir).</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">28.000 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Masa%20Tenisi%20image/Giant%20Dragon%20Masa%20Tenisi%20Masas%C4%B1%2025mm%20ITTF%20Onayl%C4%B1.webp" alt="Giant Dragon Masa Tenisi Masası 25mm ITTF Onaylı" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Giant Dragon Masa Tenisi Masası 25mm ITTF Onaylı</span>
+          <p class="kart-aciklama">St, ACP – Alüminyum Kompozit, 4 mm, anti-glare (yansımayı azaltan) yüzey, 36 mm metal çerçeve, Ø15×30 mm yuvarlak metal profil, korozyon önleyici kaplama 274 × 152,5 × 76 cm (ITTF standart ölçüleri), 2 parçalı masa, 4 adet 125 mm çaplı tekerlek (2’si yön değiştirilebilir).</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">56.990 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20A%C4%9Fdemir%20Seti%20D%C3%BCrb%C3%BCn%20RN959.webp" alt="Helix Masa Tenisi Ağdemir Seti Dürbün RN959" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Masa Tenisi Ağdemir Seti Dürbün RN959</span>
+          <p class="kart-aciklama">Masa tenisi ağ seti / ping pong file sistemi, 19 x 14,5 x 5 cm, 365 gr ağırlık, Yaylı mandal sistemli ağ aparatı Tüm masa tenisi masaları, Otomatik rulo sarma file sistemi.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">330 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20A%C4%9Fdemir%20Seti%20D%C3%BCrb%C3%BCn%20RN942.webp" alt="Helix Masa Tenisi Ağdemir Seti Dürbün RN942" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Masa Tenisi Ağdemir Seti Dürbün RN942</span>
+          <p class="kart-aciklama">Boyutlar (Kapalı): 19 x 14,5 x 5 cm, 365 gram ağırlık, Yüksek kaliteli plastik ve metal malzeme, Basit talimatlarla hızlı ve kolay kurulum Yaylı mandal – tüm masalarla uyumlu, File, direk içine rulo şeklinde sarılabilir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">330 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20A%C4%9Fdemir%20Seti%20D%C3%BCrb%C3%BCn%20RN935.webp" alt="Helix Masa Tenisi Ağdemir Seti Dürbün RN935" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Masa Tenisi Ağdemir Seti Dürbün RN935</span>
+          <p class="kart-aciklama">Kapalı halde 19 × 14,5 × 5 cm ölçü, 365 gram ağırlık, Yüksek kaliteli plastik ve metal bileşenler malzeme Yaylı mandal sistemi ile tüm masa tiplerine uyumlu, File, direklere sarılarak kolayca saklanabilir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">330 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20A%C4%9Fdemir%20Seti%20V200.webp" alt="Helix Masa Tenisi Ağdemir Seti V200" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Masa Tenisi Ağdemir Seti V200</span>
+          <p class="kart-aciklama">Mandallı tutma sistemi – kolay gerginlik ayarı, Dayanıklı örme file, Yaylı silindirli düzenleme sistemi Amatör ve profesyonel oyuncular, Hızlı ve pratik; mandallar ile kolay montaj.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">620 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20A%C4%9Fdemir%20Seti%20V100.webp" alt="Helix Masa Tenisi Ağdemir Seti V100" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Masa Tenisi Ağdemir Seti V100</span>
+          <p class="kart-aciklama">Mengeneli tutma sistemi – sağlam ve güvenli bağlantı, Dayanıklı örme file, Yaylı silindirli sistem – sürekli ve dengeli gerginlik Amatör ve profesyonel oyuncular için uygun, Hızlı ve pratik; ek ekipman gerektirmez.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">900 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20A%C4%9Fdemir%20Seti%20TTF-2.webp" alt="Helix Masa Tenisi Ağdemir Seti TTF-2" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Masa Tenisi Ağdemir Seti TTF-2</span>
+          <p class="kart-aciklama">Mandallı bağlantı – kolay montaj, güçlü tutuş, Örme – dayanıklı uzun ömürlü yapı Yaylı silindirli – optimum file gerginliği, Uluslararası standartlara uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">765 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20A%C4%9Fdemir%20Seti%20TN-200.webp" alt="Helix Masa Tenisi Ağdemir Seti TN-200" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Masa Tenisi Ağdemir Seti TN-200</span>
+          <p class="kart-aciklama">Mengeneli – güçlü tutuş, kolay montaj, Dayanıklı naylon, İpli gerdirme – hızlı ayarlanabilir Kutu ambalaj – pratik taşıma ve depolama, Antrenman ve günlük oyun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">430 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Masa%20Tenisi%20image/Helix%20Masa%20Tenisi%20A%C4%9Fdemir%20Seti%20B50.webp" alt="Helix Masa Tenisi Ağdemir Seti B50" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Masa Tenisi Ağdemir Seti B50</span>
+          <p class="kart-aciklama">Mengeneli tutma mekanizması, Örme file + dayanıklı naylon ağ, İple gerdirilebilir yapı, Mengeneli sistem sayesinde hızlı ve kolay montaj Standart masa tenisi file ölçüleri ile uyumlu.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">200 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Masa%20Tenisi%20image/Giant%20Dragon%20Masa%20Tenisi%20A%C4%9Fdemir%20Seti%20ITTF%20Onayl%C4%B1.webp" alt="Giant Dragon Masa Tenisi Ağdemir Seti ITTF Onaylı" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Giant Dragon Masa Tenisi Ağdemir Seti ITTF Onaylı</span>
+          <p class="kart-aciklama">Uluslararası Masa Tenisi Federasyonu tarafından resmi olarak onaylıdır, Dayanıklı ağ pamuk + sağlam metal bileşenler malzeme, Profesyonel oyun ölçülerine uygundur Basit talimatlarla hızlı ve pratik kurulum sağlar, Ev, okul, spor salonu ve tüm kapalı alanlarda kullanılabilir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.550 ₺</span></div>
+          </div>
+        </div>
+      </div>
+  </div>
+</main>
 
+<a class="wa-buton" href="https://wa.me/905522025737" target="_blank" rel="noopener" aria-label="WhatsApp'tan yazın">
+  <svg viewBox="0 0 32 32" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M16 3C9 3 3 9 3 16c0 2.4.6 4.6 1.8 6.6L3 29l6.6-1.7c1.9 1 4 1.6 6.4 1.6 7 0 13-6 13-13S23 3 16 3zm7.6 18.4c-.3.9-1.7 1.7-2.7 1.9-.7.1-1.6.2-4.6-1-3.9-1.6-6.4-5.5-6.6-5.8-.2-.3-1.6-2.1-1.6-4s1-2.8 1.3-3.2c.3-.3.7-.4 1-.4h.7c.2 0 .5 0 .8.6.3.7 1.1 2.6 1.2 2.8.1.2.2.4 0 .7-.1.3-.2.4-.4.6-.2.2-.4.5-.6.7-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.6 1.4 1.3 2.6 1.7 3 1.9.3.2.5.1.7-.1.2-.2.9-1 1.1-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.5 1.2.4.2.6.3.7.5.1.2.1 1-.2 1.9z"/></svg>
+</a>
 
-<script>
-function aramaFiltrele(inp){
-  var q=inp.value.toLocaleLowerCase('tr-TR').trim(), gorunen=0;
-  document.querySelectorAll('.product-card').forEach(function(k){
-    var e=k.querySelector('.pf-label');
-    var esles=(e?e.textContent.toLocaleLowerCase('tr-TR'):'').indexOf(q)!==-1;
-    k.style.display=esles?'':'none';
-    if(esles)gorunen++;
-  });
-  document.querySelector('.urun-bulunamadi').hidden=!(q&&gorunen===0);
-}
-</script>
+<footer class="alt-bilgi">
+  <div class="alt-bilgi-ic">
+    <strong>ÖZTEN SPOR</strong>
+    Kirazlı Mahallesi 1201. Sokak, Bağcılar / İstanbul<br>
+    <a href="mailto:oztensporltd@gmail.com">oztensporltd@gmail.com</a>
+  </div>
+</footer>
+
+<nav class="alt-cubuk">
+  <a class="alt-btn" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+    Ana Sayfa
+  </a>
+  <button type="button" class="alt-btn" id="altAra">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    Ara
+  </button>
+  <button type="button" class="alt-btn" id="altKategori">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    Kategoriler
+  </button>
+  <button type="button" class="alt-btn" id="altSepet">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M6 6 5 3H3"/></svg>
+    Sepet
+    <span class="alt-rozet" id="altSepetSayi" hidden>0</span>
+  </button>
+</nav>
+
 </body>
 </html>

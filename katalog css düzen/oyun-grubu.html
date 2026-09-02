@@ -4,156 +4,211 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OYUN GRUBU — Özten Spor Kataloğu</title>
-<link rel="stylesheet" href="Ozten Spor Katalog.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ozten-yeni.css">
 <script src="sepet.js" defer></script>
+<script src="site.js" defer></script>
 </head>
-<body id="top">
-<div class="floating-nav-group">
-    <a href="#top" class="floating-nav-btn"><span class="fn-arrow">&#8593;</span> Yukarı Çık</a>
-</div>
-<div class="katalog-arama"><input type="text" placeholder="Ürün ara..." oninput="aramaFiltrele(this)"></div>
-<div class="kategori-menu-cubugu">
-    <button type="button" class="kategori-menu-buton">Alt Kategoriler <span class="fn-arrow">&#9662;</span></button>
-    <div class="kategori-menu-panel" hidden>
-    </div>
-    <a href="index.html#top" class="ana-katalog-buton">Ana Kataloğa Dön</a>
-</div>
+<body>
 
-<p class="urun-bulunamadi" hidden>Ürün bulunamadı.</p>
-<section class="page cat-page" id="kategori-oyun-grubu">
-        <div class="cat-header">
-            <div class="cat-num">31</div>
-            <div class="cat-titleblock">
-                <h1>OYUN GRUBU</h1>
-                <p>Oyun grubu ürünleri.</p>
-            </div>
+<header class="ust-cubuk">
+  <a class="marka" href="index.html">ÖZTEN<span>SPOR</span></a>
+  <div class="ust-arama">
+    <span class="arama-ikon">&#9906;</span>
+    <input type="text" id="aramaKutusu" placeholder="Ürün ara" autocomplete="off" oninput="aramaFiltrele(this)">
+  </div>
+  <div class="ust-butonlar">
+    <button type="button" class="ust-btn" id="kategoriAc">Kategoriler &#9662;</button>
+    <button type="button" class="ust-btn" id="sepetAc">Sepetim <span class="ust-rozet" id="ustSepetSayi">0</span></button>
+  </div>
+</header>
+
+<nav class="kategori-panel" id="kategoriPanel" hidden>
+  <div class="kategori-panel-baslik">TÜM KATEGORİLER</div>
+  <div class="kategori-izgara">
+        <a class="kategori-link" href="futbol.html">FUTBOL</a>
+        <a class="kategori-link" href="basketbol.html">BASKETBOL</a>
+        <a class="kategori-link" href="voleybol.html">VOLEYBOL</a>
+        <a class="kategori-link" href="badminton.html">BADMINTON</a>
+        <a class="kategori-link" href="masa-tenisi.html">MASA TENİSİ</a>
+        <a class="kategori-link" href="tenis.html">TENİS</a>
+        <a class="kategori-link" href="atlama-ipi.html">ATLAMA İPİ</a>
+        <a class="kategori-link" href="el-yayi.html">EL YAYI</a>
+        <a class="kategori-link" href="yoga-pilates.html">YOGA PİLATES</a>
+        <a class="kategori-link" href="fitness.html">FITNESS</a>
+        <a class="kategori-link" href="egzersiz.html">EGZERSİZ</a>
+        <a class="kategori-link" href="hentbol.html">HENTBOL</a>
+        <a class="kategori-link" href="yuzme.html">YÜZME</a>
+        <a class="kategori-link" href="bocce.html">BOCCE</a>
+        <a class="kategori-link" href="hokey.html">HOKEY</a>
+        <a class="kategori-link" href="kano.html">KANO</a>
+        <a class="kategori-link" href="beyzbol.html">BEYZBOL</a>
+        <a class="kategori-link" href="paten.html">PATEN</a>
+        <a class="kategori-link" href="oryantiring.html">ORYANTİRİNG</a>
+        <a class="kategori-link" href="padel.html">PADEL</a>
+        <a class="kategori-link" href="pickleball.html">PICKLEBALL</a>
+        <a class="kategori-link" href="ragbi.html">RAGBİ</a>
+        <a class="kategori-link" href="satranc.html">SATRANÇ</a>
+        <a class="kategori-link" href="softball.html">SOFTBALL</a>
+        <a class="kategori-link" href="squash.html">SQUASH</a>
+        <a class="kategori-link" href="dart.html">DART</a>
+        <a class="kategori-link" href="atletizm.html">ATLETİZM</a>
+        <a class="kategori-link" href="cimnastik.html">CİMNASTİK</a>
+        <a class="kategori-link" href="saglik-toplari.html">SAĞLIK TOPLARI</a>
+        <a class="kategori-link" href="su-topu.html">SU TOPU</a>
+        <a class="kategori-link aktif" href="oyun-grubu.html">OYUN GRUBU</a>
+        <a class="kategori-link" href="dovus-sporlari.html">DÖVÜŞ SPORLARI</a>
+  </div>
+</nav>
+
+<section class="kat-basi">
+  <div class="kat-basi-ic">
+    <div class="kat-etiket">KATEGORİ 31</div>
+    <h1>OYUN GRUBU</h1>
+    <p class="kat-aciklama">Oyun grubu ürünleri.</p>
+    <span class="kat-sayac">10 ürün</span>
+  </div>
+</section>
+
+<main class="icerik">
+  <p class="urun-bulunamadi" hidden>Aramanla eşleşen ürün bulunamadı.</p>
+  <div class="product-grid">
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/oyun%20grubu%20image/Helix%20Balon%20Multicolor%20CB%20100%27l%C3%BC.webp" alt="Helix Balon Multicolor CB 100'lü" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Balon Multicolor CB 100'lü</span>
+          <p class="kart-aciklama">Lateks malzeme, 100'lü paket, Karışık renkler (kırmızı, mavi, yeşil, sarı, pembe, mor, turuncu) 25-30 cm şişme boyutu, Hava veya helyumla şişirilebilir, Doğum günü ve kutlamalar için idealdir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">140 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/oyun%20grubu%20image/Helix%20Balon%20Multicolor%20CB%20100%27l%C3%BC.bmp" alt="Helix Balon Multicolor CB 100'lü" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Balon Multicolor CB 100'lü</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Lateks malzeme, 100'lü paket, Karışık renkler (kırmızı, mavi, yeşil, sarı, pembe, mor, turuncu)</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">25-30 cm şişme boyutu, Hava veya helyumla şişirilebilir, Doğum günü ve kutlamalar için idealdir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">140 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/oyun%20grubu%20image/Helix%20Frizbi%20FZ-8.bmp" alt="Helix Frizbi FZ-8" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Frizbi FZ-8</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Yüksek kaliteli dayanıklı plastik, 24 cm çap, 75 cm çevre uzunluğu</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Rüzgarda dengeli uçuş performansı, Sahil, park, kamp ve piknik kullanımına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">35 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/oyun%20grubu%20image/Helix%20Oyun%20Brandas%C4%B1%20Beyaz%20WPT-10.bmp" alt="Helix Oyun Brandası Beyaz WPT-10" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Oyun Brandası Beyaz WPT-10</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Dayanıklı kanvas kumaş, Greenguard Gold sertifikalı UV baskı, 140x180 cm ölçü</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Resim, çizim ve duyusal etkinlikler için uygundur, Hafif ve katlanabilir taşınabilir yapı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.170 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/oyun%20grubu%20image/Helix%20Oyun%20Brandas%C4%B1%20Seksek%20SOB-120.bmp" alt="Helix Oyun Brandası Seksek SOB-120" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Oyun Brandası Seksek SOB-120</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 45x45 cm kareler, 100 cm toplam genişlik, Greenguard Gold UV baskı, 680 gram ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Okul öncesi ve ilkokul seksek oyunları için idealdir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.030 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/oyun%20grubu%20image/Helix%20Trambolin%20K%C4%B1sa%20Fileli%20HTS%2055%20%20Turuncu.bmp" alt="Helix Trambolin Kısa Fileli HTS 55  Turuncu" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Trambolin Kısa Fileli HTS 55  Turuncu</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 140x140x110 cm ölçü, 100 kg taşıma kapasitesi, 6mm köpük dolgulu 2 katlı Oxford file</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">360° güvenlik filesi, İç ve dış mekan kullanımına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">5.640 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/oyun%20grubu%20image/Helix%20Trambolin%20K%C4%B1sa%20Fileli%20HTS%2055%20Mavi.bmp" alt="Helix Trambolin Kısa Fileli HTS 55 Mavi" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Trambolin Kısa Fileli HTS 55 Mavi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 140x140x110 cm ölçü, 100 kg taşıma kapasitesi, 6mm köpük dolgulu 2 katlı Oxford file</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">360° güvenlik filesi, İç ve dış mekan kullanımına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">4.670 ₺</span></div>
-    </div>
-</div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Oyun grubu</span>
-        <span>1</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">31</div>
-            <div class="cat-titleblock">
-                <h1>OYUN GRUBU</h1>
-                <p>Ürün listesi (devamı) — sayfa 2/2</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/oyun%20grubu%20image/Helix%20Frizbi%20FZ-8.webp" alt="Helix Frizbi FZ-8" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Frizbi FZ-8</span>
+          <p class="kart-aciklama">Yüksek kaliteli dayanıklı plastik, 24 cm çap, 75 cm çevre uzunluğu Rüzgarda dengeli uçuş performansı, Sahil, park, kamp ve piknik kullanımına uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">35 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/oyun%20grubu%20image/Helix%20Trambolin%20Uzun%20Fileli%20HTL%2055%20K%C4%B1rm%C4%B1z%C4%B1.bmp" alt="Helix Trambolin Uzun Fileli HTL 55 Kırmızı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Trambolin Uzun Fileli HTL 55 Kırmızı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 140 cm çap, 153 cm file uzunluğu, 189 cm toplam yükseklik, 100 kg taşıma kapasitesi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Elastik yay sistemi, Köşe koruma profilli, Bahçe kullanımı için idealdir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">4.660 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/oyun%20grubu%20image/Helix%20Z%C4%B1p%20Z%C4%B1p%20Top%20JB.bmp" alt="Helix Zıp Zıp Top JB" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Zıp Zıp Top JB</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 55 cm boyut, 550 gram ağırlık, 70 kg taşıma kapasitesi, El tutamaçlı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Patlamaya dayanıklı (anti-burst), El pompası dahildir, Eğlenceli egzersiz için idealdir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">310 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/oyun%20grubu%20image/Helix%20%C3%87ocuk%20Para%C5%9F%C3%BCt%20AP-8.bmp" alt="Helix Çocuk Paraşüt AP-8" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Çocuk Paraşüt AP-8</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Hafif ve dayanıklı polyester kumaş, 350±10 cm çap, 8 renkli bölüm</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">3 yaş ve üzeri çocuklar için, Okul öncesi ve ilkokul grup oyunlarına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">2.300 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/oyun%20grubu%20image/Helix%20%C3%87ocuk%20Z%C4%B1plama%20%C3%87uval%C4%B1%20JC-70.bmp" alt="Helix Çocuk Zıplama Çuvalı JC-70" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Çocuk Zıplama Çuvalı JC-70</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 100x70 cm ölçü, Jüt (çuval bezi) kumaş malzeme</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Taşıma çantası dahildir, Çuval yarışı ve okul etkinlikleri için idealdir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">400 ₺</span></div>
-    </div>
-</div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Oyun grubu</span>
-        <span>2</span>
-    </div>
-    </section>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/oyun%20grubu%20image/Helix%20Oyun%20Brandas%C4%B1%20Beyaz%20WPT-10.webp" alt="Helix Oyun Brandası Beyaz WPT-10" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Oyun Brandası Beyaz WPT-10</span>
+          <p class="kart-aciklama">Dayanıklı kanvas kumaş, Greenguard Gold sertifikalı UV baskı, 140x180 cm ölçü Resim, çizim ve duyusal etkinlikler için uygundur, Hafif ve katlanabilir taşınabilir yapı.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.170 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/oyun%20grubu%20image/Helix%20Oyun%20Brandas%C4%B1%20Seksek%20SOB-120.webp" alt="Helix Oyun Brandası Seksek SOB-120" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Oyun Brandası Seksek SOB-120</span>
+          <p class="kart-aciklama">45x45 cm kareler, 100 cm toplam genişlik, Greenguard Gold UV baskı, 680 gram ağırlık Okul öncesi ve ilkokul seksek oyunları için idealdir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.030 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/oyun%20grubu%20image/Helix%20Trambolin%20K%C4%B1sa%20Fileli%20HTS%2055%20%20Turuncu.webp" alt="Helix Trambolin Kısa Fileli HTS 55  Turuncu" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Trambolin Kısa Fileli HTS 55  Turuncu</span>
+          <p class="kart-aciklama">140x140x110 cm ölçü, 100 kg taşıma kapasitesi, 6mm köpük dolgulu 2 katlı Oxford file 360° güvenlik filesi, İç ve dış mekan kullanımına uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">5.640 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/oyun%20grubu%20image/Helix%20Trambolin%20K%C4%B1sa%20Fileli%20HTS%2055%20Mavi.webp" alt="Helix Trambolin Kısa Fileli HTS 55 Mavi" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Trambolin Kısa Fileli HTS 55 Mavi</span>
+          <p class="kart-aciklama">140x140x110 cm ölçü, 100 kg taşıma kapasitesi, 6mm köpük dolgulu 2 katlı Oxford file 360° güvenlik filesi, İç ve dış mekan kullanımına uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">4.670 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/oyun%20grubu%20image/Helix%20Trambolin%20Uzun%20Fileli%20HTL%2055%20K%C4%B1rm%C4%B1z%C4%B1.webp" alt="Helix Trambolin Uzun Fileli HTL 55 Kırmızı" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Trambolin Uzun Fileli HTL 55 Kırmızı</span>
+          <p class="kart-aciklama">140 cm çap, 153 cm file uzunluğu, 189 cm toplam yükseklik, 100 kg taşıma kapasitesi Elastik yay sistemi, Köşe koruma profilli, Bahçe kullanımı için idealdir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">4.660 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/oyun%20grubu%20image/Helix%20Z%C4%B1p%20Z%C4%B1p%20Top%20JB.webp" alt="Helix Zıp Zıp Top JB" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Zıp Zıp Top JB</span>
+          <p class="kart-aciklama">55 cm boyut, 550 gram ağırlık, 70 kg taşıma kapasitesi, El tutamaçlı Patlamaya dayanıklı (anti-burst), El pompası dahildir, Eğlenceli egzersiz için idealdir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">310 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/oyun%20grubu%20image/Helix%20%C3%87ocuk%20Para%C5%9F%C3%BCt%20AP-8.webp" alt="Helix Çocuk Paraşüt AP-8" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Çocuk Paraşüt AP-8</span>
+          <p class="kart-aciklama">Hafif ve dayanıklı polyester kumaş, 350±10 cm çap, 8 renkli bölüm 3 yaş ve üzeri çocuklar için, Okul öncesi ve ilkokul grup oyunlarına uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">2.300 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/oyun%20grubu%20image/Helix%20%C3%87ocuk%20Z%C4%B1plama%20%C3%87uval%C4%B1%20JC-70.webp" alt="Helix Çocuk Zıplama Çuvalı JC-70" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Çocuk Zıplama Çuvalı JC-70</span>
+          <p class="kart-aciklama">100x70 cm ölçü, Jüt (çuval bezi) kumaş malzeme Taşıma çantası dahildir, Çuval yarışı ve okul etkinlikleri için idealdir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">400 ₺</span></div>
+          </div>
+        </div>
+      </div>
+  </div>
+</main>
 
+<a class="wa-buton" href="https://wa.me/905522025737" target="_blank" rel="noopener" aria-label="WhatsApp'tan yazın">
+  <svg viewBox="0 0 32 32" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M16 3C9 3 3 9 3 16c0 2.4.6 4.6 1.8 6.6L3 29l6.6-1.7c1.9 1 4 1.6 6.4 1.6 7 0 13-6 13-13S23 3 16 3zm7.6 18.4c-.3.9-1.7 1.7-2.7 1.9-.7.1-1.6.2-4.6-1-3.9-1.6-6.4-5.5-6.6-5.8-.2-.3-1.6-2.1-1.6-4s1-2.8 1.3-3.2c.3-.3.7-.4 1-.4h.7c.2 0 .5 0 .8.6.3.7 1.1 2.6 1.2 2.8.1.2.2.4 0 .7-.1.3-.2.4-.4.6-.2.2-.4.5-.6.7-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.6 1.4 1.3 2.6 1.7 3 1.9.3.2.5.1.7-.1.2-.2.9-1 1.1-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.5 1.2.4.2.6.3.7.5.1.2.1 1-.2 1.9z"/></svg>
+</a>
 
-<script>
-function aramaFiltrele(inp){
-  var q=inp.value.toLocaleLowerCase('tr-TR').trim(), gorunen=0;
-  document.querySelectorAll('.product-card').forEach(function(k){
-    var e=k.querySelector('.pf-label');
-    var esles=(e?e.textContent.toLocaleLowerCase('tr-TR'):'').indexOf(q)!==-1;
-    k.style.display=esles?'':'none';
-    if(esles)gorunen++;
-  });
-  document.querySelector('.urun-bulunamadi').hidden=!(q&&gorunen===0);
-}
-</script>
+<footer class="alt-bilgi">
+  <div class="alt-bilgi-ic">
+    <strong>ÖZTEN SPOR</strong>
+    Kirazlı Mahallesi 1201. Sokak, Bağcılar / İstanbul<br>
+    <a href="mailto:oztensporltd@gmail.com">oztensporltd@gmail.com</a>
+  </div>
+</footer>
+
+<nav class="alt-cubuk">
+  <a class="alt-btn" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+    Ana Sayfa
+  </a>
+  <button type="button" class="alt-btn" id="altAra">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    Ara
+  </button>
+  <button type="button" class="alt-btn" id="altKategori">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    Kategoriler
+  </button>
+  <button type="button" class="alt-btn" id="altSepet">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M6 6 5 3H3"/></svg>
+    Sepet
+    <span class="alt-rozet" id="altSepetSayi" hidden>0</span>
+  </button>
+</nav>
+
 </body>
 </html>

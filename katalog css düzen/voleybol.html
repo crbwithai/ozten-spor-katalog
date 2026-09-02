@@ -4,250 +4,328 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>VOLEYBOL — Özten Spor Kataloğu</title>
-<link rel="stylesheet" href="Ozten Spor Katalog.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ozten-yeni.css">
 <script src="sepet.js" defer></script>
+<script src="site.js" defer></script>
 </head>
-<body id="top">
-<div class="floating-nav-group">
-    <a href="#top" class="floating-nav-btn"><span class="fn-arrow">&#8593;</span> Yukarı Çık</a>
-</div>
-<div class="katalog-arama"><input type="text" placeholder="Ürün ara..." oninput="aramaFiltrele(this)"></div>
-<div class="kategori-menu-cubugu">
-    <button type="button" class="kategori-menu-buton">Alt Kategoriler <span class="fn-arrow">&#9662;</span></button>
-    <div class="kategori-menu-panel" hidden>
-        <a href="voleybol-aksesuarlari.html#top">Aksesuarlar</a>
-    </div>
-    <a href="index.html#top" class="ana-katalog-buton">Ana Kataloğa Dön</a>
-</div>
-<p class="urun-bulunamadi" hidden>Ürün bulunamadı.</p>
-<section class="page cat-page" id="kategori-voleybol">
-        <div class="cat-header">
-            <div class="cat-num">03</div>
-            <div class="cat-titleblock">
-                <h1>VOLEYBOL</h1>
-                <p>Salon ve plaj voleybolu için profesyonel toplar.</p>
-            </div>
+<body>
+
+<header class="ust-cubuk">
+  <a class="marka" href="index.html">ÖZTEN<span>SPOR</span></a>
+  <div class="ust-arama">
+    <span class="arama-ikon">&#9906;</span>
+    <input type="text" id="aramaKutusu" placeholder="Ürün ara" autocomplete="off" oninput="aramaFiltrele(this)">
+  </div>
+  <div class="ust-butonlar">
+    <button type="button" class="ust-btn" id="kategoriAc">Kategoriler &#9662;</button>
+    <button type="button" class="ust-btn" id="sepetAc">Sepetim <span class="ust-rozet" id="ustSepetSayi">0</span></button>
+  </div>
+</header>
+
+<nav class="kategori-panel" id="kategoriPanel" hidden>
+  <div class="kategori-panel-baslik">TÜM KATEGORİLER</div>
+  <div class="kategori-izgara">
+        <a class="kategori-link" href="futbol.html">FUTBOL</a>
+        <a class="kategori-link" href="basketbol.html">BASKETBOL</a>
+        <a class="kategori-link aktif" href="voleybol.html">VOLEYBOL</a>
+        <a class="kategori-link" href="badminton.html">BADMINTON</a>
+        <a class="kategori-link" href="masa-tenisi.html">MASA TENİSİ</a>
+        <a class="kategori-link" href="tenis.html">TENİS</a>
+        <a class="kategori-link" href="atlama-ipi.html">ATLAMA İPİ</a>
+        <a class="kategori-link" href="el-yayi.html">EL YAYI</a>
+        <a class="kategori-link" href="yoga-pilates.html">YOGA PİLATES</a>
+        <a class="kategori-link" href="fitness.html">FITNESS</a>
+        <a class="kategori-link" href="egzersiz.html">EGZERSİZ</a>
+        <a class="kategori-link" href="hentbol.html">HENTBOL</a>
+        <a class="kategori-link" href="yuzme.html">YÜZME</a>
+        <a class="kategori-link" href="bocce.html">BOCCE</a>
+        <a class="kategori-link" href="hokey.html">HOKEY</a>
+        <a class="kategori-link" href="kano.html">KANO</a>
+        <a class="kategori-link" href="beyzbol.html">BEYZBOL</a>
+        <a class="kategori-link" href="paten.html">PATEN</a>
+        <a class="kategori-link" href="oryantiring.html">ORYANTİRİNG</a>
+        <a class="kategori-link" href="padel.html">PADEL</a>
+        <a class="kategori-link" href="pickleball.html">PICKLEBALL</a>
+        <a class="kategori-link" href="ragbi.html">RAGBİ</a>
+        <a class="kategori-link" href="satranc.html">SATRANÇ</a>
+        <a class="kategori-link" href="softball.html">SOFTBALL</a>
+        <a class="kategori-link" href="squash.html">SQUASH</a>
+        <a class="kategori-link" href="dart.html">DART</a>
+        <a class="kategori-link" href="atletizm.html">ATLETİZM</a>
+        <a class="kategori-link" href="cimnastik.html">CİMNASTİK</a>
+        <a class="kategori-link" href="saglik-toplari.html">SAĞLIK TOPLARI</a>
+        <a class="kategori-link" href="su-topu.html">SU TOPU</a>
+        <a class="kategori-link" href="oyun-grubu.html">OYUN GRUBU</a>
+        <a class="kategori-link" href="dovus-sporlari.html">DÖVÜŞ SPORLARI</a>
+  </div>
+</nav>
+
+<section class="kat-basi">
+  <div class="kat-basi-ic">
+    <div class="kat-etiket">KATEGORİ 03</div>
+    <h1>VOLEYBOL</h1>
+    <p class="kat-aciklama">Salon ve plaj voleybolu için profesyonel toplar.</p>
+    <span class="kat-sayac">21 ürün</span>
+  </div>
+</section>
+
+<nav class="alt-kat-serit" aria-label="Alt kategoriler">
+  <div class="alt-kat-ic">
+      <a class="alt-kat-cip aktif" href="voleybol.html">Toplar</a>
+      <a class="alt-kat-cip" href="voleybol-aksesuarlari.html">Aksesuarlar</a>
+  </div>
+</nav>
+
+<main class="icerik">
+  <p class="urun-bulunamadi" hidden>Aramanla eşleşen ürün bulunamadı.</p>
+  <div class="product-grid">
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Voleybol%20image/BV100%20ALTIS.webp" alt="BV100 ALTIS" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>BV100 ALTIS</span>
+          <p class="kart-aciklama">5 Numara PVC sentetik deri yüzey, Makine dikişli, Butil iç lastik 260–280 g ağırlık Salon kullanımı, Antrenman ve hobi amaçlı kullanım.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">190 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Voleybol%20image/BV100%20ALTIS.bmp" alt="BV100 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : BV100 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 Numara PVC sentetik deri yüzey, Makine dikişli, Butil iç lastik 260–280 g ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Salon kullanımı, Antrenman ve hobi amaçlı kullanım.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">190 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Voleybol%20image/PROFINAL%20HATTR%C4%B0CK.bmp" alt="PROFINAL HATTRİCK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : PROFINAL HATTRİCK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 Numara, Sentetik deri (PVC) yüzey, El dikişli, Butil iç lastik 260–280 g ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Salon kullanımına uygun, Antrenman ve maç kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">330 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Voleybol%20image/PROSTAR%20HATTRICK.bmp" alt="PROSTAR HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : PROSTAR HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 Numara, Japon PU sentetik deri yüzey, El dikişli 5 katmanlı, Poly Viscose yapı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Butil iç lastik 260–280 g ağırlık, Salon kullanımı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">430 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Voleybol%20image/ALT350%20HATTRICK.bmp" alt="ALT350 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : ALT350 HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 Numara, Sentetik deri yüzey, Yapıştırma panel teknolojisi, Butil iç lastik 260–280 g ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Salon kullanımına uygun, Antrenman ve maç kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">510 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Voleybol%20image/PROEVA%205000%20HATTRICK.bmp" alt="PROEVA 5000 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : PROEVA 5000 HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 Numara, Dayanıklı sentetik deri yüzey, Sağlam panel yapısı, Dengeli sekme ve stabil uçuş 260–280 g ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Salon ve açık saha kullanımına uygun, Antrenman ve maç kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">500 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Voleybol%20image/Helix%20Voleybol%20Topu%20Hygroscopic%20HV-10.bmp" alt="Helix Voleybol Topu Hygroscopic HV-10" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Voleybol Topu Hygroscopic HV-10</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : HV-10, 8, 260–280 gram, Antrenman, okul sporları ve amatör müsabakalar.</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">610 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Voleybol</span>
-        <span>24</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">03</div>
-            <div class="cat-titleblock">
-                <h1>VOLEYBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 2/3</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Voleybol%20image/PROFINAL%20HATTR%C4%B0CK.webp" alt="PROFINAL HATTRİCK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>PROFINAL HATTRİCK</span>
+          <p class="kart-aciklama">5 Numara, Sentetik deri (PVC) yüzey, El dikişli, Butil iç lastik 260–280 g ağırlık Salon kullanımına uygun, Antrenman ve maç kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">330 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Voleybol%20image/Hyper%20Voleybol%20Topu%20V800.bmp" alt="Hyper Voleybol Topu V800" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Hyper Voleybol Topu V800</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : V800, 4, 18 panel, makine dikişli, Soft PU (yumuşak dokulu suni deri) dış yüzey, Polyester-pamuk astar + lateks destek</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Dayanıklı bladder (yüksek hava tutuşu), Antrenman, okul sporları, amatör maçlar.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">250 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Voleybol%20image/Helix%20Voleybol%20Topu%20I%C5%9F%C4%B1kl%C4%B1%20VL-1.bmp" alt="Helix Voleybol Topu Işıklı VL-1" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Voleybol Topu Işıklı VL-1</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 Numara (Standart voleybol topu ölçüsü) boyut, 260 – 280 gram ağırlık, 18 panel, PU (Poliüretan) malzeme</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Entegre LED ışık modülü, Değiştirilebilir LR44 piller, Beyaz &amp; Turuncu renk.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">920 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Voleybol%20image/Helix%20Voleybol%20Topu%20Sma%C3%A7%20E%C4%9Fitim%20RTV-5.bmp" alt="Helix Voleybol Topu Smaç Eğitim RTV-5" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Voleybol Topu Smaç Eğitim RTV-5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Voleybol smaç eğitim topu, 5, 290 ± 5 gram, Her iki tarafta 1 metre, Çift taraflı esnek lastik</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Smaç, zamanlama ve vuruş antrenmanı, Spor salonu, okul ve kulüp antrenmanları.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">470 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Voleybol%20image/Helix%20Spike%20Mini%20Voleybol%20Topu.bmp" alt="Helix Spike Mini Voleybol Topu" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Spike Mini Voleybol Topu</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 boyut, 190-210 gram, 12 panel, EVA Sünger (Soft Touch) malzeme.</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">770 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Voleybol%20image/Helix%20Voleybol%20Topu%20Sante%20T500.bmp" alt="Helix Voleybol Topu Sante T500" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Voleybol Topu Sante T500</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 boyut, 250–260 gram, 18 panel, PU (Poliüretan), Makine dikişli, Kapalı salon.</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">380 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Voleybol%20image/Helix%20Voleybol%20Topu%20Rise.bmp" alt="Helix Voleybol Topu Rise" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Voleybol Topu Rise</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 boyut, 260–280 gram, 18 panel, Makine dikişli, Yüksek kaliteli PU deri</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kapalı spor salonları, Sarı &amp; Turuncu renk.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">490 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Voleybol</span>
-        <span>25</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">03</div>
-            <div class="cat-titleblock">
-                <h1>VOLEYBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 3/3</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Voleybol%20image/PROSTAR%20HATTRICK.webp" alt="PROSTAR HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>PROSTAR HATTRICK</span>
+          <p class="kart-aciklama">5 Numara, Japon PU sentetik deri yüzey, El dikişli 5 katmanlı, Poly Viscose yapı Butil iç lastik 260–280 g ağırlık, Salon kullanımı.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">430 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Voleybol%20image/Helix%20Voleybol%20Topu%20Neon.bmp" alt="Helix Voleybol Topu Neon" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Voleybol Topu Neon</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 boyut, 260–280 gram, PU Deri + Poli Pamuk, 18 panel, El dikişli, İç ve dış mekân.</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">620 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Voleybol%20image/Helix%20Voleybol%20Topu%20MPV-500.bmp" alt="Helix Voleybol Topu MPV-500" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Voleybol Topu MPV-500</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : MPV-500, 5, 260–280 gram ağırlık, 18 panel, Micro kaplama, Kapalı salon voleybolu.</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">610 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Voleybol%20image/Helix%20Voleybol%20Topu%20Icon.bmp" alt="Helix Voleybol Topu Icon" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Voleybol Topu Icon</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5, 260–280 gram, PU Microfiber deri, 18 panel, 3 katmanlı destekli yapı, Salon ve sert zemin.</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">810 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Voleybol%20image/Helix%20Voleybol%20Topu%20Hygroscopic%20L100.bmp" alt="Helix Voleybol Topu Hygroscopic L100" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Voleybol Topu Hygroscopic L100</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : L100, 260–280 gram ağırlık, 18 panel, Hygroscopic</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Yapıştırma teknoloji, Kapalı salon voleybolu.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">600 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Voleybol%20image/Helix%20Voleybol%20Topu%20Golden.bmp" alt="Helix Voleybol Topu Golden" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Voleybol Topu Golden</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5, 260–280 gram, 18 panel, el dikişli, PU deri dış yüzey, Sert zeminli salonlar</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">okul spor salonları, iç mekân, Antrenman ve amatör kullanım.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">710 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Voleybol%20image/Summit%20SMT-X360.png" alt="Summit SMT-X360" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Summit SMT-X360</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 Numara, Sarı-Lacivert renk, Dayanıklı kauçuk yüzey, Antrenman topu</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kapalı ve açık saha antrenmanlarına uygun, Ekonomik ve dayanıklı kullanım.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">560 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Voleybol%20image/Summit%20SMT-X340.png" alt="Summit SMT-X340" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Summit SMT-X340</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 Numara, Sarı-Lacivert renk, Dayanıklı kauçuk yüzey, Antrenman topu</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kapalı ve açık saha antrenmanlarına uygun, Uzun ömürlü kullanım.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">840 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Voleybol%20image/Summit%20SMT-X320.png" alt="Summit SMT-X320" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Summit SMT-X320</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 Numara, Resmi ebat ve ağırlık, Sarı-Lacivert PU deri yüzey, Maç topu</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Salon voleybolu müsabakalarına uygun, Profesyonel ve amatör kullanım.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.230 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Voleybol%20image/Summit%20SMT-X300.png" alt="Summit SMT-X300" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Summit SMT-X300</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 Numara, Resmi ebat ve ağırlık, Sarı-Lacivert PU deri yüzey, Maç topu</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Salon voleybolu müsabakalarına uygun, Profesyonel müsabaka kalitesi.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.530 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Voleybol</span>
-        <span>26</span>
-    </div>
-    </section>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Voleybol%20image/ALT350%20HATTRICK.webp" alt="ALT350 HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>ALT350 HATTRICK</span>
+          <p class="kart-aciklama">5 Numara, Sentetik deri yüzey, Yapıştırma panel teknolojisi, Butil iç lastik 260–280 g ağırlık Salon kullanımına uygun, Antrenman ve maç kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">510 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Voleybol%20image/PROEVA%205000%20HATTRICK.webp" alt="PROEVA 5000 HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>PROEVA 5000 HATTRICK</span>
+          <p class="kart-aciklama">5 Numara, Dayanıklı sentetik deri yüzey, Sağlam panel yapısı, Dengeli sekme ve stabil uçuş 260–280 g ağırlık Salon ve açık saha kullanımına uygun, Antrenman ve maç kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">500 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Voleybol%20image/Helix%20Voleybol%20Topu%20Hygroscopic%20HV-10.webp" alt="Helix Voleybol Topu Hygroscopic HV-10" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Voleybol Topu Hygroscopic HV-10</span>
+          <p class="kart-aciklama">HV-10, 8, 260–280 gram, Antrenman, okul sporları ve amatör müsabakalar.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">610 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Voleybol%20image/Hyper%20Voleybol%20Topu%20V800.webp" alt="Hyper Voleybol Topu V800" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Hyper Voleybol Topu V800</span>
+          <p class="kart-aciklama">V800, 4, 18 panel, makine dikişli, Soft PU (yumuşak dokulu suni deri) dış yüzey, Polyester-pamuk astar + lateks destek Dayanıklı bladder (yüksek hava tutuşu), Antrenman, okul sporları, amatör maçlar.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">250 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Voleybol%20image/Helix%20Voleybol%20Topu%20I%C5%9F%C4%B1kl%C4%B1%20VL-1.webp" alt="Helix Voleybol Topu Işıklı VL-1" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Voleybol Topu Işıklı VL-1</span>
+          <p class="kart-aciklama">5 Numara (Standart voleybol topu ölçüsü) boyut, 260 – 280 gram ağırlık, 18 panel, PU (Poliüretan) malzeme Entegre LED ışık modülü, Değiştirilebilir LR44 piller, Beyaz &amp; Turuncu renk.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">920 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Voleybol%20image/Helix%20Voleybol%20Topu%20Sma%C3%A7%20E%C4%9Fitim%20RTV-5.webp" alt="Helix Voleybol Topu Smaç Eğitim RTV-5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Voleybol Topu Smaç Eğitim RTV-5</span>
+          <p class="kart-aciklama">Voleybol smaç eğitim topu, 5, 290 ± 5 gram, Her iki tarafta 1 metre, Çift taraflı esnek lastik Smaç, zamanlama ve vuruş antrenmanı, Spor salonu, okul ve kulüp antrenmanları.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">470 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Voleybol%20image/Helix%20Spike%20Mini%20Voleybol%20Topu.webp" alt="Helix Spike Mini Voleybol Topu" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Spike Mini Voleybol Topu</span>
+          <p class="kart-aciklama">5 boyut, 190-210 gram, 12 panel, EVA Sünger (Soft Touch) malzeme.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">770 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Voleybol%20image/Helix%20Voleybol%20Topu%20Sante%20T500.webp" alt="Helix Voleybol Topu Sante T500" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Voleybol Topu Sante T500</span>
+          <p class="kart-aciklama">5 boyut, 250–260 gram, 18 panel, PU (Poliüretan), Makine dikişli, Kapalı salon.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">380 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Voleybol%20image/Helix%20Voleybol%20Topu%20Rise.webp" alt="Helix Voleybol Topu Rise" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Voleybol Topu Rise</span>
+          <p class="kart-aciklama">5 boyut, 260–280 gram, 18 panel, Makine dikişli, Yüksek kaliteli PU deri Kapalı spor salonları, Sarı &amp; Turuncu renk.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">490 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Voleybol%20image/Helix%20Voleybol%20Topu%20Neon.webp" alt="Helix Voleybol Topu Neon" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Voleybol Topu Neon</span>
+          <p class="kart-aciklama">5 boyut, 260–280 gram, PU Deri + Poli Pamuk, 18 panel, El dikişli, İç ve dış mekân.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">620 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Voleybol%20image/Helix%20Voleybol%20Topu%20MPV-500.webp" alt="Helix Voleybol Topu MPV-500" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Voleybol Topu MPV-500</span>
+          <p class="kart-aciklama">MPV-500, 5, 260–280 gram ağırlık, 18 panel, Micro kaplama, Kapalı salon voleybolu.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">610 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Voleybol%20image/Helix%20Voleybol%20Topu%20Icon.webp" alt="Helix Voleybol Topu Icon" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Voleybol Topu Icon</span>
+          <p class="kart-aciklama">5, 260–280 gram, PU Microfiber deri, 18 panel, 3 katmanlı destekli yapı, Salon ve sert zemin.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">810 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Voleybol%20image/Helix%20Voleybol%20Topu%20Hygroscopic%20L100.webp" alt="Helix Voleybol Topu Hygroscopic L100" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Voleybol Topu Hygroscopic L100</span>
+          <p class="kart-aciklama">L100, 260–280 gram ağırlık, 18 panel, Hygroscopic Yapıştırma teknoloji, Kapalı salon voleybolu.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">600 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Voleybol%20image/Helix%20Voleybol%20Topu%20Golden.webp" alt="Helix Voleybol Topu Golden" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Voleybol Topu Golden</span>
+          <p class="kart-aciklama">5, 260–280 gram, 18 panel, el dikişli, PU deri dış yüzey, Sert zeminli salonlar okul spor salonları, iç mekân, Antrenman ve amatör kullanım.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">710 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Voleybol%20image/Summit%20SMT-X360.png" alt="Summit SMT-X360" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Summit SMT-X360</span>
+          <p class="kart-aciklama">5 Numara, Sarı-Lacivert renk, Dayanıklı kauçuk yüzey, Antrenman topu Kapalı ve açık saha antrenmanlarına uygun, Ekonomik ve dayanıklı kullanım.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">560 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Voleybol%20image/Summit%20SMT-X340.png" alt="Summit SMT-X340" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Summit SMT-X340</span>
+          <p class="kart-aciklama">5 Numara, Sarı-Lacivert renk, Dayanıklı kauçuk yüzey, Antrenman topu Kapalı ve açık saha antrenmanlarına uygun, Uzun ömürlü kullanım.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">840 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Voleybol%20image/Summit%20SMT-X320.png" alt="Summit SMT-X320" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Summit SMT-X320</span>
+          <p class="kart-aciklama">5 Numara, Resmi ebat ve ağırlık, Sarı-Lacivert PU deri yüzey, Maç topu Salon voleybolu müsabakalarına uygun, Profesyonel ve amatör kullanım.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.230 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Voleybol%20image/Summit%20SMT-X300.png" alt="Summit SMT-X300" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Summit SMT-X300</span>
+          <p class="kart-aciklama">5 Numara, Resmi ebat ve ağırlık, Sarı-Lacivert PU deri yüzey, Maç topu Salon voleybolu müsabakalarına uygun, Profesyonel müsabaka kalitesi.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.530 ₺</span></div>
+          </div>
+        </div>
+      </div>
+  </div>
+</main>
 
+<a class="wa-buton" href="https://wa.me/905522025737" target="_blank" rel="noopener" aria-label="WhatsApp'tan yazın">
+  <svg viewBox="0 0 32 32" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M16 3C9 3 3 9 3 16c0 2.4.6 4.6 1.8 6.6L3 29l6.6-1.7c1.9 1 4 1.6 6.4 1.6 7 0 13-6 13-13S23 3 16 3zm7.6 18.4c-.3.9-1.7 1.7-2.7 1.9-.7.1-1.6.2-4.6-1-3.9-1.6-6.4-5.5-6.6-5.8-.2-.3-1.6-2.1-1.6-4s1-2.8 1.3-3.2c.3-.3.7-.4 1-.4h.7c.2 0 .5 0 .8.6.3.7 1.1 2.6 1.2 2.8.1.2.2.4 0 .7-.1.3-.2.4-.4.6-.2.2-.4.5-.6.7-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.6 1.4 1.3 2.6 1.7 3 1.9.3.2.5.1.7-.1.2-.2.9-1 1.1-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.5 1.2.4.2.6.3.7.5.1.2.1 1-.2 1.9z"/></svg>
+</a>
 
-<script>
-function aramaFiltrele(inp){
-  var q=inp.value.toLocaleLowerCase('tr-TR').trim(), gorunen=0;
-  document.querySelectorAll('.product-card').forEach(function(k){
-    var e=k.querySelector('.pf-label');
-    var esles=(e?e.textContent.toLocaleLowerCase('tr-TR'):'').indexOf(q)!==-1;
-    k.style.display=esles?'':'none';
-    if(esles)gorunen++;
-  });
-  document.querySelector('.urun-bulunamadi').hidden=!(q&&gorunen===0);
-}
-</script>
+<footer class="alt-bilgi">
+  <div class="alt-bilgi-ic">
+    <strong>ÖZTEN SPOR</strong>
+    Kirazlı Mahallesi 1201. Sokak, Bağcılar / İstanbul<br>
+    <a href="mailto:oztensporltd@gmail.com">oztensporltd@gmail.com</a>
+  </div>
+</footer>
+
+<nav class="alt-cubuk">
+  <a class="alt-btn" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+    Ana Sayfa
+  </a>
+  <button type="button" class="alt-btn" id="altAra">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    Ara
+  </button>
+  <button type="button" class="alt-btn" id="altKategori">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    Kategoriler
+  </button>
+  <button type="button" class="alt-btn" id="altSepet">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M6 6 5 3H3"/></svg>
+    Sepet
+    <span class="alt-rozet" id="altSepetSayi" hidden>0</span>
+  </button>
+</nav>
+
 </body>
 </html>

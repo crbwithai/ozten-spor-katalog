@@ -4,97 +4,169 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PATEN — Özten Spor Kataloğu</title>
-<link rel="stylesheet" href="Ozten Spor Katalog.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ozten-yeni.css">
 <script src="sepet.js" defer></script>
+<script src="site.js" defer></script>
 </head>
-<body id="top">
-<div class="floating-nav-group">
-    <a href="#top" class="floating-nav-btn"><span class="fn-arrow">&#8593;</span> Yukarı Çık</a>
-</div>
-<div class="katalog-arama"><input type="text" placeholder="Ürün ara..." oninput="aramaFiltrele(this)"></div>
-<div class="kategori-menu-cubugu">
-    <button type="button" class="kategori-menu-buton">Alt Kategoriler <span class="fn-arrow">&#9662;</span></button>
-    <div class="kategori-menu-panel" hidden>
-        <a href="kaykay.html#top">Kaykay</a>
-        <a href="kasklar.html#top">Kasklar</a>
-    </div>
-    <a href="index.html#top" class="ana-katalog-buton">Ana Kataloğa Dön</a>
-</div>
+<body>
 
-<p class="urun-bulunamadi" hidden>Ürün bulunamadı.</p>
-<section class="page cat-page" id="kategori-paten">
-        <div class="cat-header">
-            <div class="cat-num">18</div>
-            <div class="cat-titleblock">
-                <h1>PATEN</h1>
-                <p>Paten çeşitleri.</p>
-            </div>
+<header class="ust-cubuk">
+  <a class="marka" href="index.html">ÖZTEN<span>SPOR</span></a>
+  <div class="ust-arama">
+    <span class="arama-ikon">&#9906;</span>
+    <input type="text" id="aramaKutusu" placeholder="Ürün ara" autocomplete="off" oninput="aramaFiltrele(this)">
+  </div>
+  <div class="ust-butonlar">
+    <button type="button" class="ust-btn" id="kategoriAc">Kategoriler &#9662;</button>
+    <button type="button" class="ust-btn" id="sepetAc">Sepetim <span class="ust-rozet" id="ustSepetSayi">0</span></button>
+  </div>
+</header>
+
+<nav class="kategori-panel" id="kategoriPanel" hidden>
+  <div class="kategori-panel-baslik">TÜM KATEGORİLER</div>
+  <div class="kategori-izgara">
+        <a class="kategori-link" href="futbol.html">FUTBOL</a>
+        <a class="kategori-link" href="basketbol.html">BASKETBOL</a>
+        <a class="kategori-link" href="voleybol.html">VOLEYBOL</a>
+        <a class="kategori-link" href="badminton.html">BADMINTON</a>
+        <a class="kategori-link" href="masa-tenisi.html">MASA TENİSİ</a>
+        <a class="kategori-link" href="tenis.html">TENİS</a>
+        <a class="kategori-link" href="atlama-ipi.html">ATLAMA İPİ</a>
+        <a class="kategori-link" href="el-yayi.html">EL YAYI</a>
+        <a class="kategori-link" href="yoga-pilates.html">YOGA PİLATES</a>
+        <a class="kategori-link" href="fitness.html">FITNESS</a>
+        <a class="kategori-link" href="egzersiz.html">EGZERSİZ</a>
+        <a class="kategori-link" href="hentbol.html">HENTBOL</a>
+        <a class="kategori-link" href="yuzme.html">YÜZME</a>
+        <a class="kategori-link" href="bocce.html">BOCCE</a>
+        <a class="kategori-link" href="hokey.html">HOKEY</a>
+        <a class="kategori-link" href="kano.html">KANO</a>
+        <a class="kategori-link" href="beyzbol.html">BEYZBOL</a>
+        <a class="kategori-link aktif" href="paten.html">PATEN</a>
+        <a class="kategori-link" href="oryantiring.html">ORYANTİRİNG</a>
+        <a class="kategori-link" href="padel.html">PADEL</a>
+        <a class="kategori-link" href="pickleball.html">PICKLEBALL</a>
+        <a class="kategori-link" href="ragbi.html">RAGBİ</a>
+        <a class="kategori-link" href="satranc.html">SATRANÇ</a>
+        <a class="kategori-link" href="softball.html">SOFTBALL</a>
+        <a class="kategori-link" href="squash.html">SQUASH</a>
+        <a class="kategori-link" href="dart.html">DART</a>
+        <a class="kategori-link" href="atletizm.html">ATLETİZM</a>
+        <a class="kategori-link" href="cimnastik.html">CİMNASTİK</a>
+        <a class="kategori-link" href="saglik-toplari.html">SAĞLIK TOPLARI</a>
+        <a class="kategori-link" href="su-topu.html">SU TOPU</a>
+        <a class="kategori-link" href="oyun-grubu.html">OYUN GRUBU</a>
+        <a class="kategori-link" href="dovus-sporlari.html">DÖVÜŞ SPORLARI</a>
+  </div>
+</nav>
+
+<section class="kat-basi">
+  <div class="kat-basi-ic">
+    <div class="kat-etiket">KATEGORİ 18</div>
+    <h1>PATEN</h1>
+    <p class="kat-aciklama">Paten çeşitleri.</p>
+    <span class="kat-sayac">5 ürün</span>
+  </div>
+</section>
+
+<nav class="alt-kat-serit" aria-label="Alt kategoriler">
+  <div class="alt-kat-ic">
+      <a class="alt-kat-cip aktif" href="paten.html">Patenler</a>
+      <a class="alt-kat-cip" href="kaykay.html">Kaykay</a>
+      <a class="alt-kat-cip" href="kasklar.html">Kasklar</a>
+  </div>
+</nav>
+
+<main class="icerik">
+  <p class="urun-bulunamadi" hidden>Aramanla eşleşen ürün bulunamadı.</p>
+  <div class="product-grid">
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/kaykay%20paten%20kask/Helix%20Paten%20-%20Pembe.webp" alt="Helix Paten - Pembe" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Paten - Pembe</span>
+          <p class="kart-aciklama">Yüksek dirençli plastik gövde, 54 mm çap tekerlek, ABEC 5 rulman 26-30 ve 31-35 numara ayarlanabilir seçenekler, Çıkarılabilir yıkanabilir iç astar, Çocuklar için idealdir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">2.970 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/kaykay%20paten%20kask/Helix%20Paten%20-%20Pembe.bmp" alt="Helix Paten - Pembe" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Paten - Pembe</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Yüksek dirençli plastik gövde, 54 mm çap tekerlek, ABEC 5 rulman</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">26-30 ve 31-35 numara ayarlanabilir seçenekler, Çıkarılabilir yıkanabilir iç astar, Çocuklar için idealdir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">2.970 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/kaykay%20paten%20kask/Helix%20Paten%20PST100%20-%20K%C4%B1rm%C4%B1z%C4%B1.bmp" alt="Helix Paten PST100 - Kırmızı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Paten PST100 - Kırmızı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Karbon fiber gövde, Pamuklu nefes alabilir astar, 110 mm çap PU tekerlek, ABEC-9 yüksek hızlı rulman</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">37-43 numara aralığı, Performans odaklı ve yüksek hızlı sürüşler için tasarlanmıştır.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">33.840 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/kaykay%20paten%20kask/Helix%20Paten%20PST100%20-%20Turuncu.bmp" alt="Helix Paten PST100 - Turuncu" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Paten PST100 - Turuncu</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Karbon fiber gövde, Pamuklu nefes alabilir astar, 110 mm çap PU tekerlek, ABEC-9 yüksek hızlı rulman</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">37-43 numara aralığı, Performans odaklı ve yüksek hızlı sürüşler için tasarlanmıştır.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">33.840 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/kaykay%20paten%20kask/Helix%20Paten%20PST100%20-%20Ye%C5%9Fil.bmp" alt="Helix Paten PST100 - Yeşil" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Paten PST100 - Yeşil</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Karbon fiber gövde, Pamuklu nefes alabilir astar, 110 mm çap PU tekerlek, ABEC-9 yüksek hızlı rulman</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">37-43 numara aralığı, Performans odaklı ve yüksek hızlı sürüşler için tasarlanmıştır.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">33.840 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/kaykay%20paten%20kask/Helix%20Paten%20SS%20Siyah.bmp" alt="Helix Paten SS Siyah" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Paten SS Siyah</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Yüksek dirençli plastik gövde, 54 mm çap tekerlek, ABEC 5 rulman, 180 mm çerçeve uzunluğu</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">26-30 numara ayarlanabilir, Başlangıç seviyesi ve çocuklar için park/düz zemin kullanımına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">2.900 ₺</span></div>
-    </div>
-</div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Paten</span>
-        <span>1</span>
-    </div>
-    </section>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/kaykay%20paten%20kask/Helix%20Paten%20PST100%20-%20K%C4%B1rm%C4%B1z%C4%B1.webp" alt="Helix Paten PST100 - Kırmızı" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Paten PST100 - Kırmızı</span>
+          <p class="kart-aciklama">Karbon fiber gövde, Pamuklu nefes alabilir astar, 110 mm çap PU tekerlek, ABEC-9 yüksek hızlı rulman 37-43 numara aralığı, Performans odaklı ve yüksek hızlı sürüşler için tasarlanmıştır.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">33.840 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/kaykay%20paten%20kask/Helix%20Paten%20PST100%20-%20Turuncu.webp" alt="Helix Paten PST100 - Turuncu" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Paten PST100 - Turuncu</span>
+          <p class="kart-aciklama">Karbon fiber gövde, Pamuklu nefes alabilir astar, 110 mm çap PU tekerlek, ABEC-9 yüksek hızlı rulman 37-43 numara aralığı, Performans odaklı ve yüksek hızlı sürüşler için tasarlanmıştır.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">33.840 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/kaykay%20paten%20kask/Helix%20Paten%20PST100%20-%20Ye%C5%9Fil.webp" alt="Helix Paten PST100 - Yeşil" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Paten PST100 - Yeşil</span>
+          <p class="kart-aciklama">Karbon fiber gövde, Pamuklu nefes alabilir astar, 110 mm çap PU tekerlek, ABEC-9 yüksek hızlı rulman 37-43 numara aralığı, Performans odaklı ve yüksek hızlı sürüşler için tasarlanmıştır.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">33.840 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/kaykay%20paten%20kask/Helix%20Paten%20SS%20Siyah.webp" alt="Helix Paten SS Siyah" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Paten SS Siyah</span>
+          <p class="kart-aciklama">Yüksek dirençli plastik gövde, 54 mm çap tekerlek, ABEC 5 rulman, 180 mm çerçeve uzunluğu 26-30 numara ayarlanabilir, Başlangıç seviyesi ve çocuklar için park/düz zemin kullanımına uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">2.900 ₺</span></div>
+          </div>
+        </div>
+      </div>
+  </div>
+</main>
 
+<a class="wa-buton" href="https://wa.me/905522025737" target="_blank" rel="noopener" aria-label="WhatsApp'tan yazın">
+  <svg viewBox="0 0 32 32" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M16 3C9 3 3 9 3 16c0 2.4.6 4.6 1.8 6.6L3 29l6.6-1.7c1.9 1 4 1.6 6.4 1.6 7 0 13-6 13-13S23 3 16 3zm7.6 18.4c-.3.9-1.7 1.7-2.7 1.9-.7.1-1.6.2-4.6-1-3.9-1.6-6.4-5.5-6.6-5.8-.2-.3-1.6-2.1-1.6-4s1-2.8 1.3-3.2c.3-.3.7-.4 1-.4h.7c.2 0 .5 0 .8.6.3.7 1.1 2.6 1.2 2.8.1.2.2.4 0 .7-.1.3-.2.4-.4.6-.2.2-.4.5-.6.7-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.6 1.4 1.3 2.6 1.7 3 1.9.3.2.5.1.7-.1.2-.2.9-1 1.1-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.5 1.2.4.2.6.3.7.5.1.2.1 1-.2 1.9z"/></svg>
+</a>
 
-<script>
-function aramaFiltrele(inp){
-  var q=inp.value.toLocaleLowerCase('tr-TR').trim(), gorunen=0;
-  document.querySelectorAll('.product-card').forEach(function(k){
-    var e=k.querySelector('.pf-label');
-    var esles=(e?e.textContent.toLocaleLowerCase('tr-TR'):'').indexOf(q)!==-1;
-    k.style.display=esles?'':'none';
-    if(esles)gorunen++;
-  });
-  document.querySelector('.urun-bulunamadi').hidden=!(q&&gorunen===0);
-}
-</script>
+<footer class="alt-bilgi">
+  <div class="alt-bilgi-ic">
+    <strong>ÖZTEN SPOR</strong>
+    Kirazlı Mahallesi 1201. Sokak, Bağcılar / İstanbul<br>
+    <a href="mailto:oztensporltd@gmail.com">oztensporltd@gmail.com</a>
+  </div>
+</footer>
+
+<nav class="alt-cubuk">
+  <a class="alt-btn" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+    Ana Sayfa
+  </a>
+  <button type="button" class="alt-btn" id="altAra">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    Ara
+  </button>
+  <button type="button" class="alt-btn" id="altKategori">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    Kategoriler
+  </button>
+  <button type="button" class="alt-btn" id="altSepet">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M6 6 5 3H3"/></svg>
+    Sepet
+    <span class="alt-rozet" id="altSepetSayi" hidden>0</span>
+  </button>
+</nav>
+
 </body>
 </html>

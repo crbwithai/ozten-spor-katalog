@@ -4,619 +4,666 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FITNESS — Özten Spor Kataloğu</title>
-<link rel="stylesheet" href="Ozten Spor Katalog.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ozten-yeni.css">
 <script src="sepet.js" defer></script>
+<script src="site.js" defer></script>
 </head>
-<body id="top">
-<div class="floating-nav-group">
-    <a href="#top" class="floating-nav-btn"><span class="fn-arrow">&#8593;</span> Yukarı Çık</a>
-</div>
-<div class="katalog-arama"><input type="text" placeholder="Ürün ara..." oninput="aramaFiltrele(this)"></div>
-<div class="kategori-menu-cubugu">
-    <button type="button" class="kategori-menu-buton">Alt Kategoriler <span class="fn-arrow">&#9662;</span></button>
-    <div class="kategori-menu-panel" hidden>
-        <a href="fitness-aletleri.html#top">Fitness Aletleri</a>
-        <a href="barlar-ve-barfiks-ekipmanlari.html#top">Barlar ve Barfiks Ekipmanları</a>
-        <a href="plaka-ve-plaka-setleri.html#top">Plaka ve Plaka Setleri</a>
-        <a href="el-ve-ayak-agirliklari.html#top">El ve Ayak Ağırlıkları</a>
-        <a href="fitness-eldiven-ve-kemerleri.html#top">Fitness Eldiven ve Kemerleri</a>
-        <a href="halatlar.html#top">Halatlar</a>
-        <a href="agirlik-ve-bulgar-cantalari.html#top">Ağırlık ve Bulgar Çantaları</a>
-        <a href="kettlebell.html#top">Kettlebell</a>
-        <a href="dambil-standlari.html#top">Dambıl Standları</a>
-    </div>
-    <a href="index.html#top" class="ana-katalog-buton">Ana Kataloğa Dön</a>
-</div>
+<body>
 
-<p class="urun-bulunamadi" hidden>Ürün bulunamadı.</p>
-<section class="page cat-page" id="kategori-fitness">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ev ve salon antrenmanları için dambıl çeşitleri.</p>
-            </div>
+<header class="ust-cubuk">
+  <a class="marka" href="index.html">ÖZTEN<span>SPOR</span></a>
+  <div class="ust-arama">
+    <span class="arama-ikon">&#9906;</span>
+    <input type="text" id="aramaKutusu" placeholder="Ürün ara" autocomplete="off" oninput="aramaFiltrele(this)">
+  </div>
+  <div class="ust-butonlar">
+    <button type="button" class="ust-btn" id="kategoriAc">Kategoriler &#9662;</button>
+    <button type="button" class="ust-btn" id="sepetAc">Sepetim <span class="ust-rozet" id="ustSepetSayi">0</span></button>
+  </div>
+</header>
+
+<nav class="kategori-panel" id="kategoriPanel" hidden>
+  <div class="kategori-panel-baslik">TÜM KATEGORİLER</div>
+  <div class="kategori-izgara">
+        <a class="kategori-link" href="futbol.html">FUTBOL</a>
+        <a class="kategori-link" href="basketbol.html">BASKETBOL</a>
+        <a class="kategori-link" href="voleybol.html">VOLEYBOL</a>
+        <a class="kategori-link" href="badminton.html">BADMINTON</a>
+        <a class="kategori-link" href="masa-tenisi.html">MASA TENİSİ</a>
+        <a class="kategori-link" href="tenis.html">TENİS</a>
+        <a class="kategori-link" href="atlama-ipi.html">ATLAMA İPİ</a>
+        <a class="kategori-link" href="el-yayi.html">EL YAYI</a>
+        <a class="kategori-link" href="yoga-pilates.html">YOGA PİLATES</a>
+        <a class="kategori-link aktif" href="fitness.html">FITNESS</a>
+        <a class="kategori-link" href="egzersiz.html">EGZERSİZ</a>
+        <a class="kategori-link" href="hentbol.html">HENTBOL</a>
+        <a class="kategori-link" href="yuzme.html">YÜZME</a>
+        <a class="kategori-link" href="bocce.html">BOCCE</a>
+        <a class="kategori-link" href="hokey.html">HOKEY</a>
+        <a class="kategori-link" href="kano.html">KANO</a>
+        <a class="kategori-link" href="beyzbol.html">BEYZBOL</a>
+        <a class="kategori-link" href="paten.html">PATEN</a>
+        <a class="kategori-link" href="oryantiring.html">ORYANTİRİNG</a>
+        <a class="kategori-link" href="padel.html">PADEL</a>
+        <a class="kategori-link" href="pickleball.html">PICKLEBALL</a>
+        <a class="kategori-link" href="ragbi.html">RAGBİ</a>
+        <a class="kategori-link" href="satranc.html">SATRANÇ</a>
+        <a class="kategori-link" href="softball.html">SOFTBALL</a>
+        <a class="kategori-link" href="squash.html">SQUASH</a>
+        <a class="kategori-link" href="dart.html">DART</a>
+        <a class="kategori-link" href="atletizm.html">ATLETİZM</a>
+        <a class="kategori-link" href="cimnastik.html">CİMNASTİK</a>
+        <a class="kategori-link" href="saglik-toplari.html">SAĞLIK TOPLARI</a>
+        <a class="kategori-link" href="su-topu.html">SU TOPU</a>
+        <a class="kategori-link" href="oyun-grubu.html">OYUN GRUBU</a>
+        <a class="kategori-link" href="dovus-sporlari.html">DÖVÜŞ SPORLARI</a>
+  </div>
+</nav>
+
+<section class="kat-basi">
+  <div class="kat-basi-ic">
+    <div class="kat-etiket">KATEGORİ 10</div>
+    <h1>FITNESS</h1>
+    <p class="kat-aciklama">Ev ve salon antrenmanları için dambıl çeşitleri.</p>
+    <span class="kat-sayac">54 ürün</span>
+  </div>
+</section>
+
+<nav class="alt-kat-serit" aria-label="Alt kategoriler">
+  <div class="alt-kat-ic">
+      <a class="alt-kat-cip aktif" href="fitness.html">Dambıllar</a>
+      <a class="alt-kat-cip" href="fitness-aletleri.html">Fitness Aletleri</a>
+      <a class="alt-kat-cip" href="barlar-ve-barfiks-ekipmanlari.html">Barlar ve Barfiks Ekipmanları</a>
+      <a class="alt-kat-cip" href="plaka-ve-plaka-setleri.html">Plaka ve Plaka Setleri</a>
+      <a class="alt-kat-cip" href="el-ve-ayak-agirliklari.html">El ve Ayak Ağırlıkları</a>
+      <a class="alt-kat-cip" href="fitness-eldiven-ve-kemerleri.html">Fitness Eldiven ve Kemerleri</a>
+      <a class="alt-kat-cip" href="halatlar.html">Halatlar</a>
+      <a class="alt-kat-cip" href="agirlik-ve-bulgar-cantalari.html">Ağırlık ve Bulgar Çantaları</a>
+      <a class="alt-kat-cip" href="kettlebell.html">Kettlebell</a>
+      <a class="alt-kat-cip" href="dambil-standlari.html">Dambıl Standları</a>
+  </div>
+</nav>
+
+<main class="icerik">
+  <p class="urun-bulunamadi" hidden>Aramanla eşleşen ürün bulunamadı.</p>
+  <div class="product-grid">
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/DAMBIL%20SET%C4%B0%20DS10%20ALTIS.webp" alt="DAMBIL SETİ DS10 ALTIS" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>DAMBIL SETİ DS10 ALTIS</span>
+          <p class="kart-aciklama">PVC dambıl seti 10,5 kg 4 adet 1,25 kg plaka 2 adet 2,5 kg plaka 1 adet 25 × 400 mm sıkma aparatlı bar Ev tipi kuvvet antrenmanlarına uygun Dayanıklı PVC kaplama.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.020 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/DAMBIL%20SET%C4%B0%20DS10%20ALTIS.bmp" alt="DAMBIL SETİ DS10 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : DAMBIL SETİ DS10 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : PVC dambıl seti</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">10,5 kg 4 adet 1,25 kg plaka 2 adet 2,5 kg plaka 1 adet 25 × 400 mm sıkma aparatlı bar Ev tipi kuvvet antrenmanlarına uygun Dayanıklı PVC kaplama.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.020 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/DAMBIL%20SET%C4%B0%20HDS20%20HATTRICK%201638TL.bmp" alt="DAMBIL SETİ HDS20 HATTRICK 1638TL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : DAMBIL SETİ HDS20 HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : PVC dambıl seti</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">16 kg 4 adet 1,25 kg plaka 4 adet 2,5 kg plaka 2 adet 25 × 400 mm sıkma aparatlı bar Ev tipi kuvvet antrenmanlarına uygun Dayanıklı PVC kaplama.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.480 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/DAMBIL%20SET%C4%B0%20HDS30%20HATTRICK%202016TL.bmp" alt="DAMBIL SETİ HDS30 HATTRICK 2016TL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : DAMBIL SETİ HDS30 HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : PVC dambıl seti</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">21 kg 8 adet 1,25 kg plaka 4 adet 2,5 kg plaka 2 adet 25 × 400 mm sıkma aparatlı bar Ev tipi kuvvet antrenmanlarına uygun Dayanıklı PVC kaplama.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.820 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/DAMBIL%20SET%C4%B0%20HDS40%20HATTRICK.png" alt="DAMBIL SETİ HDS40 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : DAMBIL SETİ HDS40 HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : PVC dambıl seti</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">50 kg 4 adet 5 kg plaka 6 adet 2,5 kg plaka 4 adet 1,25 kg plaka 2 adet 25 × 400 mm sıkma aparatlı bar 1 adet 25 × 1600 mm sıkma aparatlı bar Ev tipi kuvvet antrenmanlarına uygun Dayanıklı PVC kaplama.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">3.970 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/DAMBIL%20AL67%20ALTIS.bmp" alt="DAMBIL AL67 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : DAMBIL AL67 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Vinly dambıl 2,5 kg ağırlık, Tekli ürün, Köşeli form tasarımı, Vinly kaplama</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Dayanıklı yapı, Fitness ve kuvvet antrenmanları için uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">400 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/DAMBIL%20AL69%20ALTIS.bmp" alt="DAMBIL AL69 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : DAMBIL AL69 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Vinly dambıl 4 kg ağırlık, Tekli ürün, Köşeli form tasarımı, Vinly kaplama</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Dayanıklı yapı, Fitness ve kuvvet antrenmanları için uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">630 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>75</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ürün listesi (devamı) — sayfa 2/9</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/DAMBIL%20SET%C4%B0%20HDS20%20HATTRICK%201638TL.webp" alt="DAMBIL SETİ HDS20 HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>DAMBIL SETİ HDS20 HATTRICK</span>
+          <p class="kart-aciklama">PVC dambıl seti 16 kg 4 adet 1,25 kg plaka 4 adet 2,5 kg plaka 2 adet 25 × 400 mm sıkma aparatlı bar Ev tipi kuvvet antrenmanlarına uygun Dayanıklı PVC kaplama.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.480 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/DAMBIL%20VD7%20HATTRICK.bmp" alt="DAMBIL VD7 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : DAMBIL VD7 HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Vinly dambıl 7 kg ağırlık, Tekli ürün, Köşeli form tasarımı, Vinly kaplama</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Dayanıklı yapı, Fitness ve kuvvet antrenmanları için uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">800 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/DAMBIL%20VD9%20HATTRICK.bmp" alt="DAMBIL VD9 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : DAMBIL VD9 HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Vinly dambıl 9 kg ağırlık, Tekli ürün, Köşeli form tasarımı, Vinly kaplama</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Dayanıklı yapı, Fitness ve kuvvet antrenmanları için uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">970 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/VD10%20HATTRICK.bmp" alt="VD10 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : VD10 HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Vinly dambıl 10 kg ağırlık, Tekli ürün, Köşeli form tasarımı, Vinly kaplama</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Dayanıklı yapı, Fitness ve kuvvet antrenmanları için uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.140 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/%C3%87%C4%B0FTL%C4%B0%20DAMBIL%20VDS10%20ALTIS.bmp" alt="ÇİFTLİ DAMBIL VDS10 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : ÇİFTLİ DAMBIL VDS10 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Vinyl dambıl seti, Çiftli set 0,5 kg ağırlık, Renkli kutu ambalaj, Vinyl kaplama, Ergonomik tutuş sağlar</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Fitness, aerobik ve pilates antrenmanları için uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">170 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/%C3%87%C4%B0FTL%C4%B0%20DAMBIL%20VDS20%20ALTIS.bmp" alt="ÇİFTLİ DAMBIL VDS20 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : ÇİFTLİ DAMBIL VDS20 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Vinyl dambıl seti, Çiftli set 1 kg ağırlık, Renkli kutu ambalaj, Vinyl kaplama, Ergonomik tutuş sağlar</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Fitness, aerobik ve pilates antrenmanları için uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">330 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/%C3%87%C4%B0FTL%C4%B0%20DAMBIL%20VDS50%20ALTIS.bmp" alt="ÇİFTLİ DAMBIL VDS50 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : ÇİFTLİ DAMBIL VDS50 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Vinyl dambıl seti, Çiftli set 2,5 kg ağırlık, Renkli kutu ambalaj, Vinyl kaplama, Ergonomik tutuş sağlar</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Fitness, aerobik ve pilates antrenmanları için uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">910 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>76</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ürün listesi (devamı) — sayfa 3/9</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/DAMBIL%20SET%C4%B0%20HDS30%20HATTRICK%202016TL.webp" alt="DAMBIL SETİ HDS30 HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>DAMBIL SETİ HDS30 HATTRICK</span>
+          <p class="kart-aciklama">PVC dambıl seti 21 kg 8 adet 1,25 kg plaka 4 adet 2,5 kg plaka 2 adet 25 × 400 mm sıkma aparatlı bar Ev tipi kuvvet antrenmanlarına uygun Dayanıklı PVC kaplama.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.820 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/K%C3%96%C5%9EEL%C4%B0%20DAMBIL%20DS50%20ALTIS.bmp" alt="KÖŞELİ DAMBIL DS50 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KÖŞELİ DAMBIL DS50 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Plastik köşeli dambıl seti, Çiftli set 1 kg ağırlık, Köşeli form tasarımı, Plastik kaplama</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Export kutu ambalaj, Fitness ve kuvvet antrenmanları için uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">140 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/K%C3%96%C5%9EEL%C4%B0%20DAMBIL%20DS63%20ALTIS.bmp" alt="KÖŞELİ DAMBIL DS63 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KÖŞELİ DAMBIL DS63 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Plastik köşeli dambıl seti, Çiftli set 3 kg ağırlık, Köşeli form tasarımı, Plastik kaplama</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Export kutu ambalaj, Fitness ve kuvvet antrenmanları için uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">300 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/K%C3%96%C5%9EEL%C4%B0%20DAMBIL%20DS71%20ALTIS.bmp" alt="KÖŞELİ DAMBIL DS71 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KÖŞELİ DAMBIL DS71 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Plastik köşeli dambıl seti, Çiftli set 4 kg ağırlık, Köşeli form tasarımı, Plastik kaplama</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Dayanıklı yapı, Fitness ve kuvvet antrenmanları için uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">310 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/K%C3%96%C5%9EEL%C4%B0%20DAMBIL%20DS80%20ALTIS.bmp" alt="KÖŞELİ DAMBIL DS80 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KÖŞELİ DAMBIL DS80 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Plastik köşeli dambıl seti, Çiftli set 5 kg ağırlık, Köşeli form tasarımı, Plastik kaplama</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Dayanıklı yapı, Fitness ve kuvvet antrenmanları için uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">400 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/K%C3%96%C5%9EEL%C4%B0%20DAMBIL%20DS86%20ALTIS%20455TL.bmp" alt="KÖŞELİ DAMBIL DS86 ALTIS 455TL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KÖŞELİ DAMBIL DS86 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Plastik köşeli dambıl seti, Çiftli set 6 kg ağırlık, Köşeli form tasarımı, Plastik kaplama</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Dayanıklı yapı, Fitness ve kuvvet antrenmanları için uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">410 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/K%C3%96%C5%9EEL%C4%B0%20DAMBIL%20DS90%20ALTIS.bmp" alt="KÖŞELİ DAMBIL DS90 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KÖŞELİ DAMBIL DS90 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Plastik köşeli dambıl seti, Çiftli set 8 kg ağırlık, Köşeli form tasarımı, Plastik kaplama</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Renkli kutu ambalaj, Fitness ve kuvvet antrenmanları için uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">510 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>77</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ürün listesi (devamı) — sayfa 4/9</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/DAMBIL%20SET%C4%B0%20HDS40%20HATTRICK.png" alt="DAMBIL SETİ HDS40 HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>DAMBIL SETİ HDS40 HATTRICK</span>
+          <p class="kart-aciklama">PVC dambıl seti 50 kg 4 adet 5 kg plaka 6 adet 2,5 kg plaka 4 adet 1,25 kg plaka 2 adet 25 × 400 mm sıkma aparatlı bar 1 adet 25 × 1600 mm sıkma aparatlı bar Ev tipi kuvvet antrenmanlarına uygun Dayanıklı PVC kaplama.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">3.970 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/K%C3%96%C5%9EEL%C4%B0%20DAMBIL%20DS99%20ALTIS%20570TL.bmp" alt="KÖŞELİ DAMBIL DS99 ALTIS 570TL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KÖŞELİ DAMBIL DS99 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Plastik köşeli dambıl seti, Çiftli set 9 kg ağırlık, Köşeli form tasarımı, Plastik kaplama</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Renkli kutu ambalaj, Fitness ve kuvvet antrenmanları için uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">510 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/FITNESS%20ELD%C4%B0VEN%20TROX%20190TL.bmp" alt="KÖŞELİ DAMBIL HR30 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : KÖŞELİ DAMBIL HR30 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Plastik köşeli dambıl seti, Çiftli set 10 kg ağırlık, Köşeli form tasarımı, Plastik kaplama</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Renkli kutu ambalaj, Fitness ve kuvvet antrenmanları için uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">510 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-27%2027.5kg.bmp" alt="Helix Dambıl Kauçuk HX-27 27.5kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Kauçuk HX-27 27.5kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 27.5 KG (tek dambıl) ağırlık, Kauçuk kaplı dökme demir başlıklar, sertleştirilmiş çelik tutma sapı malzeme</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Tırtıklı (knurled) ergonomik yüzey, Ev ve spor salonları, kas kütlesi artırımı ve güç çalışmaları.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">5.140 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-35%2035kg.bmp" alt="Helix Dambıl Kauçuk HX-35 35kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Kauçuk HX-35 35kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 35 KG (tek dambıl) ağırlık, Çelik sap + kauçuk kaplı dökme demir başlıklar malzeme, Tırtıklı (knurled) ve ergonomik, Profesyonel spor salonu</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">evde yoğun antrenman, crossfit, vücut geliştirme, Darbe emici, ses yalıtımlı, zemin koruyucu, sabit başlık yapısı, paslanmaya dayanıklı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">6.920 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-30%2030kg.bmp" alt="Helix Dambıl Kauçuk HX-30 30kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Kauçuk HX-30 30kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 30 KG (tek dambıl) ağırlık, Çelik sap + kauçuk kaplı dökme demir başlıklar malzeme, Tırtıklı (knurled) ve ergonomik, Profesyonel spor salonları</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">evde yoğun kuvvet antrenmanı, crossfit, vücut geliştirme, Darbe emici, ses yalıtımlı, zemin koruyucu, sabit başlık, paslanmaya dayanıklı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">5.930 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-22%2022.5kg.bmp" alt="Helix Dambıl Kauçuk HX-22 22.5kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Kauçuk HX-22 22.5kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 22.5 KG (tek dambıl) ağırlık, Çelik sap + kauçuk kaplı dökme demir başlıklar malzeme, Tırtıklı (knurled) ve ergonomik, Spor salonları, evde kuvvet antrenmanı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">crossfit, vücut geliştirme, Darbe emici, sessiz kullanım, zemin koruyucu, sabit ağırlık başlıkları, paslanmaya dayanıklı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">5.450 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>78</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ürün listesi (devamı) — sayfa 5/9</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/DAMBIL%20AL67%20ALTIS.webp" alt="DAMBIL AL67 ALTIS" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>DAMBIL AL67 ALTIS</span>
+          <p class="kart-aciklama">Vinly dambıl 2,5 kg ağırlık, Tekli ürün, Köşeli form tasarımı, Vinly kaplama Dayanıklı yapı, Fitness ve kuvvet antrenmanları için uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">400 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-25%2025kg.bmp" alt="Helix Dambıl Kauçuk HX-25 25kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Kauçuk HX-25 25kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 25 KG ağırlık, Dökme demir üzeri kauçuk kaplama, Krom kaplama çelik sap malzemesi, Tırtıklı (Knurled), ergonomik, Standart dambıl boyutlarında</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">tutuş için optimize edilmiş sap ölçü, Ev ve ticari spor salonlarında kuvvet antrenmanı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">4.950 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-20%2020kg.bmp" alt="Helix Dambıl Kauçuk HX-20 20kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Kauçuk HX-20 20kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 20 KG (tek dambıl) ağırlık, Kauçuk kaplı dökme demir başlık + sertleştirilmiş çelik sap malzeme, Tırtıklı (knurled), ergonomik kavrama yüzeyi, Spor salonu</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">evde kuvvet antrenmanı, crossfit, vücut geliştirme, Darbe emici, ses yalıtımlı, zemin dostu, paslanmaya dayanıklı, sabit başlık yapısı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">6.960 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-17%2017.5kg.bmp" alt="Helix Dambıl Kauçuk HX-17 17.5kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Kauçuk HX-17 17.5kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 17.5 KG (tek dambıl) ağırlık, Kauçuk kaplı dökme demir başlık + sertleştirilmiş çelik sap malzeme, Ergonomik ve tırtıklı (knurled) kavrama yüzeyi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Profesyonel spor salonu, evde kuvvet antrenmanı, crossfit, vücut geliştirme, Darbe emici, sessiz kullanım, zemin koruyucu, paslanmaya dayanıklı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">3.460 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-15%2015kg.bmp" alt="Helix Dambıl Kauçuk HX-15 15kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Kauçuk HX-15 15kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 15 KG (tek dambıl) ağırlık, Kauçuk kaplı dökme demir başlıklar + sertleştirilmiş çelik sap malzeme, Ergonomik, tırtıklı (knurled) kavrama yüzeyi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Spor salonu, ev antrenmanı, crossfit, vücut geliştirme, Darbe emici, ses yalıtımlı, zemin koruyucu, paslanmaya dayanıklı, sabit başlık yapısı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">2.970 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-12%2012.5kg.bmp" alt="Helix Dambıl Kauçuk HX-12 12.5kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Kauçuk HX-12 12.5kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 12.5 KG (tek dambıl) ağırlık, Sertleştirilmiş çelik sap + kauçuk kaplı dökme demir başlıklar malzeme, Ergonomik, tırtıklı (knurled) kavrama yüzeyi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Profesyonel spor salonu, evde kuvvet antrenmanı, crossfit, vücut geliştirme, Darbe emici, ses yalıtımlı, zemin koruyucu, paslanmaya dayanıklı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">2.470 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-10%2010kg.bmp" alt="Helix Dambıl Kauçuk HX-10 10kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Kauçuk HX-10 10kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 10 KG (tek dambıl) ağırlık, Kauçuk kaplı dökme demir başlık + sertleştirilmiş çelik sap malzeme, Ergonomik, tırtıklı (knurled) kavrama yüzeyi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Spor salonları, evde kuvvet antrenmanı, crossfit, vücut geliştirme, Darbe emici, ses yalıtımlı, zemin koruyucu, paslanmaya dayanıklı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.930 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>79</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ürün listesi (devamı) — sayfa 6/9</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/DAMBIL%20AL69%20ALTIS.webp" alt="DAMBIL AL69 ALTIS" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>DAMBIL AL69 ALTIS</span>
+          <p class="kart-aciklama">Vinly dambıl 4 kg ağırlık, Tekli ürün, Köşeli form tasarımı, Vinly kaplama Dayanıklı yapı, Fitness ve kuvvet antrenmanları için uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">630 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-75%207.5kg.bmp" alt="Helix Dambıl Kauçuk HX-75 7.5kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Kauçuk HX-75 7.5kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 7.5 KG (tek dambıl) ağırlık, Kauçuk kaplı dökme demir başlıklar + sertleştirilmiş çelik sap malzeme, Ergonomik, tırtıklı (knurled) kavrama yüzeyi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ev kullanımı, spor salonları, kuvvet antrenmanı, crossfit, vücut geliştirme, Darbe emici, ses azaltıcı, zemin koruyucu, paslanmaya dayanıklı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.490 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-5%205kg.bmp" alt="Helix Dambıl Kauçuk HX-5 5kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Kauçuk HX-5 5kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 KG (tek dambıl) ağırlık, Kauçuk kaplı dökme demir başlıklar + sertleştirilmiş çelik sap malzeme, Ergonomik, tırtıklı (knurled) kavrama yüzeyi, Ev kullanımı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">spor salonu, genel fitness, kardiyo, rehabilitasyon, düşük şiddetli kuvvet antrenmanı, Darbe emici, ses azaltıcı, zemin koruyucu.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.000 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-2%202.5kg.bmp" alt="Helix Dambıl Kauçuk HX-2 2.5kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Kauçuk HX-2 2.5kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 2.5 KG (tek dambıl) ağırlık, Kauçuk kaplı dökme demir başlıklar + sertleştirilmiş çelik sap malzeme, Ergonomik, tırtıklı (knurled) kavrama yüzeyi, Ev &amp; spor salonu kullanımı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">kardiyo, genel fitness, rehabilitasyon, düşük şiddetli kuvvet antrenmanı, Darbe emici, ses yalıtımlı, zemin koruyucu.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">620 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Vinil%20PVC%20PD-10%2010kg.bmp" alt="Helix Dambıl Vinil PVC PD-10 10kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Vinil PVC PD-10 10kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 10 KG (tek dambıl) ağırlık, Dökme demir üzeri vinyl (PVC) kaplama malzeme, Ev ve spor salonu kullanımı, genel fitness</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">kuvvet antrenmanı, Ergonomik sap, kaymaz yüzey, zemin dostu, kolay temizlenebilir, paslanmaya karşı dayanıklı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">2.070 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Vinil%20PVC%20PD-09%209kg.bmp" alt="Helix Dambıl Vinil PVC PD-09 9kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Vinil PVC PD-09 9kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 9 KG (tek dambıl) ağırlık, Dökme demir gövde, vinil (PVC) kaplama malzeme, Ev ve spor salonu, genel fitness, kuvvet antrenmanı Ergonomik sap</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">kaymaz yüzey, zemin dostu, kolay temizlenebilir, paslanmaya karşı dayanıklı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.870 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Vinil%20PVC%20PD-08%208kg.bmp" alt="Helix Dambıl Vinil PVC PD-08 8kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Vinil PVC PD-08 8kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 8 KG (tek dambıl) ağırlık, Dökme demir üzeri vinil (PVC) kaplama malzeme, Ev ve spor salonu, genel fitness</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">kuvvet antrenmanı Ergonomik sap, kaymaz yüzey, zemin dostu, kolay temizlenebilir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.660 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>80</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ürün listesi (devamı) — sayfa 7/9</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/DAMBIL%20VD7%20HATTRICK.webp" alt="DAMBIL VD7 HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>DAMBIL VD7 HATTRICK</span>
+          <p class="kart-aciklama">Vinly dambıl 7 kg ağırlık, Tekli ürün, Köşeli form tasarımı, Vinly kaplama Dayanıklı yapı, Fitness ve kuvvet antrenmanları için uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">800 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Vinil%20PVC%20PD-07%207kg.bmp" alt="Helix Dambıl Vinil PVC PD-07 7kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Vinil PVC PD-07 7kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 7 KG (tek dambıl) ağırlık, Dökme demir üzeri vinil (PVC) kaplama malzeme, Ev ve spor salonu, fitness</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">kuvvet antrenmanı Ergonomik sap, kaymaz yüzey, zemin dostu kaplama, kolay temizlenebilir yapı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.460 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Vinil%20PVC%20PD-06%206kg.bmp" alt="Helix Dambıl Vinil PVC PD-06 6kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Vinil PVC PD-06 6kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 6 KG (tek dambıl ağırlığı) ağırlık, Dökme demir üzeri vinil (PVC) kaplama malzeme, Ev ve spor salonu kullanımı, genel fitness</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">kuvvet antrenmanı Ergonomik sap, zemin dostu vinil kaplama, kaymaz yüzey, kolay temizlenebilir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.250 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Vinil%20PVC%20PD-05%205kg.bmp" alt="Helix Dambıl Vinil PVC PD-05 5kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Vinil PVC PD-05 5kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 KG (tek dambıl ağırlığı) ağırlık, Dökme demir üzeri vinil (PVC) kaplama malzeme, Ev ve spor salonu kullanımı, genel fitness</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">kardiyo, rehabilitasyon, kuvvet antrenmanı Ergonomik sap, zemin dostu vinil kaplama, kaymaz yüzey, kolay temizlenebilir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.040 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Vinil%20PVC%20PD-04%204kg.bmp" alt="Helix Dambıl Vinil PVC PD-04 4kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Vinil PVC PD-04 4kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 4 KG (tek dambıl) ağırlık, Dökme demir gövde, dış yüzey vinil (PVC) kaplama malzeme, Ergonomik sap, kaymaz yüzey</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Evde egzersiz Spor salonu antrenmanları Rehabilitasyon çalışmaları, 3 ve kilogram kas tonlama (tek adet).</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">830 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Vinil%20PVC%20PD-03%203kg.bmp" alt="Helix Dambıl Vinil PVC PD-03 3kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Vinil PVC PD-03 3kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Vinyl PVC kaplı dökme demir malzeme, Yuvarlanmayı önleyen köşeli kenarlar</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kolay temizlenebilir yüzey.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">630 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Vinil%20PVC%20PD-02%202kg.bmp" alt="Helix Dambıl Vinil PVC PD-02 2kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Vinil PVC PD-02 2kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 2 KG (tek dambıl ağırlığı) ağırlık, Dökme demir üzeri vinil (PVC) kaplama malzeme, Ev ve spor salonu kullanımı, genel fitness, kardiyo</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">rehabilitasyon, hafif kuvvet antrenmanı, fizik tedavi, Ergonomik sap, zemin dostu vinil kaplama, kaymaz yüzey, kolay temizlenebilir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">420 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>81</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ürün listesi (devamı) — sayfa 8/9</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/DAMBIL%20VD9%20HATTRICK.webp" alt="DAMBIL VD9 HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>DAMBIL VD9 HATTRICK</span>
+          <p class="kart-aciklama">Vinly dambıl 9 kg ağırlık, Tekli ürün, Köşeli form tasarımı, Vinly kaplama Dayanıklı yapı, Fitness ve kuvvet antrenmanları için uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">970 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Vinil%20PVC%20PD-01%201kg.bmp" alt="Helix Dambıl Vinil PVC PD-01 1kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Vinil PVC PD-01 1kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 1 KG (tek dambıl ağırlığı) ağırlık, Dökme demir üzeri vinil (PVC) kaplama malzeme, Ev ve spor salonu kullanımı, genel fitness</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">kardiyo, rehabilitasyon, aerobik Ergonomik sap, zemin dostu vinil kaplama, kaymaz yüzey, kolay temizlenebilir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">210 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Neopren%20ND-10%2010kg.bmp" alt="Helix Dambıl Neopren ND-10 10kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Neopren ND-10 10kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 10 KG (tek dambıl) ağırlık, Dökme demir gövde + neopren kaplama malzeme, Ev, spor salonu</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">genel fitness, Ergonomik tasarım, kaymaz yüzey, zemin dostu yapı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">2.070 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Neopren%20ND-9%209kg.bmp" alt="Helix Dambıl Neopren ND-9 9kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Neopren ND-9 9kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 9 KG (tek dambıl) ağırlık, Neopren kaplı dökme demir malzeme, Ev, spor salonu, genel fitness</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kaymaz yüzey, ergonomik sap, zemin dostu, kolay temizlenebilir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.870 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Neopren%20ND-8%208kg.bmp" alt="Helix Dambıl Neopren ND-8 8kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Neopren ND-8 8kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 8 KG (tek dambıl) ağırlık, Neopren kaplı dökme demir malzeme, Kaymaz yüzey, ergonomik sap</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">kolay temizlenebilir, zemin dostu, Ev ve spor salonu, genel fitness, kuvvet antrenmanı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.660 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Neopren%20ND-7%207kg.bmp" alt="Helix Dambıl Neopren ND-7 7kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Neopren ND-7 7kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 7 KG (tek dambıl) ağırlık, Neopren kaplı dökme demir malzeme, Kaymaz yüzey, ergonomik sap</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">kolay temizlenebilir, zemin dostu, Ev ve spor salonu, genel fitness, kuvvet antrenmanı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.460 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Neopren%20ND-6%206kg.bmp" alt="Helix Dambıl Neopren ND-6 6kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Neopren ND-6 6kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 6 KG (tek dambıl) ağırlık, Dökme demir üzeri neopren kaplama malzeme, Kaymaz yüzey, ergonomik sap, kolay temizlenebilir</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">zemin dostu, Ev ve spor salonu kullanımı, genel fitness, kuvvet antrenmanı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.250 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>82</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">10</div>
-            <div class="cat-titleblock">
-                <h1>FITNESS</h1>
-                <p>Ürün listesi (devamı) — sayfa 9/9</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/VD10%20HATTRICK.webp" alt="VD10 HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>VD10 HATTRICK</span>
+          <p class="kart-aciklama">Vinly dambıl 10 kg ağırlık, Tekli ürün, Köşeli form tasarımı, Vinly kaplama Dayanıklı yapı, Fitness ve kuvvet antrenmanları için uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.140 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Neopren%20ND-5%205kg.bmp" alt="Helix Dambıl Neopren ND-5 5kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Neopren ND-5 5kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 5 KG (tek dambıl) ağırlık, Dökme demir üzeri neopren kaplama malzeme, Kaymaz yüzey, ergonomik sap, kolay temizlenebilir</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">zemin dostu, Ev ve spor salonu, fitness, kardiyo, rehabilitasyon, kuvvet antrenmanı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.040 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Neopren%20ND-4%204kg.bmp" alt="Helix Dambıl Neopren ND-4 4kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Neopren ND-4 4kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 1 adet, 4 kilogram ağırlık, Neopren kaplı döküm demir malzeme</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kaymaz ve kolay temizlenebilir yüzey, Yeşil renk.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">830 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Neopren%20ND-1%201kg.bmp" alt="Helix Dambıl Neopren ND-1 1kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Neopren ND-1 1kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 1 KG (tek dambıl) ağırlık, Dökme demir üzeri neopren kaplama malzeme, Kaymaz yüzey, ergonomik sap, kolay temizlenebilir</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">zemin dostu, Ev/spor salonu, kardiyo, rehabilitasyon, fizik tedavi, aerobik.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">210 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Neopren%20ND-05%200.5kg.bmp" alt="Helix Dambıl Neopren ND-05 0.5kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Neopren ND-05 0.5kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 0.5 KG (tek dambıl) ağırlık, Dökme demir üzeri neopren kaplama malzeme, Kaymaz yüzey, ergonomik sap, kolay temizlenebilir</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">zemin dostu, Ev/spor salonu, kardiyo, rehabilitasyon, fizik tedavi, aerobik, düşük yoğunluklu egzersizler.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">120 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Ayarlanabilir%20AD-40%202%2C5kg-40kg.bmp" alt="Helix Dambıl Ayarlanabilir AD-40 2,5kg-40kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Ayarlanabilir AD-40 2,5kg-40kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 2.5 KG – 40, Kadran, kilit veya pim mekanizması (modele göre değişebilir), Yüksek mukavemetli çelik, dayanıklı plastik veya kompozit dış kaplama malzeme</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kompakt, yer tasarrufu sağlayan yapı, Ev kullanımı, bireysel spor salonları, fonksiyonel kuvvet antrenmanları.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">13.670 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Ayarlanabilir%20AD-24%202%2C5kg-24kg.bmp" alt="Helix Dambıl Ayarlanabilir AD-24 2,5kg-24kg" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Dambıl Ayarlanabilir AD-24 2,5kg-24kg</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 2.5 KG – 24, Genellikle 2.5 KG artışlarla, Hızlı çevirmeli kadran veya kilit/pim sistemi, Yüksek mukavemetli çelik gövde, dayanıklı plastik/alaşım kaplamalar malzeme</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Tırtıklı (knurled) ergonomik dizayn, kaymaz yüzey, Ev antrenmanları, PT stüdyoları, fonksiyonel antrenman alanları.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">8.200 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Fitness</span>
-        <span>83</span>
-    </div>
-    </section>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/%C3%87%C4%B0FTL%C4%B0%20DAMBIL%20VDS10%20ALTIS.webp" alt="ÇİFTLİ DAMBIL VDS10 ALTIS" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>ÇİFTLİ DAMBIL VDS10 ALTIS</span>
+          <p class="kart-aciklama">Vinyl dambıl seti, Çiftli set 0,5 kg ağırlık, Renkli kutu ambalaj, Vinyl kaplama, Ergonomik tutuş sağlar Fitness, aerobik ve pilates antrenmanları için uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">170 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/%C3%87%C4%B0FTL%C4%B0%20DAMBIL%20VDS20%20ALTIS.webp" alt="ÇİFTLİ DAMBIL VDS20 ALTIS" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>ÇİFTLİ DAMBIL VDS20 ALTIS</span>
+          <p class="kart-aciklama">Vinyl dambıl seti, Çiftli set 1 kg ağırlık, Renkli kutu ambalaj, Vinyl kaplama, Ergonomik tutuş sağlar Fitness, aerobik ve pilates antrenmanları için uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">330 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/%C3%87%C4%B0FTL%C4%B0%20DAMBIL%20VDS50%20ALTIS.webp" alt="ÇİFTLİ DAMBIL VDS50 ALTIS" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>ÇİFTLİ DAMBIL VDS50 ALTIS</span>
+          <p class="kart-aciklama">Vinyl dambıl seti, Çiftli set 2,5 kg ağırlık, Renkli kutu ambalaj, Vinyl kaplama, Ergonomik tutuş sağlar Fitness, aerobik ve pilates antrenmanları için uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">910 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/K%C3%96%C5%9EEL%C4%B0%20DAMBIL%20DS50%20ALTIS.webp" alt="KÖŞELİ DAMBIL DS50 ALTIS" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>KÖŞELİ DAMBIL DS50 ALTIS</span>
+          <p class="kart-aciklama">Plastik köşeli dambıl seti, Çiftli set 1 kg ağırlık, Köşeli form tasarımı, Plastik kaplama Export kutu ambalaj, Fitness ve kuvvet antrenmanları için uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">140 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/K%C3%96%C5%9EEL%C4%B0%20DAMBIL%20DS63%20ALTIS.webp" alt="KÖŞELİ DAMBIL DS63 ALTIS" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>KÖŞELİ DAMBIL DS63 ALTIS</span>
+          <p class="kart-aciklama">Plastik köşeli dambıl seti, Çiftli set 3 kg ağırlık, Köşeli form tasarımı, Plastik kaplama Export kutu ambalaj, Fitness ve kuvvet antrenmanları için uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">300 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/K%C3%96%C5%9EEL%C4%B0%20DAMBIL%20DS71%20ALTIS.webp" alt="KÖŞELİ DAMBIL DS71 ALTIS" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>KÖŞELİ DAMBIL DS71 ALTIS</span>
+          <p class="kart-aciklama">Plastik köşeli dambıl seti, Çiftli set 4 kg ağırlık, Köşeli form tasarımı, Plastik kaplama Dayanıklı yapı, Fitness ve kuvvet antrenmanları için uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">310 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/K%C3%96%C5%9EEL%C4%B0%20DAMBIL%20DS80%20ALTIS.webp" alt="KÖŞELİ DAMBIL DS80 ALTIS" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>KÖŞELİ DAMBIL DS80 ALTIS</span>
+          <p class="kart-aciklama">Plastik köşeli dambıl seti, Çiftli set 5 kg ağırlık, Köşeli form tasarımı, Plastik kaplama Dayanıklı yapı, Fitness ve kuvvet antrenmanları için uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">400 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/K%C3%96%C5%9EEL%C4%B0%20DAMBIL%20DS86%20ALTIS%20455TL.webp" alt="KÖŞELİ DAMBIL DS86 ALTIS" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>KÖŞELİ DAMBIL DS86 ALTIS</span>
+          <p class="kart-aciklama">Plastik köşeli dambıl seti, Çiftli set 6 kg ağırlık, Köşeli form tasarımı, Plastik kaplama Dayanıklı yapı, Fitness ve kuvvet antrenmanları için uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">410 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/K%C3%96%C5%9EEL%C4%B0%20DAMBIL%20DS90%20ALTIS.webp" alt="KÖŞELİ DAMBIL DS90 ALTIS" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>KÖŞELİ DAMBIL DS90 ALTIS</span>
+          <p class="kart-aciklama">Plastik köşeli dambıl seti, Çiftli set 8 kg ağırlık, Köşeli form tasarımı, Plastik kaplama Renkli kutu ambalaj, Fitness ve kuvvet antrenmanları için uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">510 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/K%C3%96%C5%9EEL%C4%B0%20DAMBIL%20DS99%20ALTIS%20570TL.webp" alt="KÖŞELİ DAMBIL DS99 ALTIS" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>KÖŞELİ DAMBIL DS99 ALTIS</span>
+          <p class="kart-aciklama">Plastik köşeli dambıl seti, Çiftli set 9 kg ağırlık, Köşeli form tasarımı, Plastik kaplama Renkli kutu ambalaj, Fitness ve kuvvet antrenmanları için uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">510 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/FITNESS%20ELD%C4%B0VEN%20TROX%20190TL.webp" alt="KÖŞELİ DAMBIL HR30 ALTIS" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>KÖŞELİ DAMBIL HR30 ALTIS</span>
+          <p class="kart-aciklama">Plastik köşeli dambıl seti, Çiftli set 10 kg ağırlık, Köşeli form tasarımı, Plastik kaplama Renkli kutu ambalaj, Fitness ve kuvvet antrenmanları için uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">510 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-27%2027.5kg.webp" alt="Helix Dambıl Kauçuk HX-27 27.5kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Kauçuk HX-27 27.5kg</span>
+          <p class="kart-aciklama">27.5 KG (tek dambıl) ağırlık, Kauçuk kaplı dökme demir başlıklar, sertleştirilmiş çelik tutma sapı malzeme Tırtıklı (knurled) ergonomik yüzey, Ev ve spor salonları, kas kütlesi artırımı ve güç çalışmaları.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">5.140 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-35%2035kg.webp" alt="Helix Dambıl Kauçuk HX-35 35kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Kauçuk HX-35 35kg</span>
+          <p class="kart-aciklama">35 KG (tek dambıl) ağırlık, Çelik sap + kauçuk kaplı dökme demir başlıklar malzeme, Tırtıklı (knurled) ve ergonomik, Profesyonel spor salonu evde yoğun antrenman, crossfit, vücut geliştirme, Darbe emici, ses yalıtımlı, zemin koruyucu, sabit başlık yapısı, paslanmaya dayanıklı.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">6.920 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-30%2030kg.webp" alt="Helix Dambıl Kauçuk HX-30 30kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Kauçuk HX-30 30kg</span>
+          <p class="kart-aciklama">30 KG (tek dambıl) ağırlık, Çelik sap + kauçuk kaplı dökme demir başlıklar malzeme, Tırtıklı (knurled) ve ergonomik, Profesyonel spor salonları evde yoğun kuvvet antrenmanı, crossfit, vücut geliştirme, Darbe emici, ses yalıtımlı, zemin koruyucu, sabit başlık, paslanmaya dayanıklı.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">5.930 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-22%2022.5kg.webp" alt="Helix Dambıl Kauçuk HX-22 22.5kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Kauçuk HX-22 22.5kg</span>
+          <p class="kart-aciklama">22.5 KG (tek dambıl) ağırlık, Çelik sap + kauçuk kaplı dökme demir başlıklar malzeme, Tırtıklı (knurled) ve ergonomik, Spor salonları, evde kuvvet antrenmanı crossfit, vücut geliştirme, Darbe emici, sessiz kullanım, zemin koruyucu, sabit ağırlık başlıkları, paslanmaya dayanıklı.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">5.450 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-25%2025kg.webp" alt="Helix Dambıl Kauçuk HX-25 25kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Kauçuk HX-25 25kg</span>
+          <p class="kart-aciklama">25 KG ağırlık, Dökme demir üzeri kauçuk kaplama, Krom kaplama çelik sap malzemesi, Tırtıklı (Knurled), ergonomik, Standart dambıl boyutlarında tutuş için optimize edilmiş sap ölçü, Ev ve ticari spor salonlarında kuvvet antrenmanı.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">4.950 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-20%2020kg.webp" alt="Helix Dambıl Kauçuk HX-20 20kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Kauçuk HX-20 20kg</span>
+          <p class="kart-aciklama">20 KG (tek dambıl) ağırlık, Kauçuk kaplı dökme demir başlık + sertleştirilmiş çelik sap malzeme, Tırtıklı (knurled), ergonomik kavrama yüzeyi, Spor salonu evde kuvvet antrenmanı, crossfit, vücut geliştirme, Darbe emici, ses yalıtımlı, zemin dostu, paslanmaya dayanıklı, sabit başlık yapısı.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">6.960 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-17%2017.5kg.webp" alt="Helix Dambıl Kauçuk HX-17 17.5kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Kauçuk HX-17 17.5kg</span>
+          <p class="kart-aciklama">17.5 KG (tek dambıl) ağırlık, Kauçuk kaplı dökme demir başlık + sertleştirilmiş çelik sap malzeme, Ergonomik ve tırtıklı (knurled) kavrama yüzeyi Profesyonel spor salonu, evde kuvvet antrenmanı, crossfit, vücut geliştirme, Darbe emici, sessiz kullanım, zemin koruyucu, paslanmaya dayanıklı.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">3.460 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-15%2015kg.webp" alt="Helix Dambıl Kauçuk HX-15 15kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Kauçuk HX-15 15kg</span>
+          <p class="kart-aciklama">15 KG (tek dambıl) ağırlık, Kauçuk kaplı dökme demir başlıklar + sertleştirilmiş çelik sap malzeme, Ergonomik, tırtıklı (knurled) kavrama yüzeyi Spor salonu, ev antrenmanı, crossfit, vücut geliştirme, Darbe emici, ses yalıtımlı, zemin koruyucu, paslanmaya dayanıklı, sabit başlık yapısı.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">2.970 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-12%2012.5kg.webp" alt="Helix Dambıl Kauçuk HX-12 12.5kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Kauçuk HX-12 12.5kg</span>
+          <p class="kart-aciklama">12.5 KG (tek dambıl) ağırlık, Sertleştirilmiş çelik sap + kauçuk kaplı dökme demir başlıklar malzeme, Ergonomik, tırtıklı (knurled) kavrama yüzeyi Profesyonel spor salonu, evde kuvvet antrenmanı, crossfit, vücut geliştirme, Darbe emici, ses yalıtımlı, zemin koruyucu, paslanmaya dayanıklı.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">2.470 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-10%2010kg.webp" alt="Helix Dambıl Kauçuk HX-10 10kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Kauçuk HX-10 10kg</span>
+          <p class="kart-aciklama">10 KG (tek dambıl) ağırlık, Kauçuk kaplı dökme demir başlık + sertleştirilmiş çelik sap malzeme, Ergonomik, tırtıklı (knurled) kavrama yüzeyi Spor salonları, evde kuvvet antrenmanı, crossfit, vücut geliştirme, Darbe emici, ses yalıtımlı, zemin koruyucu, paslanmaya dayanıklı.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.930 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-75%207.5kg.webp" alt="Helix Dambıl Kauçuk HX-75 7.5kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Kauçuk HX-75 7.5kg</span>
+          <p class="kart-aciklama">7.5 KG (tek dambıl) ağırlık, Kauçuk kaplı dökme demir başlıklar + sertleştirilmiş çelik sap malzeme, Ergonomik, tırtıklı (knurled) kavrama yüzeyi Ev kullanımı, spor salonları, kuvvet antrenmanı, crossfit, vücut geliştirme, Darbe emici, ses azaltıcı, zemin koruyucu, paslanmaya dayanıklı.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.490 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-5%205kg.webp" alt="Helix Dambıl Kauçuk HX-5 5kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Kauçuk HX-5 5kg</span>
+          <p class="kart-aciklama">5 KG (tek dambıl) ağırlık, Kauçuk kaplı dökme demir başlıklar + sertleştirilmiş çelik sap malzeme, Ergonomik, tırtıklı (knurled) kavrama yüzeyi, Ev kullanımı spor salonu, genel fitness, kardiyo, rehabilitasyon, düşük şiddetli kuvvet antrenmanı, Darbe emici, ses azaltıcı, zemin koruyucu.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.000 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Kau%C3%A7uk%20HX-2%202.5kg.webp" alt="Helix Dambıl Kauçuk HX-2 2.5kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Kauçuk HX-2 2.5kg</span>
+          <p class="kart-aciklama">2.5 KG (tek dambıl) ağırlık, Kauçuk kaplı dökme demir başlıklar + sertleştirilmiş çelik sap malzeme, Ergonomik, tırtıklı (knurled) kavrama yüzeyi, Ev &amp; spor salonu kullanımı kardiyo, genel fitness, rehabilitasyon, düşük şiddetli kuvvet antrenmanı, Darbe emici, ses yalıtımlı, zemin koruyucu.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">620 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Vinil%20PVC%20PD-10%2010kg.webp" alt="Helix Dambıl Vinil PVC PD-10 10kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Vinil PVC PD-10 10kg</span>
+          <p class="kart-aciklama">10 KG (tek dambıl) ağırlık, Dökme demir üzeri vinyl (PVC) kaplama malzeme, Ev ve spor salonu kullanımı, genel fitness kuvvet antrenmanı, Ergonomik sap, kaymaz yüzey, zemin dostu, kolay temizlenebilir, paslanmaya karşı dayanıklı.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">2.070 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Vinil%20PVC%20PD-09%209kg.webp" alt="Helix Dambıl Vinil PVC PD-09 9kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Vinil PVC PD-09 9kg</span>
+          <p class="kart-aciklama">9 KG (tek dambıl) ağırlık, Dökme demir gövde, vinil (PVC) kaplama malzeme, Ev ve spor salonu, genel fitness, kuvvet antrenmanı Ergonomik sap kaymaz yüzey, zemin dostu, kolay temizlenebilir, paslanmaya karşı dayanıklı.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.870 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Vinil%20PVC%20PD-08%208kg.webp" alt="Helix Dambıl Vinil PVC PD-08 8kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Vinil PVC PD-08 8kg</span>
+          <p class="kart-aciklama">8 KG (tek dambıl) ağırlık, Dökme demir üzeri vinil (PVC) kaplama malzeme, Ev ve spor salonu, genel fitness kuvvet antrenmanı Ergonomik sap, kaymaz yüzey, zemin dostu, kolay temizlenebilir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.660 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Vinil%20PVC%20PD-07%207kg.webp" alt="Helix Dambıl Vinil PVC PD-07 7kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Vinil PVC PD-07 7kg</span>
+          <p class="kart-aciklama">7 KG (tek dambıl) ağırlık, Dökme demir üzeri vinil (PVC) kaplama malzeme, Ev ve spor salonu, fitness kuvvet antrenmanı Ergonomik sap, kaymaz yüzey, zemin dostu kaplama, kolay temizlenebilir yapı.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.460 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Vinil%20PVC%20PD-06%206kg.webp" alt="Helix Dambıl Vinil PVC PD-06 6kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Vinil PVC PD-06 6kg</span>
+          <p class="kart-aciklama">6 KG (tek dambıl ağırlığı) ağırlık, Dökme demir üzeri vinil (PVC) kaplama malzeme, Ev ve spor salonu kullanımı, genel fitness kuvvet antrenmanı Ergonomik sap, zemin dostu vinil kaplama, kaymaz yüzey, kolay temizlenebilir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.250 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Vinil%20PVC%20PD-05%205kg.webp" alt="Helix Dambıl Vinil PVC PD-05 5kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Vinil PVC PD-05 5kg</span>
+          <p class="kart-aciklama">5 KG (tek dambıl ağırlığı) ağırlık, Dökme demir üzeri vinil (PVC) kaplama malzeme, Ev ve spor salonu kullanımı, genel fitness kardiyo, rehabilitasyon, kuvvet antrenmanı Ergonomik sap, zemin dostu vinil kaplama, kaymaz yüzey, kolay temizlenebilir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.040 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Vinil%20PVC%20PD-04%204kg.webp" alt="Helix Dambıl Vinil PVC PD-04 4kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Vinil PVC PD-04 4kg</span>
+          <p class="kart-aciklama">4 KG (tek dambıl) ağırlık, Dökme demir gövde, dış yüzey vinil (PVC) kaplama malzeme, Ergonomik sap, kaymaz yüzey Evde egzersiz Spor salonu antrenmanları Rehabilitasyon çalışmaları, 3 ve kilogram kas tonlama (tek adet).</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">830 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Vinil%20PVC%20PD-03%203kg.webp" alt="Helix Dambıl Vinil PVC PD-03 3kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Vinil PVC PD-03 3kg</span>
+          <p class="kart-aciklama">Vinyl PVC kaplı dökme demir malzeme, Yuvarlanmayı önleyen köşeli kenarlar Kolay temizlenebilir yüzey.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">630 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Vinil%20PVC%20PD-02%202kg.webp" alt="Helix Dambıl Vinil PVC PD-02 2kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Vinil PVC PD-02 2kg</span>
+          <p class="kart-aciklama">2 KG (tek dambıl ağırlığı) ağırlık, Dökme demir üzeri vinil (PVC) kaplama malzeme, Ev ve spor salonu kullanımı, genel fitness, kardiyo rehabilitasyon, hafif kuvvet antrenmanı, fizik tedavi, Ergonomik sap, zemin dostu vinil kaplama, kaymaz yüzey, kolay temizlenebilir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">420 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Vinil%20PVC%20PD-01%201kg.webp" alt="Helix Dambıl Vinil PVC PD-01 1kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Vinil PVC PD-01 1kg</span>
+          <p class="kart-aciklama">1 KG (tek dambıl ağırlığı) ağırlık, Dökme demir üzeri vinil (PVC) kaplama malzeme, Ev ve spor salonu kullanımı, genel fitness kardiyo, rehabilitasyon, aerobik Ergonomik sap, zemin dostu vinil kaplama, kaymaz yüzey, kolay temizlenebilir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">210 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Neopren%20ND-10%2010kg.webp" alt="Helix Dambıl Neopren ND-10 10kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Neopren ND-10 10kg</span>
+          <p class="kart-aciklama">10 KG (tek dambıl) ağırlık, Dökme demir gövde + neopren kaplama malzeme, Ev, spor salonu genel fitness, Ergonomik tasarım, kaymaz yüzey, zemin dostu yapı.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">2.070 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Neopren%20ND-9%209kg.webp" alt="Helix Dambıl Neopren ND-9 9kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Neopren ND-9 9kg</span>
+          <p class="kart-aciklama">9 KG (tek dambıl) ağırlık, Neopren kaplı dökme demir malzeme, Ev, spor salonu, genel fitness Kaymaz yüzey, ergonomik sap, zemin dostu, kolay temizlenebilir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.870 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Neopren%20ND-8%208kg.webp" alt="Helix Dambıl Neopren ND-8 8kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Neopren ND-8 8kg</span>
+          <p class="kart-aciklama">8 KG (tek dambıl) ağırlık, Neopren kaplı dökme demir malzeme, Kaymaz yüzey, ergonomik sap kolay temizlenebilir, zemin dostu, Ev ve spor salonu, genel fitness, kuvvet antrenmanı.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.660 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Neopren%20ND-7%207kg.webp" alt="Helix Dambıl Neopren ND-7 7kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Neopren ND-7 7kg</span>
+          <p class="kart-aciklama">7 KG (tek dambıl) ağırlık, Neopren kaplı dökme demir malzeme, Kaymaz yüzey, ergonomik sap kolay temizlenebilir, zemin dostu, Ev ve spor salonu, genel fitness, kuvvet antrenmanı.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.460 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Neopren%20ND-6%206kg.webp" alt="Helix Dambıl Neopren ND-6 6kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Neopren ND-6 6kg</span>
+          <p class="kart-aciklama">6 KG (tek dambıl) ağırlık, Dökme demir üzeri neopren kaplama malzeme, Kaymaz yüzey, ergonomik sap, kolay temizlenebilir zemin dostu, Ev ve spor salonu kullanımı, genel fitness, kuvvet antrenmanı.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.250 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Neopren%20ND-5%205kg.webp" alt="Helix Dambıl Neopren ND-5 5kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Neopren ND-5 5kg</span>
+          <p class="kart-aciklama">5 KG (tek dambıl) ağırlık, Dökme demir üzeri neopren kaplama malzeme, Kaymaz yüzey, ergonomik sap, kolay temizlenebilir zemin dostu, Ev ve spor salonu, fitness, kardiyo, rehabilitasyon, kuvvet antrenmanı.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.040 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Neopren%20ND-4%204kg.webp" alt="Helix Dambıl Neopren ND-4 4kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Neopren ND-4 4kg</span>
+          <p class="kart-aciklama">1 adet, 4 kilogram ağırlık, Neopren kaplı döküm demir malzeme Kaymaz ve kolay temizlenebilir yüzey, Yeşil renk.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">830 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Neopren%20ND-1%201kg.webp" alt="Helix Dambıl Neopren ND-1 1kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Neopren ND-1 1kg</span>
+          <p class="kart-aciklama">1 KG (tek dambıl) ağırlık, Dökme demir üzeri neopren kaplama malzeme, Kaymaz yüzey, ergonomik sap, kolay temizlenebilir zemin dostu, Ev/spor salonu, kardiyo, rehabilitasyon, fizik tedavi, aerobik.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">210 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Neopren%20ND-05%200.5kg.webp" alt="Helix Dambıl Neopren ND-05 0.5kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Neopren ND-05 0.5kg</span>
+          <p class="kart-aciklama">0.5 KG (tek dambıl) ağırlık, Dökme demir üzeri neopren kaplama malzeme, Kaymaz yüzey, ergonomik sap, kolay temizlenebilir zemin dostu, Ev/spor salonu, kardiyo, rehabilitasyon, fizik tedavi, aerobik, düşük yoğunluklu egzersizler.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">120 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Ayarlanabilir%20AD-40%202%2C5kg-40kg.webp" alt="Helix Dambıl Ayarlanabilir AD-40 2,5kg-40kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Ayarlanabilir AD-40 2,5kg-40kg</span>
+          <p class="kart-aciklama">2.5 KG – 40, Kadran, kilit veya pim mekanizması (modele göre değişebilir), Yüksek mukavemetli çelik, dayanıklı plastik veya kompozit dış kaplama malzeme Kompakt, yer tasarrufu sağlayan yapı, Ev kullanımı, bireysel spor salonları, fonksiyonel kuvvet antrenmanları.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">13.670 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Fitness%20image/Helix%20Damb%C4%B1l%20Ayarlanabilir%20AD-24%202%2C5kg-24kg.webp" alt="Helix Dambıl Ayarlanabilir AD-24 2,5kg-24kg" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Dambıl Ayarlanabilir AD-24 2,5kg-24kg</span>
+          <p class="kart-aciklama">2.5 KG – 24, Genellikle 2.5 KG artışlarla, Hızlı çevirmeli kadran veya kilit/pim sistemi, Yüksek mukavemetli çelik gövde, dayanıklı plastik/alaşım kaplamalar malzeme Tırtıklı (knurled) ergonomik dizayn, kaymaz yüzey, Ev antrenmanları, PT stüdyoları, fonksiyonel antrenman alanları.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">8.200 ₺</span></div>
+          </div>
+        </div>
+      </div>
+  </div>
+</main>
 
+<a class="wa-buton" href="https://wa.me/905522025737" target="_blank" rel="noopener" aria-label="WhatsApp'tan yazın">
+  <svg viewBox="0 0 32 32" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M16 3C9 3 3 9 3 16c0 2.4.6 4.6 1.8 6.6L3 29l6.6-1.7c1.9 1 4 1.6 6.4 1.6 7 0 13-6 13-13S23 3 16 3zm7.6 18.4c-.3.9-1.7 1.7-2.7 1.9-.7.1-1.6.2-4.6-1-3.9-1.6-6.4-5.5-6.6-5.8-.2-.3-1.6-2.1-1.6-4s1-2.8 1.3-3.2c.3-.3.7-.4 1-.4h.7c.2 0 .5 0 .8.6.3.7 1.1 2.6 1.2 2.8.1.2.2.4 0 .7-.1.3-.2.4-.4.6-.2.2-.4.5-.6.7-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.6 1.4 1.3 2.6 1.7 3 1.9.3.2.5.1.7-.1.2-.2.9-1 1.1-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.5 1.2.4.2.6.3.7.5.1.2.1 1-.2 1.9z"/></svg>
+</a>
 
-<script>
-function aramaFiltrele(inp){
-  var q=inp.value.toLocaleLowerCase('tr-TR').trim(), gorunen=0;
-  document.querySelectorAll('.product-card').forEach(function(k){
-    var e=k.querySelector('.pf-label');
-    var esles=(e?e.textContent.toLocaleLowerCase('tr-TR'):'').indexOf(q)!==-1;
-    k.style.display=esles?'':'none';
-    if(esles)gorunen++;
-  });
-  document.querySelector('.urun-bulunamadi').hidden=!(q&&gorunen===0);
-}
-</script>
+<footer class="alt-bilgi">
+  <div class="alt-bilgi-ic">
+    <strong>ÖZTEN SPOR</strong>
+    Kirazlı Mahallesi 1201. Sokak, Bağcılar / İstanbul<br>
+    <a href="mailto:oztensporltd@gmail.com">oztensporltd@gmail.com</a>
+  </div>
+</footer>
+
+<nav class="alt-cubuk">
+  <a class="alt-btn" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+    Ana Sayfa
+  </a>
+  <button type="button" class="alt-btn" id="altAra">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    Ara
+  </button>
+  <button type="button" class="alt-btn" id="altKategori">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    Kategoriler
+  </button>
+  <button type="button" class="alt-btn" id="altSepet">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M6 6 5 3H3"/></svg>
+    Sepet
+    <span class="alt-rozet" id="altSepetSayi" hidden>0</span>
+  </button>
+</nav>
+
 </body>
 </html>

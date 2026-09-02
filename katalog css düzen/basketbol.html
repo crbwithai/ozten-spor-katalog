@@ -4,266 +4,328 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BASKETBOL — Özten Spor Kataloğu</title>
-<link rel="stylesheet" href="Ozten Spor Katalog.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ozten-yeni.css">
 <script src="sepet.js" defer></script>
+<script src="site.js" defer></script>
 </head>
-<body id="top">
-<div class="floating-nav-group">
-    <a href="#top" class="floating-nav-btn"><span class="fn-arrow">&#8593;</span> Yukarı Çık</a>
-</div>
-<div class="katalog-arama"><input type="text" placeholder="Ürün ara..." oninput="aramaFiltrele(this)"></div>
-<div class="kategori-menu-cubugu">
-    <button type="button" class="kategori-menu-buton">Alt Kategoriler <span class="fn-arrow">&#9662;</span></button>
-    <div class="kategori-menu-panel" hidden>
-        <a href="basketbol-potalari.html#top">Basketbol Potaları</a>
-    </div>
-    <a href="index.html#top" class="ana-katalog-buton">Ana Kataloğa Dön</a>
-</div>
-<p class="urun-bulunamadi" hidden>Ürün bulunamadı.</p>
-<section class="page cat-page" id="kategori-basketbol">
-        <div class="cat-header">
-            <div class="cat-num">02</div>
-            <div class="cat-titleblock">
-                <h1>BASKETBOL</h1>
-                <p>Antrenman ve maç için dayanıklı basketbol topları.</p>
-            </div>
+<body>
+
+<header class="ust-cubuk">
+  <a class="marka" href="index.html">ÖZTEN<span>SPOR</span></a>
+  <div class="ust-arama">
+    <span class="arama-ikon">&#9906;</span>
+    <input type="text" id="aramaKutusu" placeholder="Ürün ara" autocomplete="off" oninput="aramaFiltrele(this)">
+  </div>
+  <div class="ust-butonlar">
+    <button type="button" class="ust-btn" id="kategoriAc">Kategoriler &#9662;</button>
+    <button type="button" class="ust-btn" id="sepetAc">Sepetim <span class="ust-rozet" id="ustSepetSayi">0</span></button>
+  </div>
+</header>
+
+<nav class="kategori-panel" id="kategoriPanel" hidden>
+  <div class="kategori-panel-baslik">TÜM KATEGORİLER</div>
+  <div class="kategori-izgara">
+        <a class="kategori-link" href="futbol.html">FUTBOL</a>
+        <a class="kategori-link aktif" href="basketbol.html">BASKETBOL</a>
+        <a class="kategori-link" href="voleybol.html">VOLEYBOL</a>
+        <a class="kategori-link" href="badminton.html">BADMINTON</a>
+        <a class="kategori-link" href="masa-tenisi.html">MASA TENİSİ</a>
+        <a class="kategori-link" href="tenis.html">TENİS</a>
+        <a class="kategori-link" href="atlama-ipi.html">ATLAMA İPİ</a>
+        <a class="kategori-link" href="el-yayi.html">EL YAYI</a>
+        <a class="kategori-link" href="yoga-pilates.html">YOGA PİLATES</a>
+        <a class="kategori-link" href="fitness.html">FITNESS</a>
+        <a class="kategori-link" href="egzersiz.html">EGZERSİZ</a>
+        <a class="kategori-link" href="hentbol.html">HENTBOL</a>
+        <a class="kategori-link" href="yuzme.html">YÜZME</a>
+        <a class="kategori-link" href="bocce.html">BOCCE</a>
+        <a class="kategori-link" href="hokey.html">HOKEY</a>
+        <a class="kategori-link" href="kano.html">KANO</a>
+        <a class="kategori-link" href="beyzbol.html">BEYZBOL</a>
+        <a class="kategori-link" href="paten.html">PATEN</a>
+        <a class="kategori-link" href="oryantiring.html">ORYANTİRİNG</a>
+        <a class="kategori-link" href="padel.html">PADEL</a>
+        <a class="kategori-link" href="pickleball.html">PICKLEBALL</a>
+        <a class="kategori-link" href="ragbi.html">RAGBİ</a>
+        <a class="kategori-link" href="satranc.html">SATRANÇ</a>
+        <a class="kategori-link" href="softball.html">SOFTBALL</a>
+        <a class="kategori-link" href="squash.html">SQUASH</a>
+        <a class="kategori-link" href="dart.html">DART</a>
+        <a class="kategori-link" href="atletizm.html">ATLETİZM</a>
+        <a class="kategori-link" href="cimnastik.html">CİMNASTİK</a>
+        <a class="kategori-link" href="saglik-toplari.html">SAĞLIK TOPLARI</a>
+        <a class="kategori-link" href="su-topu.html">SU TOPU</a>
+        <a class="kategori-link" href="oyun-grubu.html">OYUN GRUBU</a>
+        <a class="kategori-link" href="dovus-sporlari.html">DÖVÜŞ SPORLARI</a>
+  </div>
+</nav>
+
+<section class="kat-basi">
+  <div class="kat-basi-ic">
+    <div class="kat-etiket">KATEGORİ 02</div>
+    <h1>BASKETBOL</h1>
+    <p class="kat-aciklama">Antrenman ve maç için dayanıklı basketbol topları.</p>
+    <span class="kat-sayac">21 ürün</span>
+  </div>
+</section>
+
+<nav class="alt-kat-serit" aria-label="Alt kategoriler">
+  <div class="alt-kat-ic">
+      <a class="alt-kat-cip aktif" href="basketbol.html">Toplar</a>
+      <a class="alt-kat-cip" href="basketbol-potalari.html">Basketbol Potaları</a>
+  </div>
+</nav>
+
+<main class="icerik">
+  <p class="urun-bulunamadi" hidden>Aramanla eşleşen ürün bulunamadı.</p>
+  <div class="product-grid">
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Basketbol%20image/C7%20HATTRICK.webp" alt="C7 HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>C7 HATTRICK</span>
+          <p class="kart-aciklama">C7 7 Kauçuk yüzey Derin kanal yapısı Dengeli sekme Yüksek tutuş Aşınmaya dayanıklı İç ve dış saha kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">310 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Basketbol%20image/C7%20HATTRICK.bmp" alt="C7 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : C7 HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : C7</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">7 Kauçuk yüzey Derin kanal yapısı Dengeli sekme Yüksek tutuş Aşınmaya dayanıklı İç ve dış saha kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">310 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Basketbol%20image/C6%20HATTRICK.bmp" alt="C6 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : C6 HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 6 Kauçuk yüzey Derin kanal yapısı Dengeli sekme Yüksek tutuş Aşınmaya dayanıklı İç ve dış saha kullanımına uygunNo:6 Kauçuk yüzey Derin kanal yapısı Dengeli sekme Yüksek tutuş Aşınmaya dayanıklı İç ve dış saha kullanımına uygun.</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">290 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Basketbol%20image/C3%20HATTRICK.bmp" alt="C3 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : C3 HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : No:3 Kauçuk yüzey, Derin kanal yapısı, Dengeli sekme, Yüksek tutuş</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Aşınmaya dayanıklı, İç ve dış saha kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">270 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Basketbol%20image/ALT700%20ALTIS.png" alt="ALT700 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : ALT700 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : ALT700</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">7 Dayanıklı kauçuk yüzey Derin kanal tasarımı Dengeli sekme Yüksek kavrama Uzun ömürlü kullanım İç ve dış saha kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">790 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Basketbol%20image/ALT600%20ALTIS.bmp" alt="ALT600 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : ALT600 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : No:6 Dayanıklı kauçuk yüzey, Derin kanal tasarımı, Dengeli sekme, Yüksek kavrama</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Uzun ömürlü kullanım, İç ve dış saha kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">790 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Basketbol%20image/ALT500%20ALTIS.bmp" alt="ALT500 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : ALT500 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : No:5 Dayanıklı kauçuk yüzey, Derin kanal tasarımı, Dengeli sekme, Yüksek kavrama</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Aşınmaya dayanıklı, Antrenman ve okul kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">790 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Basketbol</span>
-        <span>19</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">02</div>
-            <div class="cat-titleblock">
-                <h1>BASKETBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 2/4</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Basketbol%20image/C6%20HATTRICK.webp" alt="C6 HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>C6 HATTRICK</span>
+          <p class="kart-aciklama">6 Kauçuk yüzey Derin kanal yapısı Dengeli sekme Yüksek tutuş Aşınmaya dayanıklı İç ve dış saha kullanımına uygunNo:6 Kauçuk yüzey Derin kanal yapısı Dengeli sekme Yüksek tutuş Aşınmaya dayanıklı İç ve dış saha kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">290 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Basketbol%20image/B3%20ALTIS.bmp" alt="B3 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : B3 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : No:3 Dayanıklı kauçuk yüzey, Derin kanal tasarımı, Dengeli sekme, Yüksek kavrama</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Uzun ömürlü kullanım, İç ve dış saha kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">400 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Basketbol%20image/STREET%20PRO%20HATTRICK.bmp" alt="STREET PRO HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : STREET PRO HATTRICK No:7</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : No:7 Outdoor kauçuk yüzey, Derin kanal yapısı, Üstün tutuş, Dengeli sekme</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Yüksek aşınma direnci, Sokak ve açık saha kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">680 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Basketbol%20image/STREET%20PRO%20HATTRICK%202..bmp" alt="STREET PRO HATTRICK No:6" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : STREET PRO HATTRICK No:6</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : No:6 Outdoor kauçuk yüzey, Derin kanal yapısı, Üstün tutuş, Dengeli sekme</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Yüksek aşınma direnci, Sokak ve açık saha kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">680 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Basketbol%20image/STREET%20PRO%20HATTRICK%203..bmp" alt="STREET PRO HATTRICK No:5" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : STREET PRO HATTRICK No:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : No:5 Outdoor kauçuk yüzey, Derin kanal yapısı, Üstün tutuş, Dengeli sekme</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Yüksek aşınma direnci, Sokak ve açık saha kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">680 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Basketbol%20image/BB100%20ALTIS.png" alt="BB100 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : BB100 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : BB100</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">7 Dayanıklı kauçuk yüzey Derin kanal tasarımı Dengeli sekme Yüksek kavrama Aşınmaya dayanıklı İç ve dış saha kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">290 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Basketbol%20image/Helix%20Basketbol%20Topu%20Allstar.bmp" alt="Helix Basketbol Topu Allstar" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Basketbol Topu Allstar No:7</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 7, 580–620 gram ağırlık, Dayanıklı kauçuk malzeme, 12 panel, Kaymaz yüzey, İç ve dış saha.</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">540 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Basketbol</span>
-        <span>20</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">02</div>
-            <div class="cat-titleblock">
-                <h1>BASKETBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 3/4</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Basketbol%20image/C3%20HATTRICK.webp" alt="C3 HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>C3 HATTRICK</span>
+          <p class="kart-aciklama">No:3 Kauçuk yüzey, Derin kanal yapısı, Dengeli sekme, Yüksek tutuş Aşınmaya dayanıklı, İç ve dış saha kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">270 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Basketbol%20image/Helix%20Basketbol%20Topu%20Allstar%206%20NO.bmp" alt="Helix Basketbol Topu Allstar 6 NO" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Basketbol Topu Allstar No:6</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 6 – Genç ve amatör oyuncular için, 530–560 gram ağırlık, Dayanıklı kauçuk malzeme</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">12 panel, Kaymaz yüzey, İç ve dış mekân, 7.5–8.5 psi.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">520 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Basketbol%20image/Helix%20Basketbol%20Topu%20Allstar%205.bmp" alt="Helix Basketbol Topu Allstar 5" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Basketbol Topu Allstar 5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 7 (Yetişkin standart), 580–620 gram ağırlık, Dayanıklı kauçuk malzeme</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">12 panel, İç ve dış mekan, Kaymaz yüzey.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">500 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Basketbol%20image/Helix%20Basketbol%20Topu%20Wizard%20RX8%20%20NO%207.bmp" alt="Helix Basketbol Topu Wizard RX8  NO 7" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Basketbol Topu Wizard RX8 No:7</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Helix Wizard RX8, 7 numara, 600–650 g ağırlık, 12 panel, Outdoor (dış mekân)</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Okul, sokak basketbolu, spor kulübü, antrenman.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">370 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Basketbol%20image/Helix%20Basketbol%20Topu%20Wizard%20RX8%20No%206.bmp" alt="Helix Basketbol Topu Wizard RX8 No 6" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Basketbol Topu Wizard RX8 No:6</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Helix Wizard RX8, 6 numara, 520–560 g ağırlık, 12 panel, Outdoor (dış mekân)</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Okul, sokak basketbolu, spor kulübü, antrenman.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">360 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Basketbol%20image/Helix%20Basketbol%20Topu%20Wizard%20RX8%20No%205.bmp" alt="Helix Basketbol Topu Wizard RX8 No 5" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Basketbol Topu Wizard RX8 No:5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Helix Wizard RX8, 6 numara, 520–560 g ağırlık, 12 panel, Outdoor (dış mekân)</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Okul, sokak basketbolu, spor kulübü, antrenman.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">340 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Basketbol%20image/Helix%20Flash%20Tx100%20Basketbol%20Topu.bmp" alt="Helix Flash Tx100 Basketbol Topu" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Flash Tx100 Basketbol Topu: No: 7</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 7 – Yetişkin erkek oyuncular için resmi standart, 600–650 g – Profesyonel oyun ağırlığı ağırlık, 8 panel – Dengeli zıplama ve gelişmiş kontrol</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kauçuk – Dış mekân kullanımına uygun, dayanıklı yapı malzeme, Outdoor – Her hava koşulunda ve her zeminde kullanılabilir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">330 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Basketbol</span>
-        <span>21</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">02</div>
-            <div class="cat-titleblock">
-                <h1>BASKETBOL</h1>
-                <p>Ürün listesi (devamı) — sayfa 4/4</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Basketbol%20image/ALT700%20ALTIS.png" alt="ALT700 ALTIS" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>ALT700 ALTIS</span>
+          <p class="kart-aciklama">ALT700 7 Dayanıklı kauçuk yüzey Derin kanal tasarımı Dengeli sekme Yüksek kavrama Uzun ömürlü kullanım İç ve dış saha kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">790 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Basketbol%20image/Helix%20Flash%20Tx100%20Basketbol%20Topu.bmp" alt="Helix Flash Tx100 Basketbol Topu" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Flash Tx100 Basketbol Topu: No: 6</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 6 – Kadınlar ve genç oyuncular için uygun, 520–560 g – Dengeli ve kontrol edilebilir ağırlık, 8 panel – Güçlü tutuş ve dengeli top hakimiyeti</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kauçuk – Dış mekân kullanımına uygun dayanıklı yapı malzeme, Outdoor – Her hava koşulunda performans gösterir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">330 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Basketbol%20image/Helix%20Flash%20Tx100%20Basketbol%20Topu.bmp" alt="Helix Flash Tx100 Basketbol Topu" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Flash Tx100 Basketbol Topu: No: 5</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Basketbol Topu Marka /, Helix Flash Tx100 model, 5 numara, 420–450 g ağırlık, 8 panel</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Outdoor (dış mekân), Okul sahaları, sokak basketbolu, antrenman, Turuncu renk.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">330 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Basketbol%20image/Helix%20Basketbol%20Topu%20I%C5%9F%C4%B1kl%C4%B1%20BL-1.bmp" alt="Helix Basketbol Topu Işıklı BL-1" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Basketbol Topu Işıklı BL-1 No:7</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 7 No (Standart Yetişkin Boyutu), 580–620 gram ağırlık, Dayanıklı kauçuk malzeme</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">12 panel, Hareket ve ışık sensörü, İç ve dış mekan.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">970 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Basketbol</span>
-        <span>22</span>
-    </div>
-    </section>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Basketbol%20image/ALT600%20ALTIS.webp" alt="ALT600 ALTIS" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>ALT600 ALTIS</span>
+          <p class="kart-aciklama">No:6 Dayanıklı kauçuk yüzey, Derin kanal tasarımı, Dengeli sekme, Yüksek kavrama Uzun ömürlü kullanım, İç ve dış saha kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">790 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Basketbol%20image/ALT500%20ALTIS.webp" alt="ALT500 ALTIS" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>ALT500 ALTIS</span>
+          <p class="kart-aciklama">No:5 Dayanıklı kauçuk yüzey, Derin kanal tasarımı, Dengeli sekme, Yüksek kavrama Aşınmaya dayanıklı, Antrenman ve okul kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">790 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Basketbol%20image/B3%20ALTIS.webp" alt="B3 ALTIS" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>B3 ALTIS</span>
+          <p class="kart-aciklama">No:3 Dayanıklı kauçuk yüzey, Derin kanal tasarımı, Dengeli sekme, Yüksek kavrama Uzun ömürlü kullanım, İç ve dış saha kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">400 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Basketbol%20image/STREET%20PRO%20HATTRICK.webp" alt="STREET PRO HATTRICK No:7" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>STREET PRO HATTRICK No:7</span>
+          <p class="kart-aciklama">No:7 Outdoor kauçuk yüzey, Derin kanal yapısı, Üstün tutuş, Dengeli sekme Yüksek aşınma direnci, Sokak ve açık saha kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">680 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Basketbol%20image/STREET%20PRO%20HATTRICK%202..webp" alt="STREET PRO HATTRICK No:6" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>STREET PRO HATTRICK No:6</span>
+          <p class="kart-aciklama">No:6 Outdoor kauçuk yüzey, Derin kanal yapısı, Üstün tutuş, Dengeli sekme Yüksek aşınma direnci, Sokak ve açık saha kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">680 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Basketbol%20image/STREET%20PRO%20HATTRICK%203..webp" alt="STREET PRO HATTRICK No:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>STREET PRO HATTRICK No:5</span>
+          <p class="kart-aciklama">No:5 Outdoor kauçuk yüzey, Derin kanal yapısı, Üstün tutuş, Dengeli sekme Yüksek aşınma direnci, Sokak ve açık saha kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">680 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Basketbol%20image/BB100%20ALTIS.png" alt="BB100 ALTIS" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>BB100 ALTIS</span>
+          <p class="kart-aciklama">BB100 7 Dayanıklı kauçuk yüzey Derin kanal tasarımı Dengeli sekme Yüksek kavrama Aşınmaya dayanıklı İç ve dış saha kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">290 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Basketbol%20image/Helix%20Basketbol%20Topu%20Allstar.webp" alt="Helix Basketbol Topu Allstar No:7" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Basketbol Topu Allstar No:7</span>
+          <p class="kart-aciklama">7, 580–620 gram ağırlık, Dayanıklı kauçuk malzeme, 12 panel, Kaymaz yüzey, İç ve dış saha.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">540 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Basketbol%20image/Helix%20Basketbol%20Topu%20Allstar%206%20NO.webp" alt="Helix Basketbol Topu Allstar No:6" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Basketbol Topu Allstar No:6</span>
+          <p class="kart-aciklama">6 – Genç ve amatör oyuncular için, 530–560 gram ağırlık, Dayanıklı kauçuk malzeme 12 panel, Kaymaz yüzey, İç ve dış mekân, 7.5–8.5 psi.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">520 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Basketbol%20image/Helix%20Basketbol%20Topu%20Allstar%205.webp" alt="Helix Basketbol Topu Allstar 5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Basketbol Topu Allstar 5</span>
+          <p class="kart-aciklama">7 (Yetişkin standart), 580–620 gram ağırlık, Dayanıklı kauçuk malzeme 12 panel, İç ve dış mekan, Kaymaz yüzey.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">500 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Basketbol%20image/Helix%20Basketbol%20Topu%20Wizard%20RX8%20%20NO%207.webp" alt="Helix Basketbol Topu Wizard RX8 No:7" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Basketbol Topu Wizard RX8 No:7</span>
+          <p class="kart-aciklama">Helix Wizard RX8, 7 numara, 600–650 g ağırlık, 12 panel, Outdoor (dış mekân) Okul, sokak basketbolu, spor kulübü, antrenman.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">370 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Basketbol%20image/Helix%20Basketbol%20Topu%20Wizard%20RX8%20No%206.webp" alt="Helix Basketbol Topu Wizard RX8 No:6" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Basketbol Topu Wizard RX8 No:6</span>
+          <p class="kart-aciklama">Helix Wizard RX8, 6 numara, 520–560 g ağırlık, 12 panel, Outdoor (dış mekân) Okul, sokak basketbolu, spor kulübü, antrenman.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">360 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Basketbol%20image/Helix%20Basketbol%20Topu%20Wizard%20RX8%20No%205.webp" alt="Helix Basketbol Topu Wizard RX8 No:5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Basketbol Topu Wizard RX8 No:5</span>
+          <p class="kart-aciklama">Helix Wizard RX8, 6 numara, 520–560 g ağırlık, 12 panel, Outdoor (dış mekân) Okul, sokak basketbolu, spor kulübü, antrenman.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">340 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Basketbol%20image/Helix%20Flash%20Tx100%20Basketbol%20Topu.webp" alt="Helix Flash Tx100 Basketbol Topu: No: 7" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Flash Tx100 Basketbol Topu: No: 7</span>
+          <p class="kart-aciklama">7 – Yetişkin erkek oyuncular için resmi standart, 600–650 g – Profesyonel oyun ağırlığı ağırlık, 8 panel – Dengeli zıplama ve gelişmiş kontrol Kauçuk – Dış mekân kullanımına uygun, dayanıklı yapı malzeme, Outdoor – Her hava koşulunda ve her zeminde kullanılabilir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">330 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Basketbol%20image/Helix%20Flash%20Tx100%20Basketbol%20Topu.webp" alt="Helix Flash Tx100 Basketbol Topu: No: 6" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Flash Tx100 Basketbol Topu: No: 6</span>
+          <p class="kart-aciklama">6 – Kadınlar ve genç oyuncular için uygun, 520–560 g – Dengeli ve kontrol edilebilir ağırlık, 8 panel – Güçlü tutuş ve dengeli top hakimiyeti Kauçuk – Dış mekân kullanımına uygun dayanıklı yapı malzeme, Outdoor – Her hava koşulunda performans gösterir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">330 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Basketbol%20image/Helix%20Flash%20Tx100%20Basketbol%20Topu.webp" alt="Helix Flash Tx100 Basketbol Topu: No: 5" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Flash Tx100 Basketbol Topu: No: 5</span>
+          <p class="kart-aciklama">Basketbol Topu Marka /, Helix Flash Tx100 model, 5 numara, 420–450 g ağırlık, 8 panel Outdoor (dış mekân), Okul sahaları, sokak basketbolu, antrenman, Turuncu renk.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">330 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Basketbol%20image/Helix%20Basketbol%20Topu%20I%C5%9F%C4%B1kl%C4%B1%20BL-1.webp" alt="Helix Basketbol Topu Işıklı BL-1 No:7" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Basketbol Topu Işıklı BL-1 No:7</span>
+          <p class="kart-aciklama">7 No (Standart Yetişkin Boyutu), 580–620 gram ağırlık, Dayanıklı kauçuk malzeme 12 panel, Hareket ve ışık sensörü, İç ve dış mekan.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">970 ₺</span></div>
+          </div>
+        </div>
+      </div>
+  </div>
+</main>
 
+<a class="wa-buton" href="https://wa.me/905522025737" target="_blank" rel="noopener" aria-label="WhatsApp'tan yazın">
+  <svg viewBox="0 0 32 32" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M16 3C9 3 3 9 3 16c0 2.4.6 4.6 1.8 6.6L3 29l6.6-1.7c1.9 1 4 1.6 6.4 1.6 7 0 13-6 13-13S23 3 16 3zm7.6 18.4c-.3.9-1.7 1.7-2.7 1.9-.7.1-1.6.2-4.6-1-3.9-1.6-6.4-5.5-6.6-5.8-.2-.3-1.6-2.1-1.6-4s1-2.8 1.3-3.2c.3-.3.7-.4 1-.4h.7c.2 0 .5 0 .8.6.3.7 1.1 2.6 1.2 2.8.1.2.2.4 0 .7-.1.3-.2.4-.4.6-.2.2-.4.5-.6.7-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.6 1.4 1.3 2.6 1.7 3 1.9.3.2.5.1.7-.1.2-.2.9-1 1.1-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.5 1.2.4.2.6.3.7.5.1.2.1 1-.2 1.9z"/></svg>
+</a>
 
-<script>
-function aramaFiltrele(inp){
-  var q=inp.value.toLocaleLowerCase('tr-TR').trim(), gorunen=0;
-  document.querySelectorAll('.product-card').forEach(function(k){
-    var e=k.querySelector('.pf-label');
-    var esles=(e?e.textContent.toLocaleLowerCase('tr-TR'):'').indexOf(q)!==-1;
-    k.style.display=esles?'':'none';
-    if(esles)gorunen++;
-  });
-  document.querySelector('.urun-bulunamadi').hidden=!(q&&gorunen===0);
-}
-</script>
+<footer class="alt-bilgi">
+  <div class="alt-bilgi-ic">
+    <strong>ÖZTEN SPOR</strong>
+    Kirazlı Mahallesi 1201. Sokak, Bağcılar / İstanbul<br>
+    <a href="mailto:oztensporltd@gmail.com">oztensporltd@gmail.com</a>
+  </div>
+</footer>
+
+<nav class="alt-cubuk">
+  <a class="alt-btn" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+    Ana Sayfa
+  </a>
+  <button type="button" class="alt-btn" id="altAra">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    Ara
+  </button>
+  <button type="button" class="alt-btn" id="altKategori">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    Kategoriler
+  </button>
+  <button type="button" class="alt-btn" id="altSepet">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M6 6 5 3H3"/></svg>
+    Sepet
+    <span class="alt-rozet" id="altSepetSayi" hidden>0</span>
+  </button>
+</nav>
+
 </body>
 </html>

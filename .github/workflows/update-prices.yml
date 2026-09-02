@@ -1,0 +1,48 @@
+name: Fiyatları güncelle
+
+# fiyatlar.csv değiştiğinde HTML sayfalarındaki fiyatları otomatik günceller.
+# scripts/update_html_from_csv.py'nin ürettiği değişiklikleri geri commit'ler.
+
+on:
+  push:
+    paths:
+      - "katalog css düzen/fiyatlar.csv"
+
+permissions:
+  contents: write
+
+jobs:
+  update-prices:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Fiyatları HTML'e uygula
+        id: update
+        continue-on-error: true
+        run: python3 scripts/update_html_from_csv.py
+
+      - name: Değişiklikleri commit'le
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "katalog css düzen"/*.html
+          if git diff --cached --quiet; then
+            echo "Değişen fiyat yok."
+          else
+            git commit -m "Fiyatları fiyatlar.csv'den güncelle [skip ci]"
+            git push
+          fi
+
+      # Eşleşmeyen satır varsa (typo vb.) iş burada başarısız işaretlenir —
+      # eşleşen fiyatlar yine de bir önceki adımda commit'lenmiş olur.
+      - name: Eşleşmeyen satır kontrolü
+        if: steps.update.outcome == 'failure'
+        run: |
+          echo "fiyatlar.csv'de HTML ile eşleşmeyen satır(lar) var, yukarıdaki loga bakın."
+          exit 1

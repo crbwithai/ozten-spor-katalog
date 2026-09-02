@@ -3,216 +3,293 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TENİS TOPLARI — Özten Spor Kataloğu</title>
-<link rel="stylesheet" href="Ozten Spor Katalog.css">
+<title>TENİS — Özten Spor Kataloğu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ozten-yeni.css">
 <script src="sepet.js" defer></script>
+<script src="site.js" defer></script>
 </head>
-<body id="top">
-<div class="floating-nav-group">
-    <a href="#top" class="floating-nav-btn"><span class="fn-arrow">&#8593;</span> Yukarı Çık</a>
-</div>
-<div class="kategori-gecis-buton-sarici">
-    <a href="tenis.html#top" class="floating-nav-btn"><span class="fn-arrow">&#8592;</span> Tenis'e Dön</a>
-</div>
-<div class="katalog-arama"><input type="text" placeholder="Ürün ara..." oninput="aramaFiltrele(this)"></div>
+<body>
 
-<p class="urun-bulunamadi" hidden>Ürün bulunamadı.</p>
-<section class="page cat-page" id="kategori-tenis-toplari">
-        <div class="cat-header">
-            <div class="cat-num">06</div>
-            <div class="cat-titleblock">
-                <h1>TENİS TOPLARI</h1>
-                <p>ITF onaylı ve antrenman amaçlı tenis topları.</p>
-            </div>
+<header class="ust-cubuk">
+  <a class="marka" href="index.html">ÖZTEN<span>SPOR</span></a>
+  <div class="ust-arama">
+    <span class="arama-ikon">&#9906;</span>
+    <input type="text" id="aramaKutusu" placeholder="Ürün ara" autocomplete="off" oninput="aramaFiltrele(this)">
+  </div>
+  <div class="ust-butonlar">
+    <button type="button" class="ust-btn" id="kategoriAc">Kategoriler &#9662;</button>
+    <button type="button" class="ust-btn" id="sepetAc">Sepetim <span class="ust-rozet" id="ustSepetSayi">0</span></button>
+  </div>
+</header>
+
+<nav class="kategori-panel" id="kategoriPanel" hidden>
+  <div class="kategori-panel-baslik">TÜM KATEGORİLER</div>
+  <div class="kategori-izgara">
+        <a class="kategori-link" href="futbol.html">FUTBOL</a>
+        <a class="kategori-link" href="basketbol.html">BASKETBOL</a>
+        <a class="kategori-link" href="voleybol.html">VOLEYBOL</a>
+        <a class="kategori-link" href="badminton.html">BADMINTON</a>
+        <a class="kategori-link" href="masa-tenisi.html">MASA TENİSİ</a>
+        <a class="kategori-link aktif" href="tenis.html">TENİS</a>
+        <a class="kategori-link" href="atlama-ipi.html">ATLAMA İPİ</a>
+        <a class="kategori-link" href="el-yayi.html">EL YAYI</a>
+        <a class="kategori-link" href="yoga-pilates.html">YOGA PİLATES</a>
+        <a class="kategori-link" href="fitness.html">FITNESS</a>
+        <a class="kategori-link" href="egzersiz.html">EGZERSİZ</a>
+        <a class="kategori-link" href="hentbol.html">HENTBOL</a>
+        <a class="kategori-link" href="yuzme.html">YÜZME</a>
+        <a class="kategori-link" href="bocce.html">BOCCE</a>
+        <a class="kategori-link" href="hokey.html">HOKEY</a>
+        <a class="kategori-link" href="kano.html">KANO</a>
+        <a class="kategori-link" href="beyzbol.html">BEYZBOL</a>
+        <a class="kategori-link" href="paten.html">PATEN</a>
+        <a class="kategori-link" href="oryantiring.html">ORYANTİRİNG</a>
+        <a class="kategori-link" href="padel.html">PADEL</a>
+        <a class="kategori-link" href="pickleball.html">PICKLEBALL</a>
+        <a class="kategori-link" href="ragbi.html">RAGBİ</a>
+        <a class="kategori-link" href="satranc.html">SATRANÇ</a>
+        <a class="kategori-link" href="softball.html">SOFTBALL</a>
+        <a class="kategori-link" href="squash.html">SQUASH</a>
+        <a class="kategori-link" href="dart.html">DART</a>
+        <a class="kategori-link" href="atletizm.html">ATLETİZM</a>
+        <a class="kategori-link" href="cimnastik.html">CİMNASTİK</a>
+        <a class="kategori-link" href="saglik-toplari.html">SAĞLIK TOPLARI</a>
+        <a class="kategori-link" href="su-topu.html">SU TOPU</a>
+        <a class="kategori-link" href="oyun-grubu.html">OYUN GRUBU</a>
+        <a class="kategori-link" href="dovus-sporlari.html">DÖVÜŞ SPORLARI</a>
+  </div>
+</nav>
+
+<section class="kat-basi">
+  <div class="kat-basi-ic">
+    <div class="kat-etiket">KATEGORİ 06</div>
+    <h1>TENİS</h1>
+    <p class="kat-aciklama">Kort performansını artıran tenis raketleri.</p>
+    <span class="kat-sayac">17 ürün</span>
+  </div>
+</section>
+
+<nav class="alt-kat-serit" aria-label="Alt kategoriler">
+  <div class="alt-kat-ic">
+      <a class="alt-kat-cip" href="tenis.html">Raketler</a>
+      <a class="alt-kat-cip aktif" href="tenis-toplari.html">Tenis Topları</a>
+      <a class="alt-kat-cip" href="tenis-fileleri.html">Tenis Fileleri</a>
+      <a class="alt-kat-cip" href="tenis-sort-ve-etekleri.html">Tenis Şort ve Etekleri</a>
+      <a class="alt-kat-cip" href="tenis-overgrip-sac-bandi-bileklikler.html">Overgrip, Saç Bandı ve Bileklikler</a>
+      <a class="alt-kat-cip" href="tenis-malzemeleri.html">Tenis Malzemeleri</a>
+  </div>
+</nav>
+
+<main class="icerik">
+  <p class="urun-bulunamadi" hidden>Aramanla eşleşen ürün bulunamadı.</p>
+  <div class="product-grid">
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Tenis%20image/TP400%20ALTIS.webp" alt="TP400 ALTIS" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>TP400 ALTIS</span>
+          <p class="kart-aciklama"></p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">150 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Tenis%20image/TP400%20ALTIS.bmp" alt="TP400 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : TP400 ALTIS</span></div>
-        <div class="pf"><span class="pf-label">Açıklama</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Teknik Özellikler</span><span class="pf-line"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">150 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Tenis%20image/TP450%20ALTIS.bmp" alt="TP450 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : TP450 ALTIS</span></div>
-        <div class="pf"><span class="pf-label">Açıklama</span><span class="pf-line"></span></div>
-        <div class="pf"><span class="pf-label">Teknik Özellikler</span><span class="pf-line"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">150 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Tenis%20image/TP300%20HATTRICK.bmp" alt="TP300 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : TP300 HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : </span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">220 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Tenis%20image/TP600%20HATTRICK.bmp" alt="TP600 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : TP600 HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : </span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">220 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Tenis%20image/TP650%20HATTRICK.bmp" alt="TP650 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : TP650 HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : </span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">230 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Tenis%20image/TP100PRO%20HATTRICK.bmp" alt="TP100PRO HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : TP100PRO HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : </span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">400 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Tenis Topları</span>
-        <span>1</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">06</div>
-            <div class="cat-titleblock">
-                <h1>TENİS TOPLARI</h1>
-                <p>Ürün listesi (devamı) — sayfa 2/3</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Tenis%20image/TP450%20ALTIS.webp" alt="TP450 ALTIS" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>TP450 ALTIS</span>
+          <p class="kart-aciklama"></p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">150 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Tenis%20image/TP200%20ALTIS.bmp" alt="TP200 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : TP200 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : </span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">400 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Topu%20Elastik%20%C4%B0pli%20STB-10.bmp" alt="Helix Tenis Topu Elastik İpli STB-10" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Tenis Topu Elastik İpli STB- 10</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Top ağırlığı 58 gram (± 2 gram) ağırlığındadır. Topun çapı 60-65 milimetredir, Topa bağlı olan elastik ipin uzunluğu 350 santimetredir</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Elastik ipin kalınlığı 2 milimetredir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">170 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Topu%20Profesyonel%203'l%C3%BC%20TN-100%20Antrenman.bmp" alt="Helix Tenis Topu Profesyonel 3'lü TN-100 Antrenman" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Tenis Topu Profesyonel 3&#x27;lü TN-100 Antrenman</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : %45 yün, %10 pamuk, %45 naylon – Dayanıklı uzun ömürlü yapı malzeme, 56,0 - 59,4 gram</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">65,4 - 68,6 mm çap, 0.220 - 0.290 inç Sekme (20°C&#x27;de): 135 - 145 cm.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">200 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Topu%20Profesyonel%203'l%C3%BC%20TN-1000%20M%C3%BCsabaka%20TTF%26ITF%20Onayl%C4%B1.bmp" alt="Helix Tenis Topu Profesyonel 3'lü TN-1000 Müsabaka TTF&amp;ITF Onaylı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Tenis Topu Profesyonel 3&#x27;lü TN-1000 Müsabaka TTF&amp;ITF Onaylı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 56,5 - 58,5 gram, 65,5 - 67,5 mm çap, 0.220 - 0.260 inç Sekme (20°C): 140 - 145 cm</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Çim, toprak ve sert kortlar için uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">220 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Topu%20Profesyonel%2036'l%C4%B1%20Antrenman%20ITF%20Onayl%C4%B1.bmp" alt="Helix Tenis Topu Profesyonel 36'lı Antrenman ITF Onaylı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Tenis Topu Profesyonel 36&#x27;lı Antrenman ITF Onaylı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : %45 Yün, %10 Pamuk, %45 malzeme, 56,0 - 59,4 gram, 65,4 - 68,6 mm çap</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">0.220 - 0.290 inç, 135 - 145 cm (20°C&#x27;de ölçülmüştür).</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">2.440 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Topu%209%2B%20ya%C5%9F%203'l%C3%BC%20HT-100%20Ye%C5%9Fil%20TTF%26ITF%20Onayl%C4%B1.bmp" alt="Helix Tenis Topu 9+ yaş 3'lü HT-100 Yeşil TTF&amp;ITF Onaylı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Tenis Topu 9+ yaş 3&#x27;lü HT- 100 Yeşil TTF&amp;ITF Onaylı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Uluslararası Tenis Federasyonu (ITF) tarafından onaylı, 47.0 – 51.5 gram (basınçlı) ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">63.0 – 68.6 mm çap, 0.315 – 0.413 inç Sekme Yüksekliği (20°C): 120 – 135 cm.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">200 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Tenis Topları</span>
-        <span>2</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">06</div>
-            <div class="cat-titleblock">
-                <h1>TENİS TOPLARI</h1>
-                <p>Ürün listesi (devamı) — sayfa 3/3</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Tenis%20image/TP300%20HATTRICK.webp" alt="TP300 HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>TP300 HATTRICK</span>
+          <p class="kart-aciklama"></p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">220 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Topu%209%2B%20ya%C5%9F%2036'l%C4%B1%20HT-600%20ITF%20Onayl%C4%B1.bmp" alt="Helix Tenis Topu 9+ yaş 36'lı HT-600 ITF Onaylı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Tenis Topu 9+ yaş 36&#x27;lı HT- 600 ITF Onaylı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Uluslararası Tenis Federasyonu (ITF) onaylı, 47.0 – 51.5 gram (basınçlı) ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">63.0 – 68.6 mm çap, 0.315 – 0.413 inç Sekme Yüksekliği (20°C): 120 – 135 cm.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.940 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Topu%208%2B%20ya%C5%9F%203'l%C3%BC%20HT-200%20TTF%26ITF%20Onayl%C4%B1.bmp" alt="Helix Tenis Topu 8+ yaş 3'lü HT-200 TTF&amp;ITF Onaylı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Tenis Topu 8+ yaş 3&#x27;lü HT- 200 TTF&amp;ITF Onaylı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 36,0 – 46,9 gram (basınçlı) ağırlık, 60,0 – 68,6 mm çap, 0,551 – 0,650 inç Sekme (20°C): 105 – 120 cm</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">8 yaş ve üzeri çocuklar.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">200 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Topu%208%2B%20ya%C5%9F%2036'l%C4%B1%20HT-700%20ITF%20Onayl%C4%B1.bmp" alt="Helix Tenis Topu 8+ yaş 36'lı HT-700 ITF Onaylı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Tenis Topu 8+ yaş 36&#x27;lı HT- 700 ITF Onaylı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 36,0 – 46,9 gram ağırlık, 60,0 – 68,6 mm çap, 0,551 – 0,650 inç</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">36 adet tenis topu, 8 yaş ve üzeri çocuklar için.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.940 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Topu%204-7%20ya%C5%9F%203'l%C3%BC%20HT-300%20TTF%26ITF%20Onayl%C4%B1.bmp" alt="Helix Tenis Topu 4-7 yaş 3'lü HT-300 TTF&amp;ITF Onaylı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Tenis Topu 4-7 yaş 3&#x27;lü HT- 300 TTF&amp;ITF Onaylı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Uluslararası Tenis Federasyonu standartlarına uygundur, 36,0 – 49,0 gram (düşük basınçlı) ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">70,0 – 80,0 mm Sekme (20°C): 90 – 105 cm çap, 4 – 7 yaş.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">200 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Topu%204-7%20ya%C5%9F%2036'l%C4%B1%20HT-800%20ITF%20Onayl%C4%B1.bmp" alt="Helix Tenis Topu 4-7 yaş 36'lı HT-800 ITF Onaylı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Tenis Topu 4-7 yaş 36&#x27;lı HT- 800 ITF Onaylı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Uluslararası Tenis Federasyonu tarafından onaylıdır, 36,0 – 49,0 gram (düşük basınçlı) ağırlık</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">70,0 – 80,0 mm çap, 90 – 105 cm (20°C ortam sıcaklığında), 36 adet çocuk tenis topu.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.940 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Tenis Topları</span>
-        <span>3</span>
-    </div>
-    </section>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Tenis%20image/TP600%20HATTRICK.webp" alt="TP600 HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>TP600 HATTRICK</span>
+          <p class="kart-aciklama"></p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">220 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Tenis%20image/TP650%20HATTRICK.webp" alt="TP650 HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>TP650 HATTRICK</span>
+          <p class="kart-aciklama"></p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">230 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Tenis%20image/TP100PRO%20HATTRICK.webp" alt="TP100PRO HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>TP100PRO HATTRICK</span>
+          <p class="kart-aciklama"></p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">400 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Tenis%20image/TP200%20ALTIS.webp" alt="TP200 ALTIS" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>TP200 ALTIS</span>
+          <p class="kart-aciklama"></p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">400 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Topu%20Elastik%20%C4%B0pli%20STB-10.webp" alt="Helix Tenis Topu Elastik İpli STB- 10" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Tenis Topu Elastik İpli STB- 10</span>
+          <p class="kart-aciklama">Top ağırlığı 58 gram (± 2 gram) ağırlığındadır. Topun çapı 60-65 milimetredir, Topa bağlı olan elastik ipin uzunluğu 350 santimetredir Elastik ipin kalınlığı 2 milimetredir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">170 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Topu%20Profesyonel%203'l%C3%BC%20TN-100%20Antrenman.webp" alt="Helix Tenis Topu Profesyonel 3&amp;#x27;lü TN-100 Antrenman" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Tenis Topu Profesyonel 3&#x27;lü TN-100 Antrenman</span>
+          <p class="kart-aciklama">%45 yün, %10 pamuk, %45 naylon – Dayanıklı uzun ömürlü yapı malzeme, 56,0 - 59,4 gram 65,4 - 68,6 mm çap, 0.220 - 0.290 inç Sekme (20°C&#x27;de): 135 - 145 cm.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">200 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Topu%20Profesyonel%203'l%C3%BC%20TN-1000%20M%C3%BCsabaka%20TTF%26ITF%20Onayl%C4%B1.webp" alt="Helix Tenis Topu Profesyonel 3&amp;#x27;lü TN-1000 Müsabaka TTF&amp;amp;ITF Onaylı" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Tenis Topu Profesyonel 3&#x27;lü TN-1000 Müsabaka TTF&amp;ITF Onaylı</span>
+          <p class="kart-aciklama">56,5 - 58,5 gram, 65,5 - 67,5 mm çap, 0.220 - 0.260 inç Sekme (20°C): 140 - 145 cm Çim, toprak ve sert kortlar için uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">220 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Topu%20Profesyonel%2036'l%C4%B1%20Antrenman%20ITF%20Onayl%C4%B1.webp" alt="Helix Tenis Topu Profesyonel 36&amp;#x27;lı Antrenman ITF Onaylı" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Tenis Topu Profesyonel 36&#x27;lı Antrenman ITF Onaylı</span>
+          <p class="kart-aciklama">%45 Yün, %10 Pamuk, %45 malzeme, 56,0 - 59,4 gram, 65,4 - 68,6 mm çap 0.220 - 0.290 inç, 135 - 145 cm (20°C&#x27;de ölçülmüştür).</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">2.440 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Topu%209%2B%20ya%C5%9F%203'l%C3%BC%20HT-100%20Ye%C5%9Fil%20TTF%26ITF%20Onayl%C4%B1.webp" alt="Helix Tenis Topu 9+ yaş 3&amp;#x27;lü HT- 100 Yeşil TTF&amp;amp;ITF Onaylı" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Tenis Topu 9+ yaş 3&#x27;lü HT- 100 Yeşil TTF&amp;ITF Onaylı</span>
+          <p class="kart-aciklama">Uluslararası Tenis Federasyonu (ITF) tarafından onaylı, 47.0 – 51.5 gram (basınçlı) ağırlık 63.0 – 68.6 mm çap, 0.315 – 0.413 inç Sekme Yüksekliği (20°C): 120 – 135 cm.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">200 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Topu%209%2B%20ya%C5%9F%2036'l%C4%B1%20HT-600%20ITF%20Onayl%C4%B1.webp" alt="Helix Tenis Topu 9+ yaş 36&amp;#x27;lı HT- 600 ITF Onaylı" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Tenis Topu 9+ yaş 36&#x27;lı HT- 600 ITF Onaylı</span>
+          <p class="kart-aciklama">Uluslararası Tenis Federasyonu (ITF) onaylı, 47.0 – 51.5 gram (basınçlı) ağırlık 63.0 – 68.6 mm çap, 0.315 – 0.413 inç Sekme Yüksekliği (20°C): 120 – 135 cm.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.940 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Topu%208%2B%20ya%C5%9F%203'l%C3%BC%20HT-200%20TTF%26ITF%20Onayl%C4%B1.webp" alt="Helix Tenis Topu 8+ yaş 3&amp;#x27;lü HT- 200 TTF&amp;amp;ITF Onaylı" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Tenis Topu 8+ yaş 3&#x27;lü HT- 200 TTF&amp;ITF Onaylı</span>
+          <p class="kart-aciklama">36,0 – 46,9 gram (basınçlı) ağırlık, 60,0 – 68,6 mm çap, 0,551 – 0,650 inç Sekme (20°C): 105 – 120 cm 8 yaş ve üzeri çocuklar.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">200 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Topu%208%2B%20ya%C5%9F%2036'l%C4%B1%20HT-700%20ITF%20Onayl%C4%B1.webp" alt="Helix Tenis Topu 8+ yaş 36&amp;#x27;lı HT- 700 ITF Onaylı" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Tenis Topu 8+ yaş 36&#x27;lı HT- 700 ITF Onaylı</span>
+          <p class="kart-aciklama">36,0 – 46,9 gram ağırlık, 60,0 – 68,6 mm çap, 0,551 – 0,650 inç 36 adet tenis topu, 8 yaş ve üzeri çocuklar için.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.940 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Topu%204-7%20ya%C5%9F%203'l%C3%BC%20HT-300%20TTF%26ITF%20Onayl%C4%B1.webp" alt="Helix Tenis Topu 4-7 yaş 3&amp;#x27;lü HT- 300 TTF&amp;amp;ITF Onaylı" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Tenis Topu 4-7 yaş 3&#x27;lü HT- 300 TTF&amp;ITF Onaylı</span>
+          <p class="kart-aciklama">Uluslararası Tenis Federasyonu standartlarına uygundur, 36,0 – 49,0 gram (düşük basınçlı) ağırlık 70,0 – 80,0 mm Sekme (20°C): 90 – 105 cm çap, 4 – 7 yaş.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">200 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Tenis%20image/Helix%20Tenis%20Topu%204-7%20ya%C5%9F%2036'l%C4%B1%20HT-800%20ITF%20Onayl%C4%B1.webp" alt="Helix Tenis Topu 4-7 yaş 36&amp;#x27;lı HT- 800 ITF Onaylı" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Tenis Topu 4-7 yaş 36&#x27;lı HT- 800 ITF Onaylı</span>
+          <p class="kart-aciklama">Uluslararası Tenis Federasyonu tarafından onaylıdır, 36,0 – 49,0 gram (düşük basınçlı) ağırlık 70,0 – 80,0 mm çap, 90 – 105 cm (20°C ortam sıcaklığında), 36 adet çocuk tenis topu.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.940 ₺</span></div>
+          </div>
+        </div>
+      </div>
+  </div>
+</main>
 
+<a class="wa-buton" href="https://wa.me/905522025737" target="_blank" rel="noopener" aria-label="WhatsApp'tan yazın">
+  <svg viewBox="0 0 32 32" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M16 3C9 3 3 9 3 16c0 2.4.6 4.6 1.8 6.6L3 29l6.6-1.7c1.9 1 4 1.6 6.4 1.6 7 0 13-6 13-13S23 3 16 3zm7.6 18.4c-.3.9-1.7 1.7-2.7 1.9-.7.1-1.6.2-4.6-1-3.9-1.6-6.4-5.5-6.6-5.8-.2-.3-1.6-2.1-1.6-4s1-2.8 1.3-3.2c.3-.3.7-.4 1-.4h.7c.2 0 .5 0 .8.6.3.7 1.1 2.6 1.2 2.8.1.2.2.4 0 .7-.1.3-.2.4-.4.6-.2.2-.4.5-.6.7-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.6 1.4 1.3 2.6 1.7 3 1.9.3.2.5.1.7-.1.2-.2.9-1 1.1-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.5 1.2.4.2.6.3.7.5.1.2.1 1-.2 1.9z"/></svg>
+</a>
 
-<script>
-function aramaFiltrele(inp){
-  var q=inp.value.toLocaleLowerCase('tr-TR').trim(), gorunen=0;
-  document.querySelectorAll('.product-card').forEach(function(k){
-    var e=k.querySelector('.pf-label');
-    var esles=(e?e.textContent.toLocaleLowerCase('tr-TR'):'').indexOf(q)!==-1;
-    k.style.display=esles?'':'none';
-    if(esles)gorunen++;
-  });
-  document.querySelector('.urun-bulunamadi').hidden=!(q&&gorunen===0);
-}
-</script>
+<footer class="alt-bilgi">
+  <div class="alt-bilgi-ic">
+    <strong>ÖZTEN SPOR</strong>
+    Kirazlı Mahallesi 1201. Sokak, Bağcılar / İstanbul<br>
+    <a href="mailto:oztensporltd@gmail.com">oztensporltd@gmail.com</a>
+  </div>
+</footer>
+
+<nav class="alt-cubuk">
+  <a class="alt-btn" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+    Ana Sayfa
+  </a>
+  <button type="button" class="alt-btn" id="altAra">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    Ara
+  </button>
+  <button type="button" class="alt-btn" id="altKategori">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    Kategoriler
+  </button>
+  <button type="button" class="alt-btn" id="altSepet">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M6 6 5 3H3"/></svg>
+    Sepet
+    <span class="alt-rozet" id="altSepetSayi" hidden>0</span>
+  </button>
+</nav>
+
 </body>
 </html>

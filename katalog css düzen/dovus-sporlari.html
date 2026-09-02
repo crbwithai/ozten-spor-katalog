@@ -4,462 +4,481 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DÖVÜŞ SPORLARI — Özten Spor Kataloğu</title>
-<link rel="stylesheet" href="Ozten Spor Katalog.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ozten-yeni.css">
 <script src="sepet.js" defer></script>
+<script src="site.js" defer></script>
 </head>
-<body id="top">
-<div class="floating-nav-group">
-    <a href="#top" class="floating-nav-btn"><span class="fn-arrow">&#8593;</span> Yukarı Çık</a>
-</div>
-<div class="katalog-arama"><input type="text" placeholder="Ürün ara..." oninput="aramaFiltrele(this)"></div>
-<div class="kategori-menu-cubugu">
-    <button type="button" class="kategori-menu-buton">Alt Kategoriler <span class="fn-arrow">&#9662;</span></button>
-    <div class="kategori-menu-panel" hidden>
-    </div>
-    <a href="index.html#top" class="ana-katalog-buton">Ana Kataloğa Dön</a>
-</div>
+<body>
 
-<p class="urun-bulunamadi" hidden>Ürün bulunamadı.</p>
-<section class="page cat-page" id="kategori-dovus-sporlari">
-        <div class="cat-header">
-            <div class="cat-num">32</div>
-            <div class="cat-titleblock">
-                <h1>DÖVÜŞ SPORLARI</h1>
-                <p>Dövüş sporları ekipmanları.</p>
-            </div>
+<header class="ust-cubuk">
+  <a class="marka" href="index.html">ÖZTEN<span>SPOR</span></a>
+  <div class="ust-arama">
+    <span class="arama-ikon">&#9906;</span>
+    <input type="text" id="aramaKutusu" placeholder="Ürün ara" autocomplete="off" oninput="aramaFiltrele(this)">
+  </div>
+  <div class="ust-butonlar">
+    <button type="button" class="ust-btn" id="kategoriAc">Kategoriler &#9662;</button>
+    <button type="button" class="ust-btn" id="sepetAc">Sepetim <span class="ust-rozet" id="ustSepetSayi">0</span></button>
+  </div>
+</header>
+
+<nav class="kategori-panel" id="kategoriPanel" hidden>
+  <div class="kategori-panel-baslik">TÜM KATEGORİLER</div>
+  <div class="kategori-izgara">
+        <a class="kategori-link" href="futbol.html">FUTBOL</a>
+        <a class="kategori-link" href="basketbol.html">BASKETBOL</a>
+        <a class="kategori-link" href="voleybol.html">VOLEYBOL</a>
+        <a class="kategori-link" href="badminton.html">BADMINTON</a>
+        <a class="kategori-link" href="masa-tenisi.html">MASA TENİSİ</a>
+        <a class="kategori-link" href="tenis.html">TENİS</a>
+        <a class="kategori-link" href="atlama-ipi.html">ATLAMA İPİ</a>
+        <a class="kategori-link" href="el-yayi.html">EL YAYI</a>
+        <a class="kategori-link" href="yoga-pilates.html">YOGA PİLATES</a>
+        <a class="kategori-link" href="fitness.html">FITNESS</a>
+        <a class="kategori-link" href="egzersiz.html">EGZERSİZ</a>
+        <a class="kategori-link" href="hentbol.html">HENTBOL</a>
+        <a class="kategori-link" href="yuzme.html">YÜZME</a>
+        <a class="kategori-link" href="bocce.html">BOCCE</a>
+        <a class="kategori-link" href="hokey.html">HOKEY</a>
+        <a class="kategori-link" href="kano.html">KANO</a>
+        <a class="kategori-link" href="beyzbol.html">BEYZBOL</a>
+        <a class="kategori-link" href="paten.html">PATEN</a>
+        <a class="kategori-link" href="oryantiring.html">ORYANTİRİNG</a>
+        <a class="kategori-link" href="padel.html">PADEL</a>
+        <a class="kategori-link" href="pickleball.html">PICKLEBALL</a>
+        <a class="kategori-link" href="ragbi.html">RAGBİ</a>
+        <a class="kategori-link" href="satranc.html">SATRANÇ</a>
+        <a class="kategori-link" href="softball.html">SOFTBALL</a>
+        <a class="kategori-link" href="squash.html">SQUASH</a>
+        <a class="kategori-link" href="dart.html">DART</a>
+        <a class="kategori-link" href="atletizm.html">ATLETİZM</a>
+        <a class="kategori-link" href="cimnastik.html">CİMNASTİK</a>
+        <a class="kategori-link" href="saglik-toplari.html">SAĞLIK TOPLARI</a>
+        <a class="kategori-link" href="su-topu.html">SU TOPU</a>
+        <a class="kategori-link" href="oyun-grubu.html">OYUN GRUBU</a>
+        <a class="kategori-link aktif" href="dovus-sporlari.html">DÖVÜŞ SPORLARI</a>
+  </div>
+</nav>
+
+<section class="kat-basi">
+  <div class="kat-basi-ic">
+    <div class="kat-etiket">KATEGORİ 32</div>
+    <h1>DÖVÜŞ SPORLARI</h1>
+    <p class="kat-aciklama">Dövüş sporları ekipmanları.</p>
+    <span class="kat-sayac">37 ürün</span>
+  </div>
+</section>
+
+<main class="icerik">
+  <p class="urun-bulunamadi" hidden>Aramanla eşleşen ürün bulunamadı.</p>
+  <div class="product-grid">
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/BBS10%20HATTRICK.webp" alt="BBS10 HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>BBS10 HATTRICK</span>
+          <p class="kart-aciklama">PU deri dış yüzey, Çok yoğunluklu köpük dolgu, El üstü ve parmak koruması Terlemeyi önleyen iç astar, Boks antrenmanları için idealdir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">190 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/BBS10%20HATTRICK.bmp" alt="BBS10 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : BBS10 HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : PU deri dış yüzey, Çok yoğunluklu köpük dolgu, El üstü ve parmak koruması</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Terlemeyi önleyen iç astar, Boks antrenmanları için idealdir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">190 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/CHAMPION%20HATTRICK.bmp" alt="CHAMPION HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : CHAMPION HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : PU deri dış yüzey, Çok yoğunluklu köpük dolgu, El üstü ve parmak koruması</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Terlemeyi önleyen iç astar, Boks antrenmanları için idealdir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.310 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/INVICTUS%20KING%20HATTRICK%201.bmp" alt="INVICTUS KING HATTRICK 1" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : INVICTUS KING HATTRICK 1</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : PU deri dış yüzey, Çok yoğunluklu köpük dolgu, El üstü ve parmak koruması</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Terlemeyi önleyen iç astar, Boks antrenmanları için idealdir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">11.310 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/INVICTUS%20KING%20HATTRICK.bmp" alt="INVICTUS KING HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : INVICTUS KING HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : PU deri dış yüzey, Çok yoğunluklu köpük dolgu, El üstü ve parmak koruması</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Terlemeyi önleyen iç astar, Boks antrenmanları için idealdir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">11.310 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Antrenman%20Mankeni%20TRM-10%20Mavi.bmp" alt="Raptor Antrenman Mankeni TRM-10 Mavi" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Antrenman Mankeni TRM-10 Mavi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Ayarlanabilir yükseklik, Geniş kaide, Darbe emici yapı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Yumruk, tekme, dirsek ve diz teknikleri için gerçekçi hedef sağlar, Bireysel ve salon kullanımına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">21.900 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Antrenman%20Mankeni%20TRM-20%20K%C4%B1rm%C4%B1z%C4%B1.bmp" alt="Raptor Antrenman Mankeni TRM-20 Kırmızı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Antrenman Mankeni TRM-20 Kırmızı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Ayarlanabilir yükseklik, Geniş kaide, Darbe emici yapı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Yumruk, tekme, dirsek ve diz teknikleri için gerçekçi hedef sağlar, İleri seviye antrenman performansına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">21.900 ₺</span></div>
-    </div>
-</div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Dövüş sporlari</span>
-        <span>1</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">32</div>
-            <div class="cat-titleblock">
-                <h1>DÖVÜŞ SPORLARI</h1>
-                <p>Ürün listesi (devamı) — sayfa 2/6</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/CHAMPION%20HATTRICK.webp" alt="CHAMPION HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>CHAMPION HATTRICK</span>
+          <p class="kart-aciklama">PU deri dış yüzey, Çok yoğunluklu köpük dolgu, El üstü ve parmak koruması Terlemeyi önleyen iç astar, Boks antrenmanları için idealdir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.310 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Antrenman%20Mankeni%20TRM-30%20K%C4%B1rm%C4%B1z%C4%B1.bmp" alt="Raptor Antrenman Mankeni TRM-30 Kırmızı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Antrenman Mankeni TRM-30 Kırmızı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Sabit ve dengeli yapı, Darbe emici dolgu</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Boks, kickboks ve MMA antrenmanları için tasarlanmıştır.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">17.300 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Antrenman%20Mankeni%20TRM-40%20Mavi.bmp" alt="Raptor Antrenman Mankeni TRM-40 Mavi" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Antrenman Mankeni TRM-40 Mavi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Sabit ve dengeli yapı, Darbe emici dolgu</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Boks, kickboks ve MMA antrenmanları için tasarlanmıştır.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">17.300 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Ayak%20%C3%9Cst%C3%BC%20Korumas%C4%B1%20Teakwondo%20-%20RPL.bmp" alt="Raptor Ayak Üstü Koruması Teakwondo - RPL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Ayak Üstü Koruması Teakwondo - RPL</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Dayanıklı bez/suni deri malzeme, Ayak üstü ve bilek koruma tasarımı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Tekvando müsabaka ve antrenmanlarında darbe etkisini azaltır, Resmi organizasyonlarda kullanıma uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">600 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20A%C3%A7%C4%B1k%20Kask%20Kickboks%20Kafa%20Koruyucu%20HG%20K%C4%B1rm%C4%B1z%C4%B1.bmp" alt="Raptor Açık Kask Kickboks Kafa Koruyucu HG Kırmızı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Açık Kask Kickboks Kafa Koruyucu HG Kırmızı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Sentetik deri dış yüzey, Orta sertlik Polyeva dolgu, Açık yüz tasarımı (geniş görüş açısı)</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kickboks, Muay Thai, Wushu Sanda ve boks antrenman/amatör müsabakalarına uygundur, S/M/L beden seçenekleri mevcuttur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.290 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20A%C3%A7%C4%B1k%20Kask%20NVL%20-%20Beyaz.bmp" alt="Raptor Açık Kask NVL - Beyaz" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Açık Kask NVL - Beyaz</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Sentetik deri dış yüzey, Orta sertlik Polyeva dolgu, Açık yüz tasarımı (geniş görüş açısı)</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kickboks, Muay Thai, Wushu Sanda ve boks antrenman/amatör müsabakalarına uygundur, S/M/L beden seçenekleri mevcuttur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.400 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Boks%20Bandaj%C4%B1%20HWB-B%203.5m%20Siyah.bmp" alt="Raptor Boks Bandajı HWB-B 3.5m Siyah" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Boks Bandajı HWB-B 3.5m Siyah</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Naylon-pamuk karışımı esnek kumaş, 3,5 m uzunluk, 5 cm genişlik</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Bilek burkulması ve cilt aşınmasına karşı koruma sağlar, Boks ve kickboks antrenmanlarına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">260 ₺</span></div>
-    </div>
-</div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Dövüş sporlari</span>
-        <span>2</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">32</div>
-            <div class="cat-titleblock">
-                <h1>DÖVÜŞ SPORLARI</h1>
-                <p>Ürün listesi (devamı) — sayfa 3/6</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/INVICTUS%20KING%20HATTRICK%201.webp" alt="INVICTUS KING HATTRICK 1" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>INVICTUS KING HATTRICK 1</span>
+          <p class="kart-aciklama">PU deri dış yüzey, Çok yoğunluklu köpük dolgu, El üstü ve parmak koruması Terlemeyi önleyen iç astar, Boks antrenmanları için idealdir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">11.310 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Boks%20Bandaj%C4%B1%20HWB-BL%203.5m%20Mavi.bmp" alt="Raptor Boks Bandajı HWB-BL 3.5m Mavi" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Boks Bandajı HWB-BL 3.5m Mavi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Naylon-pamuk karışımı esnek kumaş, 3,5 m uzunluk, 5 cm genişlik</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Bilek burkulması ve cilt aşınmasına karşı koruma sağlar, Boks ve kickboks antrenmanlarına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">260 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Boks%20Bandaj%C4%B1%20HWB-R%203.5m%20K%C4%B1rm%C4%B1z%C4%B1.bmp" alt="Raptor Boks Bandajı HWB-R 3.5m Kırmızı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Boks Bandajı HWB-R 3.5m Kırmızı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Naylon-pamuk karışımı esnek kumaş, 3,5 m uzunluk, 5 cm genişlik</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Bilek burkulması ve cilt aşınmasına karşı koruma sağlar, Boks ve kickboks antrenmanlarına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">260 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Boks%20Di%C5%9Fli%C4%9Fi%20BD-16.bmp" alt="Raptor Boks Dişliği BD-16" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Boks Dişliği BD-16</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Antibakteriyel silikon malzeme, Sıcak suda şekillendirilebilir (kaynatma) yapı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Her ağız yapısına uyum sağlar, Tekrar kullanılabilir ve hijyeniktir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">180 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Boks%20Eldiveni%20BBG.bmp" alt="Raptor Boks Eldiveni BBG" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Boks Eldiveni BBG</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Birinci sınıf PU deri, Üç yoğunluklu köpük dolgu, Güçlendirilmiş avuç içi, Bağlı başparmak koruması</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Darbe emici özel kalıp yapı, Boks antrenman ve maçları için profesyonel kullanım sağlar.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.640 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Boks%20Ellik%20Lapa%20BFP%20K%C4%B1rm%C4%B1z%C4%B1.bmp" alt="Raptor Boks Ellik Lapa BFP Kırmızı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Boks Ellik Lapa BFP Kırmızı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Birinci sınıf PU malzeme, 2 katlı Polyeva dolgu (orta sertlik), 25x19x5 cm ölçü, Hafif eğik yapı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Çift olarak satılır, Boks antrenman ve pratik çalışmalarına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.640 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Boks%20Ellik%20Lapa%20BFP%20Siyah.bmp" alt="Raptor Boks Ellik Lapa BFP Siyah" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Boks Ellik Lapa BFP Siyah</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Birinci sınıf PU malzeme, 2 katlı Polyeva dolgu (orta sertlik), 25x19x5 cm ölçü, Hafif eğik yapı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Çift olarak satılır, Boks antrenman ve pratik çalışmalarına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.640 ₺</span></div>
-    </div>
-</div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Dövüş sporlari</span>
-        <span>3</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">32</div>
-            <div class="cat-titleblock">
-                <h1>DÖVÜŞ SPORLARI</h1>
-                <p>Ürün listesi (devamı) — sayfa 4/6</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/INVICTUS%20KING%20HATTRICK.webp" alt="INVICTUS KING HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>INVICTUS KING HATTRICK</span>
+          <p class="kart-aciklama">PU deri dış yüzey, Çok yoğunluklu köpük dolgu, El üstü ve parmak koruması Terlemeyi önleyen iç astar, Boks antrenmanları için idealdir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">11.310 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Boks%20Stand%C4%B1%20BX%20K%C4%B1rm%C4%B1z%C4%B1.bmp" alt="Raptor Boks Standı BX Kırmızı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Boks Standı BX Kırmızı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Sabit ve dayanıklı yapı, Boks torbası asma standı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Boks ve dövüş sporları antrenmanlarında stabil kullanım sağlar.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">9.250 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Boks%20Torbas%C4%B1%20Armut%20BT1239.bmp" alt="Raptor Boks Torbası Armut BT1239" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Boks Torbası Armut BT1239</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Dayanıklı sentetik deri/PU malzeme, 140 cm uzunluk, 46-47 kg ağırlık, Ağır hizmet tipi çelik kayış</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Çift dikişli güçlendirilmiş yapı, Hız, refleks ve vuruş hassasiyeti antrenmanları için idealdir.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">3.350 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Boks%20Torbas%C4%B1%20BT1236%2090x30cm.bmp" alt="Raptor Boks Torbası BT1236 90x30cm" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Boks Torbası BT1236 90x30cm</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Dayanıklı sentetik deri/PU malzeme, 90x30 cm ölçü, Darbe emici iç dolgu</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Boks, kickboks ve MMA antrenmanlarına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">2.170 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Boks%20Torbas%C4%B1%20BT1237%20100x30cm.bmp" alt="Raptor Boks Torbası BT1237 100x30cm" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Boks Torbası BT1237 100x30cm</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Dayanıklı sentetik deri/PU malzeme, 100x30 cm ölçü, Darbe emici iç dolgu</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Boks, kickboks ve MMA antrenmanlarına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">2.410 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20E%C4%9Fri%20Darbe%20Yast%C4%B1%C4%9F%C4%B1%203736.bmp" alt="Raptor Eğri Darbe Yastığı 3736" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Eğri Darbe Yastığı 3736</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Birinci sınıf suni deri (orijinal deri görünümlü), EVA iç dolgu, Hafif eğik tasarım</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Örgülü kordon ve deri tutamaç, Taşıması kolay darbe emici antrenman ekipmanıdır.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.640 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20G%C3%B6%C4%9F%C3%BCs%20Koruyucu%20Muay%20Thai%20Kad%C4%B1n%20-%20NVL.bmp" alt="Raptor Göğüs Koruyucu Muay Thai Kadın - NVL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Göğüs Koruyucu Muay Thai Kadın - NVL</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Kadın anatomisine uygun kalıp, Kalıplanmış darbe emici köpük, Nefes alabilir yapı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Muay Thai antrenmanlarında konforlu ve güvenli koruma sağlar.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">820 ₺</span></div>
-    </div>
-</div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Dövüş sporlari</span>
-        <span>4</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">32</div>
-            <div class="cat-titleblock">
-                <h1>DÖVÜŞ SPORLARI</h1>
-                <p>Ürün listesi (devamı) — sayfa 5/6</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Antrenman%20Mankeni%20TRM-10%20Mavi.webp" alt="Raptor Antrenman Mankeni TRM-10 Mavi" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Antrenman Mankeni TRM-10 Mavi</span>
+          <p class="kart-aciklama">Ayarlanabilir yükseklik, Geniş kaide, Darbe emici yapı Yumruk, tekme, dirsek ve diz teknikleri için gerçekçi hedef sağlar, Bireysel ve salon kullanımına uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">21.900 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20G%C3%B6%C4%9F%C3%BCs%20Koruyucu%20Taekvando%20Selfguard.bmp" alt="Raptor Göğüs Koruyucu Taekvando Selfguard" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Göğüs Koruyucu Taekvando Selfguard</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Darbe emici köpük dolgu, Vücut anatomisine uygun yelek formu</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Tekvando antrenman ve müsabakalarında göğüs bölgesini korur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">820 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Kapal%C4%B1%20Kask%20K%C4%B1rm%C4%B1z%C4%B1%20-%20HG.bmp" alt="Raptor Kapalı Kask Kırmızı - HG" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Kapalı Kask Kırmızı - HG</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Sentetik deri dış yüzey, 2 katmanlı orta sertlik Polyeva dolgu, Üst tepe korumalı kapalı tasarım</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kickboks, Muay Thai ve Wushu Sanda amatör müsabakalarına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.880 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Kapal%C4%B1%20Kask%20Mavi%20-%20CHG.bmp" alt="Raptor Kapalı Kask Mavi - CHG" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Kapalı Kask Mavi - CHG</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Sentetik deri dış yüzey, 2 katmanlı orta sertlik Polyeva dolgu, Üst tepe korumalı kapalı tasarım</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kickboks, Muay Thai ve Wushu Sanda amatör müsabakalarına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.880 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Kaval%20Koruyucu%20Kyokushin%20Beyaz%20-%20SPR.bmp" alt="Raptor Kaval Koruyucu Kyokushin Beyaz - SPR" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Kaval Koruyucu Kyokushin Beyaz - SPR</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Dayanıklı köpük dolgu, Ayarlanabilir bağlama sistemi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kyokushin karate antrenman ve müsabakalarında kaval bölgesini korur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">600 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Kaval%20Koruyucu%20Muay%20Thai%20-%20RPL.bmp" alt="Raptor Kaval Koruyucu Muay Thai - RPL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Kaval Koruyucu Muay Thai - RPL</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Dayanıklı köpük dolgu, Ayarlanabilir bağlama sistemi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Muay Thai antrenman ve müsabakalarında kaval bölgesini korur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">2.000 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Kaval%20Koruyucu%20Muay%20Thai%20K%C4%B1rm%C4%B1z%C4%B1%20-%20SPR.bmp" alt="Raptor Kaval Koruyucu Muay Thai Kırmızı - SPR" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Kaval Koruyucu Muay Thai Kırmızı - SPR</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Dayanıklı köpük dolgu, Ayarlanabilir bağlama sistemi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Muay Thai antrenman ve müsabakalarında kaval bölgesini korur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">600 ₺</span></div>
-    </div>
-</div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Dövüş sporlari</span>
-        <span>5</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">32</div>
-            <div class="cat-titleblock">
-                <h1>DÖVÜŞ SPORLARI</h1>
-                <p>Ürün listesi (devamı) — sayfa 6/6</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Antrenman%20Mankeni%20TRM-20%20K%C4%B1rm%C4%B1z%C4%B1.webp" alt="Raptor Antrenman Mankeni TRM-20 Kırmızı" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Antrenman Mankeni TRM-20 Kırmızı</span>
+          <p class="kart-aciklama">Ayarlanabilir yükseklik, Geniş kaide, Darbe emici yapı Yumruk, tekme, dirsek ve diz teknikleri için gerçekçi hedef sağlar, İleri seviye antrenman performansına uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">21.900 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Kaval%20Koruyucu%20Muay%20Thai%20Mavi%20-%20SPR.bmp" alt="Raptor Kaval Koruyucu Muay Thai Mavi - SPR" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Kaval Koruyucu Muay Thai Mavi - SPR</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Dayanıklı köpük dolgu, Ayarlanabilir bağlama sistemi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Muay Thai antrenman ve müsabakalarında kaval bölgesini korur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">600 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Kaval%20Koruyucu%20Muay%20Thai%20Siyah%20-%20MVL.bmp" alt="Raptor Kaval Koruyucu Muay Thai Siyah - MVL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Kaval Koruyucu Muay Thai Siyah - MVL</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Dayanıklı köpük dolgu, Ayarlanabilir bağlama sistemi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Muay Thai antrenman ve müsabakalarında kaval bölgesini korur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">660 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Kol%20ve%20Kaval%20Koruyucu%20Tekvando%20-%20ALG.bmp" alt="Raptor Kol ve Kaval Koruyucu Tekvando - ALG" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Kol ve Kaval Koruyucu Tekvando - ALG</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Yüksek yoğunluklu EVA dolgu, Gözenekli file yapı (nefes alabilir), 30°C yıkanabilir</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ergonomik tasarım hareket kabiliyetini kısıtlamaz, Tekvando antrenman ve müsabakalarında kol ve kaval korur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">940 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Kuki%20LGG%20Kad%C4%B1n.bmp" alt="Raptor Kuki LGG Kadın" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Kuki LGG Kadın</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Dayanıklı sert malzeme, Ayarlanabilir bel bağlama sistemi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Kadın anatomisine uygun tasarım, Kasık bölgesini darbelere karşı korur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">450 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Kuki%20NVL%20Erkek.bmp" alt="Raptor Kuki NVL Erkek" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Kuki NVL Erkek</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Dayanıklı sert malzeme, Ayarlanabilir bel bağlama sistemi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Erkek anatomisine uygun tasarım, Kasık bölgesini darbelere karşı korur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">450 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Raket%20Ellik%20RDR.bmp" alt="Raptor Raket Ellik RDR" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Raket Ellik RDR</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Dayanıklı malzeme, Ergonomik tasarım</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Maksimum koruma ve konfor sağlar, Tüm dövüş sporları antrenmanlarına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">820 ₺</span></div>
-    </div>
-<div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Tekvando%20Eldiveni%20NVL.bmp" alt="Raptor Tekvando Eldiveni NVL" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Raptor Tekvando Eldiveni NVL</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Darbe emici köpük dolgu, Esnek ve hafif yapı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Tekvando antrenman ve müsabakalarında el korumasını sağlar.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">600 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Dövüş sporlari</span>
-        <span>6</span>
-    </div>
-    </section>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Antrenman%20Mankeni%20TRM-30%20K%C4%B1rm%C4%B1z%C4%B1.webp" alt="Raptor Antrenman Mankeni TRM-30 Kırmızı" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Antrenman Mankeni TRM-30 Kırmızı</span>
+          <p class="kart-aciklama">Sabit ve dengeli yapı, Darbe emici dolgu Boks, kickboks ve MMA antrenmanları için tasarlanmıştır.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">17.300 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Antrenman%20Mankeni%20TRM-40%20Mavi.webp" alt="Raptor Antrenman Mankeni TRM-40 Mavi" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Antrenman Mankeni TRM-40 Mavi</span>
+          <p class="kart-aciklama">Sabit ve dengeli yapı, Darbe emici dolgu Boks, kickboks ve MMA antrenmanları için tasarlanmıştır.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">17.300 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Ayak%20%C3%9Cst%C3%BC%20Korumas%C4%B1%20Teakwondo%20-%20RPL.webp" alt="Raptor Ayak Üstü Koruması Teakwondo - RPL" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Ayak Üstü Koruması Teakwondo - RPL</span>
+          <p class="kart-aciklama">Dayanıklı bez/suni deri malzeme, Ayak üstü ve bilek koruma tasarımı Tekvando müsabaka ve antrenmanlarında darbe etkisini azaltır, Resmi organizasyonlarda kullanıma uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">600 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20A%C3%A7%C4%B1k%20Kask%20Kickboks%20Kafa%20Koruyucu%20HG%20K%C4%B1rm%C4%B1z%C4%B1.webp" alt="Raptor Açık Kask Kickboks Kafa Koruyucu HG Kırmızı" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Açık Kask Kickboks Kafa Koruyucu HG Kırmızı</span>
+          <p class="kart-aciklama">Sentetik deri dış yüzey, Orta sertlik Polyeva dolgu, Açık yüz tasarımı (geniş görüş açısı) Kickboks, Muay Thai, Wushu Sanda ve boks antrenman/amatör müsabakalarına uygundur, S/M/L beden seçenekleri mevcuttur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.290 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20A%C3%A7%C4%B1k%20Kask%20NVL%20-%20Beyaz.webp" alt="Raptor Açık Kask NVL - Beyaz" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Açık Kask NVL - Beyaz</span>
+          <p class="kart-aciklama">Sentetik deri dış yüzey, Orta sertlik Polyeva dolgu, Açık yüz tasarımı (geniş görüş açısı) Kickboks, Muay Thai, Wushu Sanda ve boks antrenman/amatör müsabakalarına uygundur, S/M/L beden seçenekleri mevcuttur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.400 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Boks%20Bandaj%C4%B1%20HWB-B%203.5m%20Siyah.webp" alt="Raptor Boks Bandajı HWB-B 3.5m Siyah" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Boks Bandajı HWB-B 3.5m Siyah</span>
+          <p class="kart-aciklama">Naylon-pamuk karışımı esnek kumaş, 3,5 m uzunluk, 5 cm genişlik Bilek burkulması ve cilt aşınmasına karşı koruma sağlar, Boks ve kickboks antrenmanlarına uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">260 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Boks%20Bandaj%C4%B1%20HWB-BL%203.5m%20Mavi.webp" alt="Raptor Boks Bandajı HWB-BL 3.5m Mavi" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Boks Bandajı HWB-BL 3.5m Mavi</span>
+          <p class="kart-aciklama">Naylon-pamuk karışımı esnek kumaş, 3,5 m uzunluk, 5 cm genişlik Bilek burkulması ve cilt aşınmasına karşı koruma sağlar, Boks ve kickboks antrenmanlarına uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">260 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Boks%20Bandaj%C4%B1%20HWB-R%203.5m%20K%C4%B1rm%C4%B1z%C4%B1.webp" alt="Raptor Boks Bandajı HWB-R 3.5m Kırmızı" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Boks Bandajı HWB-R 3.5m Kırmızı</span>
+          <p class="kart-aciklama">Naylon-pamuk karışımı esnek kumaş, 3,5 m uzunluk, 5 cm genişlik Bilek burkulması ve cilt aşınmasına karşı koruma sağlar, Boks ve kickboks antrenmanlarına uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">260 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Boks%20Di%C5%9Fli%C4%9Fi%20BD-16.webp" alt="Raptor Boks Dişliği BD-16" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Boks Dişliği BD-16</span>
+          <p class="kart-aciklama">Antibakteriyel silikon malzeme, Sıcak suda şekillendirilebilir (kaynatma) yapı Her ağız yapısına uyum sağlar, Tekrar kullanılabilir ve hijyeniktir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">180 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Boks%20Eldiveni%20BBG.webp" alt="Raptor Boks Eldiveni BBG" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Boks Eldiveni BBG</span>
+          <p class="kart-aciklama">Birinci sınıf PU deri, Üç yoğunluklu köpük dolgu, Güçlendirilmiş avuç içi, Bağlı başparmak koruması Darbe emici özel kalıp yapı, Boks antrenman ve maçları için profesyonel kullanım sağlar.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.640 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Boks%20Ellik%20Lapa%20BFP%20K%C4%B1rm%C4%B1z%C4%B1.webp" alt="Raptor Boks Ellik Lapa BFP Kırmızı" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Boks Ellik Lapa BFP Kırmızı</span>
+          <p class="kart-aciklama">Birinci sınıf PU malzeme, 2 katlı Polyeva dolgu (orta sertlik), 25x19x5 cm ölçü, Hafif eğik yapı Çift olarak satılır, Boks antrenman ve pratik çalışmalarına uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.640 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Boks%20Ellik%20Lapa%20BFP%20Siyah.webp" alt="Raptor Boks Ellik Lapa BFP Siyah" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Boks Ellik Lapa BFP Siyah</span>
+          <p class="kart-aciklama">Birinci sınıf PU malzeme, 2 katlı Polyeva dolgu (orta sertlik), 25x19x5 cm ölçü, Hafif eğik yapı Çift olarak satılır, Boks antrenman ve pratik çalışmalarına uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.640 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Boks%20Stand%C4%B1%20BX%20K%C4%B1rm%C4%B1z%C4%B1.webp" alt="Raptor Boks Standı BX Kırmızı" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Boks Standı BX Kırmızı</span>
+          <p class="kart-aciklama">Sabit ve dayanıklı yapı, Boks torbası asma standı Boks ve dövüş sporları antrenmanlarında stabil kullanım sağlar.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">9.250 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Boks%20Torbas%C4%B1%20Armut%20BT1239.webp" alt="Raptor Boks Torbası Armut BT1239" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Boks Torbası Armut BT1239</span>
+          <p class="kart-aciklama">Dayanıklı sentetik deri/PU malzeme, 140 cm uzunluk, 46-47 kg ağırlık, Ağır hizmet tipi çelik kayış Çift dikişli güçlendirilmiş yapı, Hız, refleks ve vuruş hassasiyeti antrenmanları için idealdir.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">3.350 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Boks%20Torbas%C4%B1%20BT1236%2090x30cm.webp" alt="Raptor Boks Torbası BT1236 90x30cm" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Boks Torbası BT1236 90x30cm</span>
+          <p class="kart-aciklama">Dayanıklı sentetik deri/PU malzeme, 90x30 cm ölçü, Darbe emici iç dolgu Boks, kickboks ve MMA antrenmanlarına uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">2.170 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Boks%20Torbas%C4%B1%20BT1237%20100x30cm.webp" alt="Raptor Boks Torbası BT1237 100x30cm" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Boks Torbası BT1237 100x30cm</span>
+          <p class="kart-aciklama">Dayanıklı sentetik deri/PU malzeme, 100x30 cm ölçü, Darbe emici iç dolgu Boks, kickboks ve MMA antrenmanlarına uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">2.410 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20E%C4%9Fri%20Darbe%20Yast%C4%B1%C4%9F%C4%B1%203736.webp" alt="Raptor Eğri Darbe Yastığı 3736" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Eğri Darbe Yastığı 3736</span>
+          <p class="kart-aciklama">Birinci sınıf suni deri (orijinal deri görünümlü), EVA iç dolgu, Hafif eğik tasarım Örgülü kordon ve deri tutamaç, Taşıması kolay darbe emici antrenman ekipmanıdır.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.640 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20G%C3%B6%C4%9F%C3%BCs%20Koruyucu%20Muay%20Thai%20Kad%C4%B1n%20-%20NVL.webp" alt="Raptor Göğüs Koruyucu Muay Thai Kadın - NVL" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Göğüs Koruyucu Muay Thai Kadın - NVL</span>
+          <p class="kart-aciklama">Kadın anatomisine uygun kalıp, Kalıplanmış darbe emici köpük, Nefes alabilir yapı Muay Thai antrenmanlarında konforlu ve güvenli koruma sağlar.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">820 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20G%C3%B6%C4%9F%C3%BCs%20Koruyucu%20Taekvando%20Selfguard.webp" alt="Raptor Göğüs Koruyucu Taekvando Selfguard" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Göğüs Koruyucu Taekvando Selfguard</span>
+          <p class="kart-aciklama">Darbe emici köpük dolgu, Vücut anatomisine uygun yelek formu Tekvando antrenman ve müsabakalarında göğüs bölgesini korur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">820 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Kapal%C4%B1%20Kask%20K%C4%B1rm%C4%B1z%C4%B1%20-%20HG.webp" alt="Raptor Kapalı Kask Kırmızı - HG" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Kapalı Kask Kırmızı - HG</span>
+          <p class="kart-aciklama">Sentetik deri dış yüzey, 2 katmanlı orta sertlik Polyeva dolgu, Üst tepe korumalı kapalı tasarım Kickboks, Muay Thai ve Wushu Sanda amatör müsabakalarına uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.880 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Kapal%C4%B1%20Kask%20Mavi%20-%20CHG.webp" alt="Raptor Kapalı Kask Mavi - CHG" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Kapalı Kask Mavi - CHG</span>
+          <p class="kart-aciklama">Sentetik deri dış yüzey, 2 katmanlı orta sertlik Polyeva dolgu, Üst tepe korumalı kapalı tasarım Kickboks, Muay Thai ve Wushu Sanda amatör müsabakalarına uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.880 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Kaval%20Koruyucu%20Kyokushin%20Beyaz%20-%20SPR.webp" alt="Raptor Kaval Koruyucu Kyokushin Beyaz - SPR" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Kaval Koruyucu Kyokushin Beyaz - SPR</span>
+          <p class="kart-aciklama">Dayanıklı köpük dolgu, Ayarlanabilir bağlama sistemi Kyokushin karate antrenman ve müsabakalarında kaval bölgesini korur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">600 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Kaval%20Koruyucu%20Muay%20Thai%20-%20RPL.webp" alt="Raptor Kaval Koruyucu Muay Thai - RPL" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Kaval Koruyucu Muay Thai - RPL</span>
+          <p class="kart-aciklama">Dayanıklı köpük dolgu, Ayarlanabilir bağlama sistemi Muay Thai antrenman ve müsabakalarında kaval bölgesini korur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">2.000 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Kaval%20Koruyucu%20Muay%20Thai%20K%C4%B1rm%C4%B1z%C4%B1%20-%20SPR.webp" alt="Raptor Kaval Koruyucu Muay Thai Kırmızı - SPR" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Kaval Koruyucu Muay Thai Kırmızı - SPR</span>
+          <p class="kart-aciklama">Dayanıklı köpük dolgu, Ayarlanabilir bağlama sistemi Muay Thai antrenman ve müsabakalarında kaval bölgesini korur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">600 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Kaval%20Koruyucu%20Muay%20Thai%20Mavi%20-%20SPR.webp" alt="Raptor Kaval Koruyucu Muay Thai Mavi - SPR" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Kaval Koruyucu Muay Thai Mavi - SPR</span>
+          <p class="kart-aciklama">Dayanıklı köpük dolgu, Ayarlanabilir bağlama sistemi Muay Thai antrenman ve müsabakalarında kaval bölgesini korur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">600 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Kaval%20Koruyucu%20Muay%20Thai%20Siyah%20-%20MVL.webp" alt="Raptor Kaval Koruyucu Muay Thai Siyah - MVL" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Kaval Koruyucu Muay Thai Siyah - MVL</span>
+          <p class="kart-aciklama">Dayanıklı köpük dolgu, Ayarlanabilir bağlama sistemi Muay Thai antrenman ve müsabakalarında kaval bölgesini korur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">660 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Kol%20ve%20Kaval%20Koruyucu%20Tekvando%20-%20ALG.webp" alt="Raptor Kol ve Kaval Koruyucu Tekvando - ALG" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Kol ve Kaval Koruyucu Tekvando - ALG</span>
+          <p class="kart-aciklama">Yüksek yoğunluklu EVA dolgu, Gözenekli file yapı (nefes alabilir), 30°C yıkanabilir Ergonomik tasarım hareket kabiliyetini kısıtlamaz, Tekvando antrenman ve müsabakalarında kol ve kaval korur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">940 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Kuki%20LGG%20Kad%C4%B1n.webp" alt="Raptor Kuki LGG Kadın" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Kuki LGG Kadın</span>
+          <p class="kart-aciklama">Dayanıklı sert malzeme, Ayarlanabilir bel bağlama sistemi Kadın anatomisine uygun tasarım, Kasık bölgesini darbelere karşı korur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">450 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Kuki%20NVL%20Erkek.webp" alt="Raptor Kuki NVL Erkek" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Kuki NVL Erkek</span>
+          <p class="kart-aciklama">Dayanıklı sert malzeme, Ayarlanabilir bel bağlama sistemi Erkek anatomisine uygun tasarım, Kasık bölgesini darbelere karşı korur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">450 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Raket%20Ellik%20RDR.webp" alt="Raptor Raket Ellik RDR" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Raket Ellik RDR</span>
+          <p class="kart-aciklama">Dayanıklı malzeme, Ergonomik tasarım Maksimum koruma ve konfor sağlar, Tüm dövüş sporları antrenmanlarına uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">820 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/D%C3%B6v%C3%BC%C5%9F%20image/Raptor%20Tekvando%20Eldiveni%20NVL.webp" alt="Raptor Tekvando Eldiveni NVL" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Raptor Tekvando Eldiveni NVL</span>
+          <p class="kart-aciklama">Darbe emici köpük dolgu, Esnek ve hafif yapı Tekvando antrenman ve müsabakalarında el korumasını sağlar.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">600 ₺</span></div>
+          </div>
+        </div>
+      </div>
+  </div>
+</main>
 
+<a class="wa-buton" href="https://wa.me/905522025737" target="_blank" rel="noopener" aria-label="WhatsApp'tan yazın">
+  <svg viewBox="0 0 32 32" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M16 3C9 3 3 9 3 16c0 2.4.6 4.6 1.8 6.6L3 29l6.6-1.7c1.9 1 4 1.6 6.4 1.6 7 0 13-6 13-13S23 3 16 3zm7.6 18.4c-.3.9-1.7 1.7-2.7 1.9-.7.1-1.6.2-4.6-1-3.9-1.6-6.4-5.5-6.6-5.8-.2-.3-1.6-2.1-1.6-4s1-2.8 1.3-3.2c.3-.3.7-.4 1-.4h.7c.2 0 .5 0 .8.6.3.7 1.1 2.6 1.2 2.8.1.2.2.4 0 .7-.1.3-.2.4-.4.6-.2.2-.4.5-.6.7-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.6 1.4 1.3 2.6 1.7 3 1.9.3.2.5.1.7-.1.2-.2.9-1 1.1-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.5 1.2.4.2.6.3.7.5.1.2.1 1-.2 1.9z"/></svg>
+</a>
 
-<script>
-function aramaFiltrele(inp){
-  var q=inp.value.toLocaleLowerCase('tr-TR').trim(), gorunen=0;
-  document.querySelectorAll('.product-card').forEach(function(k){
-    var e=k.querySelector('.pf-label');
-    var esles=(e?e.textContent.toLocaleLowerCase('tr-TR'):'').indexOf(q)!==-1;
-    k.style.display=esles?'':'none';
-    if(esles)gorunen++;
-  });
-  document.querySelector('.urun-bulunamadi').hidden=!(q&&gorunen===0);
-}
-</script>
+<footer class="alt-bilgi">
+  <div class="alt-bilgi-ic">
+    <strong>ÖZTEN SPOR</strong>
+    Kirazlı Mahallesi 1201. Sokak, Bağcılar / İstanbul<br>
+    <a href="mailto:oztensporltd@gmail.com">oztensporltd@gmail.com</a>
+  </div>
+</footer>
+
+<nav class="alt-cubuk">
+  <a class="alt-btn" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+    Ana Sayfa
+  </a>
+  <button type="button" class="alt-btn" id="altAra">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    Ara
+  </button>
+  <button type="button" class="alt-btn" id="altKategori">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    Kategoriler
+  </button>
+  <button type="button" class="alt-btn" id="altSepet">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M6 6 5 3H3"/></svg>
+    Sepet
+    <span class="alt-rozet" id="altSepetSayi" hidden>0</span>
+  </button>
+</nav>
+
 </body>
 </html>

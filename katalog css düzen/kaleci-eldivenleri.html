@@ -3,160 +3,260 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>KALECİ ELDİVENLERİ — Özten Spor Kataloğu</title>
-<link rel="stylesheet" href="Ozten Spor Katalog.css">
+<title>FUTBOL — Özten Spor Kataloğu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ozten-yeni.css">
 <script src="sepet.js" defer></script>
+<script src="site.js" defer></script>
 </head>
-<body id="top">
-<div class="floating-nav-group">
-    <a href="#top" class="floating-nav-btn"><span class="fn-arrow">&#8593;</span> Yukarı Çık</a>
-    <a href="index.html#top" class="floating-nav-btn"><span class="fn-arrow">&#8592;</span> Ana Kataloğa Dön</a>
-</div>
-<div class="kategori-gecis-buton-sarici">
-    <a href="futbol.html#top" class="floating-nav-btn"><span class="fn-arrow">&#8592;</span> Futbol'a Dön</a>
-</div>
-<div class="katalog-arama"><input type="text" placeholder="Ürün ara..." oninput="aramaFiltrele(this)"></div>
-<p class="urun-bulunamadi" hidden>Ürün bulunamadı.</p>
-<section class="page cat-page" id="kategori-kaleci-eldivenleri">
-        <div class="cat-header">
-            <div class="cat-num">01</div>
-            <div class="cat-titleblock">
-                <h1>KALECİ ELDİVENLERİ</h1>
-                <p>Kaleciler için tutuş, koruma ve performans odaklı eldiven modelleri.</p>
-            </div>
+<body>
+
+<header class="ust-cubuk">
+  <a class="marka" href="index.html">ÖZTEN<span>SPOR</span></a>
+  <div class="ust-arama">
+    <span class="arama-ikon">&#9906;</span>
+    <input type="text" id="aramaKutusu" placeholder="Ürün ara" autocomplete="off" oninput="aramaFiltrele(this)">
+  </div>
+  <div class="ust-butonlar">
+    <button type="button" class="ust-btn" id="kategoriAc">Kategoriler &#9662;</button>
+    <button type="button" class="ust-btn" id="sepetAc">Sepetim <span class="ust-rozet" id="ustSepetSayi">0</span></button>
+  </div>
+</header>
+
+<nav class="kategori-panel" id="kategoriPanel" hidden>
+  <div class="kategori-panel-baslik">TÜM KATEGORİLER</div>
+  <div class="kategori-izgara">
+        <a class="kategori-link aktif" href="futbol.html">FUTBOL</a>
+        <a class="kategori-link" href="basketbol.html">BASKETBOL</a>
+        <a class="kategori-link" href="voleybol.html">VOLEYBOL</a>
+        <a class="kategori-link" href="badminton.html">BADMINTON</a>
+        <a class="kategori-link" href="masa-tenisi.html">MASA TENİSİ</a>
+        <a class="kategori-link" href="tenis.html">TENİS</a>
+        <a class="kategori-link" href="atlama-ipi.html">ATLAMA İPİ</a>
+        <a class="kategori-link" href="el-yayi.html">EL YAYI</a>
+        <a class="kategori-link" href="yoga-pilates.html">YOGA PİLATES</a>
+        <a class="kategori-link" href="fitness.html">FITNESS</a>
+        <a class="kategori-link" href="egzersiz.html">EGZERSİZ</a>
+        <a class="kategori-link" href="hentbol.html">HENTBOL</a>
+        <a class="kategori-link" href="yuzme.html">YÜZME</a>
+        <a class="kategori-link" href="bocce.html">BOCCE</a>
+        <a class="kategori-link" href="hokey.html">HOKEY</a>
+        <a class="kategori-link" href="kano.html">KANO</a>
+        <a class="kategori-link" href="beyzbol.html">BEYZBOL</a>
+        <a class="kategori-link" href="paten.html">PATEN</a>
+        <a class="kategori-link" href="oryantiring.html">ORYANTİRİNG</a>
+        <a class="kategori-link" href="padel.html">PADEL</a>
+        <a class="kategori-link" href="pickleball.html">PICKLEBALL</a>
+        <a class="kategori-link" href="ragbi.html">RAGBİ</a>
+        <a class="kategori-link" href="satranc.html">SATRANÇ</a>
+        <a class="kategori-link" href="softball.html">SOFTBALL</a>
+        <a class="kategori-link" href="squash.html">SQUASH</a>
+        <a class="kategori-link" href="dart.html">DART</a>
+        <a class="kategori-link" href="atletizm.html">ATLETİZM</a>
+        <a class="kategori-link" href="cimnastik.html">CİMNASTİK</a>
+        <a class="kategori-link" href="saglik-toplari.html">SAĞLIK TOPLARI</a>
+        <a class="kategori-link" href="su-topu.html">SU TOPU</a>
+        <a class="kategori-link" href="oyun-grubu.html">OYUN GRUBU</a>
+        <a class="kategori-link" href="dovus-sporlari.html">DÖVÜŞ SPORLARI</a>
+  </div>
+</nav>
+
+<section class="kat-basi">
+  <div class="kat-basi-ic">
+    <div class="kat-etiket">KATEGORİ 01</div>
+    <h1>FUTBOL</h1>
+    <p class="kat-aciklama">Sahadan halı sahaya, her seviyeye uygun toplar, forma ve ekipmanlar.</p>
+    <span class="kat-sayac">14 ürün</span>
+  </div>
+</section>
+
+<nav class="alt-kat-serit" aria-label="Alt kategoriler">
+  <div class="alt-kat-ic">
+      <a class="alt-kat-cip" href="futbol.html">Toplar</a>
+      <a class="alt-kat-cip" href="futbol-malzemeleri.html">Futbol Malzemeleri</a>
+      <a class="alt-kat-cip aktif" href="kaleci-eldivenleri.html">Kaleci Eldivenleri</a>
+  </div>
+</nav>
+
+<main class="icerik">
+  <p class="urun-bulunamadi" hidden>Aramanla eşleşen ürün bulunamadı.</p>
+  <div class="product-grid">
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Kaleci%20eldivenleri%20image/BLADE%20HATTRICK.webp" alt="BLADE HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>BLADE HATTRICK</span>
+          <p class="kart-aciklama">Yeşil-Siyah renk, Lateks avuç içi (Süper Grip), Dayanıklı sentetik sırt malzeme, Leopar desenli yüzey Cırt cırtlı bilek bandı, Antrenman ve maç kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">410 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Kaleci%20eldivenleri%20image/BLADE%20HATTRICK.bmp" alt="BLADE HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : BLADE HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Yeşil-Siyah renk, Lateks avuç içi (Süper Grip), Dayanıklı sentetik sırt malzeme, Leopar desenli yüzey</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Cırt cırtlı bilek bandı, Antrenman ve maç kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">410 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Kaleci%20eldivenleri%20image/BLADE%20HATTRICK%201.bmp" alt="BLADE HATTRICK 1" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : BLADE HATTRICK 1</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Mavi-Siyah renk, Lateks avuç içi (Süper Grip), Dayanıklı sentetik sırt malzeme, Leopar desenli yüzey</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Cırt cırtlı bilek bandı, Antrenman ve maç kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">410 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Kaleci%20eldivenleri%20image/CORNER%20HATTRICK.bmp" alt="CORNER HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : CORNER HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Siyah-Beyaz renk, Lateks avuç içi, Dayanıklı sentetik sırt malzeme, Nefes alabilir parmak sırtı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Cırt cırtlı bilek bandı, Antrenman ve maç kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">350 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Kaleci%20eldivenleri%20image/FUTURE%20HATTRICK.bmp" alt="FUTURE HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : FUTURE HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Mavi-Yeşil renk, Lateks avuç içi, Dayanıklı sentetik sırt malzeme, Hava koşullarına dayanıklı yapı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Cırt cırtlı bilek bandı, Antrenman ve maç kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">720 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Kaleci%20eldivenleri%20image/Helix%20Kaleci%20Eldiveni%20CGK.bmp" alt="Helix Kaleci Eldiveni CGK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Kaleci Eldiveni CGK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Turuncu renk, Amatör kaleciler için geliştirilmiş, temel koruma ve güvenilir top tutuşu sunan model. Lateks köpük avuç içi, Sentetik (Dumex/PVC) dış yüzey</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">File (mesh) parmak araları, Düz kesim (Flat Cut), Cırt cırtlı bilek bandı, Antrenman ve maç kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">320 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Kaleci%20eldivenleri%20image/Helix%20Kaleci%20Eldiveni%20CGK%201.bmp" alt="Helix Kaleci Eldiveni CGK 1" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Kaleci Eldiveni CGK 1</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Yeşil renk, Amatör kaleciler için geliştirilmiş, temel koruma ve güvenilir top tutuşu sunan model. Lateks köpük avuç içi, Sentetik (Dumex/PVC) dış yüzey</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">File (mesh) parmak araları, Düz kesim (Flat Cut), Cırt cırtlı bilek bandı, Antrenman ve maç kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">320 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Kaleci%20eldivenleri%20image/Helix%20Kaleci%20Eldiveni%20GK.bmp" alt="Helix Kaleci Eldiveni GK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Kaleci Eldiveni GK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Amatör kaleciler için tasarlanmış, temel koruma ve güvenilir top tutuşu sağlayan model. Lateks köpük avuç içi, Sentetik (Dumex/EVA/PVC) dış yüzey</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">File (mesh) parmak araları, Düz kesim (Flat Cut), Cırt cırtlı bilek bandı, Antrenman ve maç kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">1.180 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Kaleci%20eldivenleri%20image/Helix%20Kaleci%20Eldiveni%20GKG.bmp" alt="Helix Kaleci Eldiveni GKG" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Kaleci Eldiveni GKG</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Amatör ve başlangıç seviyesindeki kaleciler için geliştirilmiş, temel koruma ve güvenilir top tutuşu sunan model. Lateks köpük avuç içi, Dayanıklı sentetik (Dumex/EVA/PVC) dış yüzey</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Nefes alabilen file (mesh) parmak araları, Düz kesim (Flat Cut), Cırt cırtlı bilek bandı, Antrenman ve maç kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">460 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Kaleci%20eldivenleri%20image/Helix%20Kaleci%20Eldiveni%20GKM.bmp" alt="Helix Kaleci Eldiveni GKM" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Kaleci Eldiveni GKM</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Amatör ve yeni başlayan kaleciler için geliştirilmiş, güvenli tutuş sağlayan lateks köpük avuç içi. Dumex/EVA/PVC dış yüzey (Backhand)</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Nefes alabilen file kumaş parmak araları, Düz kesim (Flat Cut), Cırt cırtlı elastik bilek bandı, Antrenman ve maç kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">770 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Kaleci%20eldivenleri%20image/Helix%20Kaleci%20Eldiveni%20Siena.bmp" alt="Helix Kaleci Eldiveni Siena" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Kaleci Eldiveni Siena</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Kırmızı renk (siyah ve beyaz detaylarla), Sahada maksimum güvenlik ve performans için tasarlandı. Yüksek kaliteli lateks köpük avuç içi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Sentetik/doğal deri karışımı sırt malzeme, Flat Cut/Roll Finger hibrit kesim, Ayarlanabilir cırt cırtlı bilek bandı, Antrenman ve maç kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">460 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Kaleci%20eldivenleri%20image/MATCH%20HATTRICK.bmp" alt="MATCH HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : MATCH HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Turuncu-Sarı renk, Lateks avuç içi, Dayanıklı sentetik sırt malzeme, Anatomik kesim</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Cırt cırtlı bilek bandı, Maç ve antrenman kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">680 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Kaleci%20eldivenleri%20image/MATCH%20HATTRICK%201.bmp" alt="MATCH HATTRICK 1" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : MATCH HATTRICK 1</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Siyah-Sarı renk, Lateks avuç içi, Dayanıklı sentetik sırt malzeme, Anatomik kesim</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Cırt cırtlı bilek bandı, Maç ve antrenman kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">680 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Kaleci%20eldivenleri%20image/PROLIFE%20HATTRICK.bmp" alt="PROLIFE HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : PROLIFE HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Kırmızı-Beyaz renk, Lateks avuç içi, Dayanıklı sentetik sırt malzeme, Geniş temas yüzeyi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Cırt cırtlı bilek bandı, Antrenman ve maç kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">640 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Kaleci%20eldivenleri%20image/PROLIFE%20HATTRICK%201.bmp" alt="PROLIFE HATTRICK 1" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : PROLIFE HATTRICK 1</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Mavi-Yeşil renk, Lateks avuç içi, Dayanıklı sentetik sırt malzeme, Geniş temas yüzeyi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Cırt cırtlı bilek bandı, Antrenman ve maç kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">640 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Kaleci Eldivenleri</span>
-        <span>1</span>
-    </div>
-    </section>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Kaleci%20eldivenleri%20image/BLADE%20HATTRICK%201.webp" alt="BLADE HATTRICK 1" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>BLADE HATTRICK 1</span>
+          <p class="kart-aciklama">Mavi-Siyah renk, Lateks avuç içi (Süper Grip), Dayanıklı sentetik sırt malzeme, Leopar desenli yüzey Cırt cırtlı bilek bandı, Antrenman ve maç kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">410 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Kaleci%20eldivenleri%20image/CORNER%20HATTRICK.webp" alt="CORNER HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>CORNER HATTRICK</span>
+          <p class="kart-aciklama">Siyah-Beyaz renk, Lateks avuç içi, Dayanıklı sentetik sırt malzeme, Nefes alabilir parmak sırtı Cırt cırtlı bilek bandı, Antrenman ve maç kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">350 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Kaleci%20eldivenleri%20image/FUTURE%20HATTRICK.webp" alt="FUTURE HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>FUTURE HATTRICK</span>
+          <p class="kart-aciklama">Mavi-Yeşil renk, Lateks avuç içi, Dayanıklı sentetik sırt malzeme, Hava koşullarına dayanıklı yapı Cırt cırtlı bilek bandı, Antrenman ve maç kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">720 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Kaleci%20eldivenleri%20image/Helix%20Kaleci%20Eldiveni%20CGK.webp" alt="Helix Kaleci Eldiveni CGK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Kaleci Eldiveni CGK</span>
+          <p class="kart-aciklama">Turuncu renk, Amatör kaleciler için geliştirilmiş, temel koruma ve güvenilir top tutuşu sunan model. Lateks köpük avuç içi, Sentetik (Dumex/PVC) dış yüzey File (mesh) parmak araları, Düz kesim (Flat Cut), Cırt cırtlı bilek bandı, Antrenman ve maç kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">320 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Kaleci%20eldivenleri%20image/Helix%20Kaleci%20Eldiveni%20CGK%201.webp" alt="Helix Kaleci Eldiveni CGK 1" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Kaleci Eldiveni CGK 1</span>
+          <p class="kart-aciklama">Yeşil renk, Amatör kaleciler için geliştirilmiş, temel koruma ve güvenilir top tutuşu sunan model. Lateks köpük avuç içi, Sentetik (Dumex/PVC) dış yüzey File (mesh) parmak araları, Düz kesim (Flat Cut), Cırt cırtlı bilek bandı, Antrenman ve maç kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">320 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Kaleci%20eldivenleri%20image/Helix%20Kaleci%20Eldiveni%20GK.webp" alt="Helix Kaleci Eldiveni GK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Kaleci Eldiveni GK</span>
+          <p class="kart-aciklama">Amatör kaleciler için tasarlanmış, temel koruma ve güvenilir top tutuşu sağlayan model. Lateks köpük avuç içi, Sentetik (Dumex/EVA/PVC) dış yüzey File (mesh) parmak araları, Düz kesim (Flat Cut), Cırt cırtlı bilek bandı, Antrenman ve maç kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">1.180 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Kaleci%20eldivenleri%20image/Helix%20Kaleci%20Eldiveni%20GKG.webp" alt="Helix Kaleci Eldiveni GKG" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Kaleci Eldiveni GKG</span>
+          <p class="kart-aciklama">Amatör ve başlangıç seviyesindeki kaleciler için geliştirilmiş, temel koruma ve güvenilir top tutuşu sunan model. Lateks köpük avuç içi, Dayanıklı sentetik (Dumex/EVA/PVC) dış yüzey Nefes alabilen file (mesh) parmak araları, Düz kesim (Flat Cut), Cırt cırtlı bilek bandı, Antrenman ve maç kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">460 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Kaleci%20eldivenleri%20image/Helix%20Kaleci%20Eldiveni%20GKM.webp" alt="Helix Kaleci Eldiveni GKM" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Kaleci Eldiveni GKM</span>
+          <p class="kart-aciklama">Amatör ve yeni başlayan kaleciler için geliştirilmiş, güvenli tutuş sağlayan lateks köpük avuç içi. Dumex/EVA/PVC dış yüzey (Backhand) Nefes alabilen file kumaş parmak araları, Düz kesim (Flat Cut), Cırt cırtlı elastik bilek bandı, Antrenman ve maç kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">770 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Kaleci%20eldivenleri%20image/Helix%20Kaleci%20Eldiveni%20Siena.webp" alt="Helix Kaleci Eldiveni Siena" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Kaleci Eldiveni Siena</span>
+          <p class="kart-aciklama">Kırmızı renk (siyah ve beyaz detaylarla), Sahada maksimum güvenlik ve performans için tasarlandı. Yüksek kaliteli lateks köpük avuç içi Sentetik/doğal deri karışımı sırt malzeme, Flat Cut/Roll Finger hibrit kesim, Ayarlanabilir cırt cırtlı bilek bandı, Antrenman ve maç kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">460 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Kaleci%20eldivenleri%20image/MATCH%20HATTRICK.webp" alt="MATCH HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>MATCH HATTRICK</span>
+          <p class="kart-aciklama">Turuncu-Sarı renk, Lateks avuç içi, Dayanıklı sentetik sırt malzeme, Anatomik kesim Cırt cırtlı bilek bandı, Maç ve antrenman kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">680 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Kaleci%20eldivenleri%20image/MATCH%20HATTRICK%201.webp" alt="MATCH HATTRICK 1" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>MATCH HATTRICK 1</span>
+          <p class="kart-aciklama">Siyah-Sarı renk, Lateks avuç içi, Dayanıklı sentetik sırt malzeme, Anatomik kesim Cırt cırtlı bilek bandı, Maç ve antrenman kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">680 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Kaleci%20eldivenleri%20image/PROLIFE%20HATTRICK.webp" alt="PROLIFE HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>PROLIFE HATTRICK</span>
+          <p class="kart-aciklama">Kırmızı-Beyaz renk, Lateks avuç içi, Dayanıklı sentetik sırt malzeme, Geniş temas yüzeyi Cırt cırtlı bilek bandı, Antrenman ve maç kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">640 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Kaleci%20eldivenleri%20image/PROLIFE%20HATTRICK%201.webp" alt="PROLIFE HATTRICK 1" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>PROLIFE HATTRICK 1</span>
+          <p class="kart-aciklama">Mavi-Yeşil renk, Lateks avuç içi, Dayanıklı sentetik sırt malzeme, Geniş temas yüzeyi Cırt cırtlı bilek bandı, Antrenman ve maç kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">640 ₺</span></div>
+          </div>
+        </div>
+      </div>
+  </div>
+</main>
 
+<a class="wa-buton" href="https://wa.me/905522025737" target="_blank" rel="noopener" aria-label="WhatsApp'tan yazın">
+  <svg viewBox="0 0 32 32" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M16 3C9 3 3 9 3 16c0 2.4.6 4.6 1.8 6.6L3 29l6.6-1.7c1.9 1 4 1.6 6.4 1.6 7 0 13-6 13-13S23 3 16 3zm7.6 18.4c-.3.9-1.7 1.7-2.7 1.9-.7.1-1.6.2-4.6-1-3.9-1.6-6.4-5.5-6.6-5.8-.2-.3-1.6-2.1-1.6-4s1-2.8 1.3-3.2c.3-.3.7-.4 1-.4h.7c.2 0 .5 0 .8.6.3.7 1.1 2.6 1.2 2.8.1.2.2.4 0 .7-.1.3-.2.4-.4.6-.2.2-.4.5-.6.7-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.6 1.4 1.3 2.6 1.7 3 1.9.3.2.5.1.7-.1.2-.2.9-1 1.1-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.5 1.2.4.2.6.3.7.5.1.2.1 1-.2 1.9z"/></svg>
+</a>
 
-<script>
-function aramaFiltrele(inp){
-  var q=inp.value.toLocaleLowerCase('tr-TR').trim(), gorunen=0;
-  document.querySelectorAll('.product-card').forEach(function(k){
-    var e=k.querySelector('.pf-label');
-    var esles=(e?e.textContent.toLocaleLowerCase('tr-TR'):'').indexOf(q)!==-1;
-    k.style.display=esles?'':'none';
-    if(esles)gorunen++;
-  });
-  document.querySelector('.urun-bulunamadi').hidden=!(q&&gorunen===0);
-}
-</script>
+<footer class="alt-bilgi">
+  <div class="alt-bilgi-ic">
+    <strong>ÖZTEN SPOR</strong>
+    Kirazlı Mahallesi 1201. Sokak, Bağcılar / İstanbul<br>
+    <a href="mailto:oztensporltd@gmail.com">oztensporltd@gmail.com</a>
+  </div>
+</footer>
+
+<nav class="alt-cubuk">
+  <a class="alt-btn" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+    Ana Sayfa
+  </a>
+  <button type="button" class="alt-btn" id="altAra">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    Ara
+  </button>
+  <button type="button" class="alt-btn" id="altKategori">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    Kategoriler
+  </button>
+  <button type="button" class="alt-btn" id="altSepet">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M6 6 5 3H3"/></svg>
+    Sepet
+    <span class="alt-rozet" id="altSepetSayi" hidden>0</span>
+  </button>
+</nav>
+
 </body>
 </html>

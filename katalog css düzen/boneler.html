@@ -3,128 +3,201 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BONELER — Özten Spor Kataloğu</title>
-<link rel="stylesheet" href="Ozten Spor Katalog.css">
+<title>YÜZME — Özten Spor Kataloğu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ozten-yeni.css">
 <script src="sepet.js" defer></script>
+<script src="site.js" defer></script>
 </head>
-<body id="top">
-<div class="floating-nav-group">
-    <a href="#top" class="floating-nav-btn"><span class="fn-arrow">&#8593;</span> Yukarı Çık</a>
-</div>
-<div class="kategori-gecis-buton-sarici">
-    <a href="yuzme.html#top" class="floating-nav-btn"><span class="fn-arrow">&#8592;</span> Yüzme'ye Dön</a>
-</div>
-<div class="katalog-arama"><input type="text" placeholder="Ürün ara..." oninput="aramaFiltrele(this)"></div>
+<body>
 
-<p class="urun-bulunamadi" hidden>Ürün bulunamadı.</p>
-<section class="page cat-page" id="kategori-boneler">
-        <div class="cat-header">
-            <div class="cat-num">13</div>
-            <div class="cat-titleblock">
-                <h1>BONELER</h1>
-                <p>Lateks ve silikon yüzücü boneleri.</p>
-            </div>
+<header class="ust-cubuk">
+  <a class="marka" href="index.html">ÖZTEN<span>SPOR</span></a>
+  <div class="ust-arama">
+    <span class="arama-ikon">&#9906;</span>
+    <input type="text" id="aramaKutusu" placeholder="Ürün ara" autocomplete="off" oninput="aramaFiltrele(this)">
+  </div>
+  <div class="ust-butonlar">
+    <button type="button" class="ust-btn" id="kategoriAc">Kategoriler &#9662;</button>
+    <button type="button" class="ust-btn" id="sepetAc">Sepetim <span class="ust-rozet" id="ustSepetSayi">0</span></button>
+  </div>
+</header>
+
+<nav class="kategori-panel" id="kategoriPanel" hidden>
+  <div class="kategori-panel-baslik">TÜM KATEGORİLER</div>
+  <div class="kategori-izgara">
+        <a class="kategori-link" href="futbol.html">FUTBOL</a>
+        <a class="kategori-link" href="basketbol.html">BASKETBOL</a>
+        <a class="kategori-link" href="voleybol.html">VOLEYBOL</a>
+        <a class="kategori-link" href="badminton.html">BADMINTON</a>
+        <a class="kategori-link" href="masa-tenisi.html">MASA TENİSİ</a>
+        <a class="kategori-link" href="tenis.html">TENİS</a>
+        <a class="kategori-link" href="atlama-ipi.html">ATLAMA İPİ</a>
+        <a class="kategori-link" href="el-yayi.html">EL YAYI</a>
+        <a class="kategori-link" href="yoga-pilates.html">YOGA PİLATES</a>
+        <a class="kategori-link" href="fitness.html">FITNESS</a>
+        <a class="kategori-link" href="egzersiz.html">EGZERSİZ</a>
+        <a class="kategori-link" href="hentbol.html">HENTBOL</a>
+        <a class="kategori-link aktif" href="yuzme.html">YÜZME</a>
+        <a class="kategori-link" href="bocce.html">BOCCE</a>
+        <a class="kategori-link" href="hokey.html">HOKEY</a>
+        <a class="kategori-link" href="kano.html">KANO</a>
+        <a class="kategori-link" href="beyzbol.html">BEYZBOL</a>
+        <a class="kategori-link" href="paten.html">PATEN</a>
+        <a class="kategori-link" href="oryantiring.html">ORYANTİRİNG</a>
+        <a class="kategori-link" href="padel.html">PADEL</a>
+        <a class="kategori-link" href="pickleball.html">PICKLEBALL</a>
+        <a class="kategori-link" href="ragbi.html">RAGBİ</a>
+        <a class="kategori-link" href="satranc.html">SATRANÇ</a>
+        <a class="kategori-link" href="softball.html">SOFTBALL</a>
+        <a class="kategori-link" href="squash.html">SQUASH</a>
+        <a class="kategori-link" href="dart.html">DART</a>
+        <a class="kategori-link" href="atletizm.html">ATLETİZM</a>
+        <a class="kategori-link" href="cimnastik.html">CİMNASTİK</a>
+        <a class="kategori-link" href="saglik-toplari.html">SAĞLIK TOPLARI</a>
+        <a class="kategori-link" href="su-topu.html">SU TOPU</a>
+        <a class="kategori-link" href="oyun-grubu.html">OYUN GRUBU</a>
+        <a class="kategori-link" href="dovus-sporlari.html">DÖVÜŞ SPORLARI</a>
+  </div>
+</nav>
+
+<section class="kat-basi">
+  <div class="kat-basi-ic">
+    <div class="kat-etiket">KATEGORİ 13</div>
+    <h1>YÜZME</h1>
+    <p class="kat-aciklama">Yetişkin ve çocuklar için yüzücü gözlükleri.</p>
+    <span class="kat-sayac">8 ürün</span>
+  </div>
+</section>
+
+<nav class="alt-kat-serit" aria-label="Alt kategoriler">
+  <div class="alt-kat-ic">
+      <a class="alt-kat-cip" href="yuzme.html">Gözlükler</a>
+      <a class="alt-kat-cip aktif" href="boneler.html">Boneler</a>
+      <a class="alt-kat-cip" href="sungerler.html">Süngerler</a>
+      <a class="alt-kat-cip" href="yuzme-malzemeleri.html">Yüzme Malzemeleri</a>
+  </div>
+</nav>
+
+<main class="icerik">
+  <p class="urun-bulunamadi" hidden>Aramanla eşleşen ürün bulunamadı.</p>
+  <div class="product-grid">
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Y%C3%BCzme%20image/LATEKS%20BONE%20SCF09.webp" alt="LATEKS BONE SCF09" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>LATEKS BONE SCF09</span>
+          <p class="kart-aciklama">Esnek lateks malzeme, Rahat ve konforlu kullanım, Saçı sudan korur, Kolay giyilip çıkarılır Dayanıklı yapı, Farklı baş ölçülerine uyumlu, Havuz kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">50 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Y%C3%BCzme%20image/LATEKS%20BONE%20SCF09.bmp" alt="LATEKS BONE SCF09" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : LATEKS BONE SCF09</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Esnek lateks malzeme, Rahat ve konforlu kullanım, Saçı sudan korur, Kolay giyilip çıkarılır</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Dayanıklı yapı, Farklı baş ölçülerine uyumlu, Havuz kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">50 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Y%C3%BCzme%20image/S%C4%B0L%C4%B0KON%20BONE%20SCF17.bmp" alt="SİLİKON BONE SCF17" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : SİLİKON BONE SCF17</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : %100 silikon malzeme, Yüksek esneklik, Saçı sudan korur, Kolay giyilip çıkarılır, Dayanıklı ve uzun ömürlü</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Konforlu kullanım, Profesyonel ve amatör yüzücüler için uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">110 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20Bonesi%20Likral%C4%B1%20LYB.bmp" alt="Helix Yüzücü Bonesi Likralı LYB" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Yüzücü Bonesi Likralı LYB</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Yüksek elastikiyetli likralı kumaş (spandex) malzeme, Hafif, nefes alabilir, çabuk kuruyan tekstil</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Havuz ve deniz kullanımı için uygundur, Saçları korur, kaymayı önler, su direncini azaltır.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">30 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20Bonesi%20YB.bmp" alt="Helix Yüzücü Bonesi YB" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Yüzücü Bonesi YB</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : %100 malzeme, Yumuşak, esnek ve sağlam, Kaydırmaz tasarım</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Antrenman, serbest yüzme, havuz ve açık su.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">120 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20Bonesi%20YB-33.bmp" alt="Helix Yüzücü Bonesi YB-33" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Yüzücü Bonesi YB-33</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : %100 yüksek kaliteli silikon malzeme, Esnek, yırtılmaya karşı dayanıklı, Kaydırmaz yapı, sabit tutuş</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Saç koruması, hidrodinamik performans, konfor, Yetişkin kullanıcılar için standart beden.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">60 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20Bonesi%20YB-58.bmp" alt="Helix Yüzücü Bonesi YB-58" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Yüzücü Bonesi YB-58</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : %100 yüksek kaliteli silikon malzeme, Yumuşak ve esnek yapı, Uzun süreli kullanımda rahatsızlık oluşturmaz, Saçları klor ve havuz kimyasallarına karşı korur</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Suda sürtünmeyi azaltan özel tasarım, Kaydırmaz iç yüzey ile sabit duruş sağlar.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">120 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Boneler</span>
-        <span>1</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">13</div>
-            <div class="cat-titleblock">
-                <h1>BONELER</h1>
-                <p>Ürün listesi (devamı) — sayfa 2/2</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Y%C3%BCzme%20image/S%C4%B0L%C4%B0KON%20BONE%20SCF17.webp" alt="SİLİKON BONE SCF17" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>SİLİKON BONE SCF17</span>
+          <p class="kart-aciklama">%100 silikon malzeme, Yüksek esneklik, Saçı sudan korur, Kolay giyilip çıkarılır, Dayanıklı ve uzun ömürlü Konforlu kullanım, Profesyonel ve amatör yüzücüler için uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">110 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20Bonesi%20YB-70.bmp" alt="Helix Yüzücü Bonesi YB-70" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Yüzücü Bonesi YB-70</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : %100 silikon malzeme, Su geçirmez, esnek ve konforlu, Kaymaz özel doku, Sürtünmeyi azaltma</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">saç koruması, sabit kullanım, Havuz ve deniz; antrenman ve yarışlar.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">110 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20Bonesi%20YB-90.bmp" alt="Helix Yüzücü Bonesi YB-90" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Yüzücü Bonesi YB-90</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : %100 silikon – Esnek, sağlam ve suya dayanıklı yapı malzeme, Kaydırmaz iç yüzey – Başta sabit durur, Saçları klor, tuz ve diğer kimyasallardan korur</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Hem havuz hem de açık su kullanımı için uygundur, Su direncini azaltarak daha akıcı yüzme sağlar, Farklı baş yapılarına uygun esnek form.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">140 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Boneler</span>
-        <span>2</span>
-    </div>
-    </section>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20Bonesi%20Likral%C4%B1%20LYB.webp" alt="Helix Yüzücü Bonesi Likralı LYB" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Yüzücü Bonesi Likralı LYB</span>
+          <p class="kart-aciklama">Yüksek elastikiyetli likralı kumaş (spandex) malzeme, Hafif, nefes alabilir, çabuk kuruyan tekstil Havuz ve deniz kullanımı için uygundur, Saçları korur, kaymayı önler, su direncini azaltır.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">30 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20Bonesi%20YB.webp" alt="Helix Yüzücü Bonesi YB" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Yüzücü Bonesi YB</span>
+          <p class="kart-aciklama">%100 malzeme, Yumuşak, esnek ve sağlam, Kaydırmaz tasarım Antrenman, serbest yüzme, havuz ve açık su.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">120 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20Bonesi%20YB-33.webp" alt="Helix Yüzücü Bonesi YB-33" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Yüzücü Bonesi YB-33</span>
+          <p class="kart-aciklama">%100 yüksek kaliteli silikon malzeme, Esnek, yırtılmaya karşı dayanıklı, Kaydırmaz yapı, sabit tutuş Saç koruması, hidrodinamik performans, konfor, Yetişkin kullanıcılar için standart beden.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">60 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20Bonesi%20YB-58.webp" alt="Helix Yüzücü Bonesi YB-58" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Yüzücü Bonesi YB-58</span>
+          <p class="kart-aciklama">%100 yüksek kaliteli silikon malzeme, Yumuşak ve esnek yapı, Uzun süreli kullanımda rahatsızlık oluşturmaz, Saçları klor ve havuz kimyasallarına karşı korur Suda sürtünmeyi azaltan özel tasarım, Kaydırmaz iç yüzey ile sabit duruş sağlar.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">120 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20Bonesi%20YB-70.webp" alt="Helix Yüzücü Bonesi YB-70" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Yüzücü Bonesi YB-70</span>
+          <p class="kart-aciklama">%100 silikon malzeme, Su geçirmez, esnek ve konforlu, Kaymaz özel doku, Sürtünmeyi azaltma saç koruması, sabit kullanım, Havuz ve deniz; antrenman ve yarışlar.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">110 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20Bonesi%20YB-90.webp" alt="Helix Yüzücü Bonesi YB-90" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Yüzücü Bonesi YB-90</span>
+          <p class="kart-aciklama">%100 silikon – Esnek, sağlam ve suya dayanıklı yapı malzeme, Kaydırmaz iç yüzey – Başta sabit durur, Saçları klor, tuz ve diğer kimyasallardan korur Hem havuz hem de açık su kullanımı için uygundur, Su direncini azaltarak daha akıcı yüzme sağlar, Farklı baş yapılarına uygun esnek form.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">140 ₺</span></div>
+          </div>
+        </div>
+      </div>
+  </div>
+</main>
 
+<a class="wa-buton" href="https://wa.me/905522025737" target="_blank" rel="noopener" aria-label="WhatsApp'tan yazın">
+  <svg viewBox="0 0 32 32" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M16 3C9 3 3 9 3 16c0 2.4.6 4.6 1.8 6.6L3 29l6.6-1.7c1.9 1 4 1.6 6.4 1.6 7 0 13-6 13-13S23 3 16 3zm7.6 18.4c-.3.9-1.7 1.7-2.7 1.9-.7.1-1.6.2-4.6-1-3.9-1.6-6.4-5.5-6.6-5.8-.2-.3-1.6-2.1-1.6-4s1-2.8 1.3-3.2c.3-.3.7-.4 1-.4h.7c.2 0 .5 0 .8.6.3.7 1.1 2.6 1.2 2.8.1.2.2.4 0 .7-.1.3-.2.4-.4.6-.2.2-.4.5-.6.7-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.6 1.4 1.3 2.6 1.7 3 1.9.3.2.5.1.7-.1.2-.2.9-1 1.1-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.5 1.2.4.2.6.3.7.5.1.2.1 1-.2 1.9z"/></svg>
+</a>
 
-<script>
-function aramaFiltrele(inp){
-  var q=inp.value.toLocaleLowerCase('tr-TR').trim(), gorunen=0;
-  document.querySelectorAll('.product-card').forEach(function(k){
-    var e=k.querySelector('.pf-label');
-    var esles=(e?e.textContent.toLocaleLowerCase('tr-TR'):'').indexOf(q)!==-1;
-    k.style.display=esles?'':'none';
-    if(esles)gorunen++;
-  });
-  document.querySelector('.urun-bulunamadi').hidden=!(q&&gorunen===0);
-}
-</script>
+<footer class="alt-bilgi">
+  <div class="alt-bilgi-ic">
+    <strong>ÖZTEN SPOR</strong>
+    Kirazlı Mahallesi 1201. Sokak, Bağcılar / İstanbul<br>
+    <a href="mailto:oztensporltd@gmail.com">oztensporltd@gmail.com</a>
+  </div>
+</footer>
+
+<nav class="alt-cubuk">
+  <a class="alt-btn" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+    Ana Sayfa
+  </a>
+  <button type="button" class="alt-btn" id="altAra">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    Ara
+  </button>
+  <button type="button" class="alt-btn" id="altKategori">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    Kategoriler
+  </button>
+  <button type="button" class="alt-btn" id="altSepet">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M6 6 5 3H3"/></svg>
+    Sepet
+    <span class="alt-rozet" id="altSepetSayi" hidden>0</span>
+  </button>
+</nav>
+
 </body>
 </html>

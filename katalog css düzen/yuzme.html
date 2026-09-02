@@ -4,237 +4,310 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>YÜZME — Özten Spor Kataloğu</title>
-<link rel="stylesheet" href="Ozten Spor Katalog.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ozten-yeni.css">
 <script src="sepet.js" defer></script>
+<script src="site.js" defer></script>
 </head>
-<body id="top">
-<div class="floating-nav-group">
-    <a href="#top" class="floating-nav-btn"><span class="fn-arrow">&#8593;</span> Yukarı Çık</a>
-</div>
-<div class="katalog-arama"><input type="text" placeholder="Ürün ara..." oninput="aramaFiltrele(this)"></div>
-<div class="kategori-menu-cubugu">
-    <button type="button" class="kategori-menu-buton">Alt Kategoriler <span class="fn-arrow">&#9662;</span></button>
-    <div class="kategori-menu-panel" hidden>
-        <a href="boneler.html#top">Boneler</a>
-        <a href="sungerler.html#top">Süngerler</a>
-        <a href="yuzme-malzemeleri.html#top">Yüzme Malzemeleri</a>
-    </div>
-    <a href="index.html#top" class="ana-katalog-buton">Ana Kataloğa Dön</a>
-</div>
+<body>
 
-<p class="urun-bulunamadi" hidden>Ürün bulunamadı.</p>
-<section class="page cat-page" id="kategori-yuzme">
-        <div class="cat-header">
-            <div class="cat-num">13</div>
-            <div class="cat-titleblock">
-                <h1>YÜZME</h1>
-                <p>Yetişkin ve çocuklar için yüzücü gözlükleri.</p>
-            </div>
+<header class="ust-cubuk">
+  <a class="marka" href="index.html">ÖZTEN<span>SPOR</span></a>
+  <div class="ust-arama">
+    <span class="arama-ikon">&#9906;</span>
+    <input type="text" id="aramaKutusu" placeholder="Ürün ara" autocomplete="off" oninput="aramaFiltrele(this)">
+  </div>
+  <div class="ust-butonlar">
+    <button type="button" class="ust-btn" id="kategoriAc">Kategoriler &#9662;</button>
+    <button type="button" class="ust-btn" id="sepetAc">Sepetim <span class="ust-rozet" id="ustSepetSayi">0</span></button>
+  </div>
+</header>
+
+<nav class="kategori-panel" id="kategoriPanel" hidden>
+  <div class="kategori-panel-baslik">TÜM KATEGORİLER</div>
+  <div class="kategori-izgara">
+        <a class="kategori-link" href="futbol.html">FUTBOL</a>
+        <a class="kategori-link" href="basketbol.html">BASKETBOL</a>
+        <a class="kategori-link" href="voleybol.html">VOLEYBOL</a>
+        <a class="kategori-link" href="badminton.html">BADMINTON</a>
+        <a class="kategori-link" href="masa-tenisi.html">MASA TENİSİ</a>
+        <a class="kategori-link" href="tenis.html">TENİS</a>
+        <a class="kategori-link" href="atlama-ipi.html">ATLAMA İPİ</a>
+        <a class="kategori-link" href="el-yayi.html">EL YAYI</a>
+        <a class="kategori-link" href="yoga-pilates.html">YOGA PİLATES</a>
+        <a class="kategori-link" href="fitness.html">FITNESS</a>
+        <a class="kategori-link" href="egzersiz.html">EGZERSİZ</a>
+        <a class="kategori-link" href="hentbol.html">HENTBOL</a>
+        <a class="kategori-link aktif" href="yuzme.html">YÜZME</a>
+        <a class="kategori-link" href="bocce.html">BOCCE</a>
+        <a class="kategori-link" href="hokey.html">HOKEY</a>
+        <a class="kategori-link" href="kano.html">KANO</a>
+        <a class="kategori-link" href="beyzbol.html">BEYZBOL</a>
+        <a class="kategori-link" href="paten.html">PATEN</a>
+        <a class="kategori-link" href="oryantiring.html">ORYANTİRİNG</a>
+        <a class="kategori-link" href="padel.html">PADEL</a>
+        <a class="kategori-link" href="pickleball.html">PICKLEBALL</a>
+        <a class="kategori-link" href="ragbi.html">RAGBİ</a>
+        <a class="kategori-link" href="satranc.html">SATRANÇ</a>
+        <a class="kategori-link" href="softball.html">SOFTBALL</a>
+        <a class="kategori-link" href="squash.html">SQUASH</a>
+        <a class="kategori-link" href="dart.html">DART</a>
+        <a class="kategori-link" href="atletizm.html">ATLETİZM</a>
+        <a class="kategori-link" href="cimnastik.html">CİMNASTİK</a>
+        <a class="kategori-link" href="saglik-toplari.html">SAĞLIK TOPLARI</a>
+        <a class="kategori-link" href="su-topu.html">SU TOPU</a>
+        <a class="kategori-link" href="oyun-grubu.html">OYUN GRUBU</a>
+        <a class="kategori-link" href="dovus-sporlari.html">DÖVÜŞ SPORLARI</a>
+  </div>
+</nav>
+
+<section class="kat-basi">
+  <div class="kat-basi-ic">
+    <div class="kat-etiket">KATEGORİ 13</div>
+    <h1>YÜZME</h1>
+    <p class="kat-aciklama">Yetişkin ve çocuklar için yüzücü gözlükleri.</p>
+    <span class="kat-sayac">19 ürün</span>
+  </div>
+</section>
+
+<nav class="alt-kat-serit" aria-label="Alt kategoriler">
+  <div class="alt-kat-ic">
+      <a class="alt-kat-cip aktif" href="yuzme.html">Gözlükler</a>
+      <a class="alt-kat-cip" href="boneler.html">Boneler</a>
+      <a class="alt-kat-cip" href="sungerler.html">Süngerler</a>
+      <a class="alt-kat-cip" href="yuzme-malzemeleri.html">Yüzme Malzemeleri</a>
+  </div>
+</nav>
+
+<main class="icerik">
+  <p class="urun-bulunamadi" hidden>Aramanla eşleşen ürün bulunamadı.</p>
+  <div class="product-grid">
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Y%C3%BCzme%20image/ADG23%20HATTRICK.webp" alt="ADG23 HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>ADG23 HATTRICK</span>
+          <p class="kart-aciklama">UV korumalı lens, Buğu önleyici kaplama, Silikon conta, Ayarlanabilir silikon baş bandı Geniş görüş açısı, Su sızdırmaz tasarım, Antrenman ve günlük kullanıma uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">190 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Y%C3%BCzme%20image/ADG23%20HATTRICK.bmp" alt="ADG23 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : ADG23 HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : UV korumalı lens, Buğu önleyici kaplama, Silikon conta, Ayarlanabilir silikon baş bandı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Geniş görüş açısı, Su sızdırmaz tasarım, Antrenman ve günlük kullanıma uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">190 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Y%C3%BCzme%20image/ADG26%20HATTRICK.bmp" alt="ADG26 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : ADG26 HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : UV korumalı lens, Anti-fog (buğu önleyici) kaplama, Yumuşak silikon conta, Ayarlanabilir baş bandı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Geniş görüş açısı, Konforlu kullanım, Havuz kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">210 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Y%C3%BCzme%20image/ADG27%20HATTRICK.bmp" alt="ADG27 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : ADG27 HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : UV korumalı lens, Anti-fog kaplama, Silikon conta, Ayarlanabilir silikon kayış</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ergonomik tasarım, Su sızdırmaz yapı, Antrenman kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">210 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Y%C3%BCzme%20image/HDG25%20HATTRICK.bmp" alt="HDG25 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : HDG25 HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : UV korumalı lens, Buğu önleyici kaplama, Silikon conta, Ayarlanabilir baş bandı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ergonomik tasarım, Su sızdırmaz yapı, Çocuk ve yetişkin kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">440 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Y%C3%BCzme%20image/ADG25%20HATTRICK.bmp" alt="ADG25 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : ADG25 HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : UV korumalı lens, Anti-fog kaplama, Silikon conta, Ayarlanabilir baş bandı, Geniş görüş açısı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Konforlu kullanım, Havuz ve antrenman kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">330 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Y%C3%BCzme%20image/HATTRICK%20HDG%2026-31.bmp" alt="HATTRICK HDG 26-31" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : HATTRICK HDG 26-31</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : UV korumalı lens, Anti-fog kaplama, Silikon conta, Ayarlanabilir baş bandı, Geniş görüş açısı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Konforlu kullanım, Havuz ve antrenman kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">410 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Yüzme</span>
-        <span>115</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">13</div>
-            <div class="cat-titleblock">
-                <h1>YÜZME</h1>
-                <p>Ürün listesi (devamı) — sayfa 2/3</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Y%C3%BCzme%20image/ADG26%20HATTRICK.webp" alt="ADG26 HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>ADG26 HATTRICK</span>
+          <p class="kart-aciklama">UV korumalı lens, Anti-fog (buğu önleyici) kaplama, Yumuşak silikon conta, Ayarlanabilir baş bandı Geniş görüş açısı, Konforlu kullanım, Havuz kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">210 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Y%C3%BCzme%20image/HDG%2032-37%20HATTRICK%20%C3%87OCUK.bmp" alt="HDG 32-37 HATTRICK ÇOCUK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : HDG 32-37 HATTRICK ÇOCUK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : UV korumalı lens, Anti-fog kaplama, Silikon conta, Ayarlanabilir baş bandı, Geniş görüş açısı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Konforlu kullanım, Havuz ve antrenman kullanımına uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">410 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20G%C3%B6zl%C3%BC%C4%9F%C3%BC%20%C3%87ocuk%201900P.bmp" alt="Helix Yüzücü Gözlüğü Çocuk 1900P" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Yüzücü Gözlüğü Çocuk 1900P</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 3–10 yaş, UV korumalı polikarbonat lens, Anti-fog kaplama, Çizilmeye karşı dayanıklı lens yüzeyi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Yumuşak silikon – Tam sızdırmazlık ve konfor, Ayarlanabilir silikon kayış.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">300 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20G%C3%B6zl%C3%BC%C4%9F%C3%BC%20Yeti%C5%9Fkin%20AGM-01.bmp" alt="Helix Yüzücü Gözlüğü Yetişkin AGM-01" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Yüzücü Gözlüğü Yetişkin AGM-01</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Geniş görüş açısına sahip, geniş lens tasarımı, Gözleri güneşin zararlı UV ışınlarından koruyan UV kaplama, Anti-fog kaplama ile kesintisiz görüş</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Polikarbonat (çizilmeye ve darbelere dayanıklı), Yumuşak silikon veya TPR (hipoalerjenik).</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">520 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20G%C3%B6zl%C3%BC%C4%9F%C3%BC%20Yeti%C5%9Fkin%20BG100.bmp" alt="Helix Yüzücü Gözlüğü Yetişkin BG100" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Yüzücü Gözlüğü Yetişkin BG100</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : BG100-BK model, Polikarbonat (P.C.), UV korumalı, Buğu önleyici kaplama, Ultra şeffaf, geniş görüş lensi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">180° kesintisiz geniş görüş, Polikarbonat (P.C.) ve TPE (termoplastik elastomer).</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">640 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20G%C3%B6zl%C3%BC%C4%9F%C3%BC%20Gen%C3%A7%20BKG80-B.bmp" alt="Helix Yüzücü Gözlüğü Genç BKG80-B" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Yüzücü Gözlüğü Genç BKG80-B</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : BKG80-B, 6–12 yaş arası çocuklar için uygundur</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">UV korumalı Buğu önleyici (anti-fog) kaplama Polikarbonat lensler (P.C.).</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">570 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20G%C3%B6zl%C3%BC%C4%9F%C3%BC%20Gen%C3%A7%20BKG80-P.bmp" alt="Helix Yüzücü Gözlüğü Genç BKG80-P" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Yüzücü Gözlüğü Genç BKG80-P</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : BKG80-P, 6–12 yaş arası çocuklar, UV korumalı Buğu önleyici (anti-fog) kaplama.</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">570 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Yüzme</span>
-        <span>116</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">13</div>
-            <div class="cat-titleblock">
-                <h1>YÜZME</h1>
-                <p>Ürün listesi (devamı) — sayfa 3/3</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Y%C3%BCzme%20image/ADG27%20HATTRICK.webp" alt="ADG27 HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>ADG27 HATTRICK</span>
+          <p class="kart-aciklama">UV korumalı lens, Anti-fog kaplama, Silikon conta, Ayarlanabilir silikon kayış Ergonomik tasarım, Su sızdırmaz yapı, Antrenman kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">210 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20G%C3%B6zl%C3%BC%C4%9F%C3%BC%20%C3%87ocuk%201900C.bmp" alt="Helix Yüzücü Gözlüğü Çocuk 1900C" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Yüzücü Gözlüğü Çocuk 1900C</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Rengarenk – Canlı renk kombinasyonları, 3–10 yaş arası çocuklar için uygundur, Polikarbonat – UV korumalı ve buğu önleyici kaplamalı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Yumuşak silikon – Sızdırmaz ve cilde dost, Ayarlanabilir silikon – Kolay uyum ve sabit duruş, Esnek yapı – Yüze tam oturur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">280 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20G%C3%B6zl%C3%BC%C4%9F%C3%BC%20Gen%C3%A7%20KG20.bmp" alt="Helix Yüzücü Gözlüğü Genç KG20" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Yüzücü Gözlüğü Genç KG20</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 6–12 yaş, UV korumalı, buğu önleyici (anti-fog), Bölünmüş ve ayarlanabilir tasarım.</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">360 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20G%C3%B6zl%C3%BC%C4%9F%C3%BC%20Gen%C3%A7%20KG25.bmp" alt="Helix Yüzücü Gözlüğü Genç KG25" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Yüzücü Gözlüğü Genç KG25</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : KG25 model, 6–12 yaş, %50 Polikarbonat çerçeve, %30 Termoplastik kauçuk kayış, %20 diğer bileşenler</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">UV korumalı, Buğu önleyici kaplamalı, Yumuşak ve esnek yapı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">380 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20G%C3%B6zl%C3%BC%C4%9F%C3%BC%20%C3%87ocuk%201900B.bmp" alt="Helix Yüzücü Gözlüğü Çocuk 1900B" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Yüzücü Gözlüğü Çocuk 1900B</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Mavi – Canlı ve dikkat çekici tasarım renk, 3–10 yaş arası çocuklar için uygundur, UV korumalı polikarbonat – Gözleri güneş ışınlarından korur</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Anti-fog kaplama – Su altında net görüş sağlar, Çizilmeye dirençli sert lens yüzeyi, Yumuşak silikon – Su geçirmezlik ve konfor sunar.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">300 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20G%C3%B6zl%C3%BC%C4%9F%C3%BC%20%C3%87ocuk%201900DB.bmp" alt="Helix Yüzücü Gözlüğü Çocuk 1900DB" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Yüzücü Gözlüğü Çocuk 1900DB</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Lacivert / Turuncu – Canlı ve dikkat çekici kombinasyon renk, 3–10 yaş arası çocuklar için uygundur, UV korumalı polikarbonat lens – Güneş ışınlarına karşı etkin koruma</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Anti-fog kaplama – Su altında net ve sürekli görüş sağlar, Darbelere ve çizilmeye karşı dirençli yapı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">300 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20G%C3%B6zl%C3%BC%C4%9F%C3%BC%20%C3%87ocuk%201900PK.bmp" alt="Helix Yüzücü Gözlüğü Çocuk 1900PK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Yüzücü Gözlüğü Çocuk 1900PK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 3–10 yaş, UV korumalı polikarbonat, Anti-fog kaplama, Yumuşak silikon</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">sızdırmaz yapı, Ayarlanabilir silikon, Esnek yapı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">300 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20G%C3%B6zl%C3%BC%C4%9F%C3%BC%20Yeti%C5%9Fkin%20AG05.bmp" alt="Helix Yüzücü Gözlüğü Yetişkin AG05" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Yüzücü Gözlüğü Yetişkin AG05</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Mavi/Gri renk, UV korumalı lens, Anti-fog (buğu önleyici) kaplama, Yumuşak silikon conta</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ayarlanabilir silikon baş bandı, Geniş görüş açısı, Antrenman ve günlük kullanıma uygun.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">470 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Yüzme</span>
-        <span>117</span>
-    </div>
-    </section>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Y%C3%BCzme%20image/HDG25%20HATTRICK.webp" alt="HDG25 HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>HDG25 HATTRICK</span>
+          <p class="kart-aciklama">UV korumalı lens, Buğu önleyici kaplama, Silikon conta, Ayarlanabilir baş bandı Ergonomik tasarım, Su sızdırmaz yapı, Çocuk ve yetişkin kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">440 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Y%C3%BCzme%20image/ADG25%20HATTRICK.webp" alt="ADG25 HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>ADG25 HATTRICK</span>
+          <p class="kart-aciklama">UV korumalı lens, Anti-fog kaplama, Silikon conta, Ayarlanabilir baş bandı, Geniş görüş açısı Konforlu kullanım, Havuz ve antrenman kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">330 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Y%C3%BCzme%20image/HATTRICK%20HDG%2026-31.webp" alt="HATTRICK HDG 26-31" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>HATTRICK HDG 26-31</span>
+          <p class="kart-aciklama">UV korumalı lens, Anti-fog kaplama, Silikon conta, Ayarlanabilir baş bandı, Geniş görüş açısı Konforlu kullanım, Havuz ve antrenman kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">410 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Y%C3%BCzme%20image/HDG%2032-37%20HATTRICK%20%C3%87OCUK.webp" alt="HDG 32-37 HATTRICK ÇOCUK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>HDG 32-37 HATTRICK ÇOCUK</span>
+          <p class="kart-aciklama">UV korumalı lens, Anti-fog kaplama, Silikon conta, Ayarlanabilir baş bandı, Geniş görüş açısı Konforlu kullanım, Havuz ve antrenman kullanımına uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">410 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20G%C3%B6zl%C3%BC%C4%9F%C3%BC%20%C3%87ocuk%201900P.webp" alt="Helix Yüzücü Gözlüğü Çocuk 1900P" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Yüzücü Gözlüğü Çocuk 1900P</span>
+          <p class="kart-aciklama">3–10 yaş, UV korumalı polikarbonat lens, Anti-fog kaplama, Çizilmeye karşı dayanıklı lens yüzeyi Yumuşak silikon – Tam sızdırmazlık ve konfor, Ayarlanabilir silikon kayış.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">300 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20G%C3%B6zl%C3%BC%C4%9F%C3%BC%20Yeti%C5%9Fkin%20AGM-01.webp" alt="Helix Yüzücü Gözlüğü Yetişkin AGM-01" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Yüzücü Gözlüğü Yetişkin AGM-01</span>
+          <p class="kart-aciklama">Geniş görüş açısına sahip, geniş lens tasarımı, Gözleri güneşin zararlı UV ışınlarından koruyan UV kaplama, Anti-fog kaplama ile kesintisiz görüş Polikarbonat (çizilmeye ve darbelere dayanıklı), Yumuşak silikon veya TPR (hipoalerjenik).</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">520 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20G%C3%B6zl%C3%BC%C4%9F%C3%BC%20Yeti%C5%9Fkin%20BG100.webp" alt="Helix Yüzücü Gözlüğü Yetişkin BG100" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Yüzücü Gözlüğü Yetişkin BG100</span>
+          <p class="kart-aciklama">BG100-BK model, Polikarbonat (P.C.), UV korumalı, Buğu önleyici kaplama, Ultra şeffaf, geniş görüş lensi 180° kesintisiz geniş görüş, Polikarbonat (P.C.) ve TPE (termoplastik elastomer).</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">640 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20G%C3%B6zl%C3%BC%C4%9F%C3%BC%20Gen%C3%A7%20BKG80-B.webp" alt="Helix Yüzücü Gözlüğü Genç BKG80-B" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Yüzücü Gözlüğü Genç BKG80-B</span>
+          <p class="kart-aciklama">BKG80-B, 6–12 yaş arası çocuklar için uygundur UV korumalı Buğu önleyici (anti-fog) kaplama Polikarbonat lensler (P.C.).</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">570 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20G%C3%B6zl%C3%BC%C4%9F%C3%BC%20Gen%C3%A7%20BKG80-P.webp" alt="Helix Yüzücü Gözlüğü Genç BKG80-P" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Yüzücü Gözlüğü Genç BKG80-P</span>
+          <p class="kart-aciklama">BKG80-P, 6–12 yaş arası çocuklar, UV korumalı Buğu önleyici (anti-fog) kaplama.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">570 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20G%C3%B6zl%C3%BC%C4%9F%C3%BC%20%C3%87ocuk%201900C.webp" alt="Helix Yüzücü Gözlüğü Çocuk 1900C" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Yüzücü Gözlüğü Çocuk 1900C</span>
+          <p class="kart-aciklama">Rengarenk – Canlı renk kombinasyonları, 3–10 yaş arası çocuklar için uygundur, Polikarbonat – UV korumalı ve buğu önleyici kaplamalı Yumuşak silikon – Sızdırmaz ve cilde dost, Ayarlanabilir silikon – Kolay uyum ve sabit duruş, Esnek yapı – Yüze tam oturur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">280 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20G%C3%B6zl%C3%BC%C4%9F%C3%BC%20Gen%C3%A7%20KG20.webp" alt="Helix Yüzücü Gözlüğü Genç KG20" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Yüzücü Gözlüğü Genç KG20</span>
+          <p class="kart-aciklama">6–12 yaş, UV korumalı, buğu önleyici (anti-fog), Bölünmüş ve ayarlanabilir tasarım.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">360 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20G%C3%B6zl%C3%BC%C4%9F%C3%BC%20Gen%C3%A7%20KG25.webp" alt="Helix Yüzücü Gözlüğü Genç KG25" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Yüzücü Gözlüğü Genç KG25</span>
+          <p class="kart-aciklama">KG25 model, 6–12 yaş, %50 Polikarbonat çerçeve, %30 Termoplastik kauçuk kayış, %20 diğer bileşenler UV korumalı, Buğu önleyici kaplamalı, Yumuşak ve esnek yapı.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">380 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20G%C3%B6zl%C3%BC%C4%9F%C3%BC%20%C3%87ocuk%201900B.webp" alt="Helix Yüzücü Gözlüğü Çocuk 1900B" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Yüzücü Gözlüğü Çocuk 1900B</span>
+          <p class="kart-aciklama">Mavi – Canlı ve dikkat çekici tasarım renk, 3–10 yaş arası çocuklar için uygundur, UV korumalı polikarbonat – Gözleri güneş ışınlarından korur Anti-fog kaplama – Su altında net görüş sağlar, Çizilmeye dirençli sert lens yüzeyi, Yumuşak silikon – Su geçirmezlik ve konfor sunar.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">300 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20G%C3%B6zl%C3%BC%C4%9F%C3%BC%20%C3%87ocuk%201900DB.webp" alt="Helix Yüzücü Gözlüğü Çocuk 1900DB" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Yüzücü Gözlüğü Çocuk 1900DB</span>
+          <p class="kart-aciklama">Lacivert / Turuncu – Canlı ve dikkat çekici kombinasyon renk, 3–10 yaş arası çocuklar için uygundur, UV korumalı polikarbonat lens – Güneş ışınlarına karşı etkin koruma Anti-fog kaplama – Su altında net ve sürekli görüş sağlar, Darbelere ve çizilmeye karşı dirençli yapı.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">300 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20G%C3%B6zl%C3%BC%C4%9F%C3%BC%20%C3%87ocuk%201900PK.webp" alt="Helix Yüzücü Gözlüğü Çocuk 1900PK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Yüzücü Gözlüğü Çocuk 1900PK</span>
+          <p class="kart-aciklama">3–10 yaş, UV korumalı polikarbonat, Anti-fog kaplama, Yumuşak silikon sızdırmaz yapı, Ayarlanabilir silikon, Esnek yapı.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">300 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Y%C3%BCzme%20image/Helix%20Y%C3%BCz%C3%BCc%C3%BC%20G%C3%B6zl%C3%BC%C4%9F%C3%BC%20Yeti%C5%9Fkin%20AG05.webp" alt="Helix Yüzücü Gözlüğü Yetişkin AG05" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Yüzücü Gözlüğü Yetişkin AG05</span>
+          <p class="kart-aciklama">Mavi/Gri renk, UV korumalı lens, Anti-fog (buğu önleyici) kaplama, Yumuşak silikon conta Ayarlanabilir silikon baş bandı, Geniş görüş açısı, Antrenman ve günlük kullanıma uygun.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">470 ₺</span></div>
+          </div>
+        </div>
+      </div>
+  </div>
+</main>
 
+<a class="wa-buton" href="https://wa.me/905522025737" target="_blank" rel="noopener" aria-label="WhatsApp'tan yazın">
+  <svg viewBox="0 0 32 32" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M16 3C9 3 3 9 3 16c0 2.4.6 4.6 1.8 6.6L3 29l6.6-1.7c1.9 1 4 1.6 6.4 1.6 7 0 13-6 13-13S23 3 16 3zm7.6 18.4c-.3.9-1.7 1.7-2.7 1.9-.7.1-1.6.2-4.6-1-3.9-1.6-6.4-5.5-6.6-5.8-.2-.3-1.6-2.1-1.6-4s1-2.8 1.3-3.2c.3-.3.7-.4 1-.4h.7c.2 0 .5 0 .8.6.3.7 1.1 2.6 1.2 2.8.1.2.2.4 0 .7-.1.3-.2.4-.4.6-.2.2-.4.5-.6.7-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.6 1.4 1.3 2.6 1.7 3 1.9.3.2.5.1.7-.1.2-.2.9-1 1.1-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.5 1.2.4.2.6.3.7.5.1.2.1 1-.2 1.9z"/></svg>
+</a>
 
-<script>
-function aramaFiltrele(inp){
-  var q=inp.value.toLocaleLowerCase('tr-TR').trim(), gorunen=0;
-  document.querySelectorAll('.product-card').forEach(function(k){
-    var e=k.querySelector('.pf-label');
-    var esles=(e?e.textContent.toLocaleLowerCase('tr-TR'):'').indexOf(q)!==-1;
-    k.style.display=esles?'':'none';
-    if(esles)gorunen++;
-  });
-  document.querySelector('.urun-bulunamadi').hidden=!(q&&gorunen===0);
-}
-</script>
+<footer class="alt-bilgi">
+  <div class="alt-bilgi-ic">
+    <strong>ÖZTEN SPOR</strong>
+    Kirazlı Mahallesi 1201. Sokak, Bağcılar / İstanbul<br>
+    <a href="mailto:oztensporltd@gmail.com">oztensporltd@gmail.com</a>
+  </div>
+</footer>
+
+<nav class="alt-cubuk">
+  <a class="alt-btn" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+    Ana Sayfa
+  </a>
+  <button type="button" class="alt-btn" id="altAra">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    Ara
+  </button>
+  <button type="button" class="alt-btn" id="altKategori">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    Kategoriler
+  </button>
+  <button type="button" class="alt-btn" id="altSepet">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M6 6 5 3H3"/></svg>
+    Sepet
+    <span class="alt-rozet" id="altSepetSayi" hidden>0</span>
+  </button>
+</nav>
+
 </body>
 </html>

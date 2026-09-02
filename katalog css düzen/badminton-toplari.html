@@ -3,145 +3,223 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BADMINTON TOPLARI — Özten Spor Kataloğu</title>
-<link rel="stylesheet" href="Ozten Spor Katalog.css">
+<title>BADMINTON — Özten Spor Kataloğu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ozten-yeni.css">
 <script src="sepet.js" defer></script>
+<script src="site.js" defer></script>
 </head>
-<body id="top">
-<div class="floating-nav-group">
-    <a href="#top" class="floating-nav-btn"><span class="fn-arrow">&#8593;</span> Yukarı Çık</a>
-    <a href="index.html#top" class="floating-nav-btn"><span class="fn-arrow">&#8592;</span> Ana Kataloğa Dön</a>
-</div>
-<div class="kategori-gecis-buton-sarici">
-    <a href="badminton.html#top" class="floating-nav-btn"><span class="fn-arrow">&#8592;</span> Badminton'a Dön</a>
-</div>
+<body>
 
-<div class="katalog-arama"><input type="text" placeholder="Ürün ara..." oninput="aramaFiltrele(this)"></div>
-<p class="urun-bulunamadi" hidden>Ürün bulunamadı.</p>
-<section class="page cat-page" id="kategori-badminton-toplari">
-        <div class="cat-header">
-            <div class="cat-num">04</div>
-            <div class="cat-titleblock">
-                <h1>BADMINTON TOPLARI</h1>
-                <p>Tüylü ve plastik badminton topları (shuttlecock).</p>
-            </div>
+<header class="ust-cubuk">
+  <a class="marka" href="index.html">ÖZTEN<span>SPOR</span></a>
+  <div class="ust-arama">
+    <span class="arama-ikon">&#9906;</span>
+    <input type="text" id="aramaKutusu" placeholder="Ürün ara" autocomplete="off" oninput="aramaFiltrele(this)">
+  </div>
+  <div class="ust-butonlar">
+    <button type="button" class="ust-btn" id="kategoriAc">Kategoriler &#9662;</button>
+    <button type="button" class="ust-btn" id="sepetAc">Sepetim <span class="ust-rozet" id="ustSepetSayi">0</span></button>
+  </div>
+</header>
+
+<nav class="kategori-panel" id="kategoriPanel" hidden>
+  <div class="kategori-panel-baslik">TÜM KATEGORİLER</div>
+  <div class="kategori-izgara">
+        <a class="kategori-link" href="futbol.html">FUTBOL</a>
+        <a class="kategori-link" href="basketbol.html">BASKETBOL</a>
+        <a class="kategori-link" href="voleybol.html">VOLEYBOL</a>
+        <a class="kategori-link aktif" href="badminton.html">BADMINTON</a>
+        <a class="kategori-link" href="masa-tenisi.html">MASA TENİSİ</a>
+        <a class="kategori-link" href="tenis.html">TENİS</a>
+        <a class="kategori-link" href="atlama-ipi.html">ATLAMA İPİ</a>
+        <a class="kategori-link" href="el-yayi.html">EL YAYI</a>
+        <a class="kategori-link" href="yoga-pilates.html">YOGA PİLATES</a>
+        <a class="kategori-link" href="fitness.html">FITNESS</a>
+        <a class="kategori-link" href="egzersiz.html">EGZERSİZ</a>
+        <a class="kategori-link" href="hentbol.html">HENTBOL</a>
+        <a class="kategori-link" href="yuzme.html">YÜZME</a>
+        <a class="kategori-link" href="bocce.html">BOCCE</a>
+        <a class="kategori-link" href="hokey.html">HOKEY</a>
+        <a class="kategori-link" href="kano.html">KANO</a>
+        <a class="kategori-link" href="beyzbol.html">BEYZBOL</a>
+        <a class="kategori-link" href="paten.html">PATEN</a>
+        <a class="kategori-link" href="oryantiring.html">ORYANTİRİNG</a>
+        <a class="kategori-link" href="padel.html">PADEL</a>
+        <a class="kategori-link" href="pickleball.html">PICKLEBALL</a>
+        <a class="kategori-link" href="ragbi.html">RAGBİ</a>
+        <a class="kategori-link" href="satranc.html">SATRANÇ</a>
+        <a class="kategori-link" href="softball.html">SOFTBALL</a>
+        <a class="kategori-link" href="squash.html">SQUASH</a>
+        <a class="kategori-link" href="dart.html">DART</a>
+        <a class="kategori-link" href="atletizm.html">ATLETİZM</a>
+        <a class="kategori-link" href="cimnastik.html">CİMNASTİK</a>
+        <a class="kategori-link" href="saglik-toplari.html">SAĞLIK TOPLARI</a>
+        <a class="kategori-link" href="su-topu.html">SU TOPU</a>
+        <a class="kategori-link" href="oyun-grubu.html">OYUN GRUBU</a>
+        <a class="kategori-link" href="dovus-sporlari.html">DÖVÜŞ SPORLARI</a>
+  </div>
+</nav>
+
+<section class="kat-basi">
+  <div class="kat-basi-ic">
+    <div class="kat-etiket">KATEGORİ 04</div>
+    <h1>BADMINTON</h1>
+    <p class="kat-aciklama">Hafif ve dayanıklı badminton raketleri.</p>
+    <span class="kat-sayac">10 ürün</span>
+  </div>
+</section>
+
+<nav class="alt-kat-serit" aria-label="Alt kategoriler">
+  <div class="alt-kat-ic">
+      <a class="alt-kat-cip" href="badminton.html">Raketler</a>
+      <a class="alt-kat-cip aktif" href="badminton-toplari.html">Badminton Topları</a>
+      <a class="alt-kat-cip" href="badminton-fileleri.html">Badminton Fileleri</a>
+      <a class="alt-kat-cip" href="badminton-gripleri.html">Badminton Gripleri</a>
+      <a class="alt-kat-cip" href="badminton-kordajlari.html">Badminton Kordajları</a>
+      <a class="alt-kat-cip" href="badminton-malzemeleri.html">Badminton Malzemeleri</a>
+  </div>
+</nav>
+
+<main class="icerik">
+  <p class="urun-bulunamadi" hidden>Aramanla eşleşen ürün bulunamadı.</p>
+  <div class="product-grid">
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Badminton%20image/TBF%20Badminton%20Topu%20SHN10.webp" alt="TBF Badminton Topu SHN10" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>TBF Badminton Topu SHN10</span>
+          <p class="kart-aciklama">SHN10 model, 2 katmanlı doğal toz mantar +, 23,5 mm, 5 gram ağırlık, 6 adet, TBF onaylı üretim.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">770 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Badminton%20image/TBF%20Badminton%20Topu%20SHN10.bmp" alt="TBF Badminton Topu SHN10" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : TBF Badminton Topu SHN10</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : SHN10 model, 2 katmanlı doğal toz mantar +, 23,5 mm, 5 gram ağırlık, 6 adet, TBF onaylı üretim.</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled"></span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">770 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Badminton%20image/Leipai%20Badminton%20Topu%20DG-10%20BWF%20Onayl%C4%B1.bmp" alt="Leipai Badminton Topu DG-10 BWF Onaylı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Leipai Badminton Topu DG-10 BWF Onaylı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : 12 adet (tüp içinde), A+ kalite kaz tüyü, tam katı doğal mantar malzeme, 4,74 – 5,50 gram (±0,76 g) ağırlık, 76/77 m/s – uçuş hızı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">A+ seviyesi – Yoğun kullanıma uygun, Folyo astar – Termal koruma sağlar kaplama, BWF (Dünya Badminton Federasyonu) sertifikalı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">4.560 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Badminton%20image/Helix%20Badminton%20Topu%20Hobi%20BBT-6'l%C4%B1.bmp" alt="Helix Badminton Topu Hobi BBT-Set 6'lı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Badminton Topu Hobi BBT-Set 6&#x27;lı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Plastik tüy + 2 katmanlı doğal toz mantar ve malzeme, 23,5 mm, 5 gram ağırlık, Tüp içinde 6 adet badminton topu</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Hobi amaçlı, iç ve dış mekan kullanımına uygundur.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">170 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Badminton%20image/Helix%20Badminton%20Topu%20I%C5%9F%C4%B1kl%C4%B1%20LB-10%20Sar%C4%B1.bmp" alt="Helix Badminton Topu Işıklı LB-10 Sarı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Badminton Topu Işıklı LB- 10 Sarı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Naylon perde tüyü – Sağlam ve uzun ömürlü malzeme, Mantar ile perdeyi ayıran destek şeridi, PU mantar – Dayanıklı temas yüzeyi</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">6 (±1) gram – Dengeli uçuş ağırlık, Orta hız – Stabil ve kontrollü performans uçuş hızı.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">300 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Badminton%20image/Helix%20Badminton%20Topu%20I%C5%9F%C4%B1kl%C4%B1%20LB-20%20Turuncu.bmp" alt="Helix Badminton Topu Işıklı LB-20 Turuncu" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Badminton Topu Işıklı LB- 20 Turuncu</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Naylon perde tüyü – Yüksek dayanıklılık malzeme, Stabil yapı için özel tasarım, PU mantar – Dayanıklı ve dengeli temas</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">6 (±1) gram – Standart oyun dengesi ağırlık, Orta – Kontrollü ve stabil uçuş.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">300 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Badminton%20image/Helix%20Badminton%20Topu%20Air%20AB-20%20Turuncu.bmp" alt="Helix Badminton Topu Air AB-20 Turuncu" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Badminton Topu Air AB-20 Turuncu</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Naylon perde tüyü malzeme, Perdeler ile baş kısmını ayıran takviye şerit</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">PU malzemeden üretilmiş mantar baş, 6 ± 1 gram ağırlık.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">250 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Badminton Topları</span>
-        <span>1</span>
-    </div>
-    </section>
-
-<section class="page cat-page">
-        <div class="cat-header">
-            <div class="cat-num">04</div>
-            <div class="cat-titleblock">
-                <h1>BADMINTON TOPLARI</h1>
-                <p>Ürün listesi (devamı) — sayfa 2/2</p>
-            </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Badminton%20image/Leipai%20Badminton%20Topu%20DG-10%20BWF%20Onayl%C4%B1.webp" alt="Leipai Badminton Topu DG-10 BWF Onaylı" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Leipai Badminton Topu DG-10 BWF Onaylı</span>
+          <p class="kart-aciklama">12 adet (tüp içinde), A+ kalite kaz tüyü, tam katı doğal mantar malzeme, 4,74 – 5,50 gram (±0,76 g) ağırlık, 76/77 m/s – uçuş hızı A+ seviyesi – Yoğun kullanıma uygun, Folyo astar – Termal koruma sağlar kaplama, BWF (Dünya Badminton Federasyonu) sertifikalı.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">4.560 ₺</span></div>
+          </div>
         </div>
-        <div class="product-grid"><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Badminton%20image/Helix%20Badminton%20Topu%20Air%20AB-10%20Sar%C4%B1.bmp" alt="Helix Badminton Topu Air AB-10 Sarı" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : Helix Badminton Topu Air AB-10 Sarı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : Naylon perde tüyü malzeme, Perdeler ile baş kısmı arasında güçlendirici bant</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">PU mantar malzeme, 6 ± 1 gram ağırlık, Orta – Dengeli ve kontrollü uçuş.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">250 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Badminton%20image/BT10%20ALTIS.bmp" alt="BT10 ALTIS" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : BT10 ALTIS</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : BT10 Altis, Tüylü badminton topu, Dayanıklı tüy yapısı, Dengeli uçuş performansı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Antrenman ve hobi kullanımına uygun, Tüp içinde çoklu adet.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">130 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Badminton%20image/BT30%20HATTRICK.bmp" alt="BT30 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : BT30 HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : BT30 Hattrick, Tüylü badminton topu, Dayanıklı ve dengeli tüy yapısı, Yüksek uçuş kararlılığı</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Antrenman ve hobi kullanımına uygun, Tüp içinde çoklu adet.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">220 ₺</span></div>
-    </div><div class="product-card">
-        <div class="img-placeholder" style="height:34mm; padding:0; overflow:hidden; background:#f2f2f2;">
-        <img src="%C4%B0mage/Badminton%20image/BT50%20HATTRICK.bmp" alt="BT50 HATTRICK" style="width:100%; height:100%; object-fit:contain; display:block; background:#fff;">
-    </div>
-        <div class="pf pf-filled"><span class="pf-label filled">Ürün Adı : BT50 HATTRICK</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Açıklama : BT50 Hattrick, Tüylü badminton topu, Üst seviye dayanıklı tüy yapısı, Güçlü ve kontrollü uçuş</span></div>
-        <div class="pf pf-filled"><span class="pf-label filled">Antrenman ve hobi kullanımına uygun, Tüp içinde çoklu adet.</span></div>
-        <div class="pf pf-price"><span class="pf-label">Fiyat</span><span class="pf-line short">300 ₺</span></div>
-    </div></div>
-        <div class="footer">
-        <span>ÖZTEN SPOR — Spor Malzemeleri Kataloğu</span>
-        <span>Badminton Topları</span>
-        <span>2</span>
-    </div>
-    </section>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Badminton%20image/Helix%20Badminton%20Topu%20Hobi%20BBT-6'l%C4%B1.webp" alt="Helix Badminton Topu Hobi BBT-Set 6&amp;#x27;lı" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Badminton Topu Hobi BBT-Set 6&#x27;lı</span>
+          <p class="kart-aciklama">Plastik tüy + 2 katmanlı doğal toz mantar ve malzeme, 23,5 mm, 5 gram ağırlık, Tüp içinde 6 adet badminton topu Hobi amaçlı, iç ve dış mekan kullanımına uygundur.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">170 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Badminton%20image/Helix%20Badminton%20Topu%20I%C5%9F%C4%B1kl%C4%B1%20LB-10%20Sar%C4%B1.webp" alt="Helix Badminton Topu Işıklı LB- 10 Sarı" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Badminton Topu Işıklı LB- 10 Sarı</span>
+          <p class="kart-aciklama">Naylon perde tüyü – Sağlam ve uzun ömürlü malzeme, Mantar ile perdeyi ayıran destek şeridi, PU mantar – Dayanıklı temas yüzeyi 6 (±1) gram – Dengeli uçuş ağırlık, Orta hız – Stabil ve kontrollü performans uçuş hızı.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">300 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Badminton%20image/Helix%20Badminton%20Topu%20I%C5%9F%C4%B1kl%C4%B1%20LB-20%20Turuncu.webp" alt="Helix Badminton Topu Işıklı LB- 20 Turuncu" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Badminton Topu Işıklı LB- 20 Turuncu</span>
+          <p class="kart-aciklama">Naylon perde tüyü – Yüksek dayanıklılık malzeme, Stabil yapı için özel tasarım, PU mantar – Dayanıklı ve dengeli temas 6 (±1) gram – Standart oyun dengesi ağırlık, Orta – Kontrollü ve stabil uçuş.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">300 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Badminton%20image/Helix%20Badminton%20Topu%20Air%20AB-20%20Turuncu.webp" alt="Helix Badminton Topu Air AB-20 Turuncu" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Badminton Topu Air AB-20 Turuncu</span>
+          <p class="kart-aciklama">Naylon perde tüyü malzeme, Perdeler ile baş kısmını ayıran takviye şerit PU malzemeden üretilmiş mantar baş, 6 ± 1 gram ağırlık.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">250 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Badminton%20image/Helix%20Badminton%20Topu%20Air%20AB-10%20Sar%C4%B1.webp" alt="Helix Badminton Topu Air AB-10 Sarı" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>Helix Badminton Topu Air AB-10 Sarı</span>
+          <p class="kart-aciklama">Naylon perde tüyü malzeme, Perdeler ile baş kısmı arasında güçlendirici bant PU mantar malzeme, 6 ± 1 gram ağırlık, Orta – Dengeli ve kontrollü uçuş.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">250 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Badminton%20image/BT10%20ALTIS.webp" alt="BT10 ALTIS" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>BT10 ALTIS</span>
+          <p class="kart-aciklama">BT10 Altis, Tüylü badminton topu, Dayanıklı tüy yapısı, Dengeli uçuş performansı Antrenman ve hobi kullanımına uygun, Tüp içinde çoklu adet.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">130 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Badminton%20image/BT30%20HATTRICK.webp" alt="BT30 HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>BT30 HATTRICK</span>
+          <p class="kart-aciklama">BT30 Hattrick, Tüylü badminton topu, Dayanıklı ve dengeli tüy yapısı, Yüksek uçuş kararlılığı Antrenman ve hobi kullanımına uygun, Tüp içinde çoklu adet.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">220 ₺</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="kart-gorsel"><img src="%C4%B0mage/Badminton%20image/BT50%20HATTRICK.webp" alt="BT50 HATTRICK" loading="lazy"></div>
+        <div class="kart-govde">
+          <span class="pf-label"><span class="gizli-etiket">Ürün Adı : </span>BT50 HATTRICK</span>
+          <p class="kart-aciklama">BT50 Hattrick, Tüylü badminton topu, Üst seviye dayanıklı tüy yapısı, Güçlü ve kontrollü uçuş Antrenman ve hobi kullanımına uygun, Tüp içinde çoklu adet.</p>
+          <div class="kart-alt">
+            <div class="pf pf-price"><span class="pf-line">300 ₺</span></div>
+          </div>
+        </div>
+      </div>
+  </div>
+</main>
 
+<a class="wa-buton" href="https://wa.me/905522025737" target="_blank" rel="noopener" aria-label="WhatsApp'tan yazın">
+  <svg viewBox="0 0 32 32" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M16 3C9 3 3 9 3 16c0 2.4.6 4.6 1.8 6.6L3 29l6.6-1.7c1.9 1 4 1.6 6.4 1.6 7 0 13-6 13-13S23 3 16 3zm7.6 18.4c-.3.9-1.7 1.7-2.7 1.9-.7.1-1.6.2-4.6-1-3.9-1.6-6.4-5.5-6.6-5.8-.2-.3-1.6-2.1-1.6-4s1-2.8 1.3-3.2c.3-.3.7-.4 1-.4h.7c.2 0 .5 0 .8.6.3.7 1.1 2.6 1.2 2.8.1.2.2.4 0 .7-.1.3-.2.4-.4.6-.2.2-.4.5-.6.7-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.6 1.4 1.3 2.6 1.7 3 1.9.3.2.5.1.7-.1.2-.2.9-1 1.1-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.5 1.2.4.2.6.3.7.5.1.2.1 1-.2 1.9z"/></svg>
+</a>
 
-<script>
-function aramaFiltrele(inp){
-  var q=inp.value.toLocaleLowerCase('tr-TR').trim(), gorunen=0;
-  document.querySelectorAll('.product-card').forEach(function(k){
-    var e=k.querySelector('.pf-label');
-    var esles=(e?e.textContent.toLocaleLowerCase('tr-TR'):'').indexOf(q)!==-1;
-    k.style.display=esles?'':'none';
-    if(esles)gorunen++;
-  });
-  document.querySelector('.urun-bulunamadi').hidden=!(q&&gorunen===0);
-}
-</script>
+<footer class="alt-bilgi">
+  <div class="alt-bilgi-ic">
+    <strong>ÖZTEN SPOR</strong>
+    Kirazlı Mahallesi 1201. Sokak, Bağcılar / İstanbul<br>
+    <a href="mailto:oztensporltd@gmail.com">oztensporltd@gmail.com</a>
+  </div>
+</footer>
+
+<nav class="alt-cubuk">
+  <a class="alt-btn" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>
+    Ana Sayfa
+  </a>
+  <button type="button" class="alt-btn" id="altAra">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    Ara
+  </button>
+  <button type="button" class="alt-btn" id="altKategori">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    Kategoriler
+  </button>
+  <button type="button" class="alt-btn" id="altSepet">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M6 6 5 3H3"/></svg>
+    Sepet
+    <span class="alt-rozet" id="altSepetSayi" hidden>0</span>
+  </button>
+</nav>
+
 </body>
 </html>
