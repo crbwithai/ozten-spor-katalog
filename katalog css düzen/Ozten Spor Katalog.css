@@ -395,26 +395,3 @@ html { scroll-behavior: smooth; }
 @media print {
   .whatsapp-buton-sarici { display:none !important; }
 }
-
-/* ============================================================
-   İLETİŞİM — KİŞİ KARTLARI
-   ============================================================ */
-.kisi-grid { display:grid; grid-template-columns:1fr 1fr; gap:2mm; margin-top:1mm; }
-.kisi-karti {
-  display:flex; flex-direction:column; align-items:flex-start; gap:0.5mm;
-  background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.25); border-radius:4px;
-  padding:2mm 3mm; cursor:pointer; text-align:left; font-family:Arial,Helvetica,sans-serif;
-}
-.kisi-karti:hover { border-color:#FD8C22; }
-.kisi-karti.aktif { background:#FD8C22; border-color:#FD8C22; }
-.kisi-karti .kisi-ad { font-size:8.5pt; font-weight:700; color:#fff; }
-.kisi-karti .kisi-gorev, .kisi-karti .kisi-tel { font-size:7.5pt; color:#B7B7B7; }
-.kisi-karti.aktif .kisi-gorev, .kisi-karti.aktif .kisi-tel { color:#E8F1FB; }
-@media (max-width:480px) {
-  .kisi-karti { padding:1.8mm 2.5mm; }
-  .kisi-karti .kisi-ad { font-size:8pt; }
-  .kisi-karti .kisi-gorev, .kisi-karti .kisi-tel { font-size:7pt; }
-}
-@media print {
-  .kisi-grid { display:none !important; }
-}

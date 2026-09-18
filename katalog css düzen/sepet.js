@@ -1,15 +1,9 @@
 (function(){
   var ANAHTAR='oztenSepet';
-  var KISI_ANAHTAR='oztenSecilenKisi';
   var INDIRIM_ANAHTAR='oztenIndirimKodu';
-  var WHATSAPP_NUMARA=null;
-  var SECILEN_KISI_ADI=null;
+  // Tüm siparişler ve sorular bu tek WhatsApp hattına gelir
+  var WHATSAPP_NUMARA='905054463913';
   var UYGULANAN_INDIRIM_KODU=null;
-  var KISILER=[
-    {ad:'SERHAT', gorev:'Satış Sorumlusu', numara:'905522025737'},
-    {ad:'FATİH', gorev:'Satış Sorumlusu', numara:'905388985539'},
-    {ad:'YAĞIZ', gorev:'Satış Sorumlusu', numara:'905434207118'}
-  ];
   // Yeni indirim kodu eklemek için bu listeye satır ekleyin: tip 'yuzde' (%) veya 'tutar' (sabit TL)
   var INDIRIM_KODLARI={
     'OZTEN5': {tip:'yuzde', deger:5}
@@ -133,31 +127,12 @@
     } else {
       toplamMetni='Genel Toplam: '+toplamFiyat.toLocaleString('tr-TR')+' TL';
     }
-    var selam=SECILEN_KISI_ADI?('Merhaba '+SECILEN_KISI_ADI+',\n\nAşağıdaki ürünler için sipariş vermek istiyorum:\n\n'):'Merhaba, aşağıdaki ürünler için sipariş vermek istiyorum:\n\n';
-    return selam+satirlar.join('\n\n')+'\n\n'+toplamMetni;
+    return 'Merhaba Özten Spor, aşağıdaki ürünler için sipariş vermek istiyorum:\n\n'+satirlar.join('\n\n')+'\n\n'+toplamMetni;
   }
   function whatsappGonder(){
     var mesaj=whatsappMesajiOlustur();
     if(!mesaj){ alert('Sepetiniz boş.'); return; }
-    if(!WHATSAPP_NUMARA){ alert('Lütfen iletişime geçmek istediğiniz kişiyi seçin.'); return; }
     window.open('https://wa.me/'+WHATSAPP_NUMARA+'?text='+encodeURIComponent(mesaj), '_blank');
-  }
-  function kisiSec(kisi, btn){
-    document.querySelectorAll('.kisi-karti.aktif').forEach(function(b){ b.classList.remove('aktif'); });
-    if(btn) btn.classList.add('aktif');
-    WHATSAPP_NUMARA=kisi.numara;
-    SECILEN_KISI_ADI=kisi.ad;
-    try{ localStorage.setItem(KISI_ANAHTAR, kisi.numara); }catch(e){}
-  }
-  // Kartı seçer (sepet var ise sonraki "WhatsApp'tan Sipariş Ver" bu kişiye gider)
-  // VE aynı anda WhatsApp'ı açar: sepet doluysa sepet mesajıyla, boşsa genel bir
-  // karşılama mesajıyla. Katalog dijital bir vitrin — asıl sipariş satış
-  // temsilcisiyle WhatsApp üzerinden tamamlanıyor, o yüzden tek tıkla ulaşım önemli.
-  function kisiSecVeYaz(kisi, btn){
-    kisiSec(kisi, btn);
-    var sepetMesaji=whatsappMesajiOlustur();
-    var mesaj=sepetMesaji || ('Merhaba '+kisi.ad+', Özten Spor kataloğu hakkında bilgi almak istiyorum.');
-    window.open('https://wa.me/'+kisi.numara+'?text='+encodeURIComponent(mesaj), '_blank');
   }
   function indirimHesapla(kod, toplamFiyat){
     var tanim=INDIRIM_KODLARI[kod];
@@ -197,26 +172,6 @@
       if(girdi) girdi.value=kayitliKod;
       indirimMesajGoster('İndirim kodu uygulandı: '+kayitliKod, true);
     }
-  }
-  function kisiSeciminiUygula(){
-    var kayitliNumara=null;
-    try{ kayitliNumara=localStorage.getItem(KISI_ANAHTAR); }catch(e){}
-    if(!kayitliNumara) return;
-    var kisi=KISILER.find(function(k){ return k.numara===kayitliNumara; });
-    if(kisi){ WHATSAPP_NUMARA=kisi.numara; SECILEN_KISI_ADI=kisi.ad; }
-  }
-  function kisiKartlariOlustur(){
-    kisiSeciminiUygula();
-    var kapsayici=document.getElementById('iletisimKisiler');
-    if(!kapsayici) return;
-    KISILER.forEach(function(kisi){
-      var btn=document.createElement('button');
-      btn.type='button'; btn.className='kisi-karti'+(kisi.numara===WHATSAPP_NUMARA?' aktif':'');
-      btn.innerHTML='<span class="kisi-karti-metin"><span class="kisi-ad">'+kisi.ad+'</span><span class="kisi-gorev">'+kisi.gorev+'</span></span>'+
-        '<span class="kisi-wa"><svg viewBox="0 0 32 32" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M16 3C9 3 3 9 3 16c0 2.4.6 4.6 1.8 6.6L3 29l6.6-1.7c1.9 1 4 1.6 6.4 1.6 7 0 13-6 13-13S23 3 16 3zm7.6 18.4c-.3.9-1.7 1.7-2.7 1.9-.7.1-1.6.2-4.6-1-3.9-1.6-6.4-5.5-6.6-5.8-.2-.3-1.6-2.1-1.6-4s1-2.8 1.3-3.2c.3-.3.7-.4 1-.4h.7c.2 0 .5 0 .8.6.3.7 1.1 2.6 1.2 2.8.1.2.2.4 0 .7-.1.3-.2.4-.4.6-.2.2-.4.5-.6.7-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.6 1.4 1.3 2.6 1.7 3 1.9.3.2.5.1.7-.1.2-.2.9-1 1.1-1.4.2-.4.5-.3.8-.2.3.1 2.1 1 2.5 1.2.4.2.6.3.7.5.1.2.1 1-.2 1.9z"/></svg>WhatsApp\'tan Yaz</span>';
-      btn.addEventListener('click', function(){ kisiSecVeYaz(kisi, btn); });
-      kapsayici.appendChild(btn);
-    });
   }
   function whatsappButonuEkle(){
     var sarici=document.createElement('div');
@@ -305,7 +260,6 @@
     indirimSeciminiUygula();
     butonEkle();
     whatsappButonuEkle();
-    kisiKartlariOlustur();
     kategoriMenuKur();
     guncelle();
   });
